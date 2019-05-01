@@ -129,13 +129,9 @@ alias qqqqq='cd ../../../../..'
 alias qqqqqq='cd ../../../../../..'
 alias qqqqqqq='cd ../../../../../../..'
 alias qqqqqqqq='cd ../../../../../../../..'
-alias lab='ssh -X rjian23@lab0z.mathcs.emory.edu'
-alias triton='ssh -X triton.mathcs.emory.edu'
-alias syslab='ssh -X syslab.mathcs.emory.edu'
-alias core='ssh -X core.mathcs.emory.edu'
-alias sdbt='ssh belt.ooapi.com -L 27020:localhost:27017'
-alias psoodbt='ssh vneck-21.ooapi.com -L 27069:localhost:27017'
-alias pssldbt='ssh blazer-41.ooapi.com -L 27096:localhost:27017'
+alias sdb='ssh belt.ooapi.com -L 27020:localhost:27017'
+alias oodb='ssh vneck-21.ooapi.com -L 27069:localhost:27017'
+alias sldb='ssh blazer-41.ooapi.com -L 27096:localhost:27017'
 alias vimrc='vim ~/.vimrc'
 alias nvimrc='nvim ~/.nvimrc'
 alias bashrc='nvim ~/.bashrc'
@@ -173,8 +169,11 @@ function findstr {
 }
 
 function pullall {
-  for repo in oo-config oo-components oo-util oo-routes sp-components oo-print oo-artwork oo-billing oo-router oo-shipping oo-inventory oo-order sp-website sp-manager sp-manager-components sp-dashboard sp-dashboard-menu oo-email sp-order sp-product-picker sp-designer sp-designer-util sp-query sp-middleware oo-middleware oo-logger oo-dashboard;
-    do echo $repo && builtin cd ~/oo/$repo && git checkout master && git pull
+  for repo in oo-config oo-components oo-crash oo-data oo-logger oo-middleware oo-queue-client oo-routes oo-util sp-components sp-dashboard-menu sp-designer sp-designer-util sp-manager-components sp-middleware sp-product-picker;
+    do echo $repo && builtin cd ~/oo/$repo && git fetch && git checkout master && git pull
+  done
+  for repo in oo-artwork oo-billing oo-case oo-dashboard oo-dtg oo-email oo-employee oo-inventory oo-manager oo-mug oo-order oo-print oo-queue oo-racker oo-report oo-router oo-shipping oo-website sp-assembly sp-autoprint sp-dashboard sp-facility sp-manager sp-order sp-query sp-website;
+    do echo $repo && builtin cd ~/oo/$repo && git fetch && git checkout develop && git pull
   done
 }
 
