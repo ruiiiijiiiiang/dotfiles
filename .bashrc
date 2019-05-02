@@ -168,12 +168,67 @@ function findstr {
   grep -rnw . -e $@
 }
 
-function pullall {
-  for repo in oo-config oo-components oo-crash oo-data oo-logger oo-middleware oo-queue-client oo-routes oo-util sp-components sp-dashboard-menu sp-designer sp-designer-util sp-manager-components sp-middleware sp-product-picker;
-    do echo $repo && builtin cd ~/oo/$repo && git fetch && git checkout master && git pull
+function pulloo {
+  oo_home="/home/rui/oo/"
+  libraries="oo-auth
+  oo-auth-roles
+  oo-boat
+  oo-components
+  oo-config
+  oo-crash
+  oo-data
+  oo-email-client
+  oo-logger
+  oo-middleware
+  oo-queue-client
+  oo-routes
+  oo-util
+  sp-components
+  sp-dashboard-menu
+  sp-designer
+  sp-designer-util
+  sp-manager-components
+  sp-middleware
+  sp-product-picker
+  sp-sla"
+  services="oo-artwork
+  oo-billing
+  oo-case
+  oo-dashboard
+  oo-dtg
+  oo-email-server
+  oo-email
+  oo-employee
+  oo-inventory
+  oo-manager
+  oo-mug
+  oo-order
+  oo-poster
+  oo-print
+  oo-queue
+  oo-racker
+  oo-report
+  oo-router
+  oo-shipping
+  oo-status
+  oo-website
+  sp-assembly
+  sp-autoprint
+  sp-dashboard
+  sp-dtg-server
+  sp-embr-server
+  sp-embr
+  sp-facility
+  sp-graphql
+  sp-manager
+  sp-order
+  sp-query
+  sp-website"
+  for repo in $libraries
+    do echo pulling for $repo && builtin cd $oo_home$repo && git fetch -q >/dev/null && git checkout master -q >/dev/null && git pull -q >/dev/null
   done
-  for repo in oo-artwork oo-billing oo-case oo-dashboard oo-dtg oo-email oo-employee oo-inventory oo-manager oo-mug oo-order oo-print oo-queue oo-racker oo-report oo-router oo-shipping oo-website sp-assembly sp-autoprint sp-dashboard sp-facility sp-manager sp-order sp-query sp-website;
-    do echo $repo && builtin cd ~/oo/$repo && git fetch && git checkout develop && git pull
+  for repo in $services
+    do echo pulling for $repo && builtin cd $oo_home$repo && git fetch -q >/dev/null && git checkout develop -q >/dev/null && git pull -q >/dev/null
   done
 }
 
@@ -181,11 +236,11 @@ function gitstat {
   git ls-files | grep -v '^yarn.lock$' | while read f; do git blame --line-porcelain $f | grep '^author '; done | sort -f | uniq -ic | sort -n
 }
 
-function sshooapi {
+function sshoo {
   ssh $@.ooapi.com
 }
 
-function sshfsooapi {
+function sshfsoo {
   if [ ! -d ~/ssh/$@ ]; then
     mkdir -p ~/ssh/$@
   fi
