@@ -183,10 +183,12 @@ function pulloo {
   oo-queue-client
   oo-routes
   oo-util
+  sp-auth-client
   sp-components
   sp-dashboard-menu
   sp-designer
   sp-designer-util
+  sp-dhl
   sp-manager-components
   sp-middleware
   sp-product-picker
@@ -213,6 +215,7 @@ function pulloo {
   oo-status
   oo-website
   sp-assembly
+  sp-auth-server
   sp-autoprint
   sp-dashboard
   sp-dtg-server
@@ -264,6 +267,8 @@ fi
 eval $(thefuck --alias fuck)
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
+
+xinput set-prop "Kensington Expert Mouse" "Device Accel Constant Deceleration" 0.5
 
 echo '
           _______  _        _______
