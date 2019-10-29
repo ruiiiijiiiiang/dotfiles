@@ -8,7 +8,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-fugitive'
@@ -26,8 +26,11 @@ Plug 'ternjs/tern_for_vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
+Plug 'jparise/vim-graphql'
 Plug 'ryanoasis/vim-devicons'
 Plug 'int3/vim-extradite'
+Plug 'rbong/vim-flog'
+Plug 'idanarye/vim-merginal'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " All of your Plugins must be added before the following line
@@ -81,7 +84,7 @@ set udir=/home/rui/.vim/backup/undo/
 
 " color scheme
 set termguicolors
-colorscheme onedark
+colorscheme molokai
 set background=dark
 
 " enable italic and bold
@@ -91,7 +94,7 @@ highlight Identifier gui=italic cterm=italic
 
 " statusline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
+let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -103,9 +106,6 @@ let g:ctrlp_cmd = 'CtrlP /home/rui/oo'
 " Ack behavior
 cnoreabbrev ag Ack!
 let g:ackprg = 'ag --vimgrep --smart-case'
-
-" YCM behavior
-"autocmd CompleteDone * pclose
 
 " JS libraries support
 let g:used_javascript_libs = 'underscore,react,angularjs'
@@ -142,6 +142,7 @@ vnoremap <C-c> "+y
 vnoremap <C-x> "+d
 
 " search for selected text in visual mode
+vnoremap <Space> y:Ack! <C-r>"<C-b>
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
@@ -159,6 +160,12 @@ command! RC source ~/.config/nvim/init.vim
 
 " extradite behavior
 command! Ghistory Extradite!
+
+" merginal behavior
+command! Gbranch Merginal
+
+" flog behavior
+command! Gtree Flog
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1

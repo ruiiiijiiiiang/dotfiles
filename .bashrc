@@ -148,7 +148,9 @@ alias yil='yarn --ignore-engines; yloo; ylsp; ylsl; rm yarn-error.log'
 alias yolo='gulp dev-server'
 alias swag='gulp main-server'
 alias oovpn='sudo openvpn --config ~/Dropbox/rui.jiang.ovpn'
-alias n='nodemon'
+alias localtsc='./node_modules/typescript/bin/tsc'
+alias rmmg='rm -rf ./node_modules/@types/mongoose/'
+alias udn='cd node_modules/gulp && yarn add natives@1.1.6'
 
 function run {
   ($1 $@ &> /dev/null &)
