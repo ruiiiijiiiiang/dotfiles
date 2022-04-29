@@ -148,6 +148,8 @@ alias yil='yarn --ignore-engines; yloo; ylsp; ylsl; rm yarn-error.log'
 alias yolo='gulp dev-server'
 alias swag='gulp main-server'
 alias oovpn='sudo openvpn --config ~/Dropbox/rui.jiang.ovpn'
+alias oovpndal='sudo openvpn --config ~/Dropbox/rui.jiang-dallas.ovpn'
+alias oovpnind='sudo openvpn --config ~/Dropbox/rui.jiang-indy.ovpn'
 alias localtsc='./node_modules/typescript/bin/tsc'
 alias rmmg='rm -rf ./node_modules/@types/mongoose/'
 alias udn='cd node_modules/gulp && yarn add natives@1.1.6'
@@ -193,11 +195,11 @@ function pulloo {
   sp-dhl
   sp-manager-components
   sp-middleware
+  sp-mockup-client
   sp-product-picker
   sp-sla"
   services="oo-artwork
   oo-billing
-  oo-case
   oo-dashboard
   oo-dtg
   oo-email-server
@@ -205,9 +207,8 @@ function pulloo {
   oo-employee
   oo-inventory
   oo-manager
-  oo-mug
   oo-order
-  oo-poster
+  oo-pretreat3
   oo-print
   oo-queue
   oo-racker
@@ -218,14 +219,18 @@ function pulloo {
   oo-website
   sp-assembly
   sp-auth-server
+  sp-autobagger
   sp-autoprint
   sp-dashboard
+  sp-domain
   sp-dtg-server
-  sp-embr-server
   sp-embr
+  sp-embr-server
   sp-facility
+  sp-feature-flag
   sp-graphql
   sp-manager
+  sp-mockup-server
   sp-order
   sp-query
   sp-website"
@@ -233,7 +238,7 @@ function pulloo {
     do echo pulling for $repo && builtin cd $oo_home$repo && git fetch -q >/dev/null && git checkout master -q >/dev/null && git pull -q >/dev/null
   done
   for repo in $services
-    do echo pulling for $repo && builtin cd $oo_home$repo && git fetch -q >/dev/null && git checkout develop -q >/dev/null && git pull -q >/dev/null
+    do echo pulling for $repo && builtin cd $oo_home$repo && git fetch -q >/dev/null && git checkout master -q >/dev/null && git pull -q >/dev/null
   done
 }
 
@@ -241,11 +246,11 @@ function gitstat {
   git ls-files | grep -v '^yarn.lock$' | while read f; do git blame --line-porcelain $f | grep '^author '; done | sort -f | uniq -ic | sort -n
 }
 
-function sshoo {
+function oossh {
   ssh $@.ooapi.com
 }
 
-function sshfsoo {
+function oosshfs {
   if [ ! -d ~/ssh/$@ ]; then
     mkdir -p ~/ssh/$@
   fi
@@ -270,7 +275,7 @@ eval $(thefuck --alias fuck)
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
 
-xinput set-prop "Kensington Expert Mouse" "Device Accel Constant Deceleration" 0.5
+#xinput set-prop "Kensington Expert Mouse" "Device Accel Constant Deceleration" 0.5
 
 echo '
           _______  _        _______
@@ -289,4 +294,14 @@ echo '
       ) || || || || (   ) || | \_  )
 /\____) || () () || )   ( || (___) |
 \_______)(_______)|/     \|(_______)'
-#source /opt/ros/kinetic/setup.bash
+
+export PATH="$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/rui/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/rui/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/rui/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/rui/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+export NPM_TOKEN_4873=oDxoRuFiRXzleNmTiTSrkw==
+export NPM_TOKEN_4874=oDxoRuFiRXzleNmTiTSrkw==

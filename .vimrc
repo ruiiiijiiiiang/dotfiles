@@ -145,6 +145,7 @@ vnoremap <C-c> "+y
 vnoremap <C-x> "+d
 
 " search for selected text in visual mode
+vnoremap <Space> y:<C-r>"<C-b>
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>

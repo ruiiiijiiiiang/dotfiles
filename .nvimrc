@@ -1,13 +1,13 @@
 call plug#begin()
 " plugins
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'scrooloose/nerdtree'
+"Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'kchmck/vim-coffee-script'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
@@ -32,6 +32,12 @@ Plug 'int3/vim-extradite'
 Plug 'rbong/vim-flog'
 Plug 'idanarye/vim-merginal'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/nvim-bufferline.lua'
+Plug 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -54,7 +60,7 @@ set backspace=indent,eol,start
 set formatoptions+=j
 syntax on
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 let g:deoplete#enable_at_startup = 1
 
@@ -84,7 +90,7 @@ set udir=/home/rui/.vim/backup/undo/
 
 " color scheme
 set termguicolors
-colorscheme molokai
+colorscheme nightfox
 set background=dark
 
 " enable italic and bold
@@ -93,11 +99,11 @@ highlight Comment gui=italic cterm=italic
 highlight Identifier gui=italic cterm=italic
 
 " statusline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='molokai'
-let g:airline#extensions#tabline#enabled = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"let g:airline_powerline_fonts = 1
+"let g:airline_theme='molokai'
+"let g:airline#extensions#tabline#enabled = 1
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
 
 " ctrlp behavior
 let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|.git\|public\|build\'
@@ -113,8 +119,10 @@ let g:used_javascript_libs = 'underscore,react,angularjs'
 " key remap
 nnoremap <Space> :
 nnoremap <Enter> a<Enter><Esc>
-nnoremap ; :NERDTreeToggle<CR>
-nnoremap <A-;> :NERDTreeFind<CR>
+"nnoremap ; :NERDTreeToggle<CR>
+"nnoremap <A-;> :NERDTreeFind<CR>
+nnoremap ; :NvimTreeToggle<CR>
+nnoremap <A-;> :NvimTreeFindFile<CR>
 nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 tnoremap <Esc> <C-\><C-n>
@@ -165,7 +173,7 @@ command! Ghistory Extradite!
 command! Gbranch Merginal
 
 " flog behavior
-command! Gtree Flog
+command! Gtree Flogsplit
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1
@@ -193,21 +201,34 @@ function! ExecuteMacroOverVisualRange()
 endfunction
 
 " adjust devicons alignment in NERDTree
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
+"let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
+"let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 
 " enable NERDTree syntax highlighting for full name
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
+"let g:NERDTreeFileExtensionHighlightFullName = 1
+"let g:NERDTreeExactMatchHighlightFullName = 1
+"let g:NERDTreePatternMatchHighlightFullName = 1
 
 " reduce NERDTree lags from syntax highlighting
-let g:NERDTreeLimitedSyntax = 1
-let g:NERDTreeSyntaxEnabledExtensions = ['ejs', 'ts']
-let g:NERDTreeHighlightCursorline = 0
+"let g:NERDTreeLimitedSyntax = 1
+"let g:NERDTreeSyntaxEnabledExtensions = ['ejs', 'ts']
+"let g:NERDTreeHighlightCursorline = 0
 
 " delete integrity check from yarn.lock files
 cnoreabbrev di g/integrity\ /d
 
 " format JSON file
 cnoreabbrev JSON %!python -m json.tool
+
+" set up bufferline
+lua << EOF
+require("bufferline").setup{}
+EOF
+
+" lightline behavior
+let g:lightline = {
+\  'colorscheme': 'one',
+\  'enable': {
+\    'tabline': 0
+\  }
+\}
