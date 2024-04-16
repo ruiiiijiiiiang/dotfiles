@@ -1,18 +1,18 @@
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 " plugins
 "Plug 'scrooloose/nerdtree'
 "Plug 'jistr/vim-nerdtree-tabs'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/nerdcommenter'
-Plug 'kchmck/vim-coffee-script'
+"Plug 'preservim/nerdcommenter'
+"Plug 'kchmck/vim-coffee-script'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fubitive'
+"Plug 'tommcdo/vim-fubitive'
 Plug 'yggdroot/indentline'
 Plug 'gioele/vim-autoswap'
 Plug 'airblade/vim-gitgutter'
@@ -22,28 +22,32 @@ Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'ternjs/tern_for_vim'
+" Plug 'ternjs/tern_for_vim'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
+"Plug 'Quramy/tsuquyomi'
+"Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
 Plug 'ryanoasis/vim-devicons'
 Plug 'int3/vim-extradite'
 Plug 'rbong/vim-flog'
 Plug 'idanarye/vim-merginal'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'jiangmiao/auto-pairs'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'jiangmiao/auto-pairs'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'itchyny/lightline.vim'
+Plug 'numToStr/Comment.nvim'
+Plug 'tpope/vim-rhubarb'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ap/vim-css-color'
 
 " All of your Plugins must be added before the following line
 call plug#end()
 
 " general settings
-set smartindent
+set autoindent
 set number
 set laststatus=2
 set nowrap
@@ -60,9 +64,11 @@ set backspace=indent,eol,start
 set formatoptions+=j
 syntax on
 autocmd StdinReadPre * let s:std_in=1
+lua require'nvim-tree'.setup {}
+lua require('Comment').setup()
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " always shows another line after scrolling
 if !&scrolloff
@@ -81,12 +87,13 @@ set wildmode=longest:full,full
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set smarttab
 
 " backup path
-set directory=/home/rui/.vim/backup/swp/
-set backupdir=/home/rui/.vim/backup/backup/
+set directory=~/.config/nvim/backup/swp/
+set backupdir=~/.config/nvim/backup/backup/
 set udf
-set udir=/home/rui/.vim/backup/undo/
+set udir=~/.config/nvim/backup/undo/
 
 " color scheme
 set termguicolors
@@ -107,14 +114,14 @@ highlight Identifier gui=italic cterm=italic
 
 " ctrlp behavior
 let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|.git\|public\|build\'
-let g:ctrlp_cmd = 'CtrlP /home/rui/oo'
+let g:ctrlp_cmd = 'CtrlP /Users/rui/dev'
 
 " Ack behavior
 cnoreabbrev ag Ack!
 let g:ackprg = 'ag --vimgrep --smart-case'
 
 " JS libraries support
-let g:used_javascript_libs = 'underscore,react,angularjs'
+let g:used_javascript_libs = 'underscore,react'
 
 " key remap
 nnoremap <Space> :
@@ -122,9 +129,9 @@ nnoremap <Enter> a<Enter><Esc>
 "nnoremap ; :NERDTreeToggle<CR>
 "nnoremap <A-;> :NERDTreeFind<CR>
 nnoremap ; :NvimTreeToggle<CR>
-nnoremap <A-;> :NvimTreeFindFile<CR>
-nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
-vnoremap <C-_> :call NERDComment(0, "toggle")<CR>
+nnoremap ;; :NvimTreeFindFile<CR>
+"nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
+"vnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-n> :nohl<CR>
 
@@ -176,22 +183,23 @@ command! Gbranch Merginal
 command! Gtree Flogsplit
 
 " syntastic settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " delay gitgutter to prevent slowness
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
 " auto remove trailing whitespaces
-autocmd BufWritePre *.coffee :%s/\s\+$//e
-autocmd BufWritePre *.js :%s/\s\+$//e
-autocmd BufWritePre *.jsx :%s/\s\+$//e
-autocmd BufWritePre *.scss :%s/\s\+$//e
-autocmd BufWritePre *.ts :%s/\s\+$//e
-autocmd BufWritePre *.tsx :%s/\s\+$//e
+autocmd BufWritePre *.coffee :Format
+autocmd BufWritePre *.js :Format
+autocmd BufWritePre *.jsx :Format
+autocmd BufWritePre *.scss :Format
+autocmd BufWritePre *.ts :Format
+autocmd BufWritePre *.tsx :Format
+autocmd BufWritePre *.graphql :Format
 
 " apply macro on visually selected lines
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
@@ -223,6 +231,7 @@ cnoreabbrev JSON %!python -m json.tool
 " set up bufferline
 lua << EOF
 require("bufferline").setup{}
+require('Comment').setup()
 EOF
 
 " lightline behavior
@@ -232,3 +241,41 @@ let g:lightline = {
 \    'tabline': 0
 \  }
 \}
+
+" coc extensions
+let g:coc_global_extensions = [
+\ 'coc-pairs',
+\ 'coc-tsserver',
+\ 'coc-graphql',
+\ 'coc-json',
+\ 'coc-prettier',
+\ 'coc-eslint',
+\]
+
+" coc config
+let g:coc_node_path = '/Users/rui/.volta/tools/image/node/18.13.0/bin/node'
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocActionAsync('format')
+" Symbol renaming.
+nmap <C-m> <Plug>(coc-rename)
