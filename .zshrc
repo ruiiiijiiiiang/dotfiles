@@ -50,11 +50,11 @@ if [ -f ~/.bash_aliases ]; then
  . ~/.bash_aliases
 fi
 
-alias l='ls'
-alias la='ls -a'
-alias ll='ls -l'
-alias lla='ls -la'
-alias lal='ls -al'
+alias l='lsd'
+alias la='lsd -a'
+alias ll='lsd -l'
+alias lla='lsd -la'
+alias lal='lsd -al'
 alias v='vim'
 alias nv='nvim'
 alias tm='tmux -2'
@@ -107,6 +107,10 @@ function cd {
 
 function findstr {
   grep -rnw . -e $@
+}
+
+function cat {
+  bat $@
 }
 
 function cloneoo {
@@ -268,7 +272,7 @@ function cd {
   output=$(z $@ 2>&1)
   if [[ $output != *"no match found"* ]]; then
     z $@
-    exa -ahl
+    lsd -ahl
   else
     echo $output
   fi
