@@ -1,18 +1,12 @@
 call plug#begin('~/.config/nvim/plugged')
 " plugins
-"Plug 'scrooloose/nerdtree'
-"Plug 'jistr/vim-nerdtree-tabs'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'preservim/nerdcommenter'
-"Plug 'kchmck/vim-coffee-script'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"Plug 'scrooloose/syntastic'
+Plug 'kchmck/vim-coffee-script'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-fugitive'
-"Plug 'tommcdo/vim-fubitive'
+Plug 'tommcdo/vim-fubitive'
 Plug 'yggdroot/indentline'
 Plug 'gioele/vim-autoswap'
 Plug 'airblade/vim-gitgutter'
@@ -25,8 +19,8 @@ Plug 'mxw/vim-jsx'
 " Plug 'ternjs/tern_for_vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 "Plug 'Quramy/tsuquyomi'
-"Plug 'leafgarland/typescript-vim'
-Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
+"Plug 'jparise/vim-graphql'
 Plug 'ryanoasis/vim-devicons'
 Plug 'int3/vim-extradite'
 Plug 'rbong/vim-flog'
@@ -37,7 +31,6 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
-Plug 'itchyny/lightline.vim'
 Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-rhubarb'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -67,6 +60,7 @@ autocmd StdinReadPre * let s:std_in=1
 lua require'nvim-tree'.setup {}
 lua require('Comment').setup()
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:vim_json_conceal=0
 
 " let g:deoplete#enable_at_startup = 1
 
@@ -106,11 +100,9 @@ highlight Comment gui=italic cterm=italic
 highlight Identifier gui=italic cterm=italic
 
 " statusline
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme='molokai'
-"let g:airline#extensions#tabline#enabled = 1
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
+let g:airline_powerline_fonts = 1
+let g:airline_theme='bubblegum'
+set statusline+=%#warningmsg#
 
 " ctrlp behavior
 let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|.git\|public\|build\'
@@ -126,12 +118,8 @@ let g:used_javascript_libs = 'underscore,react'
 " key remap
 nnoremap <Space> :
 nnoremap <Enter> a<Enter><Esc>
-"nnoremap ; :NERDTreeToggle<CR>
-"nnoremap <A-;> :NERDTreeFind<CR>
 nnoremap ; :NvimTreeToggle<CR>
 nnoremap ;; :NvimTreeFindFile<CR>
-"nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
-"vnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-n> :nohl<CR>
 
@@ -182,11 +170,8 @@ command! Gbranch Merginal
 " flog behavior
 command! Gtree Flogsplit
 
-" syntastic settings
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+" blame behavior
+command! Gblame Git blame
 
 " delay gitgutter to prevent slowness
 let g:gitgutter_realtime = 0
@@ -208,39 +193,18 @@ function! ExecuteMacroOverVisualRange()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
-" adjust devicons alignment in NERDTree
-"let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
-"let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
-
-" enable NERDTree syntax highlighting for full name
-"let g:NERDTreeFileExtensionHighlightFullName = 1
-"let g:NERDTreeExactMatchHighlightFullName = 1
-"let g:NERDTreePatternMatchHighlightFullName = 1
-
-" reduce NERDTree lags from syntax highlighting
-"let g:NERDTreeLimitedSyntax = 1
-"let g:NERDTreeSyntaxEnabledExtensions = ['ejs', 'ts']
-"let g:NERDTreeHighlightCursorline = 0
-
 " delete integrity check from yarn.lock files
 cnoreabbrev di g/integrity\ /d
 
 " format JSON file
 cnoreabbrev JSON %!python -m json.tool
 
-" set up bufferline
-lua << EOF
-require("bufferline").setup{}
-require('Comment').setup()
-EOF
-
-" lightline behavior
-let g:lightline = {
-\  'colorscheme': 'one',
-\  'enable': {
-\    'tabline': 0
-\  }
-\}
+" bufferline setup
+lua require("bufferline").setup{
+  \ options = {
+    \ show_buffer_close_icons = false
+  \ }
+\ }
 
 " coc extensions
 let g:coc_global_extensions = [
