@@ -63,22 +63,22 @@ config.keys = {
   },
   {
     key = 'u',
-    mods = 'CMD|CTRL',
+    mods = 'CTRL|SHIFT',
     action = act.ScrollByPage(-0.5),
   },
   {
     key = 'd',
-    mods = 'CMD|CTRL',
+    mods = 'CTRL|SHIFT',
     action = act.ScrollByPage(0.5),
   },
   {
     key = 'b',
-    mods = 'CMD|CTRL',
+    mods = 'CTRL|SHIFT',
     action = act.ScrollByPage(-1),
   },
   {
     key = 'f',
-    mods = 'CMD|CTRL',
+    mods = 'CTRL|SHIFT',
     action = act.ScrollByPage(1),
   },
 }
