@@ -1,8 +1,40 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
-
 # Inserts a blank line between shell prompts
 add_newline = true
+
+# Status line format
+format = """
+[](mauve)\
+$os\
+$username\
+[](fg:mauve bg:red)\
+$directory\
+[](fg:red bg:green)\
+$git_branch\
+$git_status\
+[](fg:green bg:yellow)\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$lua\
+$nodejs\
+$nim\
+$ruby\
+$rust\
+$scala\
+$php\
+$python\
+[](fg:yellow bg:peach)\
+$package\
+[](fg:peach bg:sky)\
+$time\
+[](fg:sky)\
+$character\
+"""
 
 # Sets user-defined palette
 # Palettes must be defined _after_ this line
@@ -10,10 +42,9 @@ palette = "catppuccin_frappe"
 
 # Starship modules
 [character]
-# Note the use of Catppuccin color 'peach'
-success_symbol = "[[󰄛](green) ❯](peach)"
-error_symbol = "[[󰄛](red) ❯](peach)"
-vimcmd_symbol = "[󰄛 ❮](subtext1)" # For use with zsh-vi-mode
+success_symbol = "[[󰈺](green) ❯](peach)"
+error_symbol = "[[󰈺](red) ❯](pink)"
+vimcmd_symbol = "[[](teal) ❮](subtext1)" # For use with zsh-vi-mode
 
 # Catppuccin palette
 [palettes.catppuccin_frappe]
@@ -44,100 +75,146 @@ base = "#303446"
 mantle = "#292c3c"
 crust = "#232634"
 
-# Nerd font symbols
-[aws]
-symbol = "  "
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+style = "fg:crust bg:mauve"
+disabled = false
 
-[buf]
-symbol = " "
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "fg:crust bg:mauve"
+style_root = "fg:crust bg:mauve"
+format = '[$user]($style)'
+disabled = false
+
+[directory]
+style = "fg:crust bg:red italic"
+format = "[ $path]($style)"
+truncation_length = 4
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+[git_branch]
+symbol = ""
+style = "bold fg:crust bg:green"
+format = '[ $symbol $branch]($style)'
+
+[git_status]
+style = "bold fg:crust bg:green"
+format = '[$all_status$ahead_behind]($style)'
 
 [c]
 symbol = " "
-
-[conda]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[directory]
-truncation_length = 4
-style = "bold lavender"
-read_only = " 󰌾"
-
-[docker_context]
-symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [elixir]
-symbol = " "
+symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [elm]
 symbol = " "
-
-[fennel]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[git_branch]
-style = "bold mauve"
-symbol = " "
-
-[git_commit]
-tag_symbol = '  '
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [golang]
 symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
-[guix_shell]
-symbol = " "
+[gradle]
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [haskell]
 symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [java]
 symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [julia]
 symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
-[kotlin]
-symbol = " "
+[php]
+symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
+
+[python]
+symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [lua]
 symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [nim]
 symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
 [nodejs]
-symbol = " "
+symbol = ""
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
-[ocaml]
-symbol = " "
+[ruby]
+symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
 
+[rust]
+symbol = ""
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
+
+[scala]
+symbol = " "
+style = "fg:crust bg:yellow"
+format = '[ $symbol $version]($style)'
+
+[package]
+format = '[ $symbol$version]($style)'
+style = "fg:crust bg:peach"
+symbol = "󰏗 "
+#
+# [docker_context]
+# symbol = " "
+# style = "bg:#06969A"
+# format = '[ $symbol $context ]($style)'
+
+[time]
+disabled = false
+time_format = "%R%P" # Hour:Minute Format
+style = "fg:crust bg:sky"
+format = '[  $time]($style)'
+
+# Other symbols
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
@@ -183,39 +260,68 @@ Unknown = " "
 Void = " "
 Windows = "󰍲 "
 
-[package]
-format = '\[[$symbol$version]($style)\]'
-symbol = "󰏗 "
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[guix_shell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[kotlin]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nix_shell]
+symbol = " "
+
+[ocaml]
+symbol = " "
 
 [perl]
 symbol = " "
 
-[php]
-symbol = " "
-
 [pijul_channel]
 symbol = " "
 
-[python]
-symbol = " "
-
 [rlang]
 symbol = "󰟔 "
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = "󱘗 "
-
-[scala]
-symbol = " "
 
 [swift]
 symbol = " "
 
 [zig]
 symbol = " "
-
-[gradle]
-symbol = " "
