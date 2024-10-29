@@ -57,7 +57,6 @@ return {
 		build = "make",
 		opts = {
 			save_path = "~/Pictures",
-			has_line_number = true,
 			has_breadcrumbs = true,
 			watermark = "",
 			bg_theme = "sea",
