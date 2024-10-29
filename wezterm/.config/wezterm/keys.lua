@@ -65,6 +65,16 @@ local keys = {
 		action = act.SplitVertical,
 	},
 	{
+		key = "k",
+		mods = "CMD|SHIFT",
+		action = act.ScrollByLine(-1),
+	},
+	{
+		key = "j",
+		mods = "CMD|SHIFT",
+		action = act.ScrollByLine(1),
+	},
+	{
 		key = "u",
 		mods = "CTRL|SHIFT",
 		action = act.ScrollByPage(-0.5),

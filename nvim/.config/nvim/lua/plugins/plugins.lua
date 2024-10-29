@@ -104,8 +104,22 @@ return {
 			local mason = require("mason")
 			local lspconfig = require("lspconfig")
 			mason.setup()
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({
+				on_attach = on_attach,
+				root_dir = lspconfig.util.root_pattern("package.json"),
+				single_file_support = false,
+			})
 			lspconfig.eslint.setup({})
+			lspconfig.denols.setup({
+				on_attach = on_attach,
+				root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+			})
+			lspconfig.coffeesense.setup({})
+			lspconfig.fish_lsp.setup({})
+			lspconfig.svelte.setup({})
+			lspconfig.graphql.setup({})
+			lspconfig.ruby_lsp.setup({})
+			lspconfig.lua_ls.setup({})
 		end,
 	},
 }

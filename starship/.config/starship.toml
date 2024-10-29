@@ -3,36 +3,28 @@ add_newline = true
 
 # Status line format
 format = """
-[](mauve)\
+[](flamingo)\
 $os\
 $username\
-[](fg:mauve bg:red)\
+[](fg:flamingo bg:red)\
 $directory\
 [](fg:red bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:yellow)\
 $c\
-$elixir\
-$elm\
-$golang\
-$gradle\
-$haskell\
+$deno\
 $java\
-$julia\
 $lua\
 $nodejs\
-$nim\
 $ruby\
-$rust\
-$scala\
 $php\
 $python\
-[](fg:yellow bg:peach)\
+[](fg:yellow bg:sky)\
 $package\
-[](fg:peach bg:sky)\
+[](fg:sky bg:lavender)\
 $time\
-[](fg:sky)\
+[](fg:lavender)\
 $character\
 """
 
@@ -42,8 +34,8 @@ palette = "catppuccin_frappe"
 
 # Starship modules
 [character]
-success_symbol = "[[󰈺](green) ❯](peach)"
-error_symbol = "[[󰈺](red) ❯](pink)"
+success_symbol = "[[󰈺](green) ❯](sapphire)"
+error_symbol = "[[󰈺](red) ❯](red)"
 vimcmd_symbol = "[[](teal) ❮](subtext1)" # For use with zsh-vi-mode
 
 # Catppuccin palette
@@ -78,21 +70,21 @@ crust = "#232634"
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
-style = "fg:crust bg:mauve"
+style = "fg:crust bg:flamingo"
 disabled = false
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
 show_always = true
-style_user = "fg:crust bg:mauve"
-style_root = "fg:crust bg:mauve"
+style_user = "fg:crust bg:flamingo"
+style_root = "fg:crust bg:flamingo"
 format = '[$user]($style)'
 disabled = false
 
 [directory]
-style = "fg:crust bg:red italic"
-format = "[ $path]($style)"
+style = "fg:crust bg:red bold"
+format = "[$path]($style)"
 truncation_length = 4
 truncation_symbol = "…/"
 truncate_to_repo = false
@@ -112,107 +104,68 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-style = "bold fg:crust bg:green"
-format = '[ $symbol $branch]($style)'
+style = "fg:crust bg:green italic"
+format = '[$symbol $branch]($style)'
 
 [git_status]
-style = "bold fg:crust bg:green"
+style = "fg:crust bg:green italic"
 format = '[$all_status$ahead_behind]($style)'
 
 [c]
 symbol = " "
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
-[elixir]
-symbol = " "
+[deno]
+symbol = ""
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[elm]
-symbol = " "
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[golang]
-symbol = " "
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[gradle]
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[haskell]
-symbol = " "
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
 [java]
 symbol = " "
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[julia]
-symbol = " "
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
 [php]
 symbol = " "
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
 [python]
 symbol = " "
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
 [lua]
 symbol = " "
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[nim]
-symbol = "󰆥 "
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
 [nodejs]
 symbol = ""
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
 [ruby]
 symbol = " "
 style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[rust]
-symbol = ""
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
-
-[scala]
-symbol = " "
-style = "fg:crust bg:yellow"
-format = '[ $symbol $version]($style)'
+format = '[$symbol $version]($style)'
 
 [package]
-format = '[ $symbol$version]($style)'
-style = "fg:crust bg:peach"
+format = '[$symbol$version]($style)'
+style = "fg:crust bg:sky"
 symbol = "󰏗 "
 #
 # [docker_context]
 # symbol = " "
-# style = "bg:#06969A"
+# style = "bg:blue"
 # format = '[ $symbol $context ]($style)'
 
 [time]
 disabled = false
 time_format = "%R%P" # Hour:Minute Format
-style = "fg:crust bg:sky"
-format = '[  $time]($style)'
+style = "fg:crust bg:lavender bold"
+format = '[ $time]($style)'
 
 # Other symbols
 [os.symbols]
@@ -275,6 +228,12 @@ symbol = " "
 [dart]
 symbol = " "
 
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
 [fennel]
 symbol = " "
 
@@ -284,8 +243,14 @@ symbol = " "
 [git_commit]
 tag_symbol = '  '
 
+[golang]
+symbol = " "
+
 [guix_shell]
 symbol = " "
+
+[haskell]
+symbol = " "
 
 [haxe]
 symbol = " "
@@ -296,6 +261,9 @@ symbol = " "
 [hostname]
 ssh_symbol = " "
 
+[julia]
+symbol = " "
+
 [kotlin]
 symbol = " "
 
@@ -304,6 +272,9 @@ symbol = "󰍛 "
 
 [meson]
 symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
@@ -319,6 +290,12 @@ symbol = " "
 
 [rlang]
 symbol = "󰟔 "
+
+[rust]
+symbol = ""
+
+[scala]
+symbol = " "
 
 [swift]
 symbol = " "
