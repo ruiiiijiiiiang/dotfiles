@@ -43,17 +43,17 @@ end
 local keys = {
 	{
 		key = "c",
-		mods = "" .. alt .. "|SHIFT",
+		mods = alt,
 		action = act.ActivateCopyMode,
 	},
 	{
 		key = "LeftArrow",
-		mods = "" .. alt .. "|SHIFT",
+		mods = alt,
 		action = act.ActivateTabRelative(-1),
 	},
 	{
 		key = "RightArrow",
-		mods = "" .. alt .. "|SHIFT",
+		mods = alt,
 		action = act.ActivateTabRelative(1),
 	},
 	{
@@ -68,33 +68,23 @@ local keys = {
 	},
 	{
 		key = "k",
-		mods = "" .. alt .. "|SHIFT",
+		mods = alt,
 		action = act.ScrollByLine(-1),
 	},
 	{
 		key = "j",
-		mods = "" .. alt .. "|SHIFT",
+		mods = alt,
 		action = act.ScrollByLine(1),
 	},
 	{
-		key = "u",
-		mods = "CTRL|SHIFT",
-		action = act.ScrollByPage(-0.5),
-	},
-	{
-		key = "d",
-		mods = "CTRL|SHIFT",
-		action = act.ScrollByPage(0.5),
-	},
-	{
 		key = "b",
-		mods = "CTRL|SHIFT",
-		action = act.ScrollByPage(-1),
+		mods = "CTRL|" .. alt .. "",
+		action = act.ScrollByPage(-0.9),
 	},
 	{
 		key = "f",
-		mods = "CTRL|SHIFT",
-		action = act.ScrollByPage(1),
+		mods = "CTRL|" .. alt .. "",
+		action = act.ScrollByPage(0.9),
 	},
 	-- move between split panes
 	split_nav("move", "h"),
