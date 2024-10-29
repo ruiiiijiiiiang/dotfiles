@@ -1,6 +1,13 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
+local alt = "ALT"
+local super = "SUPER"
+if wezterm.target_triple == "aarch64-apple-darwin" then
+	alt = "CMD"
+	super = "OPT"
+end
+
 local direction_keys = {
 	h = "Left",
 	j = "Down",
@@ -35,43 +42,38 @@ end
 
 local keys = {
 	{
-		key = "r",
-		mods = "CMD|SHIFT",
-		action = act.ReloadConfiguration,
-	},
-	{
 		key = "c",
-		mods = "CMD|SHIFT",
+		mods = "" .. alt .. "|SHIFT",
 		action = act.ActivateCopyMode,
 	},
 	{
 		key = "LeftArrow",
-		mods = "CMD|SHIFT",
+		mods = "" .. alt .. "|SHIFT",
 		action = act.ActivateTabRelative(-1),
 	},
 	{
 		key = "RightArrow",
-		mods = "CMD|SHIFT",
+		mods = "" .. alt .. "|SHIFT",
 		action = act.ActivateTabRelative(1),
 	},
 	{
 		key = "\\",
-		mods = "CMD|SHIFT",
-		action = act.SplitHorizontal,
+		mods = alt,
+		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "-",
-		mods = "CMD|SHIFT",
-		action = act.SplitVertical,
+		mods = alt,
+		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "k",
-		mods = "CMD|SHIFT",
+		mods = "" .. alt .. "|SHIFT",
 		action = act.ScrollByLine(-1),
 	},
 	{
 		key = "j",
-		mods = "CMD|SHIFT",
+		mods = "" .. alt .. "|SHIFT",
 		action = act.ScrollByLine(1),
 	},
 	{

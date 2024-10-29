@@ -23,20 +23,24 @@ return {
 	},
 	{
 		"echasnovski/mini.indentscope",
-		opts = {
-			draw = {
-				delay = 0,
-				animation = require("mini.indentscope").gen_animation.none(),
-			},
-		},
+		config = function()
+			require("mini.indentscope").setup({
+				draw = {
+					delay = 0,
+					animation = require("mini.indentscope").gen_animation.none(),
+				},
+			})
+		end,
 	},
 	{
 		"echasnovski/mini.animate",
-		opts = {
-			scroll = {
-				timing = require("mini.animate").gen_timing.linear({ duration = 3 }),
-			},
-		},
+		config = function()
+			require("mini.cursorword").setup({
+				scroll = {
+					timing = require("mini.animate").gen_timing.linear({ duration = 3 }),
+				},
+			})
+		end,
 	},
 	{
 		"s1n7ax/nvim-window-picker",
