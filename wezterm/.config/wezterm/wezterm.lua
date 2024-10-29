@@ -6,7 +6,6 @@ local keys = require("keys")
 local config = wezterm.config_builder()
 
 config.color_scheme = "Catppuccin Frappe"
-config.window_background_opacity = 0.9
 
 config.keys = keys
 
@@ -18,6 +17,7 @@ end
 config.font = wezterm.font("Hasklug Nerd Font")
 config.font_size = 12
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
 
 -- and finally, return the configuration to wezterm
 return config

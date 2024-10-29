@@ -47,16 +47,6 @@ local keys = {
 		action = act.ActivateCopyMode,
 	},
 	{
-		key = "LeftArrow",
-		mods = alt,
-		action = act.ActivateTabRelative(-1),
-	},
-	{
-		key = "RightArrow",
-		mods = alt,
-		action = act.ActivateTabRelative(1),
-	},
-	{
 		key = "\\",
 		mods = alt,
 		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
@@ -67,24 +57,44 @@ local keys = {
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
+		key = "h",
+		mods = "SHIFT|" .. alt .. "",
+		action = act.ActivateTabRelative(-1),
+	},
+	{
+		key = "l",
+		mods = "SHIFT|" .. alt .. "",
+		action = act.ActivateTabRelative(1),
+	},
+	{
 		key = "k",
-		mods = alt,
+		mods = "SHIFT|" .. alt .. "",
 		action = act.ScrollByLine(-1),
 	},
 	{
 		key = "j",
-		mods = alt,
+		mods = "SHIFT|" .. alt .. "",
 		action = act.ScrollByLine(1),
 	},
 	{
+		key = "d",
+		mods = "CTRL|SHIFT",
+		action = act.ScrollByPage(-0.5),
+	},
+	{
+		key = "u",
+		mods = "CTRL|SHIFT",
+		action = act.ScrollByPage(0.5),
+	},
+	{
 		key = "b",
-		mods = "CTRL|" .. alt .. "",
-		action = act.ScrollByPage(-0.9),
+		mods = "CTRL|SHIFT",
+		action = act.ScrollByPage(-1),
 	},
 	{
 		key = "f",
-		mods = "CTRL|" .. alt .. "",
-		action = act.ScrollByPage(0.9),
+		mods = "CTRL|SHIFT",
+		action = act.ScrollByPage(1),
 	},
 	-- move between split panes
 	split_nav("move", "h"),

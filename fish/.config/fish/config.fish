@@ -62,10 +62,10 @@ if status is-login
 --multi"
 
     # volta
-    set -gx VOLTA_HOME "$HOME/.volta"
-    fish_add_path "$VOLTA_HOME/bin"
 
     function fish_greeting
         fastfetch
     end
 end
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
