@@ -7,7 +7,10 @@ local config = wezterm.config_builder()
 
 config.keys = keys
 
-config.default_prog = { "fish", "-l" }
+config.default_prog = { "/usr/bin/fish", "-l" }
+if wezterm.target_triple == "aarch64-apple-darwin" then
+	config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+end
 
 config.color_scheme = "Catppuccin Frappe"
 config.font = wezterm.font("Hasklug Nerd Font")
