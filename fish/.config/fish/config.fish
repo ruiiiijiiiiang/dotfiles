@@ -13,6 +13,7 @@ if status is-login
     thefuck --alias | source
     zoxide init fish | source
 
+    alias l="lsd"
     alias ls="lsd"
     alias lt="lsd --tree"
     alias lta="lsd --tree -a"
@@ -20,6 +21,7 @@ if status is-login
     alias cat="bat"
     alias vg="ssh veggie.ooapi.com"
 
+    # zoxide
     function cd
         z $argv
     end
@@ -62,10 +64,15 @@ if status is-login
 --multi"
 
     # volta
+    set -gx VOLTA_HOME "$HOME/.volta"
+    set -gx PATH "$VOLTA_HOME/bin" $PATH
 
     function fish_greeting
-        fastfetch
+        switch (uname)
+            case Linux
+                catnap
+            case Darwin
+                fastfetch
+        end
     end
 end
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH

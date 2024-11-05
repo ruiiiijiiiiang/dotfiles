@@ -42,6 +42,11 @@ end
 
 local keys = {
 	{
+		key = "t",
+		mods = alt,
+		action = act.SpawnTab("CurrentPaneDomain"),
+	},
+	{
 		key = "c",
 		mods = alt,
 		action = act.ActivateCopyMode,
