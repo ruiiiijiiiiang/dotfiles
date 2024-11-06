@@ -1,0 +1,137 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  // "height": 50, // Waybar height (to be removed for auto height)
+  "width": 2718, // Waybar width
+  "margin": 5,
+  "spacing": 4, // Gaps between modules
+  "modules-left": ["hyprland/workspaces", "group/volume", "group/brightness"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "network",
+    "group/system",
+    "temperature",
+    "power-profiles-daemon",
+    "battery",
+    "clock",
+    "custom/power",
+  ],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "format": "{name}: {windows} ",
+    "window-rewrite": {
+      "title<.*youtube.*>": "",
+      "class<firefox>": "",
+      "class<org.kde.dolphin>": "",
+      "class<org.wezfurlong.wezterm>": "",
+      "title<nv.*>": "",
+      "class<code-oss>": "󰨞",
+      "class<discord>": "",
+      "class<mailspring>": "󰇮",
+      "class<spotify>": "󰓇",
+    },
+    "window-rewrite-default": "󰣆",
+  },
+  "group/volume": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio", "pulseaudio/slider"],
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "default": [" ", " ", " "],
+    },
+    "on-click": "pavucontrol",
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "rotate": 0,
+    "device": "pulseaudio",
+    "scroll-step": 5,
+  },
+  "group/brightness": {
+    "orientation": "horizontal",
+    "modules": ["backlight", "backlight/slider"],
+  },
+  "backlight": {
+    "scroll-step": 10,
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "󰖨"],
+  },
+  "backlight/slider": {
+    "min": 10,
+    "max": 100,
+    "rotate": 0,
+    "device": "intel_backlight",
+    "scroll-step": 10,
+  },
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "icon": true,
+  },
+  "network": {
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-disconnected": "⚠ Disconnected",
+    "on-click": "kcmshell6 kcm_networkmanagement",
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "disk"],
+  },
+  "cpu": {
+    "format": "  {usage}%",
+  },
+  "memory": {
+    "format": "  {}%",
+  },
+  "disk": {
+    "format": "󰋊 {percentage_used}%",
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", "󰸁"],
+  },
+  "power-profiles-daemon": {
+    "format": "󱤁 {icon} ",
+    "tooltip-format": "Power profile: {profile}",
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰢝 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+  },
+  "clock": {
+    "format": "󰃭 {:%a %b %d   %R}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "custom/power": {
+    "format": " 󰐥 ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+    "menu-actions": {
+      "logoff": "hyprctl dispatch exit",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+      "shutdown": "shutdown 0",
+      "reboot": "reboot 0",
+    },
+  },
+}

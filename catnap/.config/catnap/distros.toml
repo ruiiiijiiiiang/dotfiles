@@ -1,0 +1,20 @@
+[endeavour]
+alias = "default"
+margin = [0, 0, 0,]
+art    = [
+"{RD}                     ./{MA}o{BE}.               ",
+"{RD}                   ./{MA}sssso{BE}-             ",
+"{RD}                 `:{MA}osssssss+{BE}-           ",
+"{RD}               `:+{MA}sssssssssso{BE}/.         ",
+"{RD}             `-/o{MA}ssssssssssssso{BE}/.       ",
+"{RD}           `-/+{MA}sssssssssssssssso{BE}+:`     ",
+"{RD}         `-:/+{MA}sssssssssssssssssso{BE}+/.    ",
+"{RD}       `.://o{MA}sssssssssssssssssssso{BE}++-   ",
+"{RD}      .://+{MA}ssssssssssssssssssssssso{BE}++:  ",
+"{RD}    .:///o{MA}ssssssssssssssssssssssssso{BE}++: ",
+"{RD}  `:////{MA}ssssssssssssssssssssssssssso{BE}+++.",
+"{RD}`-////+{MA}ssssssssssssssssssssssssssso{BE}++++-",
+"{RD} `..-+{MA}oosssssssssssssssssssssssso{BE}+++++/`",
+"{BE}   ./++++++++++++++++++++++++++++++/:.  ",
+"{BE}  `:::::::::::::::::::::::::------``    "
+]
