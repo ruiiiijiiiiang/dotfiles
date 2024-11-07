@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background: alpha(@lavender, 0.8);
+  background: alpha(@mantle, 0.5);
 }
 
 tooltip label {
