@@ -6,9 +6,10 @@ format = """
 [](flamingo)\
 $os\
 $username\
-[](fg:flamingo bg:red)\
+$sudo\
+[](fg:flamingo bg:lavender)\
 $directory\
-[](fg:red bg:green)\
+[](fg:lavender bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:yellow)\
@@ -16,27 +17,23 @@ $c\
 $deno\
 $java\
 $lua\
+$nim\
 $nodejs\
 $ruby\
 $php\
 $python\
 [](fg:yellow bg:sky)\
 $package\
-[](fg:sky bg:lavender)\
+[](fg:sky bg:pink)\
 $time\
-[](fg:lavender)\
+$status\
+[](fg:pink)
 $character\
 """
 
 # Sets user-defined palette
 # Palettes must be defined _after_ this line
 palette = "catppuccin_frappe"
-
-# Starship modules
-[character]
-success_symbol = "[[󰈺](green) ❯](sapphire)"
-error_symbol = "[[󰈺](red) ❯](red)"
-vimcmd_symbol = "[[](teal) ❮](subtext1)" # For use with zsh-vi-mode
 
 # Catppuccin palette
 [palettes.catppuccin_frappe]
@@ -67,14 +64,10 @@ base = "#303446"
 mantle = "#292c3c"
 crust = "#232634"
 
-# An alternative to the username module which displays a symbol that
-# represents the current operating system
 [os]
 style = "fg:crust bg:flamingo"
 disabled = false
 
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
 [username]
 show_always = true
 style_user = "fg:crust bg:flamingo"
@@ -82,8 +75,14 @@ style_root = "fg:crust bg:flamingo"
 format = '[$user]($style)'
 disabled = false
 
+[sudo]
+disabled = false
+symbol = " "
+style = "fg:crust bg:flamingo"
+format = '[$symbol]($style)'
+
 [directory]
-style = "fg:crust bg:red bold"
+style = "fg:crust bg:lavender bold"
 format = "[$path]($style)"
 truncation_length = 4
 truncation_symbol = "…/"
@@ -112,7 +111,7 @@ style = "fg:crust bg:green italic"
 format = '[$all_status$ahead_behind]($style)'
 
 [c]
-symbol = " "
+symbol = ""
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
@@ -122,22 +121,27 @@ style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [java]
-symbol = " "
+symbol = ""
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [php]
-symbol = " "
+symbol = ""
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [python]
-symbol = " "
+symbol = ""
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [lua]
-symbol = " "
+symbol = ""
+style = "fg:crust bg:yellow"
+format = '[$symbol $version]($style)'
+
+[nim]
+symbol = "󰆥"
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
@@ -147,14 +151,14 @@ style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [ruby]
-symbol = " "
+symbol = ""
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [package]
+symbol = "󰏗"
 format = '[$symbol$version]($style)'
 style = "fg:crust bg:sky"
-symbol = "󰏗 "
 #
 # [docker_context]
 # symbol = " "
@@ -164,8 +168,21 @@ symbol = "󰏗 "
 [time]
 disabled = false
 time_format = "%R%P" # Hour:Minute Format
-style = "fg:crust bg:lavender bold"
+style = "fg:crust bg:pink bold"
 format = '[ $time]($style)'
+
+[status]
+format = "$symbol"
+disabled = false
+symbol = "[ 󰈺 ](fg:red bg:pink)"
+success_symbol = "[ 󰈺 ](fg:green bg:pink)"
+
+[character]
+success_symbol = "[](teal) [I](bold fg:base bg:green)"
+error_symbol = "[](teal) [I](bold fg:base bg:green)"
+vimcmd_symbol = "[](teal) [N](bold fg:base bg:blue)"
+vimcmd_visual_symbol = "[](teal) [V](bold fg:base bg:mauve)"
+vimcmd_replace_one_symbol = "[](teal) [R](bold fg:base bg:red)"
 
 # Other symbols
 [os.symbols]
@@ -272,9 +289,6 @@ symbol = "󰍛 "
 
 [meson]
 symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
