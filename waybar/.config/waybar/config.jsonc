@@ -2,7 +2,7 @@
 {
   // "layer": "top", // Waybar at top layer
   // "position": "bottom", // Waybar position (top|bottom|left|right)
-  // "height": 50, // Waybar height (to be removed for auto height)
+  "height": 50, // Waybar height (to be removed for auto height)
   "width": 2718, // Waybar width
   "margin": 5,
   "spacing": 4, // Gaps between modules
@@ -22,7 +22,7 @@
     "all-outputs": true,
     "format": "{name}: {windows} ",
     "window-rewrite": {
-      "title<.*youtube.*>": "",
+      "class<firefox>title<.*youtube.*>": "",
       "class<firefox>": "",
       "class<org.kde.dolphin>": "",
       "class<org.wezfurlong.wezterm>": "",

@@ -17,32 +17,22 @@ tooltip label {
 }
 
 #workspaces button {
-  background-color: alpha(@mauve, 0.4);
+  background: alpha(@lavender, 0.45);
   margin: 2px;
 }
 
 #workspaces button:hover {
-  background-color: alpha(@mauve, 0.85);
+  background: alpha(@lavender, 0.6);
 }
 
 #workspaces button.active {
-  background-color: @mauve;
+  background: alpha(@lavender, 0.75);
 }
 
-#volume {
-  color: @crust;
-  background: @blue;
-}
-
-#brightness {
-  background: @rosewater;
-}
-
-#pulseaudio-slider slider {
-  background: @teal;
-}
+#pulseaudio-slider slider,
 #backlight-slider slider {
-  background: @maroon;
+  min-height: 14px;
+  background: @teal;
 }
 
 #pulseaudio-slider trough,
@@ -50,38 +40,27 @@ tooltip label {
   min-width: 90px;
   min-height: 14px;
   border-radius: 8px;
-}
-
-#pulseaudio-slider trough {
-  background: @lavender;
-}
-#backlight-slider trough {
-  background: @mauve;
+  background: @sapphire;
 }
 
 #pulseaudio-slider highlight,
 #backlight-slider highlight {
   border-radius: 8px;
-}
-
-#pulseaudio-slider highlight {
   background: @blue;
-}
-#backlight-slider highlight {
-  background: @rosewater;
 }
 
 #window {
   margin: 2px 8px;
   padding: 0 8px;
   font-size: 28px;
-  background: @sapphire;
 }
 
 window#waybar.empty #window {
   background: none;
+  border: none;
 }
 
+#window,
 #volume,
 #brightness,
 #network,
@@ -93,15 +72,11 @@ window#waybar.empty #window {
 #custom-power {
   margin: 2px 2px;
   padding: 0 8px;
-}
-
-#network {
-  background: @yellow;
+  background: alpha(@lavender, 0.75);
 }
 
 #system {
   margin: 2px 0;
-  background: @peach;
 }
 
 #cpu,
@@ -110,23 +85,6 @@ window#waybar.empty #window {
   margin: 0 3px;
 }
 
-#temperature {
-  background: @red;
-}
-
-#power-profiles-daemon {
-  background: @teal;
-}
-
-#battery {
-  background: @green;
-}
-
-#clock {
-  background: @lavender;
-}
-
 #custom-power {
   font-size: 28px;
-  background: @maroon;
 }

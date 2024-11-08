@@ -7,9 +7,9 @@ format = """
 $os\
 $username\
 $sudo\
-[](fg:flamingo bg:lavender)\
+[](fg:flamingo bg:sky)\
 $directory\
-[](fg:lavender bg:green)\
+[](fg:sky bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:yellow)\
@@ -22,12 +22,12 @@ $nodejs\
 $ruby\
 $php\
 $python\
-[](fg:yellow bg:sky)\
+[](fg:yellow bg:peach)\
 $package\
-[](fg:sky bg:pink)\
+[](fg:peach bg:lavender)\
 $time\
 $status\
-[](fg:pink)
+[](fg:lavender)
 $character\
 """
 
@@ -82,7 +82,7 @@ style = "fg:crust bg:flamingo"
 format = '[$symbol]($style)'
 
 [directory]
-style = "fg:crust bg:lavender bold"
+style = "fg:crust bg:sky bold"
 format = "[$path]($style)"
 truncation_length = 4
 truncation_symbol = "…/"
@@ -158,7 +158,7 @@ format = '[$symbol $version]($style)'
 [package]
 symbol = "󰏗"
 format = '[$symbol$version]($style)'
-style = "fg:crust bg:sky"
+style = "fg:crust bg:peach"
 #
 # [docker_context]
 # symbol = " "
@@ -168,14 +168,14 @@ style = "fg:crust bg:sky"
 [time]
 disabled = false
 time_format = "%R%P" # Hour:Minute Format
-style = "fg:crust bg:pink bold"
+style = "fg:crust bg:lavender bold"
 format = '[ $time]($style)'
 
 [status]
 format = "$symbol"
 disabled = false
-symbol = "[ 󰈺 ](fg:red bg:pink)"
-success_symbol = "[ 󰈺 ](fg:green bg:pink)"
+symbol = "[ 󰈺 ](fg:red bg:lavender)"
+success_symbol = "[ 󰈺 ](fg:green bg:lavender)"
 
 [character]
 success_symbol = "[](teal) [I](bold fg:base bg:green)"
