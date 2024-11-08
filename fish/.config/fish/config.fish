@@ -9,6 +9,7 @@ if status is-login
 
     set -g fish_key_bindings fish_vi_key_bindings
     set -gx EDITOR nvim
+    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     thefuck --alias | source
     zoxide init fish | source

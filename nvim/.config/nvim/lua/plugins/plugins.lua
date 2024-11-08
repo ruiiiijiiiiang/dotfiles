@@ -5,6 +5,7 @@ return {
   { import = "lazyvim.plugins.extras.formatting.prettier" },
   { import = "lazyvim.plugins.extras.linting.eslint" },
   { "kchmck/vim-coffee-script" },
+  { "alaviss/nim.nvim" },
   { "mrjones2014/smart-splits.nvim", lazy = false },
   {
     "akinsho/toggleterm.nvim",
@@ -133,6 +134,7 @@ return {
       lspconfig.graphql.setup({})
       lspconfig.ruby_lsp.setup({})
       lspconfig.lua_ls.setup({})
+      lspconfig.nim_langserver.setup({})
     end,
   },
 }
