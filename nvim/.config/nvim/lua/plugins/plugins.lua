@@ -35,7 +35,7 @@ return {
   {
     "echasnovski/mini.animate",
     config = function()
-      require("mini.cursorword").setup({
+      require("mini.animate").setup({
         scroll = {
           timing = require("mini.animate").gen_timing.linear({ duration = 3 }),
         },
