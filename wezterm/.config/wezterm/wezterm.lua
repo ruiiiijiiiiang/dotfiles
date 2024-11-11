@@ -17,9 +17,8 @@ config.font = wezterm.font("Hasklug Nerd Font")
 config.font_size = 16
 
 config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 config.tab_max_width = 48
-
-local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
 
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`
@@ -44,6 +43,7 @@ local function tab_title(tab_info)
   return title
 end
 
+local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local edge_background = color_scheme.tab_bar.background
   local edge_foreground = color_scheme.tab_bar.inactive_tab.fg_color

@@ -32,21 +32,20 @@ tooltip label {
 #pulseaudio-slider slider,
 #backlight-slider slider {
   min-height: 14px;
-  background: @teal;
+  background: @blue;
 }
 
 #pulseaudio-slider trough,
 #backlight-slider trough {
   min-width: 90px;
   min-height: 14px;
-  border-radius: 8px;
+  border: none;
   background: @sapphire;
 }
 
 #pulseaudio-slider highlight,
 #backlight-slider highlight {
-  border-radius: 8px;
-  background: @blue;
+  background: @sky;
 }
 
 #window {
