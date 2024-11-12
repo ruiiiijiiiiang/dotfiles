@@ -31,6 +31,8 @@ local function tab_title(tab_info)
   end
   if title:find("^nv ") then
     title = title:gsub("^nv ", " ")
+  elseif title:find("^vim ") then
+    title = title:gsub("^vim ", " ")
   elseif title:find("^yay ") then
     title = title:gsub("^yay ", " ")
   elseif title:find("^pacman ") then
@@ -66,13 +68,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   return {
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
-    { Text = " " },
+    { Text = " " },
     { Background = { Color = text_background } },
     { Foreground = { Color = text_foreground } },
     { Text = title },
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
-    { Text = " " },
+    { Text = " " },
   }
 end)
 

@@ -2,14 +2,37 @@
 
 Thank you for checking out the configuration for my personal development environment. I am a full stack TS/JS engineer and I develop primarily using neovim. These are the dotfiles I use across MacOS and Linux. I hope you find some inspiration here.
 
-## Screenshot
+## Screenshots
 
-![Terminal Screenshot](./Screenshot_20241029_101253.png)
-I am a big fan of the [Catppuccin](https://github.com/catppuccin) theme. I use the frappe variant for any application that it supports. The font I use is [Hasklug Nerd Font](https://github.com/ryanoasis/nerd-fonts), with a huge set of icons and ligature support.
+<details>
+  <summary>Version 1</summary>
+  Simple wezterm setup on MacOS
+  ![Screenshot](./Screenshot_20241029_101253.png)
+</details>
+<details>
+  <summary>Version 2</summary>
+  First attempt at Linux ricing with Hyprland and waybar
+  ![Screenshot](./2024-11-05-230828_hyprshot.png)
+</details>
+<details>
+  <summary>Version 3</summary>
+  Got rid of that god awful rainbow puke (I don't know why I thought it was cool😅)
+  ![Screenshot](./2024-11-09-195111_hyprshot.png)
+</details>
+<details>
+  <summary>Version 4 (current)</summary>
+  Ditched waybar for hyprpanel
+  ![Screenshot](./2024-11-12-110707_hyprshot.png)
+</details>
 
-## CLI Tools
+## Theme
 
-All CLI tools should be readily available from the package manager of your choice, ie. homebrew, apt, pacman, etc.
+I am a big fan of the [Catppuccin](https://github.com/catppuccin) theme. I use the frappe variant for any application that it supports.
+I prefer [Hasklug Nerd Font](https://www.nerdfonts.com/font-downloads) for coding.
+
+## Tools
+
+Most of these tools should be readily available from the package manager of your choice, ie. homebrew, apt, pacman, etc.
 Neovim plugins are managed by LazyVim.
 
 - [wezterm](https://github.com/wez/wezterm)
@@ -34,3 +57,10 @@ Neovim plugins are managed by LazyVim.
 - [yazi](https://github.com/sxyazi/yazi)
 - [fd](https://github.com/sharkdp/fd)
 - [btop](https://github.com/aristocratos/btop)
+- [catnap](https://github.com/iinsertNameHere/catnap)
+
+Linux only:
+
+- [hyprland](https://github.com/hyprwm/Hyprland)
+- [hyprpanel](https://github.com/Jas-SinghFSU/HyprPanel)
+- [waybar](https://github.com/Alexays/Waybar)
