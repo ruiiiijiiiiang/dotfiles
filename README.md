@@ -7,22 +7,30 @@ Thank you for checking out the configuration for my personal development environ
 <details>
   <summary>Version 1</summary>
   Simple wezterm setup on MacOS
-  ![Screenshot](./Screenshot_20241029_101253.png)
+
+![Screenshot](./screenshots/Screenshot_20241029_101253.png)
+
 </details>
 <details>
   <summary>Version 2</summary>
   First attempt at Linux ricing with Hyprland and waybar
-  ![Screenshot](./2024-11-05-230828_hyprshot.png)
+
+![Screenshot](./screenshots/2024-11-05-230828_hyprshot.png)
+
 </details>
 <details>
   <summary>Version 3</summary>
   Got rid of that god awful rainbow puke (I don't know why I thought it was cool😅)
-  ![Screenshot](./2024-11-09-195111_hyprshot.png)
+
+![Screenshot](./screenshots/2024-11-09-195111_hyprshot.png)
+
 </details>
 <details>
   <summary>Version 4 (current)</summary>
   Ditched waybar for hyprpanel
-  ![Screenshot](./2024-11-12-110707_hyprshot.png)
+
+![Screenshot](./screenshots/2024-11-12-110707_hyprshot.png)
+
 </details>
 
 ## Theme
