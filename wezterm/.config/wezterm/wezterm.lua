@@ -51,8 +51,12 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local edge_foreground = color_scheme.tab_bar.inactive_tab.fg_color
   local text_background = color_scheme.tab_bar.inactive_tab.fg_color
   local text_foreground = color_scheme.tab_bar.inactive_tab.bg_color
+  local left_edge = " "
+  local right_edge = " "
 
   if tab.is_active then
+    left_edge = " "
+    right_edge = " "
     edge_foreground = color_scheme.tab_bar.active_tab.bg_color
     text_background = color_scheme.tab_bar.active_tab.bg_color
     text_foreground = color_scheme.tab_bar.active_tab.fg_color
@@ -68,13 +72,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   return {
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
-    { Text = " " },
+    { Text = left_edge },
     { Background = { Color = text_background } },
     { Foreground = { Color = text_foreground } },
     { Text = title },
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
-    { Text = " " },
+    { Text = right_edge },
   }
 end)
 

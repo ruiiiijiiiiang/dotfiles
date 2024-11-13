@@ -6,6 +6,7 @@ return {
   { import = "lazyvim.plugins.extras.linting.eslint" },
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
+  { "evanleck/vim-svelte" },
   { "mrjones2014/smart-splits.nvim", lazy = false },
   {
     "akinsho/toggleterm.nvim",
@@ -123,6 +124,7 @@ return {
             useFlatConfig = true,
           },
         },
+        root_dir = lspconfig.util.root_pattern("eslint.config.js"),
       })
       lspconfig.denols.setup({
         on_attach = on_attach,
@@ -130,7 +132,10 @@ return {
       })
       lspconfig.coffeesense.setup({})
       lspconfig.fish_lsp.setup({})
-      lspconfig.svelte.setup({})
+      lspconfig.svelte.setup({
+        on_attach = on_attach,
+        root_dir = lspconfig.util.root_pattern("svelte.config.js"),
+      })
       lspconfig.graphql.setup({})
       lspconfig.ruby_lsp.setup({})
       lspconfig.lua_ls.setup({})
