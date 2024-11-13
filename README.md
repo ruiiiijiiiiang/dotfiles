@@ -6,7 +6,7 @@ Thank you for checking out the configuration for my personal development environ
 
 <details>
   <summary>Version 1</summary>
-  Simple wezterm setup on MacOS
+  Simple terminal setup
 
 ![Screenshot](./screenshots/Screenshot_20241029_101253.png)
 

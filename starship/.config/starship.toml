@@ -95,6 +95,7 @@ truncate_to_repo = false
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+"~" = " "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
