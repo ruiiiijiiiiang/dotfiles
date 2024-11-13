@@ -60,6 +60,7 @@ return {
     opts = {
       save_path = "~/Pictures",
       has_breadcrumbs = true,
+      has_line_number = true,
       watermark = "",
       bg_theme = "sea",
       bg_x_padding = 32,

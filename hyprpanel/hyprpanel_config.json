@@ -1,0 +1,119 @@
+{
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.bar.menus.menu.dashboard.confirmation_scaling": 60,
+  "menus.transitionTime": 200,
+  "terminal": "wezterm",
+  "scalingPriority": "hyprland",
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.layer": "top",
+  "bar.network.showWifiInfo": true,
+  "menus.clock.time.hideSeconds": false,
+  "menus.clock.weather.location": "Houston",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "firefox",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Firefox",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "theme.bar.transparent": false,
+  "theme.bar.buttons.background_hover_opacity": 100,
+  "theme.bar.floating": false,
+  "bar.launcher.icon": "",
+  "bar.launcher.autoDetectIcon": true,
+  "theme.bar.buttons.workspaces.enableBorder": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.show_icons": false,
+  "menus.dashboard.shortcuts.left.shortcut2.command": "spotify",
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "media"
+      ],
+      "middle": [
+        "windowtitle"
+      ],
+      "right": [
+        "volume",
+        "bluetooth",
+        "network",
+        "battery",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "media"
+      ],
+      "middle": [
+        "windowtitle"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "media"
+      ],
+      "middle": [
+        "windowtitle"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "menus.clock.weather.enabled": true,
+  "bar.clock.format": "%a %b %d  %I:%M %p",
+  "wallpaper.pywal": false,
+  "menus.clock.weather.key": "87ffd90eb1ba4758a7623046241111",
+  "bar.workspaces.numbered_active_indicator": "highlight",
+  "bar.windowtitle.custom_title": false,
+  "bar.windowtitle.class_name": false,
+  "bar.systray.customIcons": {
+    "discord": {
+      "icon": ""
+    }
+  },
+  "menus.dashboard.powermenu.avatar.image": "/home/rui/Pictures/macchiato_squircle.png",
+  "theme.bar.menus.menu.dashboard.profile.size": "15em",
+  "bar.systray.ignore": [
+    "chrome_status_icon_1"
+  ],
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
+  "bar.workspaces.applicationIconMap": {
+    "title:nv.*": "",
+    "Vesktop": "",
+    "class:org.kde.dolphin": ""
+  },
+  "bar.workspaces.workspaces": 8,
+  "bar.workspaces.applicationIconEmptyWorkspace": "",
+  "theme.bar.buttons.windowtitle.enableBorder": false,
+  "bar.windowtitle.icon": true,
+  "theme.bar.buttons.clock.enableBorder": false,
+  "theme.bar.menus.monochrome": false,
+  "wallpaper.image": "/home/rui/Pictures/shaded_landscape.png",
+  "bar.windowtitle.truncation_size": 40,
+  "menus.dashboard.powermenu.sleep": "systemctl hibernate",
+  "menus.dashboard.shortcuts.right.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.right.shortcut1.command": "rofi -show drun",
+  "menus.dashboard.shortcuts.right.shortcut1.tooltip": "Search Apps",
+  "menus.dashboard.shortcuts.left.shortcut4.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut4.tooltip": "Thunderbird",
+  "menus.dashboard.shortcuts.left.shortcut4.command": "thunderbird",
+  "theme.font.name": "Google Sans Display",
+  "theme.bar.scaling": 85,
+  "theme.bar.menus.menu.dashboard.scaling": 75,
+  "theme.bar.menus.menu.power.scaling": 100,
+  "menus.dashboard.shortcuts.left.shortcut3.command": "vesktop",
+  "theme.bar.menus.menu.notifications.scaling": 85
+}
