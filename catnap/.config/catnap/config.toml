@@ -8,21 +8,21 @@
 ##          FetchInfo stats Config          ##
 ##############################################
 [stats]
-# gpu       = {icon = " ", name = "gpu", color = "(MA)"}      # WARNING: Resource Intensive
 cpu       = {icon = " ", name = "cpu", color = "(RD)"}
-disk_0    = {icon = "󰋊 ", name = "disk", color = "(GN)"}
+gpu       = {icon = " ", name = "gpu", color = "(MA)"}      # WARNING: Resource Intensive
 memory    = {icon = " ", name = "memory", color = "(YW)"}
+disk_0    = {icon = "󰋊 ", name = "disk", color = "(BE)"}
 battery    = {icon = " ", name = "battery", color = "(GN)"}
 sep_color = "SEPARATOR"
-username  = {icon = " ", name = "user", color = "(RD)"}
-# hostname  = {icon = " ", name = "hostname", color = "(YW)"}
-uptime    = {icon = " ", name = "uptime", color = "(BE)"}
-distro    = {icon = " ", name = "distro", color = "(GN)"}
-kernel    = {icon = " ", name = "kernel", color = "(MA)"}
+username  = {icon = " ", name = "user", color = "(WE)"}
+hostname  = {icon = "󰀑 ", name = "hostname", color = "(RD)"}
+uptime    = {icon = " ", name = "uptime", color = "(YW)"}
+distro    = {icon = " ", name = "distro", color = "(MA)"}
+kernel    = {icon = " ", name = "kernel", color = "(BK)"}
 desktop   = {icon = " ", name = "desktop", color = "(CN)"}
-terminal  = {icon = " ", name = "terminal", color = "(RD)"}
-shell     = {icon = " ", name = "shell", color = "(MA)"}
-# packages  = {icon = " ", name = "packages", color = "(RD)"}  # WARNING: Resource Intensive
+terminal  = {icon = " ", name = "terminal", color = "(GN)"}
+shell     = {icon = " ", name = "shell", color = "(WE)"}
+packages  = {icon = " ", name = "packages", color = "(BE)"}  # WARNING: Resource Intensive
 # weather   = {icon = " ", name = "weather", color = "(BE)"} # Requires curl and an emoji font. | WARNING: Resource Intensive
 # The following stats do not work on MacOS and the BSDs.
 sep_hardware = "SEPARATOR"

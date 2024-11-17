@@ -1,6 +1,6 @@
 [endeavour]
 alias = "default"
-margin = [0, 0, 0,]
+margin = [2, 0, 0,]
 art    = [
 "{RD}                     ./{MA}o{BE}.               ",
 "{RD}                   ./{MA}sssso{BE}-             ",

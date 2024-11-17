@@ -117,7 +117,7 @@ style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [deno]
-symbol = ""
+symbol = "🦖"
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
