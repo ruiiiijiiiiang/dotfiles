@@ -68,9 +68,35 @@ return {
     },
   },
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "frappe",
+        styles = {
+          comments = { "italic" },
+          conditionals = { "italic" },
+          loops = { "italic" },
+          operators = { "italic" },
+          functions = { "bold" },
+          keywords = { "bold" },
+          types = { "bold" },
+        },
+        dim_inactive = {
+          enabled = true,
+          shade = "light",
+          percentage = 0.6,
+        },
+      })
+    end,
+  },
+  {
     "LazyVim/LazyVim",
+    dependencies = { "catppuccin" },
     opts = {
-      colorscheme = "catppuccin-frappe",
+      colorscheme = "catppuccin",
     },
     lazy = false,
   },

@@ -5,7 +5,10 @@ if status is-interactive
 end
 
 if status is-login
-    fish_add_path /opt/homebrew/bin
+    if uname == Darwin
+        fish_add_path /opt/homebrew/bin
+        fish_add_path /opt/homebrew/opt
+    end
 
     set -g fish_key_bindings fish_vi_key_bindings
     set -gx EDITOR nvim
