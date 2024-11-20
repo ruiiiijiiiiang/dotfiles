@@ -5,7 +5,7 @@ if status is-interactive
 end
 
 if status is-login
-    if uname == Darwin
+    if test (uname) = Darwin
         fish_add_path /opt/homebrew/bin
         fish_add_path /opt/homebrew/opt
     end
