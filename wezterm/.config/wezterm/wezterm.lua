@@ -29,22 +29,24 @@ local function tab_title(tab_info)
   if not title or #title == 0 then
     title = tab_info.active_pane.title
   end
-  if title:find("^nv ") or title:find("^nvim ") then
-    title = title:sub("^nv ", " "):sub("^nvim ", " ")
+  if not title:find(" ") then
+    title = " " .. title
+  elseif title:find(".+@.+:%s.+") then
+    title = "󰣀 " .. title
+  elseif title:find("^nv ") or title:find("^nvim ") then
+    title = title:gsub("^nv ", " "):gsub("^nvim ", " ")
   elseif title:find("^vim ") then
-    title = title:sub("^vim ", " ")
+    title = title:gsub("^vim ", " ")
   elseif title:find("^yay ") or title:find("^pacman ") then
-    title = title:sub("^yay ", " "):sub("^pacman ", " ")
-  elseif title:find("^ssh ") then
-    title = title:sub("^ssh ", "󰣀 ")
+    title = title:gsub("^yay ", " "):gsub("^pacman ", " ")
   elseif title:find("^yazi ") then
-    title = title:sub("^yazi ", " ")
+    title = title:gsub("^yazi ", " ")
   elseif title:find("^deno ") then
-    title = title:sub("^deno ", "🦖 ")
+    title = title:gsub("^deno ", "🦖 ")
   elseif title:find("^node ") then
-    title = title:sub("^node ", " ")
-  elseif title:find("^bundle ") or title:find("^ruby ") then
-    title = title:sub("^bundle ", " "):sub("^ruby ", " ")
+    title = title:gsub("^node ", " ")
+  elseif title:find("^bundle ") or title:find("^irb ") then
+    title = title:gsub("^bundle ", " "):gsub("^irb ", " ")
   end
   return title
 end
