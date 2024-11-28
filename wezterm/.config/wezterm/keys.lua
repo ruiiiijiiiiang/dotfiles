@@ -20,14 +20,16 @@ local function is_vim(pane)
 end
 
 local function split_nav(resize_or_move, key)
+  local moveMod = "CTRL"
+  local resizeMod = "CTRL|META"
   return {
     key = key,
-    mods = resize_or_move == "resize" and "META" or "CTRL",
+    mods = resize_or_move == "resize" and resizeMod or moveMod,
     action = wezterm.action_callback(function(win, pane)
       if is_vim(pane) then
         -- pass the keys through to vim/nvim
         win:perform_action({
-          SendKey = { key = key, mods = resize_or_move == "resize" and "META" or "CTRL" },
+          SendKey = { key = key, mods = resize_or_move == "resize" and resizeMod or moveMod },
         }, pane)
       else
         if resize_or_move == "resize" then

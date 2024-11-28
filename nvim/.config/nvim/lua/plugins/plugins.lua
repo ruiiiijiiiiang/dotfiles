@@ -18,6 +18,22 @@ return {
     end,
   },
   {
+    "echasnovski/mini.ai",
+    config = function()
+      require("mini.ai").setup({})
+    end,
+  },
+  {
+    "echasnovski/mini.animate",
+    config = function()
+      require("mini.animate").setup({
+        scroll = {
+          timing = require("mini.animate").gen_timing.linear({ duration = 3 }),
+        },
+      })
+    end,
+  },
+  {
     "echasnovski/mini.cursorword",
     config = function()
       require("mini.cursorword").setup({})
@@ -35,13 +51,9 @@ return {
     end,
   },
   {
-    "echasnovski/mini.animate",
+    "echasnovski/mini.move",
     config = function()
-      require("mini.animate").setup({
-        scroll = {
-          timing = require("mini.animate").gen_timing.linear({ duration = 3 }),
-        },
-      })
+      require("mini.move").setup({})
     end,
   },
   {
@@ -140,7 +152,6 @@ return {
       local lspconfig = require("lspconfig")
       mason.setup()
       lspconfig.ts_ls.setup({
-        on_attach = on_attach,
         root_dir = lspconfig.util.root_pattern("package.json"),
         single_file_support = false,
       })
@@ -154,13 +165,11 @@ return {
         root_dir = lspconfig.util.root_pattern("eslint.config.js"),
       })
       lspconfig.denols.setup({
-        on_attach = on_attach,
         root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
       })
       lspconfig.coffeesense.setup({})
       lspconfig.fish_lsp.setup({})
       lspconfig.svelte.setup({
-        on_attach = on_attach,
         root_dir = lspconfig.util.root_pattern("svelte.config.js"),
       })
       lspconfig.graphql.setup({})

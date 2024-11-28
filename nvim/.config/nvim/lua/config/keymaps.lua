@@ -14,15 +14,15 @@ map("i", "<C-k>", "<Up>")
 map("i", "<C-l>", "<Right>")
 
 -- move between split panes
-map("n", "<A-h>", smart_splits.resize_left)
-map("n", "<A-j>", smart_splits.resize_down)
-map("n", "<A-k>", smart_splits.resize_up)
-map("n", "<A-l>", smart_splits.resize_right)
--- resize panes
 map("n", "<C-h>", smart_splits.move_cursor_left)
 map("n", "<C-j>", smart_splits.move_cursor_down)
 map("n", "<C-k>", smart_splits.move_cursor_up)
 map("n", "<C-l>", smart_splits.move_cursor_right)
+-- resize panes
+map("n", "<C-A-h>", smart_splits.resize_left)
+map("n", "<C-A-j>", smart_splits.resize_down)
+map("n", "<C-A-k>", smart_splits.resize_up)
+map("n", "<C-A-l>", smart_splits.resize_right)
 
 -- ToggleTerm
 map("n", "<leader>t", "<Cmd>ToggleTerm direction=horizontal size=20<Cr>", { desc = "Terminal (bottom)" })
