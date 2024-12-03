@@ -14,7 +14,7 @@ end
 
 config.color_scheme = "Catppuccin Frappe"
 config.font = wezterm.font("Hasklug Nerd Font")
-config.font_size = 16
+config.font_size = 14
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -33,14 +33,16 @@ local function tab_title(tab_info)
     title = " " .. title
   elseif title:find(".+@.+:%s.+") then
     title = "󰣀 " .. title
+  elseif title:find("^sudo ") then
+    title = "󰦝 " .. title
   elseif title:find("^nv ") or title:find("^nvim ") then
     title = title:gsub("^nv ", " "):gsub("^nvim ", " ")
   elseif title:find("^vim ") then
     title = title:gsub("^vim ", " ")
   elseif title:find("^yay ") or title:find("^pacman ") then
-    title = title:gsub("^yay ", " "):gsub("^pacman ", " ")
-  elseif title:find("^yazi ") then
-    title = title:gsub("^yazi ", " ")
+    title = title:gsub("^yay ", " "):gsub("^pacman ", " ")
+  elseif title:find("^Yazi:") then
+    title = title:gsub("^Yazi:", " ")
   elseif title:find("^deno ") then
     title = title:gsub("^deno ", "🦖 ")
   elseif title:find("^node ") then

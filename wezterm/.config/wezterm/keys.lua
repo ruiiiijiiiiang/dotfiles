@@ -1,13 +1,6 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-local alt = "ALT"
-local super = "SUPER"
-if wezterm.target_triple == "aarch64-apple-darwin" then
-  alt = "CMD"
-  super = "OPT"
-end
-
 local direction_keys = {
   h = "Left",
   j = "Down",
@@ -21,7 +14,7 @@ end
 
 local function split_nav(resize_or_move, key)
   local moveMod = "CTRL"
-  local resizeMod = "CTRL|META"
+  local resizeMod = "CTRL|ALT"
   return {
     key = key,
     mods = resize_or_move == "resize" and resizeMod or moveMod,
@@ -42,65 +35,73 @@ local function split_nav(resize_or_move, key)
   }
 end
 
+local function activateTab(n)
+  return {
+    key = tostring(n),
+    mods = "ALT",
+    action = act.ActivateTab(n - 1),
+  }
+end
+
 local keys = {
   {
     key = "t",
-    mods = alt,
+    mods = "ALT",
     action = act.SpawnTab("CurrentPaneDomain"),
   },
   {
     key = "c",
-    mods = alt,
+    mods = "ALT",
     action = act.ActivateCopyMode,
   },
   {
     key = "\\",
-    mods = alt,
+    mods = "ALT",
     action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
   },
   {
     key = "-",
-    mods = alt,
+    mods = "ALT",
     action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
   {
     key = "h",
-    mods = "SHIFT|" .. alt .. "",
+    mods = "ALT",
     action = act.ActivateTabRelative(-1),
   },
   {
     key = "l",
-    mods = "SHIFT|" .. alt .. "",
+    mods = "ALT",
     action = act.ActivateTabRelative(1),
   },
   {
     key = "k",
-    mods = "SHIFT|" .. alt .. "",
+    mods = "ALT",
     action = act.ScrollByLine(-1),
   },
   {
     key = "j",
-    mods = "SHIFT|" .. alt .. "",
+    mods = "ALT",
     action = act.ScrollByLine(1),
   },
   {
     key = "u",
-    mods = "CTRL|SHIFT",
+    mods = "CTRL|ALT",
     action = act.ScrollByPage(-0.5),
   },
   {
     key = "d",
-    mods = "CTRL|SHIFT",
+    mods = "CTRL|ALT",
     action = act.ScrollByPage(0.5),
   },
   {
     key = "b",
-    mods = "CTRL|SHIFT",
+    mods = "CTRL|ALT",
     action = act.ScrollByPage(-1),
   },
   {
     key = "f",
-    mods = "CTRL|SHIFT",
+    mods = "CTRL|ALT",
     action = act.ScrollByPage(1),
   },
   -- move between split panes
@@ -114,5 +115,9 @@ local keys = {
   split_nav("resize", "k"),
   split_nav("resize", "l"),
 }
+
+for i = 1, 9 do
+  table.insert(keys, activateTab(i))
+end
 
 return keys

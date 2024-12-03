@@ -5,13 +5,9 @@ if status is-interactive
 end
 
 if status is-login
-    if test (uname) = Darwin
-        fish_add_path /opt/homebrew/bin
-        fish_add_path /opt/homebrew/opt
-    end
-
     set -g fish_key_bindings fish_vi_key_bindings
     set -gx EDITOR nvim
+    set -gx MANROFFOPT -c
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     thefuck --alias | source
@@ -72,11 +68,6 @@ if status is-login
     set -gx PATH "$VOLTA_HOME/bin" $PATH
 
     function fish_greeting
-        switch (uname)
-            case Linux
-                catnap
-            case Darwin
-                fastfetch
-        end
+        catnap
     end
 end

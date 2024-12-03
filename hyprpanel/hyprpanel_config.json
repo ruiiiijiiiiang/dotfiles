@@ -9,13 +9,13 @@
   "bar.network.showWifiInfo": true,
   "menus.clock.time.hideSeconds": false,
   "menus.clock.weather.location": "Houston",
-  "menus.dashboard.shortcuts.left.shortcut1.command": "firefox",
-  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Firefox",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "zen-browser",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Zen",
   "menus.dashboard.shortcuts.left.shortcut1.icon": "",
   "theme.bar.transparent": false,
   "theme.bar.buttons.background_hover_opacity": 100,
   "theme.bar.floating": false,
-  "bar.launcher.icon": "",
+  "bar.launcher.icon": "󰣇",
   "bar.launcher.autoDetectIcon": true,
   "theme.bar.buttons.workspaces.enableBorder": false,
   "bar.workspaces.show_numbered": false,
@@ -75,7 +75,7 @@
   "bar.clock.format": "%a %b %d  %I:%M %p",
   "wallpaper.pywal": false,
   "menus.clock.weather.key": "87ffd90eb1ba4758a7623046241111",
-  "bar.workspaces.numbered_active_indicator": "highlight",
+  "bar.workspaces.numbered_active_indicator": "color",
   "bar.windowtitle.custom_title": false,
   "bar.windowtitle.class_name": false,
   "bar.systray.customIcons": {
@@ -93,6 +93,7 @@
   "bar.workspaces.applicationIconMap": {
     "title:nv.*": "",
     "Vesktop": "",
+    "class:zen-alpha": "",
     "class:org.kde.dolphin": ""
   },
   "bar.workspaces.workspaces": 8,
@@ -115,5 +116,10 @@
   "theme.bar.menus.menu.dashboard.scaling": 75,
   "theme.bar.menus.menu.power.scaling": 100,
   "menus.dashboard.shortcuts.left.shortcut3.command": "vesktop",
-  "theme.bar.menus.menu.notifications.scaling": 85
+  "theme.bar.menus.menu.notifications.scaling": 85,
+  "theme.bar.buttons.workspaces.fontSize": "1.2em",
+  "theme.bar.buttons.workspaces.smartHighlight": true,
+  "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "0.2em",
+  "bar.workspaces.showAllActive": true,
+  "bar.network.truncation_size": 10
 }

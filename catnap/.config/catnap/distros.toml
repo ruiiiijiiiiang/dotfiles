@@ -1,5 +1,4 @@
 [endeavour]
-alias = "default"
 margin = [2, 0, 0,]
 art    = [
 "{RD}                     ./{MA}o{BE}.               ",
@@ -17,4 +16,28 @@ art    = [
 "{RD} `..-+{MA}oosssssssssssssssssssssssso{BE}+++++/`",
 "{BE}   ./++++++++++++++++++++++++++++++/:.  ",
 "{BE}  `:::::::::::::::::::::::::------``    "
+]
+[arch]
+alias = "default"
+margin = [0, 0, 0,]
+art = [
+"{BE}                   -`                 ",
+"{BE}                  .o+`                ",
+"{BE}                 `ooo/                ",
+"{BE}                `+oooo:               ",
+"{BE}               `+oooooo:              ",
+"{BE}               -+oooooo+:             ",
+"{BE}             `/:-:++oooo+:            ",
+"{BE}            `/++++/+++++++:           ",
+"{BE}           `/++++++++++++++:          ",
+"{BE}          `/+++ooooooooooooo/`        ",
+"{BE}         ./ooosssso++osssssso+`       ",
+"{BE}        .oossssso-````/ossssss+`      ",
+"{BE}       -osssssso.      :ssssssso.     ",
+"{BE}      :osssssss/        osssso+++.    ",
+"{BE}     /ossssssss/        +ssssooo/-    ",
+"{BE}   `/ossssso+/:-        -:/+osssso+-  ",
+"{BE}  `+sso+:-`                 `.-/+oso: ",
+"{BE} `++:.                           `-/+/",
+"{BE} .`                                 ` ",
 ]

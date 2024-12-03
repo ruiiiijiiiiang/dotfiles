@@ -168,7 +168,7 @@ style = "fg:crust bg:peach"
 
 [time]
 disabled = false
-time_format = "%R%P" # Hour:Minute Format
+time_format = "%I:%M%p"
 style = "fg:crust bg:lavender bold"
 format = '[ $time]($style)'
 
