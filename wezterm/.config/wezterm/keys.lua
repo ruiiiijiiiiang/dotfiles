@@ -50,9 +50,19 @@ local keys = {
     action = act.SpawnTab("CurrentPaneDomain"),
   },
   {
+    key = "Space",
+    mods = "ALT",
+    action = act.QuickSelect,
+  },
+  {
     key = "c",
     mods = "ALT",
     action = act.ActivateCopyMode,
+  },
+  {
+    key = "/",
+    mods = "ALT",
+    action = act.Search({ CaseInSensitiveString = "" }),
   },
   {
     key = "\\",
