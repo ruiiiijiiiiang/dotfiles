@@ -1,4 +1,5 @@
 [endeavour]
+alias = "endeavouros"
 margin = [2, 0, 0,]
 art    = [
 "{RD}                     ./{MA}o{BE}.               ",

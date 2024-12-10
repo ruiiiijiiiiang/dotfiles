@@ -1,21 +1,20 @@
 return {
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-  { import = "lazyvim.plugins.extras.lang.json" },
-  { import = "lazyvim.plugins.extras.lang.tailwind" },
-  { import = "lazyvim.plugins.extras.formatting.prettier" },
-  { import = "lazyvim.plugins.extras.linting.eslint" },
-  { import = "lazyvim.plugins.extras.ai.codeium" },
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
   { "mrjones2014/smart-splits.nvim", lazy = false },
   {
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("toggleterm").setup({
-        shell = "fish -l",
-        hidden = true,
-      })
-    end,
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        sections = {
+          { section = "header" },
+          { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          { section = "startup" },
+        },
+      },
+    },
   },
   {
     "echasnovski/mini.ai",
@@ -51,9 +50,9 @@ return {
     end,
   },
   {
-    "echasnovski/mini.move",
+    "echasnovski/mini.splitjoin",
     config = function()
-      require("mini.move").setup({})
+      require("mini.splitjoin").setup({})
     end,
   },
   {
@@ -131,23 +130,31 @@ return {
           group = "CodeSnap",
           mode = "x",
         },
+        {
+          "<leader>gS",
+          icon = {
+            icon = "",
+            color = "blue",
+          },
+          mode = "n",
+          desc = "Toggle Split/Join",
+        },
       },
     },
   },
-  -- {
-  --   "Exafunction/codeium.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   config = function()
-  --     require("codeium").setup({})
-  --   end,
-  -- },
   {
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "codeium" })
+    "monkoose/neocodeium",
+    event = "VeryLazy",
+    config = function()
+      local neocodeium = require("neocodeium")
+      neocodeium.setup()
+      vim.keymap.set("i", "<A-f>", neocodeium.accept)
     end,
   },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   opts = function(_, opts)
+  --     table.insert(opts.sources, { name = "codeium" })
+  --   end,
+  -- },
 }

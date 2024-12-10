@@ -24,10 +24,6 @@ map("n", "<C-A-j>", smart_splits.resize_down)
 map("n", "<C-A-k>", smart_splits.resize_up)
 map("n", "<C-A-l>", smart_splits.resize_right)
 
--- ToggleTerm
-map("n", "<leader>t", "<Cmd>ToggleTerm direction=horizontal size=20<Cr>", { desc = "Terminal (bottom)" })
-map("n", "<leader>T", "<Cmd>ToggleTerm direction=vertical size=80<Cr>", { desc = "Terminal (right)" })
-
 -- CodeSnap
 map("x", "<leader>Cc", "<Esc><Cmd>CodeSnap<Cr>", { desc = "Save selected code snapshot into clipboard" })
 map("x", "<leader>Cs", "<Esc><Cmd>CodeSnapSave<Cr>", { desc = "Save selected code snapshot in ~/Pictures" })
