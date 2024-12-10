@@ -9,15 +9,6 @@ return {
       dashboard = {
         enabled = true,
         preset = {
-          header = [[
-██████   █████                   █████   █████  ███                 
-░██████ ░░███                   ░░███   ░░███  ░░░                  
-░███░███ ░███   ██████   ██████  ░███    ░███  ████  █████████████  
-░███░░███░███  ███░░███ ███░░███ ░███    ░███ ░░███ ░░███░░███░░███ 
-░███ ░░██████ ░███████ ░███ ░███ ░░███   ███   ░███  ░███ ░███ ░███ 
-░███  ░░█████ ░███░░░  ░███ ░███  ░░░█████░    ░███  ░███ ░███ ░███ 
-█████  ░░█████░░██████ ░░██████     ░░███      █████ █████░███ █████
-░░░░░    ░░░░░  ░░░░░░   ░░░░░░       ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░]],
           keys = {
             { icon = " ", key = "e", desc = "Explore Directory", action = ":Neotree" },
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
@@ -36,26 +27,35 @@ return {
           },
         },
         sections = {
-          { section = "header" },
           {
-            pane = 1,
+            section = "terminal",
+            cmd = "chafa ~/Pictures/doge.png --format symbols --size 50x50; sleep .1",
+            height = 30,
+          },
+          {
+            section = "terminal",
+            cmd = "printf 'WoW! Much Arch! Very Wezterm! Goodest Neovim!' | lolcat",
+          },
+          {
+            pane = 2,
+            icon = " ",
+            title = "Shortcuts",
             section = "keys",
             indent = 2,
             gap = 1,
+            padding = 1,
           },
           {
             pane = 2,
             icon = " ",
             title = "Recent Files",
             section = "recent_files",
-            limit = 20,
+            limit = 10,
             indent = 2,
-            padding = 1,
           },
-          { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
           { section = "startup" },
         },
-        width = 68,
+        width = 50,
       },
     },
   },
