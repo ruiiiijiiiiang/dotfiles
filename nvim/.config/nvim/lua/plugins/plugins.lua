@@ -11,10 +11,19 @@ return {
         preset = {
           keys = {
             { icon = " ", key = "e", desc = "Explore Directory", action = ":Neotree" },
-            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+            {
+              icon = " ",
+              key = "f",
+              desc = "Find File",
+              action = ":lua Snacks.dashboard.pick('files')",
+            },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-            { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-            { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            {
+              icon = " ",
+              key = "g",
+              desc = "Find Text",
+              action = ":lua Snacks.dashboard.pick('live_grep')",
+            },
             {
               icon = " ",
               key = "c",
@@ -22,7 +31,13 @@ return {
               action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
             },
             { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-            { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+            {
+              icon = "󰒲 ",
+              key = "L",
+              desc = "Lazy",
+              action = ":Lazy",
+              enabled = package.loaded.lazy ~= nil,
+            },
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
         },
@@ -57,6 +72,13 @@ return {
         },
         width = 50,
       },
+      bigfile = { enabled = true },
+      quickfile = { enabled = true },
+      indent = { enabled = true },
+      scroll = { enabled = true },
+      scope = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
     },
   },
   {
@@ -88,30 +110,9 @@ return {
     end,
   },
   {
-    "echasnovski/mini.animate",
-    config = function()
-      require("mini.animate").setup({
-        scroll = {
-          timing = require("mini.animate").gen_timing.linear({ duration = 3 }),
-        },
-      })
-    end,
-  },
-  {
     "echasnovski/mini.cursorword",
     config = function()
       require("mini.cursorword").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.indentscope",
-    config = function()
-      require("mini.indentscope").setup({
-        draw = {
-          delay = 0,
-          animation = require("mini.indentscope").gen_animation.none(),
-        },
-      })
     end,
   },
   {
@@ -187,18 +188,9 @@ return {
     lazy = false,
   },
   {
-    "monkoose/neocodeium",
-    event = "VeryLazy",
-    config = function()
-      local neocodeium = require("neocodeium")
-      neocodeium.setup()
-      vim.keymap.set("i", "<A-f>", neocodeium.accept)
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      table.insert(opts.sources, { name = "codeium" })
     end,
   },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = function(_, opts)
-  --     table.insert(opts.sources, { name = "codeium" })
-  --   end,
-  -- },
 }
