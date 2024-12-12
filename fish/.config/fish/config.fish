@@ -68,6 +68,10 @@ if status is-login
     set -gx PATH "$VOLTA_HOME/bin" $PATH
 
     function fish_greeting
-        catnap
+        if command -v catnap >/dev/null 2>&1
+            catnap
+        else
+            fastfetch
+        end
     end
 end

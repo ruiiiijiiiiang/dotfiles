@@ -42,11 +42,11 @@ return {
           },
         },
         sections = {
-          {
-            section = "terminal",
-            cmd = "chafa ~/Pictures/doge.png --format symbols --size 50x50; sleep .1",
-            height = 30,
-          },
+          -- {
+          --   section = "terminal",
+          --   cmd = "chafa ~/Pictures/doge.png --format symbols --size 50x50; sleep .1",
+          --   height = 30,
+          -- },
           {
             section = "terminal",
             cmd = "printf 'WoW! Much Arch! Very Wezterm! Goodest Neovim!' | lolcat",
