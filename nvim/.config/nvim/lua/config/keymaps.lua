@@ -27,3 +27,6 @@ map("n", "<C-A-l>", smart_splits.resize_right)
 -- CodeSnap
 map("x", "<leader>Cc", "<Esc><Cmd>CodeSnap<Cr>", { desc = "Save selected code snapshot into clipboard" })
 map("x", "<leader>Cs", "<Esc><Cmd>CodeSnapSave<Cr>", { desc = "Save selected code snapshot in ~/Pictures" })
+
+-- BufferLine
+map("n", "<leader>bs", ":BufferLinePick<CR>", { desc = "Select buffer" })

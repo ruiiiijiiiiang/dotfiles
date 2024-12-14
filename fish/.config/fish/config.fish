@@ -1,6 +1,6 @@
 if status is-interactive
     function run-ls-on-cd -v PWD
-        ls -lF
+        command lsd -l
     end
 end
 
@@ -11,10 +11,10 @@ if status is-login
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     thefuck --alias | source
-    zoxide init fish | source
 
     alias l="lsd"
     alias ls="lsd"
+    alias ll="lsd -l"
     alias lt="lsd --tree"
     alias lta="lsd --tree -a"
     alias nv="nvim"
@@ -22,14 +22,16 @@ if status is-login
     alias vg="ssh veggie.ooapi.com"
 
     # zoxide
+    zoxide init fish | source
     function cd
         z $argv
     end
 
+    # leave directories
     function qcd
         echo cd (string repeat -n (string length $argv) ../)
     end
-    abbr -a qcd --position command --regex 'q+' --function qcd
+    abbr -a qcd --position command --regex "q+" --function qcd
 
     # yazi
     function y
@@ -42,19 +44,16 @@ if status is-login
     end
 
     # starship
-    function starship_transient_prompt_func
-        starship module character
-    end
+    # function starship_transient_prompt_func
+    #     starship module character
+    # end
     starship init fish | source
     #enable_transience
 
     # fzf
     fzf --fish | source
-    function nvfzf
-        nvim $(fzf)
-    end
-    function fzfp
-        fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
+    function fzf
+        nvim $(command fzf --preview "bat --style=numbers --color=always --line-range :500 {}")
     end
     set -gx FZF_DEFAULT_OPTS "\
 --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \

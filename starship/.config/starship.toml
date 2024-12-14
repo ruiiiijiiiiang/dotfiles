@@ -7,12 +7,12 @@ format = """
 $os\
 $username\
 $sudo\
-[](fg:flamingo bg:sky)\
+[▓▒░](fg:flamingo bg:sky)\
 $directory\
-[](fg:sky bg:green)\
+[▓▒░](fg:sky bg:green)\
 $git_branch\
 $git_status\
-[](fg:green bg:yellow)\
+[▓▒░](fg:green bg:yellow)\
 $c\
 $deno\
 $java\
@@ -22,9 +22,9 @@ $nodejs\
 $ruby\
 $php\
 $python\
-[](fg:yellow bg:peach)\
+[▓▒░](fg:yellow bg:peach)\
 $package\
-[](fg:peach bg:lavender)\
+[▓▒░](fg:peach bg:lavender)\
 $time\
 $status\
 [](fg:lavender)

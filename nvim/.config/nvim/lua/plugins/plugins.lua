@@ -9,6 +9,16 @@ return {
       dashboard = {
         enabled = true,
         preset = {
+          header = [[
+                                                                   
+      ████ ██████           █████      ██                    
+     ███████████             █████                            
+     █████████ ███████████████████ ███   ███████████  
+    █████████  ███    █████████████ █████ ██████████████  
+   █████████ ██████████ █████████ █████ █████ ████ █████  
+ ███████████ ███    ███ █████████ █████ █████ ████ █████ 
+██████  █████████████████████ ████ █████ █████ ████ ██████
+]],
           keys = {
             { icon = " ", key = "e", desc = "Explore Directory", action = ":Neotree" },
             {
@@ -32,59 +42,49 @@ return {
             },
             { icon = " ", key = "s", desc = "Restore Session", section = "session" },
             {
-              icon = "󰒲 ",
-              key = "L",
+              icon = "󰐱 ",
+              key = "l",
               desc = "Lazy",
               action = ":Lazy",
+              enabled = package.loaded.lazy ~= nil,
+            },
+            {
+              icon = "󱓖 ",
+              key = "x",
+              desc = "Lazy Extras",
+              action = ":LazyExtras",
               enabled = package.loaded.lazy ~= nil,
             },
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
         },
         sections = {
-          -- {
-          --   section = "terminal",
-          --   cmd = "chafa ~/Pictures/doge.png --format symbols --size 50x50; sleep .1",
-          --   height = 30,
-          -- },
-          {
-            section = "terminal",
-            cmd = "printf 'WoW! Much Arch! Very Wezterm! Goodest Neovim!' | lolcat",
-          },
-          {
-            pane = 2,
-            icon = " ",
-            title = "Shortcuts",
-            section = "keys",
-            indent = 2,
-            gap = 1,
-            padding = 1,
-          },
+          { pane = 1, section = "header" },
+          { pane = 1, icon = " ", title = "Shortcuts", section = "keys", indent = 2 },
           {
             pane = 2,
             icon = " ",
             title = "Recent Files",
             section = "recent_files",
-            limit = 10,
             indent = 2,
+            limit = 10,
+            padding = 2,
           },
-          { section = "startup" },
+          { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, limit = 5, padding = 2 },
+          { pane = 2, section = "startup" },
         },
-        width = 50,
+        width = 69,
       },
       bigfile = { enabled = true },
       quickfile = { enabled = true },
-      indent = { enabled = true },
-      scroll = { enabled = true },
-      scope = { enabled = true },
       statuscolumn = { enabled = true },
-      words = { enabled = true },
     },
   },
   {
     "folke/which-key.nvim",
     lazy = false,
     opts = {
+      preset = "modern",
       spec = {
         {
           "<leader>C",
@@ -125,6 +125,7 @@ return {
     "s1n7ax/nvim-window-picker",
     name = "window-picker",
     event = "VeryLazy",
+    version = "2.*",
     config = function()
       require("window-picker").setup({
         hint = "floating-big-letter",
@@ -188,9 +189,33 @@ return {
     lazy = false,
   },
   {
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "codeium" })
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("bufferline").setup({
+        options = {
+          indicator = {
+            style = "underline",
+          },
+          separator_style = "slant",
+        },
+      })
     end,
+  },
+  {
+    "saghen/blink.cmp",
+    enabled = false,
+    -- lazy = false,
+    -- dependencies = "Exafunction/codeium",
+    -- version = "v0.*",
+    -- -- opts = function(_, opts)
+    -- --   table.insert(opts.sources, { name = "codeium" })
+    -- -- end,
+    -- opts = {
+    --   sources = {
+    --     compat = { "codeium" },
+    --   },
+    -- },
   },
 }

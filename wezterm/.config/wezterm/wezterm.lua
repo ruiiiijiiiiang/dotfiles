@@ -59,15 +59,15 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local edge_foreground = color_scheme.tab_bar.inactive_tab.fg_color
 	local text_background = color_scheme.tab_bar.inactive_tab.fg_color
 	local text_foreground = color_scheme.tab_bar.inactive_tab.bg_color
-	local left_edge = " "
-	local right_edge = " "
+	local left_edge = ""
+	local right_edge = ""
+	local italic = false
 
 	if tab.is_active then
-		left_edge = " "
-		right_edge = " "
 		edge_foreground = color_scheme.tab_bar.active_tab.bg_color
 		text_background = color_scheme.tab_bar.active_tab.bg_color
 		text_foreground = color_scheme.tab_bar.active_tab.fg_color
+		italic = true
 	elseif hover then
 		edge_foreground = color_scheme.tab_bar.inactive_tab_hover.bg_color
 		text_background = color_scheme.tab_bar.inactive_tab_hover.bg_color
@@ -83,6 +83,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 		{ Text = left_edge },
 		{ Background = { Color = text_background } },
 		{ Foreground = { Color = text_foreground } },
+		{ Attribute = { Italic = italic } },
 		{ Text = title },
 		{ Background = { Color = edge_background } },
 		{ Foreground = { Color = edge_foreground } },
