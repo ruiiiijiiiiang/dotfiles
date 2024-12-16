@@ -3,10 +3,7 @@
  * @description A tui-style discord theme. Based on the catppuccin frappe color palette.
  * @author refact0r, bean, ruiiiijiiiiang
  * @version 1.0.0
- * @invite nz87hXyvcy
  * @website https://github.com/refact0r/system24
- * @source https://github.com/refact0r/system24/blob/master/flavors/catppuccin-mocha.theme.css 
- * @authorId 508863359777505290
  * @authorLink https://www.refact0r.dev
 */
 
@@ -20,16 +17,16 @@
 	letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
 	font-weight: 500; /* UI font weight. */
 	--label-font-weight: 600; /* font weight for panel labels. */
-	--corner-text: 'frappe24'; /* custom text to display in the corner. only works on windows. */
+	--corner-text: 'catppuccin24'; /* custom text to display in the corner. only works on windows. */
 	--pad: 16px; /* padding between panels. */
 	--txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
 	--panel-roundness: 0px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
 
 	/* background colors */
-	--bg-0: #303446; /* main background color. */ /* Base */
-	--bg-1: #292c3c; /* background color for secondary elements like code blocks, embeds, etc. */ /* Mantle */
-	--bg-2: #414559; /* color of neutral buttons. */ /* Surface 0 */
-	--bg-3: #51576d; /* color of neutral buttons when hovered. */ /* Surface 1 */
+	--bg-0: oklch(32.91% 0.0324 274.76); /* main background color. */ /* Catppuccin Base */
+	--bg-1: oklch(29.73% 0.0294 276.21); /* background color for secondary elements like code blocks, embeds, etc. */ /* Catppuccin Mantle */
+	--bg-2: oklch(39.49% 0.0342 275.9); /* color of neutral buttons. */ /* Catppuccin Surface 0 */
+	--bg-3: oklch(46.01% 0.0367 272.97); /* color of neutral buttons when hovered. */ /* Catppuccin Surface 1 */
 
 	/* state modifiers */
 	--hover: color-mix(in oklch, var(--txt-3), transparent 80%); /* color of hovered elements. */
@@ -39,10 +36,10 @@
 	/* text colors */
 	--txt-dark: var(--bg-0); /* color of dark text on colored backgrounds. */
 	--txt-link: var(--cyan); /* color of links. */
-	--txt-0: #e8ebfc; /* color of bright/white text. */
-	--txt-1: #c6d0f5; /* main text color. */ /* Text */
-	--txt-2: #949cbb; /* color of secondary text like channel list. */ /* Overlay 2 */
-	--txt-3: #626880; /* color of muted text. */ /* Surface 2 */
+	--txt-0: oklch(96.19% 0.0526 273.35); /* color of bright/white text. */ /* +10% lightness from Text */
+	--txt-1: oklch(86.19% 0.0526 273.35); /* main text color. */ /* Catppuccin Text */
+	--txt-2: oklch(69.7% 0.0464 273.78); /* color of secondary text like channel list. */ /* Catppuccin Overlay 2 */
+	--txt-3: oklch(52.11% 0.0386 274); /* color of muted text. */ /* Catppuccin Surface 2 */
 
 	/* accent colors */
 	--acc-0: var(--lavender); /* main accent color. */
@@ -70,18 +67,18 @@
 	--reply-hover-overlay: var(--hover); /* overlay color of message you are replying to when hovered. */
 
 	/* color shades */
-	--pink: oklch(71.71% 0.1244 19.39);        /* Red */
+	--pink: oklch(71.71% 0.1244 19.39);        /* Catppuccin Red */
 	--pink-1: oklch(61.71% 0.1244 19.39);      /* -10% Lightness from Red */
 	--pink-2: oklch(51.71% 0.1244 19.39);      /* -20% Lightness from Red */
-	--purple: oklch(76.48% 0.1108 311.74);     /* Mauve */
+	--purple: oklch(76.48% 0.1108 311.74);     /* Catppuccin Mauve */
 	--purple-1: oklch(66.48% 0.1108 311.74);   /* -10% Lightness from Mauve */
 	--purple-2: oklch(56.48% 0.1108 311.74);   /* -20% Lightness from Mauve */
-	--cyan: oklch(77.96% 0.0727 227.88);       /* Sapphire */
-	--yellow: oklch(84.43% 0.0795 83.47);      /* Yellow */
-	--green: oklch(81.24% 0.1071 133.39);      /* Green */
+	--cyan: oklch(77.96% 0.0727 227.88);       /* Catppuccin Sapphire */
+	--yellow: oklch(84.43% 0.0795 83.47);      /* Catppuccin Yellow */
+	--green: oklch(81.24% 0.1071 133.39);      /* Catppuccin Green */
 	--green-1: oklch(71.24% 0.1071 133.39);    /* -10% Lightness from Green */
 	--green-2: oklch(61.24% 0.1071 133.39);    /* -20% Lightness from Green */
-	--lavender: oklch(80.99% 0.0759 283.74);   /* Lavender */
+	--lavender: oklch(80.99% 0.0759 283.74);   /* Catppuccin Lavender */
 	--lavender-1: oklch(70.99% 0.0759 283.74); /* -10% Lightness from Lavender */
 	--lavender-2: oklch(60.99% 0.0759 283.74); /* -20% Lightness from Lavender */
 }
