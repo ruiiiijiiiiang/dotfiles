@@ -1,4 +1,4 @@
-# Hello world!
+# Hello world
 
 Thank you for checking out the configuration for my personal development environment. I am a full stack TS/JS engineer and I develop primarily using neovim. These are the dotfiles I use across MacOS and Linux. I hope you find some inspiration here.
 
@@ -26,16 +26,23 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 4 (current)</summary>
+  <summary>Version 4</summary>
   Ditched waybar for hyprpanel
 
 ![Screenshot](./screenshots/2024-11-12-110707_hyprshot.png)
 
 </details>
+<details>
+  <summary>Version 5 (current)</summary>
+  Added theme for spotify and discord
+
+![Screenshot](./screenshots/2024-12-16-144539_hyprshot.png)
+
+</details>
 
 ## Theme
 
-I am a big fan of the [Catppuccin](https://github.com/catppuccin) theme. I use the frappe variant for any application that it supports.
+I am a big fan of the [Catppuccin](https://github.com/catppuccin) theme, specifically the frappe variant.
 I prefer [Hasklug Nerd Font](https://www.nerdfonts.com/font-downloads) for coding.
 
 ## Tools
@@ -43,13 +50,16 @@ I prefer [Hasklug Nerd Font](https://www.nerdfonts.com/font-downloads) for codin
 Most of these tools should be readily available from the package manager of your choice, ie. homebrew, apt, pacman, etc.
 Neovim plugins are managed by LazyVim.
 
+- [hyprland](https://github.com/hyprwm/Hyprland)
+- [hyprpanel](https://github.com/Jas-SinghFSU/HyprPanel)
+- [waybar](https://github.com/Alexays/Waybar)
 - [wezterm](https://github.com/wez/wezterm)
 - [neovim](https://github.com/neovim/neovim)
   - [LazyVim](https://github.com/LazyVim/LazyVim)
+  - [snacks.nvim](https://github.com/folke/snacks.nvim)
   - [mini.nvim](https://github.com/echasnovski/mini.nvim)
   - [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
   - [smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim)
-  - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
   - [codesnap.nvim](https://github.com/mistricky/codesnap.nvim)
 - [fish-shell](https://github.com/fish-shell/fish-shell)
 - [starship](https://github.com/starship/starship)
@@ -66,9 +76,5 @@ Neovim plugins are managed by LazyVim.
 - [fd](https://github.com/sharkdp/fd)
 - [btop](https://github.com/aristocratos/btop)
 - [catnap](https://github.com/iinsertNameHere/catnap)
-
-Linux only:
-
-- [hyprland](https://github.com/hyprwm/Hyprland)
-- [hyprpanel](https://github.com/Jas-SinghFSU/HyprPanel)
-- [waybar](https://github.com/Alexays/Waybar)
+- [spicetify](https://github.com/spicetify/cli)
+- [system24](https://github.com/refact0r/system24)
