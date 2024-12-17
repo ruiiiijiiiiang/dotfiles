@@ -141,11 +141,26 @@ return {
     name = "window-picker",
     event = "VeryLazy",
     version = "2.*",
-    config = function()
-      require("window-picker").setup({
-        hint = "floating-big-letter",
-      })
-    end,
+    opts = {
+      filter_rules = {
+        bo = {
+          filetype = {
+            "edgy",
+            "neo-tree",
+            "noice",
+            "notify",
+            "smear-cursor",
+            "snacks_dashboard",
+            "snacks_notif",
+            "snacks_terminal",
+            "trouble",
+            "tutor",
+            "noice",
+          },
+        },
+      },
+      hint = "floating-big-letter",
+    },
   },
   {
     "mistricky/codesnap.nvim",
@@ -221,16 +236,5 @@ return {
   {
     "saghen/blink.cmp",
     enabled = false,
-    -- lazy = false,
-    -- dependencies = "Exafunction/codeium",
-    -- version = "v0.*",
-    -- -- opts = function(_, opts)
-    -- --   table.insert(opts.sources, { name = "codeium" })
-    -- -- end,
-    -- opts = {
-    --   sources = {
-    --     compat = { "codeium" },
-    --   },
-    -- },
   },
 }
