@@ -13,11 +13,10 @@
       "group/volume",
       "network",
       "group/system",
-      "clock"
-      // "custom/power",
+      "clock",
+      "custom/power"
     ],
     "hyprland/workspaces": {
-      "all-outputs": true,
       "format": "{name}: {windows} ",
       "window-rewrite": {
         "class<.*zen.*>title<.*youtube.*>": "󰗃",
@@ -32,7 +31,28 @@
         "class<spotify>": "󰓇",
         "title<Picture-in-Picture>": "󰗃"
       },
-      "window-rewrite-default": "󰣆"
+      "window-rewrite-default": "󰣆",
+      "active-only": true,
+      "persistent-workspaces": {
+        "HDMI-A-1": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "DP-1": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ]
+      }
+    },
+    "hyprland/window": {
+      "format": "{initialTitle}",
+      "icon": true
     },
     "group/volume": {
       "orientation": "horizontal",
@@ -60,10 +80,6 @@
       "rotate": 0,
       "device": "pulseaudio",
       "scroll-step": 5
-    },
-    "hyprland/window": {
-      "format": "{initialTitle}",
-      "icon": true
     },
     "network": {
       "format-wifi": "  {signalStrength}%",
@@ -93,15 +109,7 @@
     "custom/power": {
       "format": " 󰐥 ",
       "tooltip": false,
-      "menu": "on-click",
-      "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-      "menu-actions": {
-        "logoff": "hyprctl dispatch exit",
-        "suspend": "systemctl suspend",
-        "hibernate": "systemctl hibernate",
-        "shutdown": "systemctl poweroff",
-        "reboot": "systemctl reboot"
-      }
+      "on-click": "sh ~/.config/rofi/powermenu.sh"
     }
   }
 ]

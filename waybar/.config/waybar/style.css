@@ -34,6 +34,28 @@ window#waybar {
   border-bottom: 6px solid alpha(@mauve, 0.8);
 }
 
+#window,
+#volume,
+#network,
+#system,
+#clock,
+#custom-power {
+  margin: 2px 2px;
+  padding: 0 8px;
+  background: alpha(@surface2, 0.65);
+  border-bottom: 6px solid @surface2;
+}
+
+#window {
+  font-size: 28px;
+  color: @text;
+}
+
+window#waybar.empty #window {
+  background: none;
+  border: none;
+}
+
 #pulseaudio {
   color: @sapphire;
 }
@@ -56,32 +78,11 @@ window#waybar {
   background: @sapphire;
 }
 
-#window {
-  margin: 2px 8px;
-  padding: 0 8px;
-  font-size: 28px;
-  color: @text;
-}
-
-window#waybar.empty #window {
-  background: none;
-  border: none;
-}
-
-#window,
-#volume,
-#network,
-#system,
-#clock,
-#custom-power {
-  margin: 2px 2px;
-  padding: 0 8px;
-  background: alpha(@surface2, 0.65);
-  border-bottom: 6px solid @surface2;
+#network {
+  color: @green;
 }
 
 #system {
-  color: @red;
   margin: 2px 0;
 }
 
@@ -92,14 +93,11 @@ window#waybar.empty #window {
   margin: 0 3px;
 }
 
-#network {
-  color: @green;
-}
-
 #clock {
   color: @yellow;
 }
 
 #custom-power {
+  color: @red;
   font-size: 28px;
 }
