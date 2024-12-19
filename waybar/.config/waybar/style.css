@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background: alpha(@lavender, 0.8);
+  background: @crust;
 }
 
 /*tooltip label {*/
@@ -18,14 +18,14 @@ window#waybar {
 
 #workspaces button {
   color: @rosewater;
-  background: alpha(@base, 0.4);
+  background: alpha(@surface2, 0.4);
   border: 0;
-  border-bottom: 6px solid @base;
+  border-bottom: 6px solid @surface2;
   margin: 2px;
 }
 
 #workspaces button:hover {
-  background: alpha(@mauve, 0.2);
+  background: alpha(@mauve, 0.3);
   border-bottom: 6px solid alpha(@mauve, 0.5);
 }
 
@@ -76,8 +76,8 @@ window#waybar.empty #window {
 #custom-power {
   margin: 2px 2px;
   padding: 0 8px;
-  background: alpha(@base, 0.65);
-  border-bottom: 6px solid @base;
+  background: alpha(@surface2, 0.65);
+  border-bottom: 6px solid @surface2;
 }
 
 #system {

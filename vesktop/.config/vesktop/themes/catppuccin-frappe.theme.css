@@ -19,7 +19,7 @@
 	--corner-text: 'catppuccin24'; /* custom text to display in the corner. only works on windows. */
 	--pad: 16px; /* padding between panels. */
 	--txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
-	--panel-roundness: 20px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
+	--panel-roundness: 8px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
 
 	/* background colors */
 	--bg-0: oklch(32.91% 0.0324 274.76); /* main background color. */ /* Catppuccin Base */

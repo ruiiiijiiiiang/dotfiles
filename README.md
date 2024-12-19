@@ -33,10 +33,17 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 5 (current)</summary>
+  <summary>Version 5</summary>
   Added theme for spotify and discord
 
 ![Screenshot](./screenshots/2024-12-16-144539_hyprshot.png)
+
+</details>
+<details>
+  <summary>Version 6 (current)</summary>
+  Reverted to waybar and rethemed
+
+![Screenshot](./screenshots/2024-12-18-222122_hyprshot.png)
 
 </details>
 
@@ -75,6 +82,7 @@ Neovim plugins are managed by LazyVim.
 - [yazi](https://github.com/sxyazi/yazi)
 - [fd](https://github.com/sharkdp/fd)
 - [btop](https://github.com/aristocratos/btop)
+- [clipboard](https://github.com/Slackadays/Clipboard)
 - [catnap](https://github.com/iinsertNameHere/catnap)
 - [spicetify](https://github.com/spicetify/cli)
 - [system24](https://github.com/refact0r/system24)
