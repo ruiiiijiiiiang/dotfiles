@@ -12,7 +12,7 @@
 :root {
     --font-family: "Hasklug Nerd Font", monospace;
     --font-weight: 500; /* 200 : 900 */
-    --font-size: 14px;
+    --font-size: 16px;
     --line-height: 1.2;
 
     --font-size-lyrics: 14px; /* 1.5em (default) */
@@ -28,8 +28,8 @@
     --display-spicetify-banner-ascii: block; /* none | block */
     --display-music-banner-ascii: none; /* none | block */
 
-    --border-radius: 0px;
-    --border-width: 1px;
+    --border-radius: 8px;
+    --border-width: 2px;
     --border-style: solid; /* dotted | dashed | solid | double | groove | ridge | inset | outset */
     --border-transition: 0.2s ease; /* 'none' to disable  */
 }

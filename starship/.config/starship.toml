@@ -157,7 +157,7 @@ style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
 [package]
-symbol = "󰏗"
+symbol = "󰏗 "
 format = '[$symbol$version]($style)'
 style = "fg:crust bg:peach"
 #

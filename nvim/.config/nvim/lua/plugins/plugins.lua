@@ -222,19 +222,46 @@ return {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
-    config = function()
-      require("bufferline").setup({
-        options = {
-          indicator = {
-            style = "underline",
-          },
-          separator_style = "slant",
+    opts = {
+      options = {
+        indicator = {
+          style = "underline",
         },
-      })
-    end,
+        separator_style = "slant",
+      },
+    },
   },
   {
     "saghen/blink.cmp",
     enabled = false,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      opts.options = {
+        section_separators = { left = "▓▒░", right = "░▒▓" },
+        component_separators = { left = "", right = "" },
+      }
+      opts.sections.lualine_a = {
+        {
+          opts.sections.lualine_a[1],
+          separator = { left = "", right = "▓▒░" },
+        },
+      }
+      opts.sections.lualine_z = {
+        {
+          opts.sections.lualine_z[1],
+          separator = { left = "░▒▓", right = "" },
+        },
+      }
+    end,
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+    config = function()
+      require("hardtime").setup({})
+    end,
   },
 }

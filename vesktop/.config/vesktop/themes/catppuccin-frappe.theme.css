@@ -9,7 +9,6 @@
 
 /* import theme modules */
 @import url('https://refact0r.github.io/system24/src/main.css'); /* main theme css. DO NOT REMOVE */
-@import url('https://refact0r.github.io/system24/src/unrounding.css'); /* gets rid of all rounded corners. remove if you want rounded corners. */
 
 /* customize things here */
 :root {
@@ -20,7 +19,7 @@
 	--corner-text: 'catppuccin24'; /* custom text to display in the corner. only works on windows. */
 	--pad: 16px; /* padding between panels. */
 	--txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
-	--panel-roundness: 0px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
+	--panel-roundness: 20px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
 
 	/* background colors */
 	--bg-0: oklch(32.91% 0.0324 274.76); /* main background color. */ /* Catppuccin Base */

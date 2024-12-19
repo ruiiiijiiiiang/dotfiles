@@ -1,57 +1,66 @@
 @import "catppuccin-frappe.css";
 
 * {
-  font-family: "DejaVu Sans";
+  font-family: "Hasklug Nerd Font";
+  font-weight: 600;
   font-size: 22px;
-  color: @crust;
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 window#waybar {
-  background: alpha(@mantle, 0.5);
+  background: alpha(@lavender, 0.8);
 }
 
-tooltip label {
-  color: @text;
-  border: 1px solid @mantle;
-}
+/*tooltip label {*/
+/*  color: @text;*/
+/*  border: 1px solid @mantle;*/
+/*}*/
 
 #workspaces button {
-  background: alpha(@lavender, 0.45);
+  color: @rosewater;
+  background: alpha(@base, 0.4);
+  border: 0;
+  border-bottom: 6px solid @base;
   margin: 2px;
 }
 
 #workspaces button:hover {
-  background: alpha(@lavender, 0.6);
+  background: alpha(@mauve, 0.2);
+  border-bottom: 6px solid alpha(@mauve, 0.5);
 }
 
 #workspaces button.active {
-  background: alpha(@lavender, 0.75);
+  background: alpha(@mauve, 0.5);
+  border-bottom: 6px solid alpha(@mauve, 0.8);
 }
 
-#pulseaudio-slider slider,
-#backlight-slider slider {
+#pulseaudio {
+  color: @sapphire;
+}
+
+#pulseaudio-slider slider {
   min-height: 14px;
   background: @blue;
+  border-radius: 100%;
 }
 
-#pulseaudio-slider trough,
-#backlight-slider trough {
+#pulseaudio-slider trough {
   min-width: 90px;
   min-height: 14px;
-  border: none;
-  background: @sapphire;
+  border: 1px solid @base;
+  background: alpha(@sapphire, 0.5);
 }
 
-#pulseaudio-slider highlight,
-#backlight-slider highlight {
-  background: @sky;
+#pulseaudio-slider highlight {
+  border: 1px solid @base;
+  background: @sapphire;
 }
 
 #window {
   margin: 2px 8px;
   padding: 0 8px;
   font-size: 28px;
+  color: @text;
 }
 
 window#waybar.empty #window {
@@ -61,27 +70,34 @@ window#waybar.empty #window {
 
 #window,
 #volume,
-#brightness,
 #network,
 #system,
-#temperature,
-#power-profiles-daemon,
-#battery,
 #clock,
 #custom-power {
   margin: 2px 2px;
   padding: 0 8px;
-  background: alpha(@lavender, 0.75);
+  background: alpha(@base, 0.65);
+  border-bottom: 6px solid @base;
 }
 
 #system {
+  color: @red;
   margin: 2px 0;
 }
 
 #cpu,
 #memory,
 #disk {
+  color: @maroon;
   margin: 0 3px;
+}
+
+#network {
+  color: @green;
+}
+
+#clock {
+  color: @yellow;
 }
 
 #custom-power {

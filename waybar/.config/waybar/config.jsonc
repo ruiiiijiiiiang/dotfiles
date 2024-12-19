@@ -1,127 +1,94 @@
 // -*- mode: jsonc -*-
 [
   {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 50, // Waybar height (to be removed for auto height)
-    // "width": 2718, // Waybar width
-    "output": "eDP-1",
     "margin": 8,
-    "spacing": 4, // Gaps between modules
-    "modules-left": ["hyprland/workspaces", "group/volume", "group/brightness"],
-    "modules-center": ["hyprland/window"],
+    "spacing": 2, // Gaps between modules
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
     "modules-right": [
+      "group/volume",
       "network",
       "group/system",
-      "temperature",
-      "power-profiles-daemon",
-      "battery",
-      "clock",
-      "custom/power",
+      "clock"
+      // "custom/power",
     ],
     "hyprland/workspaces": {
       "all-outputs": true,
       "format": "{name}: {windows} ",
       "window-rewrite": {
-        "class<firefox>title<.*youtube.*>": "",
-        "class<firefox>": "",
+        "class<.*zen.*>title<.*youtube.*>": "󰗃",
+        "class<.*zen.*>": "",
         "class<org.kde.dolphin>": "",
         "class<org.wezfurlong.wezterm>": "",
         "title<nv.*>": "",
         "class<code-oss>": "󰨞",
         "class<discord>": "",
         "class<vesktop>": "",
-        "class<mailspring>": "󰇮",
+        "class<.*betterbird.*>": "󰇮",
         "class<spotify>": "󰓇",
+        "title<Picture-in-Picture>": "󰗃"
       },
-      "window-rewrite-default": "󰣆",
+      "window-rewrite-default": "󰣆"
     },
     "group/volume": {
       "orientation": "horizontal",
-      "modules": ["pulseaudio", "pulseaudio/slider"],
+      "modules": [
+        "pulseaudio",
+        "pulseaudio/slider"
+      ]
     },
     "pulseaudio": {
       "scroll-step": 5,
       "format": "{icon} {volume}%",
-      "format-muted": " ",
+      "format-muted": "",
       "format-icons": {
-        "default": [" ", " ", " "],
+        "default": [
+          "",
+          "",
+          ""
+        ]
       },
-      "on-click": "pavucontrol",
+      "on-click": "pavucontrol"
     },
     "pulseaudio/slider": {
       "min": 0,
       "max": 100,
       "rotate": 0,
       "device": "pulseaudio",
-      "scroll-step": 5,
-    },
-    "group/brightness": {
-      "orientation": "horizontal",
-      "modules": ["backlight", "backlight/slider"],
-    },
-    "backlight": {
-      "scroll-step": 10,
-      "format": "{icon} {percent}%",
-      "format-icons": ["", "", "", "", "", "", "", "", "", "󰖨"],
-    },
-    "backlight/slider": {
-      "min": 10,
-      "max": 100,
-      "rotate": 0,
-      "device": "intel_backlight",
-      "scroll-step": 10,
+      "scroll-step": 5
     },
     "hyprland/window": {
       "format": "{initialTitle}",
-      "icon": true,
+      "icon": true
     },
     "network": {
-      "format-wifi": "  {essid} ({signalStrength}%)",
-      "format-disconnected": "⚠ Disconnected",
-      "on-click": "kcmshell6 kcm_networkmanagement",
+      "format-wifi": "  {signalStrength}%",
+      "format-disconnected": "⚠ Disconnected"
     },
     "group/system": {
       "orientation": "horizontal",
-      "modules": ["cpu", "memory", "disk"],
+      "modules": [
+        "cpu",
+        "memory",
+        "disk"
+      ]
     },
     "cpu": {
-      "format": "  {usage}%",
+      "format": " {usage}%"
     },
     "memory": {
-      "format": "  {}%",
+      "format": " {}%"
     },
     "disk": {
-      "format": "󰋊 {percentage_used}%",
-    },
-    "temperature": {
-      "critical-threshold": 80,
-      "format": "{icon} {temperatureC}°C",
-      "format-icons": ["", "", "󰸁"],
-    },
-    "power-profiles-daemon": {
-      "format": "󱤁 {icon} ",
-      "tooltip-format": "Power profile: {profile}",
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": "",
-      },
-    },
-    "battery": {
-      "states": {
-        "warning": 30,
-        "critical": 15,
-      },
-      "format": "{icon} {capacity}%",
-      "format-charging": "󰢝 {capacity}%",
-      "format-plugged": " {capacity}%",
-      "format-icons": [" ", " ", " ", " ", " "],
+      "format": "󰋊 {percentage_used}%"
     },
     "clock": {
-      "format": "󰃭 {:%a %b %d   %R}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": "󰃭 {:%a %b %d  %I:%M%p}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "custom/power": {
       "format": " 󰐥 ",
@@ -133,40 +100,8 @@
         "suspend": "systemctl suspend",
         "hibernate": "systemctl hibernate",
         "shutdown": "systemctl poweroff",
-        "reboot": "systemctl reboot",
-      },
-    },
-  },
-  {
-    "output": "HDMI-A-2",
-    "margin": 8,
-    "spacing": 4, // Gaps between modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["clock"],
-    "hyprland/workspaces": {
-      "all-outputs": true,
-      "format": "{name}: {windows} ",
-      "window-rewrite": {
-        "class<firefox>title<.*youtube.*>": "",
-        "class<firefox>": "",
-        "class<org.kde.dolphin>": "",
-        "class<org.wezfurlong.wezterm>": "",
-        "title<nv.*>": "",
-        "class<code-oss>": "󰨞",
-        "class<discord>": "",
-        "class<mailspring>": "󰇮",
-        "class<spotify>": "󰓇",
-      },
-      "window-rewrite-default": "󰣆",
-    },
-    "hyprland/window": {
-      "format": "{initialTitle}",
-      "icon": true,
-    },
-    "clock": {
-      "format": "󰃭 {:%a %b %d   %R}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    },
-  },
+        "reboot": "systemctl reboot"
+      }
+    }
+  }
 ]
