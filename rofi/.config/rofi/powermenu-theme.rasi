@@ -64,33 +64,20 @@ inputbar {
     spacing:                     20px;
     padding:                     80px 40px;
     background-color:            transparent;
-    background-image:            url("~/Pictures/arch_cat.png", width);
-    children:                    [ "textbox-prompt-colon", "prompt"];
+    background-image:            url("./background.png", width);
+    children:                    ["prompt"];
 }
 
 dummy {
     background-color:            transparent;
 }
 
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "󰣇 System";
-    padding:                     15px;
-    border:                      0px 0px 0px 10px;
-    border-radius:               8px;
-    border-color:                @selected;
-    background-color:            @urgent;
-    text-color:                  @foreground;
-}
 prompt {
     enabled:                     true;
     padding:                     15px;
-    border:                      0px;
-    border:                      0px 10px 0px 0px;
     border-radius:               8px;
     border-color:                @selected;
-    background-color:            @active;
+    background-color:            @background-alt;
     text-color:                  @foreground;
 }
 
@@ -106,7 +93,6 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
     spacing:                     30px;
     margin:                      30px;
     background-color:            transparent;
