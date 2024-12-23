@@ -1,7 +1,6 @@
 // -*- mode: jsonc -*-
 [
   {
-    "position": "bottom",
     "margin": 8,
     "modules-left": [
       "custom/launcher",
@@ -48,7 +47,7 @@
       },
       "status-icons": {
         "playing": "▶",
-        "paused": "⏸"
+        "paused": ""
       },
       "ignored-players": [
         "firefox"
@@ -99,13 +98,16 @@
       ]
     },
     "cpu": {
-      "format": " {usage}%"
+      "format": " {usage}%",
+      "on-click": "missioncenter"
     },
     "memory": {
-      "format": " {}%"
+      "format": " {}%",
+      "on-click": "missioncenter"
     },
     "disk": {
-      "format": " {percentage_used}%"
+      "format": " {percentage_used}%",
+      "on-click": "missioncenter"
     },
     "clock": {
       "format": "󰃭 {:%a %b %d  %I:%M%p}",

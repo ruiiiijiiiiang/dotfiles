@@ -4,18 +4,21 @@
  * Github : @adi1090x
  * 
  * Rofi Theme File
- * Rofi Version: 1.7.3
+ * Rofi Version: 1.7.5
  **/
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,filebrowser";
-    show-icons:                 true;
-    display-drun:               "Apps";
-    display-filebrowser:        "Files";
-	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
-  terminal:                   "wezterm";
+    modi:                        "drun,filebrowser";
+        show-icons:                  true;
+        display-drun:                "Apps";
+        display-filebrowser:         "Files";
+    drun-display-format:          "{name}";
+    window-format:                "{w} · {c} · {t}";
+    terminal:                     "wezterm";
+    hover-select:                 true;
+    me-select-entry:              "";
+    me-accept-entry:              "MousePrimary";
 }
 
 /*****----- Global Properties -----*****/
@@ -67,7 +70,7 @@ listbox {
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     0px;
     padding:                     80px 60px;
     background-color:            transparent;
     background-image:            url("./background.png", width);
@@ -79,8 +82,9 @@ textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    padding:                     12px 16px 12px 12px;
-    border-radius:               8px;
+    padding:                     12px;
+    padding-right:               0;
+    border-radius:               8px 0 0 8px;
     background-color:            @background-alt;
     text-color:                  inherit;
 }
@@ -88,8 +92,9 @@ entry {
     enabled:                     true;
     expand:                      false;
     width:                       300px;
-    padding:                     12px 16px;
-    border-radius:               8px;
+    padding:                     12px;
+    padding-left:                0;
+    border-radius:               0 8px 8px 0;
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      text;
@@ -133,7 +138,6 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
     spacing:                     10px;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -202,7 +206,7 @@ textbox {
 }
 error-message {
     padding:                     12px;
-    border-radius:               20px;
+    border-radius:               8px;
     background-color:            @background;
     text-color:                  @foreground;
 }

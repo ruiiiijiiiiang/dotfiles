@@ -4,12 +4,15 @@
  * Github : @adi1090x
  * 
  * Rofi Theme File
- * Rofi Version: 1.7.3
+ * Rofi Version: 1.7.5
  **/
 
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 false;
+    hover-select:               true;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
 }
 
 /*****----- Global Properties -----*****/
@@ -39,7 +42,7 @@ window {
 
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               20px;
+    border-radius:               8px;
     border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
@@ -103,7 +106,7 @@ listview {
 element {
     enabled:                     true;
     padding:                     35px 10px;
-    border-radius:               25px;
+    border-radius:               8px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     cursor:                      pointer;

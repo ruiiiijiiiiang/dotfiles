@@ -6,7 +6,7 @@
   font-size: 16px;
   border-radius: 6px;
 }
-
+#workspaces button,
 #custom-launcher,
 #mpris,
 #window,
@@ -15,51 +15,43 @@
 #system,
 #clock,
 #custom-power {
+  border: 0;
   margin: 0 2px;
   padding: 0 6px;
-  background: alpha(@surface2, 0.75);
-  border-bottom: 6px solid @surface2;
+  background: alpha(@base, 0.75);
+  border-bottom: 6px solid @base;
+  color: @lavender;
 }
 
 window#waybar {
-  background: @crust;
+  background: transparent;
   padding: 0;
   margin: 0;
 }
 
 #workspaces button {
-  color: @rosewater;
-  background: alpha(@surface2, 0.75);
-  border: 0;
-  border-bottom: 6px solid @surface2;
   margin: 0 1px;
 }
 
 #workspaces button:hover {
-  background: alpha(@mauve, 0.3);
-  border-bottom: 6px solid alpha(@mauve, 0.5);
+  background: alpha(@lavender, 0.3);
+  border-bottom: 6px solid alpha(@lavender, 0.5);
 }
 
 #workspaces button.active {
-  background: alpha(@mauve, 0.5);
-  border-bottom: 6px solid alpha(@mauve, 0.8);
+  background: alpha(@lavender, 0.5);
+  border-bottom: 6px solid alpha(@lavender, 0.8);
 }
 
 #custom-launcher {
-  color: @lavender;
   font-size: 20px;
   padding-left: 20px;
   padding-right: 23px;
   margin-right: 3px;
 }
 
-#mpris {
-  color: @teal;
-}
-
 #window {
   font-size: 20px;
-  color: @text;
 }
 
 window#waybar.empty #window {
@@ -67,13 +59,9 @@ window#waybar.empty #window {
   border: none;
 }
 
-#pulseaudio {
-  color: @sapphire;
-}
-
 #pulseaudio-slider slider {
   min-height: 14px;
-  background: @blue;
+  background: @mauve;
   border-radius: 100%;
 }
 
@@ -81,31 +69,21 @@ window#waybar.empty #window {
   min-width: 90px;
   min-height: 14px;
   border: 1px solid @base;
-  background: alpha(@sapphire, 0.5);
+  background: alpha(@lavender, 0.5);
 }
 
 #pulseaudio-slider highlight {
   border: 1px solid @base;
-  background: @sapphire;
-}
-
-#network {
-  color: @green;
+  background: @lavender;
 }
 
 #cpu,
 #memory,
 #disk {
-  color: @peach;
   margin: 0 3px;
 }
 
-#clock {
-  color: @yellow;
-}
-
 #custom-power {
-  color: @red;
   font-size: 20px;
   padding: 0 16px;
 }

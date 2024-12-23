@@ -5,7 +5,6 @@ if status is-interactive
 end
 
 if status is-login
-    set -g fish_key_bindings fish_vi_key_bindings
     set -gx EDITOR nvim
     set -gx MANROFFOPT -c
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -61,10 +60,6 @@ if status is-login
 --color=marker:#babbf1,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284 \
 --color=selected-bg:#51576d \
 --multi"
-
-    # volta
-    set -gx VOLTA_HOME "$HOME/.volta"
-    set -gx PATH "$VOLTA_HOME/bin" $PATH
 
     function fish_greeting
         if command -v catnap >/dev/null 2>&1
