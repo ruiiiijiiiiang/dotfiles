@@ -1,7 +1,7 @@
 while true; do
   directory=~/Pictures/Wallpapers
   monitor_1=$(hyprctl monitors | grep Monitor | head -n 1 | awk '{print $2}')
-  monitor_2=$(hyprctl monitors | grep Monitor | head -n 2 | awk '{print $2}')
+  monitor_2=$(hyprctl monitors | grep Monitor | head -n 2 | tail -n 1 | awk '{print $2}')
 
   hyprctl hyprpaper unload all
 
