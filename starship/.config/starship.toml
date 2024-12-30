@@ -15,11 +15,13 @@ $git_status\
 [▓▒░](fg:green bg:yellow)\
 $c\
 $deno\
+$goland\
 $java\
 $lua\
 $nim\
 $nodejs\
 $ruby\
+$rust\
 $php\
 $python\
 [▓▒░](fg:yellow bg:peach)\
@@ -121,6 +123,11 @@ symbol = "🦖"
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
+[golang]
+symbol = " "
+style = "fg:crust bg:yellow"
+format = '[$symbol $version]($style)'
+
 [java]
 symbol = ""
 style = "fg:crust bg:yellow"
@@ -153,6 +160,11 @@ format = '[$symbol $version]($style)'
 
 [ruby]
 symbol = ""
+style = "fg:crust bg:yellow"
+format = '[$symbol $version]($style)'
+
+[rust]
+symbol = ""
 style = "fg:crust bg:yellow"
 format = '[$symbol $version]($style)'
 
@@ -261,9 +273,6 @@ symbol = " "
 [git_commit]
 tag_symbol = '  '
 
-[golang]
-symbol = " "
-
 [guix_shell]
 symbol = " "
 
@@ -305,9 +314,6 @@ symbol = " "
 
 [rlang]
 symbol = "󰟔 "
-
-[rust]
-symbol = ""
 
 [scala]
 symbol = " "

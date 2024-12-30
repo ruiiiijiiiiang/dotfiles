@@ -256,6 +256,14 @@ return {
       }
     end,
   },
+  {
+    "alanfortlink/animatedbg.nvim",
+    config = function()
+      require("animatedbg-nvim").setup({
+        fps = 60, -- default
+      })
+    end,
+  },
   -- {
   --   "m4xshen/hardtime.nvim",
   --   dependencies = { "MunifTanjim/nui.nvim" },
