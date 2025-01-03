@@ -51,7 +51,8 @@
       },
       "ignored-players": [
         "firefox"
-      ]
+      ],
+      "max-length": 60
     },
     "hyprland/window": {
       "format": "{initialTitle}",
