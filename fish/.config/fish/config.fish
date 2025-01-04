@@ -19,6 +19,7 @@ if status is-login
     alias nv="nvim"
     alias cat="bat"
     alias vg="ssh veggie.ooapi.com"
+    alias lg="lazygit"
 
     # zoxide
     zoxide init fish | source
