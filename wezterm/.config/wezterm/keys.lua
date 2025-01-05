@@ -114,6 +114,16 @@ local keys = {
     mods = "CTRL|ALT",
     action = act.ScrollByPage(1),
   },
+  {
+    key = "l",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = "k",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
   -- move between split panes
   split_nav("move", "h"),
   split_nav("move", "j"),
