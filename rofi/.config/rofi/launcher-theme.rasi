@@ -24,12 +24,12 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "Hasklug Nerd Font 14";
-    background:                  #babbf1c8;
-    background-alt:              #8caaee;
-    foreground:                  #232634;
-    selected:                    #ca9ee6;
-    active:                      #a6d189;
-    urgent:                      #e78284;
+    background:                  #babbf1c8; /* lavender alpha */
+    background-alt:              #babbf1;   /* lavender */
+    foreground:                  #303446;   /* base */
+    selected:                    #8caaee;   /* blue */
+    active:                      #a6d189;   /* green */
+    urgent:                      #e78284;   /* red */
 }
 
 /*****----- Main Window -----*****/

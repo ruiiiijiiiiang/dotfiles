@@ -45,7 +45,12 @@
     },
     {
       "type": "battery",
-      "key": "└ └ ",
+      "key": "│ ├ ",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "chassis",
+      "key": "└ └󰪫 ",
       "keyColor": "cyan",
     },
     {
@@ -83,6 +88,11 @@
       "keyColor": "blue",
     },
     {
+      "type": "wm",
+      "key": "│ ├󱂬 ",
+      "keyColor": "blue",
+    },
+    {
       "type": "terminal",
       "key": "│ ├ ",
       "keyColor": "blue",
@@ -101,7 +111,7 @@
     },
     {
       "type": "uptime",
-      "key": "└ └ ",
+      "key": "└ └ ",
       "keyColor": "blue",
     },
     {
@@ -110,6 +120,7 @@
     },
     {
       "type": "colors",
+      "symbol": "square",
     },
   ],
 }

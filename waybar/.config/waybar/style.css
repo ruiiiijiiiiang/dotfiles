@@ -18,9 +18,18 @@
   border: 0;
   margin: 0 2px;
   padding: 0 6px;
+  color: @lavender;
   background: alpha(@base, 0.75);
   border-bottom: 6px solid @base;
-  color: @lavender;
+}
+
+#custom-launcher,
+#mpris {
+  color: @sapphire;
+}
+
+#window {
+  color: @blue;
 }
 
 window#waybar {
@@ -30,17 +39,19 @@ window#waybar {
 }
 
 #workspaces button {
+  color: @sapphire;
   margin: 0 1px;
 }
 
-#workspaces button:hover {
-  background: alpha(@lavender, 0.3);
-  border-bottom: 6px solid alpha(@lavender, 0.5);
+#workspaces button:hover,
+#custom-launcher:hover {
+  background: alpha(@sapphire, 0.3);
+  border-bottom: 6px solid alpha(@sapphire, 0.5);
 }
 
 #workspaces button.active {
-  background: alpha(@lavender, 0.5);
-  border-bottom: 6px solid alpha(@lavender, 0.8);
+  background: alpha(@sapphire, 0.5);
+  border-bottom: 6px solid alpha(@sapphire, 0.8);
 }
 
 #custom-launcher {
@@ -84,6 +95,7 @@ window#waybar.empty #window {
 }
 
 #custom-power {
+  color: @red;
   font-size: 20px;
   padding: 0 16px;
 }

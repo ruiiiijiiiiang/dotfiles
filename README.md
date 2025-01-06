@@ -40,10 +40,17 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 6 (current)</summary>
+  <summary>Version 6</summary>
   Reverted to waybar and rethemed
 
 ![Screenshot](./screenshots/2024-12-18-222122_hyprshot.png)
+
+</details>
+<details>
+  <summary>Version 7 (current)</summary>
+  Better rofi theme
+
+![Screenshot](./screenshots/2025-01-06-161854_hyprshot.png)
 
 </details>
 
