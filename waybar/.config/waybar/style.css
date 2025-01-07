@@ -2,10 +2,17 @@
 
 * {
   font-family: "Hasklug Nerd Font";
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   border-radius: 6px;
 }
+
+window#waybar {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
 #workspaces button,
 #custom-launcher,
 #mpris,
@@ -18,24 +25,20 @@
   border: 0;
   margin: 0 2px;
   padding: 0 6px;
-  color: @lavender;
   background: alpha(@base, 0.75);
   border-bottom: 6px solid @base;
 }
 
-#custom-launcher,
-#mpris {
-  color: @sapphire;
-}
-
-#window {
+#custom-launcher {
   color: @blue;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 23px;
+  margin-right: 3px;
 }
 
-window#waybar {
-  background: transparent;
-  padding: 0;
-  margin: 0;
+#mpris {
+  color: @green;
 }
 
 #workspaces button {
@@ -54,15 +57,9 @@ window#waybar {
   border-bottom: 6px solid alpha(@sapphire, 0.8);
 }
 
-#custom-launcher {
-  font-size: 20px;
-  padding-left: 20px;
-  padding-right: 23px;
-  margin-right: 3px;
-}
-
 #window {
   font-size: 20px;
+  color: @lavender;
 }
 
 window#waybar.empty #window {
@@ -70,9 +67,13 @@ window#waybar.empty #window {
   border: none;
 }
 
+#volume {
+  color: @yellow;
+}
+
 #pulseaudio-slider slider {
   min-height: 14px;
-  background: @mauve;
+  background: @peach;
   border-radius: 100%;
 }
 
@@ -80,18 +81,27 @@ window#waybar.empty #window {
   min-width: 90px;
   min-height: 14px;
   border: 1px solid @base;
-  background: alpha(@lavender, 0.5);
+  background: alpha(@yellow, 0.75);
 }
 
 #pulseaudio-slider highlight {
   border: 1px solid @base;
-  background: @lavender;
+  background: @yellow;
+}
+
+#network {
+  color: @teal;
 }
 
 #cpu,
 #memory,
 #disk {
+  color: @mauve;
   margin: 0 3px;
+}
+
+#clock {
+  color: @rosewater;
 }
 
 #custom-power {

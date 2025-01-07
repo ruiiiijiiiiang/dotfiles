@@ -1,6 +1,6 @@
 # Hello world
 
-Thank you for checking out the configuration for my personal development environment. I am a full stack TS/JS engineer and I develop primarily using neovim. These are the dotfiles I use across MacOS and Linux. I hope you find some inspiration here.
+Thank you for checking out the configuration for my personal development environment. I am a full stack TS/JS engineer and I develop primarily using neovim. These are the dotfiles I use across Arch Linux and NixOS. I hope you find some inspiration here.
 
 ## Screenshots
 
@@ -50,7 +50,7 @@ Thank you for checking out the configuration for my personal development environ
   <summary>Version 7 (current)</summary>
   Better rofi theme
 
-![Screenshot](./screenshots/2025-01-06-161854_hyprshot.png)
+![Screenshot](./screenshots/2025-01-06-200827_hyprshot.png)
 
 </details>
 
@@ -61,13 +61,20 @@ I prefer [Hasklug Nerd Font](https://www.nerdfonts.com/font-downloads) for codin
 
 ## Tools
 
-Most of these tools should be readily available from the package manager of your choice, ie. homebrew, apt, pacman, etc.
+Most of these tools should be readily available from the package manager of your choice, ie. homebrew, pacman, nixpkg, etc.
 Neovim plugins are managed by LazyVim.
+
+### Desktop Environment
 
 - [hyprland](https://github.com/hyprwm/Hyprland)
 - [hyprpanel](https://github.com/Jas-SinghFSU/HyprPanel)
 - [waybar](https://github.com/Alexays/Waybar)
+- [rofi](https://github.com/davatorium/rofi)
+
+### Development Environment
+
 - [wezterm](https://github.com/wez/wezterm)
+- [fish-shell](https://github.com/fish-shell/fish-shell)
 - [neovim](https://github.com/neovim/neovim)
   - [LazyVim](https://github.com/LazyVim/LazyVim)
   - [snacks.nvim](https://github.com/folke/snacks.nvim)
@@ -75,21 +82,28 @@ Neovim plugins are managed by LazyVim.
   - [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
   - [smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim)
   - [codesnap.nvim](https://github.com/mistricky/codesnap.nvim)
-- [fish-shell](https://github.com/fish-shell/fish-shell)
+
+### CLI Applications
+
 - [starship](https://github.com/starship/starship)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
-- [stow](https://github.com/aspiers/stow)
-- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
-- [thefuck](https://github.com/nvbn/thefuck)
+- [yazi](https://github.com/sxyazi/yazi)
 - [lsd](https://github.com/lsd-rs/lsd)
+- [thefuck](https://github.com/nvbn/thefuck)
+- [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
+- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 - [bat](https://github.com/sharkdp/bat)
 - [lazygit](https://github.com/jesseduffield/lazygit)
-- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
-- [yazi](https://github.com/sxyazi/yazi)
-- [fd](https://github.com/sharkdp/fd)
+- [stow](https://github.com/aspiers/stow)
 - [btop](https://github.com/aristocratos/btop)
 - [clipboard](https://github.com/Slackadays/Clipboard)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [catnap](https://github.com/iinsertNameHere/catnap)
+
+### Desktop Applications
+
+- [zen-browser](https://github.com/zen-browser/desktop)
+- [vesktop](https://github.com/Vencord/Vesktop)
 - [spicetify](https://github.com/spicetify/cli)
 - [system24](https://github.com/refact0r/system24)

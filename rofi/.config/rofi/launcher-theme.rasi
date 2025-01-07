@@ -45,7 +45,7 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               8px;
+    border-radius:               16px;
     cursor:                      "default";
     background-color:            @background;
 }

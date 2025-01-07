@@ -41,9 +41,7 @@ window {
     y-offset:                    0px;
 
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               8px;
-    border-color:                @selected;
+    border-radius:               16px;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -65,7 +63,7 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     20px;
-    padding:                     80px 40px;
+    padding:                     78px 40px;
     background-color:            transparent;
     background-image:            url("./background.png", width);
     children:                    ["prompt"];
