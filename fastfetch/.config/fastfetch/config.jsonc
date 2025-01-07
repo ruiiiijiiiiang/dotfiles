@@ -8,7 +8,7 @@
   "modules": [
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────Hardware──────────────────┐",
+      "format": "\u001b[90m╭──────────────────Hardware──────────────────╮",
     },
     {
       "type": "host",
@@ -18,48 +18,48 @@
     },
     {
       "type": "cpu",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "cyan",
       "format": "{1} @ {7}",
     },
     {
       "type": "gpu",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "cyan",
       "format": "{1} {2}",
     },
     {
       "type": "memory",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "cyan",
     },
     {
       "type": "swap",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "cyan",
     },
     {
       "type": "disk",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "cyan",
     },
     {
       "type": "battery",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "cyan",
     },
     {
       "type": "chassis",
-      "key": "└ └󰪫 ",
+      "key": "┊ ╚󰪫 ",
       "keyColor": "cyan",
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────┘",
+      "format": "\u001b[90m╰────────────────────────────────────────────╯",
     },
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────Software──────────────────┐",
+      "format": "\u001b[90m╭──────────────────Software──────────────────╮",
     },
     {
       "type": "os",
@@ -69,58 +69,58 @@
     },
     {
       "type": "title",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "blue",
     },
     {
       "type": "kernel",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "blue",
     },
     {
       "type": "packages",
-      "key": "│ ├󰏖 ",
+      "key": "┊ ╠󰏖 ",
       "keyColor": "blue",
     },
     {
       "type": "de",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "blue",
     },
     {
       "type": "wm",
-      "key": "│ ├󱂬 ",
+      "key": "┊ ╠󱂬 ",
       "keyColor": "blue",
     },
     {
       "type": "terminal",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "blue",
       "format": "{5}",
     },
     {
       "type": "shell",
-      "key": "│ ├ ",
+      "key": "┊ ╠ ",
       "keyColor": "blue",
       "format": "{6}",
     },
     {
       "type": "terminalfont",
-      "key": "│ ├󰬴 ",
+      "key": "┊ ╠󰬴 ",
       "keyColor": "blue",
     },
     {
       "type": "uptime",
-      "key": "└ └ ",
+      "key": "┊ ╚ ",
       "keyColor": "blue",
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────┘",
+      "format": "\u001b[90m╰────────────────────────────────────────────╯",
     },
     {
       "type": "colors",
-      "symbol": "square",
+      "symbol": "circle",
     },
   ],
 }

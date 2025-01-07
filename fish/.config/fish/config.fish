@@ -67,10 +67,11 @@ if status is-interactive
     end
 
     function fish_greeting
-        if command -v catnap >/dev/null 2>&1
-            catnap
-        else
-            fastfetch
-        end
+        fastfetch
+        # if command -v catnap >/dev/null 2>&1
+        #     catnap
+        # else
+        #     fastfetch
+        # end
     end
 end
