@@ -1,6 +1,14 @@
 return {
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
+  { "rasulomaroff/reactive.nvim" },
+  {
+    "nullromo/go-up.nvim",
+    config = function(_, opts)
+      local goUp = require("go-up")
+      goUp.setup(opts)
+    end,
+  },
   { "mrjones2014/smart-splits.nvim", lazy = false },
   {
     "folke/which-key.nvim",
@@ -158,6 +166,20 @@ return {
     opts = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       keys[#keys + 1] = { "<c-k>", false, mode = { "i" } }
+    end,
+  },
+  {
+    "Bekaboo/dropbar.nvim",
+    -- optional, but required for fuzzy finder support
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+    },
+    config = function()
+      local dropbar_api = require("dropbar.api")
+      vim.keymap.set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
+      vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
+      vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
     end,
   },
 }

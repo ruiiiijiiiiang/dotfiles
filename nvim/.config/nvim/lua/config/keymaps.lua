@@ -8,10 +8,10 @@ local smart_splits = require("smart-splits")
 map("n", "<Enter>", "a<Enter><Esc>", { desc = "Enter in normal mode" })
 
 -- insert mode movement
-map("i", "<C-h>", "<Left>", { remap = true })
-map("i", "<C-j>", "<Down>", { remap = true })
-map("i", "<C-k>", "<Up>", { remap = true })
-map("i", "<C-l>", "<Right>", { remap = true })
+map("i", "<C-h>", "<Left>")
+map("i", "<C-j>", "<Down>")
+map("i", "<C-k>", "<Up>")
+map("i", "<C-l>", "<Right>")
 
 -- move between split panes
 map("n", "<C-h>", smart_splits.move_cursor_left)
@@ -30,3 +30,9 @@ map("x", "<leader>Cs", "<Esc><Cmd>CodeSnapSave<Cr>", { desc = "Save selected cod
 
 -- BufferLine
 map("n", "<leader>bs", ":BufferLinePick<CR>", { desc = "Select buffer" })
+
+-- Center search
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
+map("n", "<C-o>", "<C-o>zz")
+map("n", "<C-i>", "<C-i>zz")
