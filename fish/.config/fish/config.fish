@@ -67,7 +67,7 @@ if status is-interactive
     end
 
     function fish_greeting
-        sleep 0.01
+        sleep 0.1
         fastfetch
         # if command -v catnap >/dev/null 2>&1
         #     catnap

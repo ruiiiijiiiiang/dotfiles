@@ -7,14 +7,11 @@ local config = wezterm.config_builder()
 
 config.keys = keys
 
-config.default_prog = { "/usr/bin/fish", "-l" }
-if wezterm.target_triple == "aarch64-apple-darwin" then
-	config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
-end
+config.default_prog = { "fish", "-l" }
 
 config.color_scheme = "Catppuccin Frappe"
 config.font = wezterm.font("Hasklug Nerd Font")
-config.font_size = 14
+config.font_size = 12
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -92,6 +89,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 config.enable_wayland = false
+config.front_end = "WebGpu"
 
 -- and finally, return the configuration to wezterm
 return config
