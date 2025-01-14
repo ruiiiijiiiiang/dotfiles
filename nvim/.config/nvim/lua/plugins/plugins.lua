@@ -1,15 +1,15 @@
 return {
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
-  { "rasulomaroff/reactive.nvim" },
+  { "mrjones2014/smart-splits.nvim", lazy = false },
   {
-    "nullromo/go-up.nvim",
-    config = function(_, opts)
-      local goUp = require("go-up")
-      goUp.setup(opts)
+    "rasulomaroff/reactive.nvim",
+    config = function()
+      require("reactive").setup({
+        load = { "catppuccin-frappe-cursor", "catppuccin-frappe-cursorline" },
+      })
     end,
   },
-  { "mrjones2014/smart-splits.nvim", lazy = false },
   {
     "folke/which-key.nvim",
     lazy = false,
@@ -156,9 +156,7 @@ return {
   {
     "alanfortlink/animatedbg.nvim",
     config = function()
-      require("animatedbg-nvim").setup({
-        fps = 60, -- default
-      })
+      require("animatedbg-nvim").setup({})
     end,
   },
   {
@@ -182,4 +180,24 @@ return {
       vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
     end,
   },
+  {
+    "rachartier/tiny-glimmer.nvim",
+    event = "TextYankPost",
+    config = function()
+      local frappe = require("catppuccin.palettes").get_palette("frappe")
+      require("tiny-glimmer").setup({
+        default_animation = "bounce",
+        animations = {
+          bounce = {
+            from_color = frappe.lavender,
+            to_color = frappe.mauve,
+            oscillation_count = 3,
+          },
+        },
+      })
+    end,
+  },
+  { "SmiteshP/nvim-navic", opts = {
+    highlight = true,
+  } },
 }

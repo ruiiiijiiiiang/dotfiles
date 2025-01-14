@@ -20,7 +20,7 @@ Thank you for checking out the configuration for my personal development environ
 </details>
 <details>
   <summary>Version 3</summary>
-  Got rid of that god awful rainbow puke (I don't know why I thought it was cool😅)
+  Reduced rainbow puke
 
 ![Screenshot](./screenshots/2024-11-09-195111_hyprshot.png)
 
@@ -47,10 +47,19 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 7 (current)</summary>
+  <summary>Version 7</summary>
   Better rofi theme
 
 ![Screenshot](./screenshots/2025-01-06-200827_hyprshot.png)
+
+</details>
+
+</details>
+<details>
+  <summary>Version 8 (current)</summary>
+  Some minor color adjustments
+
+![Screenshot](./screenshots/2025-01-10-194631_hyprshot.png)
 
 </details>
 
@@ -82,6 +91,11 @@ Neovim plugins are managed by LazyVim.
   - [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
   - [smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim)
   - [codesnap.nvim](https://github.com/mistricky/codesnap.nvim)
+  - [tiny-glimmer.nvim](https://github.com/rachartier/tiny-glimmer.nvim)
+  - [reactive.nvim](https://github.com/rasulomaroff/reactive.nvim)
+  - [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim)
+  - [animatedbg.nvim](https://github.com/alanfortlink/animatedbg.nvim)
+  - [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
 
 ### CLI Applications
 

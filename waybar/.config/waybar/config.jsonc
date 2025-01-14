@@ -27,15 +27,16 @@
       "window-rewrite": {
         "class<.*zen.*>title<.*youtube.*>": "󰗃",
         "class<.*zen.*>": "",
+        "class<firefox>": "",
         "class<org.kde.dolphin>": "",
         "class<org.wezfurlong.wezterm>": "",
-        "title<nv.*>": "",
         "class<code-oss>": "󰨞",
         "class<discord>": "",
         "class<vesktop>": "",
         "class<.*betterbird.*>": "󰇮",
         "class<spotify>": "󰓇",
         "class<steam>": "",
+        "class<Slack>": "",
         "title<Picture-in-Picture>": "󰗃"
       },
       "window-rewrite-default": "󰣆"
