@@ -1,12 +1,12 @@
 add_newline = true
 
 format = """
-[](flamingo) $os $username $sudo\
-[▓▒░](fg:flamingo bg:sky) $directory\
-[▓▒░](fg:sky bg:green) $git_branch $git_status\
-[▓▒░](fg:green bg:yellow) $c $deno $goland $java $lua $nim $nodejs $ruby $rust $php $python\
-[▓▒░](fg:yellow bg:peach) $package\
-[▓▒░](fg:peach bg:lavender) $time $status\
+[](flamingo)$os$username$sudo\
+[▓▒░](fg:flamingo bg:sky)$directory\
+[▓▒░](fg:sky bg:green)$git_branch$git_status\
+[▓▒░](fg:green bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
+[▓▒░](fg:yellow bg:peach)$package\
+[▓▒░](fg:peach bg:lavender)$time$status\
 [](fg:lavender)
 $character\
 """
