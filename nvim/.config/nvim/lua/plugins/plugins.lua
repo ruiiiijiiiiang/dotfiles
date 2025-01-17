@@ -178,6 +178,7 @@ return {
   {
     "rachartier/tiny-glimmer.nvim",
     event = "TextYankPost",
+    enabled = false,
     config = function()
       local frappe = require("catppuccin.palettes").get_palette("frappe")
       require("tiny-glimmer").setup({

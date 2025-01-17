@@ -1,14 +1,15 @@
-add_newline = true
+add_newline = false
 
-format = """
-[](flamingo) $os $username $sudo\
-[▓▒░](fg:flamingo bg:sky) $directory\
-[▓▒░](fg:sky bg:green) $git_branch $git_status\
-[▓▒░](fg:green bg:yellow) $c $deno $goland $java $lua $nim $nodejs $ruby $rust $php $python\
-[▓▒░](fg:yellow bg:peach) $package\
-[▓▒░](fg:peach bg:lavender) $time $status\
-[](fg:lavender)
-$character\
+format = """\
+[󱞫](maroon)[](overlay0)$cmd_duration$status[](overlay0)
+[󰞘](maroon)[](flamingo)$os$username$sudo\
+[▓▒░](fg:flamingo bg:sky)$directory\
+[▓▒░](fg:sky bg:green)$git_branch$git_status\
+[▓▒░](fg:green bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
+[▓▒░](fg:yellow bg:peach)$package\
+[▓▒░](fg:peach bg:lavender)$time\
+[](lavender)
+[󱞩](maroon)$character\
 """
 
 palette = "catppuccin_frappe"
@@ -148,11 +149,15 @@ time_format = "%I:%M%p"
 style = "fg:crust bg:lavender bold"
 format = '[ $time]($style)'
 
+[cmd_duration]
+format = '[  $duration]($style)'
+style = "fg:mauve bg:overlay0 bold"
+
 [status]
 format = "$symbol"
 disabled = false
-symbol = "[ 󰈺 ](fg:red bg:lavender)"
-success_symbol = "[ 󰈺 ](fg:green bg:lavender)"
+symbol = "[  ](fg:red bg:overlay0)"
+success_symbol = "[ 󰗡 ](fg:green bg:overlay0)"
 
 [character]
 success_symbol = "[](teal) [I](bold fg:base bg:green)"

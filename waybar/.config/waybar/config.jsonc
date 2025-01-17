@@ -31,6 +31,7 @@
         "class<org.kde.dolphin>": "",
         "class<org.wezfurlong.wezterm>": "",
         "class<code-oss>": "󰨞",
+        "class<codium>": "󰨞",
         "class<discord>": "",
         "class<vesktop>": "",
         "class<.*betterbird.*>": "󰇮",
