@@ -178,16 +178,14 @@ return {
   {
     "rachartier/tiny-glimmer.nvim",
     event = "TextYankPost",
-    enabled = false,
     config = function()
       local frappe = require("catppuccin.palettes").get_palette("frappe")
       require("tiny-glimmer").setup({
-        default_animation = "bounce",
+        default_animation = "fade",
         animations = {
-          bounce = {
+          fade = {
             from_color = frappe.lavender,
             to_color = frappe.mauve,
-            oscillation_count = 3,
           },
         },
       })

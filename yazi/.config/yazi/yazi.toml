@@ -1,16 +1,7 @@
 [plugin]
-prepend_previewers = [
-  { name = "*.csv", run = "bat" },
-  { name = "*.md", run = "bat" },
-  { name = "*.lua", run = "bat" },
-  { name = "*.toml", run = "bat" },
-  { name = "*.json", run = "bat" },
-  { name = "*.coffee", run = "bat" },
-  { name = "*.js", run = "bat" },
-  { name = "*.jsx", run = "bat" },
-  { name = "*.ts", run = "bat" },
-  { name = "*.tsx", run = "bat" },
-  { name = "*.css", run = "bat" },
-  { name = "*.svelte", run = "bat" },
-  { name = "*.nim", run = "bat" },
-]
+code = "bat"
+json = "bat"
+
+[manager]
+ratio = [2, 3, 3]
+show_hidden = true
