@@ -3,4 +3,4 @@
 -- Add any additional options here
 
 vim.o.shell = "fish -l"
-vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_picker = "snacks"

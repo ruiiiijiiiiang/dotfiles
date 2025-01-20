@@ -87,6 +87,7 @@ return {
         },
         width = 69,
       },
+      picker = {},
       bigfile = { enabled = true },
       quickfile = { enabled = true },
       statuscolumn = { enabled = true },
