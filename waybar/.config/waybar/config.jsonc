@@ -20,7 +20,8 @@
     "custom/launcher": {
       "format": "󰣇",
       "tooltip": false,
-      "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi"
+      "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
+      "on-click-right": "killall rofi"
     },
     "hyprland/workspaces": {
       "format": "{name}: {windows} ",
@@ -120,7 +121,8 @@
     "custom/power": {
       "format": "󰐥",
       "tooltip": false,
-      "on-click": "sh ~/.config/rofi/powermenu.sh"
+      "on-click": "sh ~/.config/rofi/powermenu.sh",
+      "on-click-right": "killall rofi"
     }
   }
 ]
