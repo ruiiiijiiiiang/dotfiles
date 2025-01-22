@@ -51,7 +51,7 @@ local function tab_title(tab_info)
 end
 
 local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+wezterm.on("format-tab-title", function(tab, tabs, panes, _config, hover, max_width)
 	local edge_background = color_scheme.tab_bar.background
 	local edge_foreground = color_scheme.tab_bar.inactive_tab.fg_color
 	local text_background = color_scheme.tab_bar.inactive_tab.fg_color

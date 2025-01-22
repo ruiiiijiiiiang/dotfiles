@@ -26,43 +26,44 @@
     },
     {
       "type": "cpu",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} @ {7}"
+      "format": "\u001b[96m{1} @ {7}",
+      "showPeCoreCount": true
     },
     {
       "type": "gpu",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} {2}"
     },
     {
       "type": "memory",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "swap",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "disk",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} / {2} ({3}\u001b[96m) - {9}"
+      "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "battery",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "cyan",
       "format": "\u001b[96m{4}"
     },
     {
       "type": "uptime",
-      "key": "┊ ╚ ",
+      "key": "│ ╚ ",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} days {2} hours {3} minutes"
     },
@@ -82,49 +83,49 @@
     },
     {
       "type": "title",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "blue",
       "format": "\u001b[94m{1}@{2}"
     },
     {
       "type": "kernel",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "blue",
       "format": "\u001b[94m{1} {2} {4}"
     },
     {
       "type": "packages",
-      "key": "┊ ╠󰏖 ",
+      "key": "│ ╠󰏖 ",
       "keyColor": "blue",
       "format": "\u001b[94m{1}"
     },
     {
       "type": "de",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "blue",
       "format": "\u001b[94m{2}"
     },
     {
       "type": "wm",
-      "key": "┊ ╠󱂬 ",
+      "key": "│ ╠󱂬 ",
       "keyColor": "blue",
       "format": "\u001b[94m{2} ({3})"
     },
     {
       "type": "terminal",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "blue",
       "format": "\u001b[94m{5}"
     },
     {
       "type": "shell",
-      "key": "┊ ╠ ",
+      "key": "│ ╠ ",
       "keyColor": "blue",
       "format": "\u001b[94m{6}"
     },
     {
       "type": "terminalfont",
-      "key": "┊ ╚󰬴 ",
+      "key": "│ ╚󰬴 ",
       "keyColor": "blue",
       "format": "\u001b[94m{1}"
     },

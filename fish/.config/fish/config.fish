@@ -14,23 +14,6 @@ end
 
 # Login shell - Environment setup and one-time initializations
 if status is-login
-    # Environment variables
-    set -gx EDITOR nvim
-    set -gx MANROFFOPT -c
-    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
-    set -gx FZF_DEFAULT_OPTS "\
---color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
---color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
---color=marker:#babbf1,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284 \
---color=selected-bg:#51576d \
---multi"
-
-    # Case-insensitive completion
-    set -g fish_complete_path case-insensitive
-
-    # Show completion descriptions
-    set -g fish_complete_descriptions 1
-
     # Tool initializations
     thefuck --alias | source
     zoxide init fish | source

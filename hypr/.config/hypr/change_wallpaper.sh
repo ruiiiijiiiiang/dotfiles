@@ -5,12 +5,12 @@ while true; do
 
   hyprctl hyprpaper unload all
 
-  random_background=$(ls $directory/*.{jpg,png} | shuf -n 1)
-  hyprctl hyprpaper preload $random_background
+  random_background=$(find $directory/*.{jpg,png} | shuf -n 1)
+  hyprctl hyprpaper preload "$random_background"
   hyprctl hyprpaper wallpaper "$monitor_1, $random_background"
 
-  random_background=$(ls $directory/*.{jpg,png} | shuf -n 1)
-  hyprctl hyprpaper preload $random_background
+  random_background=$(find $directory/*.{jpg,png} | shuf -n 1)
+  hyprctl hyprpaper preload "$random_background"
   hyprctl hyprpaper wallpaper "$monitor_2, $random_background"
 
   sleep $((RANDOM % 900 + 300))

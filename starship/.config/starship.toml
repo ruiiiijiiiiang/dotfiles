@@ -154,7 +154,7 @@ format = "[$symbol$version]($style)"
 style = "fg:crust bg:pink"
 
 [fill]
-symbol = " 󰈺 "
+symbol = " 󰈺"
 style = "lavender bold"
 
 [time]

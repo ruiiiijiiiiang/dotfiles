@@ -1,6 +1,14 @@
 [global]
-frame_color = "#8caaee"
-separator_color= frame
+follow = mouse
+progress_bar = true
+progress_bar_height = 20
+progress_bar_frame_width = 1
+progress_bar_min_width = 200
+progress_bar_max_width = 600
+font = Hasklug Nerd Font 14
+corner_radius = 8
+frame_color = "#babbf1"
+separator_color = "#303446"
 
 [urgency_low]
 background = "#303446"
@@ -13,4 +21,4 @@ foreground = "#c6d0f5"
 [urgency_critical]
 background = "#303446"
 foreground = "#c6d0f5"
-frame_color = "#ef9f76"
+frame_color = "#e78284"
