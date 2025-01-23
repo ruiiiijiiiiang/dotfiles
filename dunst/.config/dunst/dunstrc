@@ -1,10 +1,11 @@
 [global]
 follow = mouse
+width = (400, 800)
 progress_bar = true
 progress_bar_height = 20
 progress_bar_frame_width = 1
-progress_bar_min_width = 200
-progress_bar_max_width = 600
+progress_bar_min_width = 400
+progress_bar_max_width = 800
 font = Hasklug Nerd Font 14
 corner_radius = 8
 frame_color = "#babbf1"

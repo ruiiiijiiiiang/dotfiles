@@ -43,17 +43,7 @@ return {
       filter_rules = {
         bo = {
           filetype = {
-            "edgy",
-            "neo-tree",
-            "noice",
-            "notify",
             "smear-cursor",
-            "snacks_dashboard",
-            "snacks_notif",
-            "snacks_terminal",
-            "trouble",
-            "tutor",
-            "noice",
           },
         },
       },
@@ -194,7 +184,7 @@ return {
   { "SmiteshP/nvim-navic", opts = {
     highlight = true,
   } },
-  { "nvzone/typr", cmd = "TyprStats", dependencies = "nvzone/volt", opts = {} },
+  -- { "nvzone/typr", cmd = "TyprStats", dependencies = "nvzone/volt", opts = {} },
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
