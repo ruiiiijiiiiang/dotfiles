@@ -7,6 +7,7 @@ deps = [
   { use = "yazi-rs/plugins:chmod", rev = "6418698" },
   { use = "Reledia/glow", rev = "5ce76dc" },
   { use = "Reledia/miller", rev = "40e0265" },
+  { use = "imsi32/yatline-catppuccin", rev = "dc575da" },
 ]
 
 [flavor]

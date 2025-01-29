@@ -1,3 +1,7 @@
+git:
+  autoFetch: true
+  fetchAll: true
+
 gui:
   nerdFontsVersion: "3"
   theme:

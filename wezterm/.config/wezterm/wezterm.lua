@@ -11,7 +11,7 @@ config.default_prog = { "fish", "-l" }
 
 config.color_scheme = "Catppuccin Frappe"
 config.font = wezterm.font("Hasklug Nerd Font")
-config.font_size = 12
+config.font_size = 14
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
