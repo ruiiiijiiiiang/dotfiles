@@ -107,7 +107,7 @@
       "on-click": "missioncenter"
     },
     "memory": {
-      "format": " {}%",
+      "format": " {percentage}%  {swapPercentage}%",
       "on-click": "missioncenter"
     },
     "disk": {

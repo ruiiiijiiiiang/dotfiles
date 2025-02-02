@@ -1,14 +1,15 @@
 add_newline = true
 
 format = """\
-[󱞫](lavender)[](blue)$cmd_duration$status[](blue)
-[󰞘](lavender)[](rosewater)$os$username$sudo\
-[▓▒░](fg:rosewater bg:sky)$directory\
-[▓▒░](fg:sky bg:green)$git_branch$git_status\
-[▓▒░](fg:green bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
-[▓▒░](fg:yellow bg:pink)$package\
-[](pink)$fill\
-[](teal)$time[](teal)
+[󱞫](lavender)[](lavender)$os$username$sudo\
+[▓▒░](fg:lavender bg:sky)$directory\
+[▓▒░](fg:sky bg:blue)$cmd_duration$status\
+[](blue)$fill\
+[](flamingo)$git_branch$git_status\
+[▓▒░](fg:flamingo bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
+[▓▒░](fg:yellow bg:maroon)$package\
+[▓▒░](fg:maroon bg:mauve)$time\
+[](mauve)
 [󱞩](lavender)$character\
 """
 
@@ -53,21 +54,21 @@ symbol = "[  ](fg:red bg:blue)"
 success_symbol = "[ 󰗡 ](fg:green bg:blue)"
 
 [os]
-style = "fg:crust bg:rosewater"
+style = "fg:crust bg:lavender"
 disabled = false
 symbols = { Arch = " ", NixOS = " " }
 
 [username]
 show_always = true
-style_user = "fg:crust bg:rosewater"
-style_root = "fg:crust bg:rosewater"
+style_user = "fg:crust bg:lavender"
+style_root = "fg:crust bg:lavender"
 format = "[$user]($style)"
 disabled = false
 
 [sudo]
 disabled = false
 symbol = " "
-style = "fg:crust bg:rosewater"
+style = "fg:crust bg:lavender"
 format = "[$symbol]($style)"
 
 [directory]
@@ -86,11 +87,11 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-style = "fg:crust bg:green italic"
+style = "fg:crust bg:flamingo italic"
 format = "[$symbol $branch]($style)"
 
 [git_status]
-style = "fg:crust bg:green italic"
+style = "fg:crust bg:flamingo italic"
 format = "[$all_status$ahead_behind]($style)"
 
 [c]
@@ -151,7 +152,7 @@ format = "[$symbol $version]($style)"
 [package]
 symbol = "󰏗 "
 format = "[$symbol$version]($style)"
-style = "fg:crust bg:pink"
+style = "fg:crust bg:maroon"
 
 [fill]
 symbol = " 󰈺"
@@ -160,7 +161,7 @@ style = "lavender bold"
 [time]
 disabled = false
 time_format = "%I:%M%p"
-style = "fg:crust bg:teal bold"
+style = "fg:crust bg:mauve bold"
 format = "[ $time]($style)"
 
 [character]

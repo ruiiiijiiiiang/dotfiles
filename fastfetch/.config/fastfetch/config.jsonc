@@ -1,5 +1,8 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "separator": " "
+  },
   "logo": {
     "padding": {
       "top": 1
@@ -11,131 +14,130 @@
   },
   "modules": [
     {
-      "type": "colors",
-      "symbol": "circle"
+      "type": "custom",
+      "format": "\u001b[5;90m \u001b[91m \u001b[92m \u001b[93m \u001b[94m \u001b[95m \u001b[96m \u001b[97m"
     },
     {
       "type": "custom",
-      "format": "\u001b[36m╭──────────────────Hardware──────────────────╮"
+      "format": "\u001b[36m╭────┬─────────────Hardware──────────────────╮"
     },
     {
       "type": "host",
-      "key": " PC ",
+      "key": " PC │",
       "keyColor": "cyan",
       "format": "\u001b[1;96m{2}"
     },
     {
       "type": "cpu",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} @ {7}",
-      "showPeCoreCount": true
+      "format": "\u001b[96m{1} @ {7}"
     },
     {
       "type": "gpu",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} {2}"
     },
     {
       "type": "memory",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "swap",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "disk",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "battery",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "cyan",
       "format": "\u001b[96m{4}"
     },
     {
       "type": "uptime",
-      "key": "│ ╚ ",
+      "key": "│ ╚ │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} days {2} hours {3} minutes"
     },
     {
       "type": "custom",
-      "format": "\u001b[36m╰────────────────────────────────────────────╯"
+      "format": "\u001b[36m╰────┴───────────────────────────────────────╯"
     },
     {
       "type": "custom",
-      "format": "\u001b[34m╭──────────────────Software──────────────────╮"
+      "format": "\u001b[34m╭────┬─────────────Software──────────────────╮"
     },
     {
       "type": "os",
-      "key": " OS ",
+      "key": " OS │",
       "keyColor": "blue",
       "format": "\u001b[1;94m{3}"
     },
     {
       "type": "title",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "blue",
       "format": "\u001b[94m{1}@{2}"
     },
     {
       "type": "kernel",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "blue",
       "format": "\u001b[94m{1} {2} {4}"
     },
     {
       "type": "packages",
-      "key": "│ ╠󰏖 ",
+      "key": "│ ╠󰏖 │",
       "keyColor": "blue",
       "format": "\u001b[94m{1}"
     },
     {
       "type": "de",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "blue",
       "format": "\u001b[94m{2}"
     },
     {
       "type": "wm",
-      "key": "│ ╠󱂬 ",
+      "key": "│ ╠󱂬 │",
       "keyColor": "blue",
       "format": "\u001b[94m{2} ({3})"
     },
     {
       "type": "terminal",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "blue",
       "format": "\u001b[94m{5}"
     },
     {
       "type": "shell",
-      "key": "│ ╠ ",
+      "key": "│ ╠ │",
       "keyColor": "blue",
       "format": "\u001b[94m{6}"
     },
     {
       "type": "terminalfont",
-      "key": "│ ╚󰬴 ",
+      "key": "│ ╚󰬴 │",
       "keyColor": "blue",
       "format": "\u001b[94m{1}"
     },
     {
       "type": "custom",
-      "format": "\u001b[34m╰────────────────────────────────────────────╯"
+      "format": "\u001b[34m╰────┴───────────────────────────────────────╯"
     },
     {
-      "type": "colors",
-      "symbol": "circle"
+      "type": "custom",
+      "format": "\u001b[5;90m \u001b[91m \u001b[92m \u001b[93m \u001b[94m \u001b[95m \u001b[96m \u001b[97m"
     }
   ]
 }
