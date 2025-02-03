@@ -1,0 +1,38 @@
+[user]
+  email = me@ruijiang.me
+  name = Rui Jiang
+[core]
+  preloadindex = true
+  fscache = true
+  pager = delta
+[include]
+  path = "~/.config/delta/catppuccin.gitconfig"
+[alias]
+  lg = log --graph --pretty=format:'%C(auto)%h%d %s %C(green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  co = checkout
+  br = branch
+  sw = switch
+  rs = restore
+  cleanup = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+[pull]
+  rebase = true
+[push]
+  default = current
+  autoSetupRemote = true
+  followTags = true
+[rebase]
+  autoStash = true
+[fetch]
+  prune = true
+[difftool]
+  prompt = false
+[fetch]
+  parallel = 4
+[pack]
+  deltaCacheSize = 2047m
+  threads = 1
+  windowMemory = 1g
+[branch]
+  autosetuprebase = always
+[delta]
+  features = "catppuccin-frappe line-numbers side-by-side"
