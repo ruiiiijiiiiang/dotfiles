@@ -97,7 +97,7 @@ Neovim plugins are managed by LazyVim.
   - [animatedbg.nvim](https://github.com/alanfortlink/animatedbg.nvim)
   - [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
 
-### CLI Applications
+### TUI Applications
 
 - [starship](https://github.com/starship/starship)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
@@ -114,6 +114,9 @@ Neovim plugins are managed by LazyVim.
 - [clipboard](https://github.com/Slackadays/Clipboard)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [catnap](https://github.com/iinsertNameHere/catnap)
+- [delta](https://github.com/dandavison/delta)
+- [superfile](https://github.com/yorukot/superfile)
+- [posting](https://github.com/darrenburns/posting)
 
 ### Desktop Applications
 

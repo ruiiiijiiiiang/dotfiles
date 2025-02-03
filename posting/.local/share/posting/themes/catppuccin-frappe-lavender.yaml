@@ -1,0 +1,38 @@
+name: "catppuccin-frappe-lavender"  # use this name in your config file
+primary: "#babbf1" # buttons, fixed table columns
+secondary: "#babbf1"  # method selector, some minor labels
+accent: "#babbf1"  # header text, scrollbars, cursors, focus highlights
+background: "#303446" # background colors
+surface: "#414559"  # panels, etc
+error: "#e78284"  # error messages
+success: "#a6d189"  # success messages
+warning: "#e5c890"  # warning messages
+dark: "true"
+
+text_area:
+  cursor: "reverse #f2d5cf"
+  cursor_line: "underline #c6d0f5"
+  selection: "reverse #949cbb"
+  gutter: "bold #a6d189"
+  matched_bracket: "reverse #b5bfe2"
+
+url:
+  base: "italic #8caaee"
+  protocol: "bold #81c8be"
+  separator: "#c6d0f5"
+
+syntax:
+  json_key: "italic #8caaee"
+  json_number: "#ef9f76"
+  json_string: "#a6d189"
+  json_boolean: "#99d1db"
+  json_null: "#949cbb"
+
+method:
+  get: "bold #8caaee"
+  post: "bold #a6d189"
+  put: "bold #e5c890"
+  delete: "bold #e78284"
+  patch: "bold #81c8be"
+  options: "bold #babbf1"
+  head: "bold #ca9ee6"
