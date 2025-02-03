@@ -18,6 +18,12 @@ return {
     end,
   },
   {
+    "echasnovski/mini.bracketed",
+    config = function()
+      require("mini.bracketed").setup({})
+    end,
+  },
+  {
     "echasnovski/mini.move",
     config = function()
       require("mini.move").setup({

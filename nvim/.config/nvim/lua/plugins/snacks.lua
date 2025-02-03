@@ -87,10 +87,19 @@ return {
         },
         width = 69,
       },
-      picker = {},
       bigfile = { enabled = true },
       quickfile = { enabled = true },
       statuscolumn = { enabled = true },
+      indent = {
+        chunk = {
+          enabled = true,
+          char = {
+            arrow = "─",
+            corner_top = "╭",
+            corner_bottom = "╰",
+          },
+        },
+      },
     },
   },
 }

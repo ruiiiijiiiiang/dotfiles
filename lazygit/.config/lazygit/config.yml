@@ -1,6 +1,7 @@
 git:
-  autoFetch: true
-  fetchAll: true
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --line-numbers
 
 gui:
   nerdFontsVersion: "3"
@@ -24,6 +25,5 @@ gui:
       - "#c6d0f5"
     searchingActiveBorderColor:
       - "#e5c890"
-
   authorColors:
     "*": "#babbf1"
