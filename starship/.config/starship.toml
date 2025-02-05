@@ -2,9 +2,9 @@ add_newline = true
 
 format = """\
 [󱞫](lavender)[](lavender)$os$username$sudo\
-[▓▒░](fg:lavender bg:sky)$directory\
-[▓▒░](fg:sky bg:blue)$cmd_duration$status\
-[](blue)$fill\
+[▓▒░](fg:lavender bg:teal)$directory\
+[▓▒░](fg:teal bg:sapphire)$cmd_duration$status\
+[](sapphire)$fill\
 [](flamingo)$git_branch$git_status\
 [▓▒░](fg:flamingo bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
 [▓▒░](fg:yellow bg:maroon)$package\
@@ -45,13 +45,15 @@ crust = "#232634"
 
 [cmd_duration]
 format = "[  $duration]($style)"
-style = "fg:crust bg:blue bold"
+style = "fg:crust bg:sapphire bold"
 
 [status]
-format = "$symbol"
 disabled = false
-symbol = "[  ](fg:red bg:blue)"
-success_symbol = "[ 󰗡 ](fg:green bg:blue)"
+symbol = "[  ](fg:red bg:sapphire)"
+success_symbol = "[ 󰗡 ](fg:green bg:sapphire)"
+success_style = "fg:green bg:sapphire"
+failure_style = "fg:red bg:sapphire"
+format = "$symbol([$status]($style))"
 
 [os]
 style = "fg:crust bg:lavender"
@@ -59,11 +61,11 @@ disabled = false
 symbols = { Arch = " ", NixOS = " " }
 
 [username]
+disabled = false
 show_always = true
 style_user = "fg:crust bg:lavender"
 style_root = "fg:crust bg:lavender"
 format = "[$user]($style)"
-disabled = false
 
 [sudo]
 disabled = false
@@ -72,7 +74,7 @@ style = "fg:crust bg:lavender"
 format = "[$symbol]($style)"
 
 [directory]
-style = "fg:crust bg:sky bold"
+style = "fg:crust bg:teal bold"
 format = "[$path]($style)"
 truncation_length = 4
 truncation_symbol = "…/"

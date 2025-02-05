@@ -31,13 +31,13 @@ return {
               desc = "Find Text",
               action = ":lua Snacks.dashboard.pick('live_grep')",
             },
+            { icon = " ", key = "s", desc = "Restore Session", section = "session" },
             {
               icon = " ",
               key = "c",
               desc = "Config",
               action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
             },
-            { icon = " ", key = "s", desc = "Restore Session", section = "session" },
             {
               icon = "󰐱 ",
               key = "l",
@@ -52,6 +52,7 @@ return {
               action = ":LazyExtras",
               enabled = package.loaded.lazy ~= nil,
             },
+            { icon = " ", key = "m", desc = "LSP", action = ":Mason" },
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
         },
@@ -72,7 +73,7 @@ return {
             section = "recent_files",
             indent = 2,
             padding = 1,
-            limit = 10,
+            limit = 15,
           },
           {
             pane = 2,

@@ -40,6 +40,8 @@
         "class<spotify>": "󰓇",
         "class<steam>": "",
         "class<Slack>": "",
+        "class<org.telegram.desktop>": "",
+        "class<Simplenote>": "",
         "title<Picture-in-Picture>": "󰗃"
       },
       "window-rewrite-default": "󰣆"
