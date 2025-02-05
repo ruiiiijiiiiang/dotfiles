@@ -14,6 +14,7 @@
       "group/volume",
       "network",
       "group/system",
+      "battery",
       "clock",
       "custom/power"
     ],
@@ -107,12 +108,22 @@
       "on-click": "missioncenter"
     },
     "memory": {
-      "format": " {percentage}%  {swapPercentage}%",
+      "format": " {percentage}%",
       "on-click": "missioncenter"
     },
     "disk": {
       "format": " {percentage_used}%",
       "on-click": "missioncenter"
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15,
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": "󰢝 {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-icons": [" ", " ", " ", " ", " "],
     },
     "clock": {
       "format": "󰃭 {:%a %b %d  %I:%M%p}",

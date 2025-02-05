@@ -61,7 +61,7 @@
       "type": "battery",
       "key": "│ ╠ │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{4}"
+      "outputColor": "cyan",
     },
     {
       "type": "uptime",
@@ -99,7 +99,7 @@
       "type": "packages",
       "key": "│ ╠󰏖 │",
       "keyColor": "blue",
-      "format": "\u001b[94m{1}"
+      "outputColor": "blue",
     },
     {
       "type": "de",
@@ -129,7 +129,7 @@
       "type": "terminalfont",
       "key": "│ ╚󰬴 │",
       "keyColor": "blue",
-      "format": "\u001b[94m{1}"
+      "outputColor": "blue",
     },
     {
       "type": "custom",

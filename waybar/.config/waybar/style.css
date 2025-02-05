@@ -20,6 +20,7 @@ window#waybar {
 #volume,
 #network,
 #system,
+#battery,
 #clock,
 #custom-power {
   border: 0;
@@ -98,6 +99,10 @@ window#waybar.empty #window {
 #disk {
   color: @mauve;
   margin: 0 3px;
+}
+
+#battery {
+  color: @flamingo;
 }
 
 #clock {
