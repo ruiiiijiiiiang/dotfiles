@@ -64,7 +64,11 @@ run_cmd() {
     elif [[ $1 == '--suspend' ]]; then
       systemctl suspend
     elif [[ $1 == '--logout' ]]; then
-      hyprctl dispatch exit
+      if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
+        hyprctl dispatch exit
+      elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
+        pkill -u "$USER" niri
+      fi
     fi
   else
     exit 0
