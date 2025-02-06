@@ -48,14 +48,20 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-  echo -e "$lock\n$suspend\n$logout\n$hibernate\n$reboot\n$shutdown" | rofi_cmd
+  echo -e "$lock\n$logout\n$suspend\n$hibernate\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
 run_cmd() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
-    if [[ $1 == '--shutdown' ]]; then
+    if [[ $1 == '--lock' ]]; then
+      if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
+        hyprlock
+      elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
+        swaylock -f -c 000000 -C /home/rui/.config/swaylock/conf
+      fi
+    elif [[ $1 == '--shutdown' ]]; then
       systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
       systemctl reboot
@@ -67,7 +73,7 @@ run_cmd() {
       if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
         hyprctl dispatch exit
       elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
-        pkill -u "$USER" niri
+        niri msg action quit --skip-confirmation
       fi
     fi
   else
@@ -88,7 +94,7 @@ $hibernate)
   run_cmd --hibernate
   ;;
 $lock)
-  hyprlock
+  run_cmd --lock
   ;;
 $suspend)
   run_cmd --suspend

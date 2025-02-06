@@ -1,3 +1,13 @@
+clock
+indicator-idle-visible
+indicator-radius=100
+indicator-thickness=7
+ignore-empty-password
+show-failed-attempts
+font=Hasklug Nerd Font
+grace=2
+fade-in=0.2
+
 color=303446
 bs-hl-color=f2d5cf
 caps-lock-bs-hl-color=f2d5cf

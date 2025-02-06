@@ -14,7 +14,7 @@ input {
 
             // For example:
             // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            options "caps:escape"
         }
     }
 
@@ -51,11 +51,15 @@ input {
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
-    // warp-mouse-to-focus
+    warp-mouse-to-focus
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse // max-scroll-amount="0%"
+}
+
+cursor {
+    xcursor-theme "Catppuccin-Frappe-Lavender"
 }
 
 // You can configure outputs by their name, which you can find
@@ -151,7 +155,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-         off
+        off
 
         // How many logical pixels the ring extends out from the windows.
         width 4
@@ -215,16 +219,23 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "dunst"
+spawn-at-startup "nm-applet"
 spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-i" "/home/rui/Pictures/nixos-wallpaper-catppuccin-frappe.png" "-m" "fill"
+spawn-at-startup "swaync"
+spawn-at-startup "sh" "-c" "/home/rui/.config/swayidle/idle.sh"
+spawn-at-startup "flatpak" "run" "ch.protonmail.protonmail-bridge" "--no-window"
+
+hotkey-overlay {
+    skip-at-startup
+}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-prefer-no-csd
+// prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -256,7 +267,7 @@ window-rule {
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+    default-column-width { proportion 0.75; }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -282,8 +293,8 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 6
     clip-to-geometry true
 }
 
@@ -303,8 +314,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T { spawn "wezterm"; }
     Mod+Space { spawn "rofi" "-show" "drun" "-theme" "/home/rui/.config/rofi/launcher-theme.rasi"; }
+    Mod+Escape { spawn "sh" "/home/rui/.config/rofi/powermenu.sh"; }
+    Mod+T { spawn "wezterm"; }
     Mod+B { spawn "flatpak" "run" "app.zen_browser.zen"; }
     Mod+E { spawn "dolphin"; }
 
@@ -474,8 +486,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+W { maximize-column; }
+    Mod+Shift+W { fullscreen-window; }
     Mod+C { center-column; }
 
     // Finer width adjustments.
@@ -494,8 +506,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+F       { toggle-window-floating; }
+    Mod+Shift+F { switch-focus-between-floating-and-tiling; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
