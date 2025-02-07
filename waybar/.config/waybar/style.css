@@ -18,6 +18,7 @@ window#waybar {
 #taskbar button,
 #mpris,
 #window,
+#brightness,
 #volume,
 #network,
 #bluetooth,
@@ -74,25 +75,53 @@ window#waybar.empty #window {
   border: none;
 }
 
+#brightness {
+  color: @pink;
+}
+
 #volume {
   color: @yellow;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
   min-height: 14px;
-  background: @peach;
   border-radius: 100%;
 }
 
+#backlight-slider slider {
+  background: @mauve;
+}
+
+#pulseaudio-slider slider {
+  background: @peach;
+}
+
+#blacklight-slider trough,
 #pulseaudio-slider trough {
   min-width: 90px;
   min-height: 14px;
   border: 1px solid @base;
+}
+
+#backlight-slider trough {
+  background: alpha(@pink, 0.75);
+}
+
+#pulseaudio-slider trough {
   background: alpha(@yellow, 0.75);
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
   border: 1px solid @base;
+}
+
+#blacklight-slider highlight {
+  background: @pink;
+}
+
+#pulseaudio-slider highlight {
   background: @yellow;
 }
 

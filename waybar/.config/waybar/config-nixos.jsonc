@@ -1,0 +1,89 @@
+{
+  "modules-left": [
+    "custom/launcher",
+    "wlr/taskbar",
+    "mpris"
+  ],
+  "modules-center": [
+    "niri/window"
+  ],
+  "modules-right": [
+    "group/brightness",
+    "group/volume",
+    "network",
+    "bluetooth",
+    "group/system",
+    "power-profiles-daemon",
+    "battery",
+    "clock",
+    "custom/power"
+  ],
+  "custom/launcher": {
+    "format": "󱄅",
+    "tooltip": false,
+    "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
+    "on-click-right": "killall rofi"
+  },
+  "wlr/taskbar": {
+    "format": " {icon} ",
+    "tooltip-format": "{name} | {title}",
+    "on-click": "activate"
+  },
+  "group/brightness": {
+    "orientation": "horizontal",
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+  },
+  "backlight": {
+    "scroll-step": 10,
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "󰖨"
+    ]
+  },
+  "backlight/slider": {
+    "min": 10,
+    "max": 100,
+    "rotate": 0,
+    "device": "intel_backlight",
+    "scroll-step": 10
+  },
+  "power-profiles-daemon": {
+    "format": " {icon} ",
+    "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰢝 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
+  }
+}

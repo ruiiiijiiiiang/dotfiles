@@ -50,6 +50,11 @@ local keys = {
     action = act.SpawnTab("CurrentPaneDomain"),
   },
   {
+    key = 'q',
+    mods = 'ALT',
+    action = wezterm.action.CloseCurrentTab { confirm = true },
+  },
+  {
     key = "Space",
     mods = "ALT",
     action = act.QuickSelect,

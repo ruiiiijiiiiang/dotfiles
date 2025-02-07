@@ -1,169 +1,89 @@
-// -*- mode: jsonc -*-
-[
-  {
-    "margin": 8,
-    "modules-left": [
-      "custom/launcher",
-      "hyprland/workspaces",
-      "wlr/taskbar",
-      "mpris"
+{
+  "margin": 8,
+  "mpris": {
+    "format": "{player_icon} {status_icon} {artist} - {title}",
+    "player-icons": {
+      "default": "",
+      "spotify": ""
+    },
+    "status-icons": {
+      "playing": "▶",
+      "paused": ""
+    },
+    "ignored-players": [
+      "firefox"
     ],
-    "modules-center": [
-      "hyprland/window"
-    ],
-    "modules-right": [
-      "group/volume",
-      "network",
-      "bluetooth",
-      "group/system",
-      "power-profiles-daemon",
-      "battery",
-      "clock",
-      "custom/power"
-    ],
-    "custom/launcher": {
-      "format": "󱄅",
-      "tooltip": false,
-      "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
-      "on-click-right": "killall rofi"
-    },
-    "hyprland/workspaces": {
-      "format": "{name}: {windows} ",
-      "window-rewrite": {
-        "class<.*zen.*>title<.*youtube.*>": "󰗃",
-        "class<.*zen.*>": "",
-        "class<firefox>": "",
-        "class<org.kde.dolphin>": "",
-        "class<org.wezfurlong.wezterm>": "",
-        "class<code-oss>": "󰨞",
-        "class<codium>": "󰨞",
-        "class<discord>": "",
-        "class<vesktop>": "",
-        "class<.*betterbird.*>": "󰇮",
-        "class<spotify>": "󰓇",
-        "class<steam>": "",
-        "class<Slack>": "",
-        "class<org.telegram.desktop>": "",
-        "class<Simplenote>": "",
-        "title<Picture-in-Picture>": "󰗃"
-      },
-      "window-rewrite-default": "󰣆"
-    },
-    "wlr/taskbar": {
-      "format": " {icon} ",
-      "tooltip-format": "{name} | {title}",
-      "on-click": "activate",
-    },
-    "mpris": {
-      "format": "{player_icon} {status_icon} {artist} - {title}",
-      "player-icons": {
-        "default": "",
-        "spotify": ""
-      },
-      "status-icons": {
-        "playing": "▶",
-        "paused": ""
-      },
-      "ignored-players": [
-        "firefox"
-      ],
-      "max-length": 60
-    },
-    "hyprland/window": {
-      "format": "{initialTitle}",
-      "icon": true
-    },
-    "group/volume": {
-      "orientation": "horizontal",
-      "modules": [
-        "pulseaudio",
-        "pulseaudio/slider"
+    "max-length": 60
+  },
+  "group/volume": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
       ]
     },
-    "pulseaudio": {
-      "scroll-step": 5,
-      "format": "{icon} {volume}%",
-      "format-muted": "",
-      "format-icons": {
-        "default": [
-          "",
-          "",
-          ""
-        ]
-      },
-      "on-click": "pavucontrol"
-    },
-    "pulseaudio/slider": {
-      "min": 0,
-      "max": 100,
-      "rotate": 0,
-      "device": "pulseaudio",
-      "scroll-step": 5
-    },
-    "network": {
-      "format-wifi": "  {signalStrength}%",
-      "format-disconnected": "⚠ Disconnected",
-      "on-click": "nm-connection-editor"
-    },
-    "bluetooth": {
-      "format": " {status}",
-      "format-disabled": "󰂲 off",
-      "format-connected": " {num_connections} connected",
-      "tooltip-format": "{controller_alias}\t{controller_address}",
-      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-      "on-click": "blueman-manager"
-    },
-    "group/system": {
-      "orientation": "horizontal",
-      "modules": [
-        "cpu",
-        "memory",
-        "disk"
-      ]
-    },
-    "cpu": {
-      "format": " {usage}%",
-      "on-click": "missioncenter"
-    },
-    "memory": {
-      "format": " {percentage}%",
-      "on-click": "missioncenter"
-    },
-    "disk": {
-      "format": " {percentage_used}%",
-      "on-click": "missioncenter"
-    },
-    "power-profiles-daemon": {
-      "format": " {icon} ",
-      "tooltip-format": "Power profile: {profile}nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "battery": {
-      "states": {
-        "warning": 30,
-        "critical": 15,
-      },
-      "format": "{icon} {capacity}%",
-      "format-charging": "󰢝 {capacity}%",
-      "format-plugged": " {capacity}%",
-      "format-icons": [" ", " ", " ", " ", " "],
-    },
-    "clock": {
-      "format": "󰃭 {:%a %b %d  %I:%M%p}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "custom/power": {
-      "format": "󰐥",
-      "tooltip": false,
-      "on-click": "sh ~/.config/rofi/powermenu.sh",
-      "on-click-right": "killall rofi"
-    }
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "rotate": 0,
+    "device": "pulseaudio",
+    "scroll-step": 5
+  },
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-disconnected": "⚠ Disconnected",
+    "on-click": "nm-connection-editor"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "󰂲 off",
+    "format-connected": " {num_connections} connected",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "disk"
+    ]
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "missioncenter"
+  },
+  "memory": {
+    "format": " {percentage}%",
+    "on-click": "missioncenter"
+  },
+  "disk": {
+    "format": " {percentage_used}%",
+    "on-click": "missioncenter"
+  },
+  "clock": {
+    "format": "󰃭 {:%a %b %d  %I:%M%p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip": false,
+    "on-click": "sh ~/.config/rofi/powermenu.sh",
+    "on-click-right": "killall rofi"
   }
-]
+}

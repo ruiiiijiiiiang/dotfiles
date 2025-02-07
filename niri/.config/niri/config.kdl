@@ -218,7 +218,7 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "nm-applet"
-spawn-at-startup "waybar"
+spawn-at-startup "waybar" "-c" "/home/rui/.config/waybar/config-nixos.jsonc"
 spawn-at-startup "swaybg" "-i" "/home/rui/Pictures/nixos-wallpaper-catppuccin-frappe.png" "-m" "fill"
 spawn-at-startup "swaync"
 spawn-at-startup "sh" "-c" "/home/rui/.config/swayidle/idle.sh"

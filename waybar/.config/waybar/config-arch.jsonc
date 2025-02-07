@@ -1,0 +1,53 @@
+{
+  "include": [
+    "~/dotfiles/waybar/.config/waybar/config.jsonc"
+  ],
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "mpris"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "group/volume",
+    "network",
+    "bluetooth",
+    "group/system",
+    "clock",
+    "custom/power"
+  ],
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
+    "on-click-right": "killall rofi"
+  },
+  "hyprland/workspaces": {
+    "format": "{name}: {windows} ",
+    "window-rewrite": {
+      "class<.*zen.*>title<.*youtube.*>": "󰗃",
+      "class<.*zen.*>": "",
+      "class<firefox>": "",
+      "class<org.kde.dolphin>": "",
+      "class<org.wezfurlong.wezterm>": "",
+      "class<code-oss>": "󰨞",
+      "class<codium>": "󰨞",
+      "class<discord>": "",
+      "class<vesktop>": "",
+      "class<.*betterbird.*>": "󰇮",
+      "class<spotify>": "󰓇",
+      "class<steam>": "",
+      "class<Slack>": "",
+      "class<org.telegram.desktop>": "",
+      "class<Simplenote>": "",
+      "title<Picture-in-Picture>": "󰗃"
+    },
+    "window-rewrite-default": "󰣆"
+  },
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "icon": true
+  }
+}
