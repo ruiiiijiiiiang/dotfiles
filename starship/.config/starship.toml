@@ -58,7 +58,7 @@ format = "$symbol([$status]($style))"
 [os]
 style = "fg:crust bg:lavender"
 disabled = false
-symbols = { Arch = " ", NixOS = " " }
+symbols = { Arch = " ", NixOS = "󱄅 " }
 
 [username]
 disabled = false

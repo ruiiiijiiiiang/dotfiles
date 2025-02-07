@@ -5,6 +5,7 @@
     "modules-left": [
       "custom/launcher",
       "hyprland/workspaces",
+      "wlr/taskbar",
       "mpris"
     ],
     "modules-center": [
@@ -13,13 +14,15 @@
     "modules-right": [
       "group/volume",
       "network",
+      "bluetooth",
       "group/system",
+      "power-profiles-daemon",
       "battery",
       "clock",
       "custom/power"
     ],
     "custom/launcher": {
-      "format": "󰣇",
+      "format": "󱄅",
       "tooltip": false,
       "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
       "on-click-right": "killall rofi"
@@ -45,6 +48,11 @@
         "title<Picture-in-Picture>": "󰗃"
       },
       "window-rewrite-default": "󰣆"
+    },
+    "wlr/taskbar": {
+      "format": " {icon} ",
+      "tooltip-format": "{name} | {title}",
+      "on-click": "activate",
     },
     "mpris": {
       "format": "{player_icon} {status_icon} {artist} - {title}",
@@ -97,6 +105,15 @@
       "format-disconnected": "⚠ Disconnected",
       "on-click": "nm-connection-editor"
     },
+    "bluetooth": {
+      "format": " {status}",
+      "format-disabled": "󰂲 off",
+      "format-connected": " {num_connections} connected",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "on-click": "blueman-manager"
+    },
     "group/system": {
       "orientation": "horizontal",
       "modules": [
@@ -116,6 +133,17 @@
     "disk": {
       "format": " {percentage_used}%",
       "on-click": "missioncenter"
+    },
+    "power-profiles-daemon": {
+      "format": " {icon} ",
+      "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
     },
     "battery": {
       "states": {

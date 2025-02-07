@@ -7,7 +7,12 @@
 
 # CMDs
 lastlogin="$(last $USER | head -n1 | tr -s ' ' | cut -d' ' -f3,4,5,6)"
-uptime="$(uptime -p | sed -e 's/up //g')"
+if [[ "$OS" == "nixos" ]]; then
+  uptime="$(uptime | awk '{print $3}' | sed -e 's/,//g')"
+else
+  uptime="$(uptime -p | sed -e 's/up //g')"
+fi
+
 host=$(hostname)
 
 # Options
@@ -62,8 +67,14 @@ run_cmd() {
         swaylock -f -c 000000 -C /home/rui/.config/swaylock/conf
       fi
     elif [[ $1 == '--shutdown' ]]; then
+      if [[ $DEVICE == 'Surface Pro 4' ]]; then
+        systemctl restart iptsd
+      fi
       systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
+      if [[ $DEVICE == 'Surface Pro 4' ]]; then
+        systemctl restart iptsd
+      fi
       systemctl reboot
     elif [[ $1 == '--hibernate' ]]; then
       systemctl hibernate

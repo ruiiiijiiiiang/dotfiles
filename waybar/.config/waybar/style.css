@@ -13,13 +13,16 @@ window#waybar {
   margin: 0;
 }
 
-#workspaces button,
 #custom-launcher,
+#workspaces button,
+#taskbar button,
 #mpris,
 #window,
 #volume,
 #network,
+#bluetooth,
 #system,
+#power-profiles-daemon,
 #battery,
 #clock,
 #custom-power {
@@ -38,24 +41,27 @@ window#waybar {
   margin-right: 3px;
 }
 
-#mpris {
-  color: @green;
-}
-
-#workspaces button {
+#workspaces button,
+#taskbar button {
   color: @rosewater;
   margin: 0 1px;
 }
 
 #workspaces button:hover,
+#taskbar button:hover,
 #custom-launcher:hover {
   background: alpha(@rosewater, 0.3);
   border-bottom: 6px solid alpha(@rosewater, 0.5);
 }
 
-#workspaces button.active {
+#workspaces button.active,
+#taskbar button.active {
   background: alpha(@rosewater, 0.5);
   border-bottom: 6px solid alpha(@rosewater, 0.8);
+}
+
+#mpris {
+  color: @green;
 }
 
 #window {
@@ -94,11 +100,20 @@ window#waybar.empty #window {
   color: @green;
 }
 
+#bluetooth {
+  color: @blue;
+}
+
 #cpu,
 #memory,
 #disk {
   color: @mauve;
   margin: 0 3px;
+}
+
+#power-profiles-daemon {
+  padding: 0 6px;
+  color: @peach;
 }
 
 #battery {
