@@ -85,7 +85,7 @@ output "eDP-1" {
     // mode "1920x1080@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.65
+    scale 1.5
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -218,10 +218,10 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "nm-applet"
-spawn-at-startup "waybar" "-c" "/home/rui/.config/waybar/config-nixos.jsonc"
 spawn-at-startup "swaybg" "-i" "/home/rui/Pictures/nixos-wallpaper-catppuccin-frappe.png" "-m" "fill"
 spawn-at-startup "swaync"
 spawn-at-startup "sh" "-c" "/home/rui/.config/swayidle/idle.sh"
+spawn-at-startup "waybar" "-c" "/home/rui/.config/waybar/config-nixos.jsonc"
 spawn-at-startup "flatpak" "run" "ch.protonmail.protonmail-bridge" "--no-window"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.

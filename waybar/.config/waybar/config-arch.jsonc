@@ -11,7 +11,7 @@
     "hyprland/window"
   ],
   "modules-right": [
-    "group/volume",
+    "pulseaudio",
     "network",
     "bluetooth",
     "group/system",

@@ -1,4 +1,6 @@
 {
+  "layer": "top",
+  "position": "top",
   "margin": 8,
   "mpris": {
     "format": "{player_icon} {status_icon} {artist} - {title}",
@@ -38,9 +40,7 @@
   "pulseaudio/slider": {
     "min": 0,
     "max": 100,
-    "rotate": 0,
     "device": "pulseaudio",
-    "scroll-step": 5
   },
   "network": {
     "format-wifi": "  {signalStrength}%",
@@ -84,6 +84,6 @@
     "format": "󰐥",
     "tooltip": false,
     "on-click": "sh ~/.config/rofi/powermenu.sh",
-    "on-click-right": "killall rofi"
+    "on-click-right": "pkill rofi"
   }
 }

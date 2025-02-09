@@ -48,6 +48,8 @@ window {
     border-radius:               16px;
     cursor:                      "default";
     background-color:            @background;
+    border-color:                @selected;
+    border:                      3px solid;
 }
 
 /*****----- Main Box -----*****/

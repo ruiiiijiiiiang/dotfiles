@@ -18,13 +18,12 @@ window#waybar {
 #taskbar button,
 #mpris,
 #window,
-#brightness,
-#volume,
+#backlight,
+#pulseaudio,
 #network,
 #bluetooth,
 #system,
-#power-profiles-daemon,
-#battery,
+#power,
 #clock,
 #custom-power {
   border: 0;
@@ -75,11 +74,13 @@ window#waybar.empty #window {
   border: none;
 }
 
-#brightness {
+#brightness,
+#backlight {
   color: @pink;
 }
 
-#volume {
+#volume,
+#pulseaudio {
   color: @yellow;
 }
 
@@ -97,7 +98,7 @@ window#waybar.empty #window {
   background: @peach;
 }
 
-#blacklight-slider trough,
+#backlight-slider trough,
 #pulseaudio-slider trough {
   min-width: 90px;
   min-height: 14px;
@@ -117,7 +118,7 @@ window#waybar.empty #window {
   border: 1px solid @base;
 }
 
-#blacklight-slider highlight {
+#backlight-slider highlight {
   background: @pink;
 }
 
@@ -140,13 +141,9 @@ window#waybar.empty #window {
   margin: 0 3px;
 }
 
-#power-profiles-daemon {
-  padding: 0 6px;
-  color: @peach;
-}
-
+#power-profiles-daemon,
 #battery {
-  color: @flamingo;
+  color: @peach;
 }
 
 #clock {

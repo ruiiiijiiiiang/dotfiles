@@ -1,20 +1,17 @@
 {
+  "include": [ "/home/rui/.config/waybar/config.jsonc" ],
   "modules-left": [
     "custom/launcher",
     "wlr/taskbar",
-    "mpris"
-  ],
-  "modules-center": [
-    "niri/window"
+    "niri/window",
   ],
   "modules-right": [
-    "group/brightness",
-    "group/volume",
+    "backlight",
+    "pulseaudio",
     "network",
     "bluetooth",
     "group/system",
-    "power-profiles-daemon",
-    "battery",
+    "group/power",
     "clock",
     "custom/power"
   ],
@@ -22,12 +19,15 @@
     "format": "󱄅",
     "tooltip": false,
     "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
-    "on-click-right": "killall rofi"
+    "on-click-right": "pkill rofi"
   },
   "wlr/taskbar": {
     "format": " {icon} ",
     "tooltip-format": "{name} | {title}",
     "on-click": "activate"
+  },
+  "niri/window": {
+    "icon": true
   },
   "group/brightness": {
     "orientation": "horizontal",
@@ -38,6 +38,8 @@
   },
   "backlight": {
     "scroll-step": 10,
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
     "format": "{icon} {percent}%",
     "format-icons": [
       "",
@@ -55,13 +57,17 @@
   "backlight/slider": {
     "min": 10,
     "max": 100,
-    "rotate": 0,
-    "device": "intel_backlight",
-    "scroll-step": 10
+  },
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": [
+      "power-profiles-daemon",
+      "battery",
+    ]
   },
   "power-profiles-daemon": {
     "format": " {icon} ",
-    "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+    "tooltip-format": "Power profile: {profile}",
     "tooltip": true,
     "format-icons": {
       "default": "",
