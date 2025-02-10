@@ -76,7 +76,7 @@ window#waybar.empty #window {
 
 #brightness,
 #backlight {
-  color: @pink;
+  color: @flamingo;
 }
 
 #volume,
@@ -106,7 +106,7 @@ window#waybar.empty #window {
 }
 
 #backlight-slider trough {
-  background: alpha(@pink, 0.75);
+  background: alpha(@flamingo, 0.75);
 }
 
 #pulseaudio-slider trough {
@@ -119,7 +119,7 @@ window#waybar.empty #window {
 }
 
 #backlight-slider highlight {
-  background: @pink;
+  background: @flamingo;
 }
 
 #pulseaudio-slider highlight {
