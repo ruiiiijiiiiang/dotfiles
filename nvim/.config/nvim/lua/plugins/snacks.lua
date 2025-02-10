@@ -17,7 +17,12 @@ return {
 ██████  █████████████████████ ████ █████ █████ ████ ██████
 ]],
           keys = {
-            { icon = " ", key = "e", desc = "Explore Directory", action = ":Neotree" },
+            {
+              icon = " ",
+              key = "e",
+              desc = "Explore Directory",
+              action = ":lua Snacks.explorer({ hidden = true })",
+            },
             {
               icon = " ",
               key = "f",
@@ -100,6 +105,25 @@ return {
             corner_bottom = "╰",
           },
         },
+      },
+      explorer = {
+        hidden = true,
+      },
+    },
+    keys = {
+      {
+        "<leader>e",
+        function()
+          Snacks.explorer({ cwd = LazyVim.root(), hidden = true })
+        end,
+        desc = "File Explorer (root dir)",
+      },
+      {
+        "<leader>E",
+        function()
+          Snacks.explorer({ hidden = true })
+        end,
+        desc = "File Explorer (cwd)",
       },
     },
   },
