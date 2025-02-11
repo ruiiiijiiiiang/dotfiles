@@ -12,13 +12,3 @@ prepend_previewers = [
   { mime = "text/csv", run = "miller" },
   { name = "*.md", run = "glow" },
 ]
-
-[[plugin.prepend_fetchers]]
-id = "git"
-name = "*"
-run = "git"
-
-[[plugin.prepend_fetchers]]
-id = "git"
-name = "*/"
-run = "git"

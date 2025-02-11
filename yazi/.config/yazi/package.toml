@@ -1,14 +1,42 @@
-[plugin]
-deps = [
-  { use = "yazi-rs/plugins:full-border", rev = "600614a" },
-  { use = "yazi-rs/plugins:git", rev = "7707c09" },
-  { use = "imsi32/yatline", rev = "9328205" },
-  { use = "yazi-rs/plugins:smart-enter", rev = "6418698" },
-  { use = "yazi-rs/plugins:chmod", rev = "6418698" },
-  { use = "Reledia/glow", rev = "5ce76dc" },
-  { use = "Reledia/miller", rev = "40e0265" },
-  { use = "imsi32/yatline-catppuccin", rev = "dc575da" },
-]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "600614a"
+hash = "882ed23839778f82dc137248979c8681"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "7707c09"
+hash = "e9cf1bfc03de7fee0f1d4260da0d1dfd"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "9328205"
+hash = "3e51d1fd8a2e481fcfa8eab1251d1c5f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "6418698"
+hash = "c1a2739e9ef2d837030ccb4267be3ed1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "6418698"
+hash = "4c7e8fd0266eedee7b619d966bd2d025"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "5ce76dc"
+hash = "52e5f5c602962e7cbf874da28f52ba45"
+
+[[plugin.deps]]
+use = "Reledia/miller"
+rev = "40e0265"
+hash = "2d6d77583162aaf0a599e7a3091b5878"
+
+[[plugin.deps]]
+use = "imsi32/yatline-catppuccin"
+rev = "dc575da"
+hash = "fd03fb015a28040bca0c0f9a8fe6fd8d"
 
 [flavor]
 deps = []

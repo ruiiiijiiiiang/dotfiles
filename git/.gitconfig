@@ -24,10 +24,9 @@
   autoStash = true
 [fetch]
   prune = true
+  parallel = 4
 [difftool]
   prompt = false
-[fetch]
-  parallel = 4
 [pack]
   deltaCacheSize = 2047m
   threads = 1
