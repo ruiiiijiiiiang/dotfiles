@@ -1,6 +1,6 @@
 # Hello world
 
-Thank you for checking out the configuration for my personal development environment. I am a full stack TS/JS engineer and I develop primarily using neovim. These are the dotfiles I use across Arch Linux and NixOS. I hope you find some inspiration here.
+Thank you for checking out the configuration for my personal development environment. These are the dotfiles I use across Arch Linux and NixOS. I hope you find some inspiration here.
 
 ## Screenshots
 
@@ -56,10 +56,17 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 8 (current)</summary>
+  <summary>Version 8</summary>
   Some minor color adjustments
 
 ![Screenshot](./screenshots/2025-01-10-194631_hyprshot.png)
+
+</details>
+<details>
+  <summary>Version 9 (current)</summary>
+  Moved to niri on NixOS
+
+![Screenshot](./screenshots/niri_screenshot_2.png)
 
 </details>
 
@@ -76,9 +83,9 @@ Neovim plugins are managed by LazyVim.
 ### Desktop Environment
 
 - [hyprland](https://github.com/hyprwm/Hyprland)
-- [hyprpanel](https://github.com/Jas-SinghFSU/HyprPanel)
 - [waybar](https://github.com/Alexays/Waybar)
 - [rofi](https://github.com/davatorium/rofi)
+- [niri](https://github.com/YaLTeR/niri)
 
 ### Development Environment
 

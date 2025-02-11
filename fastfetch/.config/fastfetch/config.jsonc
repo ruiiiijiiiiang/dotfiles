@@ -31,7 +31,7 @@
       "type": "cpu",
       "key": "│ ╠ cpu     │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} @ {7}"
+      "format": "\u001b[96m{1}"
     },
     {
       "type": "gpu",
