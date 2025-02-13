@@ -84,7 +84,7 @@ Neovim plugins are managed by LazyVim.
 
 - [hyprland](https://github.com/hyprwm/Hyprland)
 - [waybar](https://github.com/Alexays/Waybar)
-- [rofi](https://github.com/davatorium/rofi)
+- [rofi](https://github.com/in0ni/rofi-wayland)
 - [niri](https://github.com/YaLTeR/niri)
 
 ### Development Environment

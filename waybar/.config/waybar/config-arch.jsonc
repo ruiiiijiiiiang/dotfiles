@@ -46,6 +46,21 @@
     },
     "window-rewrite-default": "󰣆"
   },
+  "mpris": {
+    "format": "{player_icon} {status_icon} {artist} - {title}",
+    "player-icons": {
+      "default": "",
+      "spotify": ""
+    },
+    "status-icons": {
+      "playing": "▶",
+      "paused": ""
+    },
+    "ignored-players": [
+      "firefox"
+    ],
+    "max-length": 60
+  },
   "hyprland/window": {
     "format": "{initialTitle}",
     "icon": true

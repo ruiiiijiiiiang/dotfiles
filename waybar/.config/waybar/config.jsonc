@@ -2,21 +2,6 @@
   "layer": "top",
   "position": "top",
   "margin": 8,
-  "mpris": {
-    "format": "{player_icon} {status_icon} {artist} - {title}",
-    "player-icons": {
-      "default": "",
-      "spotify": ""
-    },
-    "status-icons": {
-      "playing": "▶",
-      "paused": ""
-    },
-    "ignored-players": [
-      "firefox"
-    ],
-    "max-length": 60
-  },
   "group/volume": {
     "orientation": "horizontal",
     "modules": [
