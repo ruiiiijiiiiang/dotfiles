@@ -1,10 +1,10 @@
 add_newline = true
 
 format = """\
-[󱞫](lavender)[](blue)$os$username$sudo\
-[▓▒░](fg:blue bg:teal)$directory\
-[▓▒░](fg:teal bg:lavender)$cmd_duration$status\
-[](lavender)$fill\
+[󱞫](lavender)[](teal)$os$username$sudo\
+[▓▒░](fg:teal bg:sapphire)$directory\
+[▓▒░](fg:sapphire bg:blue)$cmd_duration$status\
+[](blue)$fill\
 [](flamingo)$git_branch$git_status\
 [▓▒░](fg:flamingo bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
 [▓▒░](fg:yellow bg:maroon)$package\
@@ -44,25 +44,25 @@ mantle = "#292c3c"
 crust = "#232634"
 
 [os]
-style = "fg:crust bg:blue"
+style = "fg:crust bg:teal"
 disabled = false
 symbols = { Arch = " ", NixOS = "󱄅 " }
 
 [username]
 disabled = false
 show_always = true
-style_user = "fg:crust bg:blue"
-style_root = "fg:crust bg:blue"
+style_user = "fg:crust bg:teal"
+style_root = "fg:crust bg:teal"
 format = "[$user]($style)"
 
 [sudo]
 disabled = false
 symbol = " "
-style = "fg:crust bg:blue"
+style = "fg:crust bg:teal"
 format = "[$symbol]($style)"
 
 [directory]
-style = "fg:crust bg:teal bold"
+style = "fg:crust bg:sapphire bold"
 format = "[$path]($style)"
 truncation_length = 4
 truncation_symbol = "…/"
@@ -77,14 +77,14 @@ truncate_to_repo = false
 
 [cmd_duration]
 format = "[  $duration]($style)"
-style = "fg:crust bg:lavender bold"
+style = "fg:crust bg:blue bold"
 
 [status]
 disabled = false
-symbol = "[  ](fg:red bg:lavender)"
-success_symbol = "[ 󰗡 ](fg:green bg:lavender)"
-success_style = "fg:green bg:lavender"
-failure_style = "fg:red bg:lavender"
+symbol = "[  ](fg:red bg:blue)"
+success_symbol = "[ 󰗡 ](fg:green bg:blue)"
+success_style = "fg:green bg:blue"
+failure_style = "fg:red bg:blue"
 format = "$symbol([$status]($style))"
 
 [git_branch]

@@ -221,7 +221,7 @@ spawn-at-startup "nm-applet"
 spawn-at-startup "swaybg" "-i" "/home/rui/Pictures/nixos-wallpaper-catppuccin-frappe.png" "-m" "fill"
 spawn-at-startup "swaync"
 spawn-at-startup "sh" "-c" "/home/rui/.config/swayidle/idle.sh"
-spawn-at-startup "waybar" "-c" "/home/rui/.config/waybar/config-nixos.jsonc"
+spawn-at-startup "waybar" "-l" "trace" "-c" "/home/rui/.config/waybar/config-nixos.jsonc" ">" "~/.local/share/waybar.log" "2>&1"
 spawn-at-startup "flatpak" "run" "ch.protonmail.protonmail-bridge" "--no-window"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
