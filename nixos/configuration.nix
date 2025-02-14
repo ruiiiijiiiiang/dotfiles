@@ -52,11 +52,9 @@
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.defaultSession = "niri";
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "rui";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -84,6 +82,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+    options = "caps:escape";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rui = {
     isNormalUser = true;
@@ -91,10 +96,6 @@
     extraGroups = [ "networkmanager" "video" "wheel" "docker" ];
     packages = with pkgs; [];
   };
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "rui";
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -112,7 +113,6 @@
     gnumake
     wget
     wl-clipboard
-    wezterm
 
     # niri desktop
     rofi-wayland
@@ -125,7 +125,6 @@
     catppuccin-cursors.frappeLavender
     xwayland-satellite
     brightnessctl
-    mission-center
 
     # kde desktop
     kdePackages.plasma-pa
@@ -137,6 +136,11 @@
     libsForQt5.qtstyleplugin-kvantum
     catppuccin-kde
     maliit-keyboard
+
+    # gui apps
+    libreoffice-qt
+    mission-center
+    wezterm
 
     # cli
     bat
@@ -166,11 +170,11 @@
     delta
     spotify-player
 
-    # js/ts
+    # web dev
     deno
     nodejs
+    typescript-language-server
     svelte-language-server
-    vtsls
     tailwindcss-language-server
     nodePackages.vscode-json-languageserver
 
@@ -180,7 +184,6 @@
     # cargo
     # clippy
     # rust-analyzer
-    # rustlings
 
     # lua
     lua54Packages.luarocks
@@ -244,7 +247,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # virtualisation.docker.enable = true;
+  virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "rui" ];
 
