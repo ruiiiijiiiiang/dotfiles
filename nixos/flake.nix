@@ -6,6 +6,10 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    wezterm = {
+      url = "github:wezterm/wezterm?dir=nix&rev=ee0c04e735fb94cb5119681f704fb7fa6731e713";
+      inputs.nixpkg.follows = "nixpkgs";
+    };
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -13,26 +17,27 @@
     # };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-staging, nixpkgs-unstable, nixos-hardware, ... }@inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.rui-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
-        nixos-hardware.nixosModules.microsoft-surface-pro-intel
+        inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
         # inputs.home-manager.nixosModules.default
         ({ config, pkgs, ... }: {
           nixpkgs.config.allowUnfree = true;
           nixpkgs.overlays = [
             (final: prev: {
-              staging = import nixpkgs-staging {
+              staging = import inputs.nixpkgs-staging {
                 system = prev.system;
                 config.allowUnfree = true;
               };
-              unstable = import nixpkgs-unstable {
+              unstable = import inputs.nixpkgs-unstable {
                 system = prev.system;
                 config.allowUnfree = true;
               };
+              wezterm = inputs.wezterm.packages.${prev.system}.default;
             })
           ];
           environment.systemPackages = with pkgs; [
@@ -40,6 +45,7 @@
             unstable.yazi
             unstable.codeium
             unstable.zed-editor
+            wezterm
           ];
         })
       ];

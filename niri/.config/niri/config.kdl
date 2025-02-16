@@ -221,7 +221,7 @@ spawn-at-startup "nm-applet"
 spawn-at-startup "swaybg" "-i" "/home/rui/Pictures/nixos-wallpaper-catppuccin-frappe.png" "-m" "fill"
 spawn-at-startup "swaync"
 spawn-at-startup "sh" "-c" "/home/rui/.config/swayidle/idle.sh"
-spawn-at-startup "waybar" "-l" "trace" "-c" "/home/rui/.config/waybar/config-nixos.jsonc" ">" "~/.local/share/waybar.log" "2>&1"
+spawn-at-startup "waybar" "-c" "/home/rui/.config/waybar/config-nixos.jsonc"
 spawn-at-startup "flatpak" "run" "ch.protonmail.protonmail-bridge" "--no-window"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -229,7 +229,7 @@ spawn-at-startup "flatpak" "run" "ch.protonmail.protonmail-bridge" "--no-window"
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.

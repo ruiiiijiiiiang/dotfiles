@@ -50,11 +50,11 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.defaultSession = "niri";
+  # services.displayManager.defaultSession = "niri";
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "rui";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "rui";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -140,7 +140,6 @@
     # gui apps
     libreoffice-qt
     mission-center
-    wezterm
 
     # cli
     bat
