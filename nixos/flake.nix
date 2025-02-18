@@ -10,6 +10,7 @@
       url = "github:wezterm/wezterm?dir=nix&rev=ee0c04e735fb94cb5119681f704fb7fa6731e713";
       inputs.nixpkg.follows = "nixpkgs";
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay?rev=1b82dbcbbcba812ad19f5c0601d1731731bf4ebe";
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -28,6 +29,7 @@
         ({ config, pkgs, ... }: {
           nixpkgs.config.allowUnfree = true;
           nixpkgs.overlays = [
+            inputs.neovim-nightly-overlay.overlays.default
             (final: prev: {
               staging = import inputs.nixpkgs-staging {
                 system = prev.system;
@@ -46,6 +48,7 @@
             unstable.codeium
             unstable.zed-editor
             wezterm
+            neovim
           ];
         })
       ];

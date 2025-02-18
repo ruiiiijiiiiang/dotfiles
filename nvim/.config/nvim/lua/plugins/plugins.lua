@@ -167,6 +167,10 @@ return {
     opts = {},
     cmd = { "Typr", "TyprStats" },
   },
+  {
+    "hat0uma/csvview.nvim",
+    opts = {},
+  },
   -- {
   --   "alanfortlink/animatedbg.nvim",
   --   config = function()

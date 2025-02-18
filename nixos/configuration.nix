@@ -46,7 +46,6 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -60,10 +59,10 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = false;
+    enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -94,7 +93,6 @@
     isNormalUser = true;
     description = "Rui Jiang";
     extraGroups = [ "networkmanager" "video" "wheel" "docker" ];
-    packages = with pkgs; [];
   };
 
   # Install firefox.
@@ -197,6 +195,7 @@
     python313
     taplo
     marksman
+    imagemagick
   ];
 
   environment.variables = {
@@ -225,10 +224,8 @@
   programs.git.enable = true;
   programs.fish.enable = true;
   programs.vim.enable = true;
-  programs.neovim.enable = true;
   programs.lazygit.enable = true;
   programs.thefuck.enable = true;
-
   programs.niri.enable = true;
 
   # List services that you want to enable:
