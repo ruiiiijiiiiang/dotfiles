@@ -1,9 +1,11 @@
 {
-  "include": [ "/home/rui/.config/waybar/config.jsonc" ],
+  "include": [
+    "/home/rui/.config/waybar/config.jsonc"
+  ],
   "modules-left": [
     "custom/launcher",
     "wlr/taskbar",
-    "niri/window",
+    "niri/window"
   ],
   "modules-right": [
     "backlight",
@@ -56,13 +58,13 @@
   },
   "backlight/slider": {
     "min": 10,
-    "max": 100,
+    "max": 100
   },
   "group/power": {
     "orientation": "horizontal",
     "modules": [
       "power-profiles-daemon",
-      "battery",
+      "battery"
     ]
   },
   "power-profiles-daemon": {

@@ -109,6 +109,9 @@ return {
       explorer = {
         hidden = true,
       },
+      image = {
+        enabled = true,
+      },
     },
     keys = {
       {

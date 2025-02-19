@@ -29,43 +29,43 @@
     },
     {
       "type": "cpu",
-      "key": "│ ╠ cpu     │",
+      "key": "  ╠ cpu     │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1}"
     },
     {
       "type": "gpu",
-      "key": "│ ╠ gpu     │",
+      "key": "  ╠ gpu     │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} {2}"
     },
     {
       "type": "memory",
-      "key": "│ ╠ ram     │",
+      "key": "  ╠ ram     │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "swap",
-      "key": "│ ╠ swap    │",
+      "key": "  ╠ swap    │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "disk",
-      "key": "│ ╠ disk    │",
+      "key": "  ╠ disk    │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
     },
     {
       "type": "battery",
-      "key": "│ ╠ battery │",
+      "key": "  ╠ battery │",
       "keyColor": "cyan",
       "outputColor": "cyan"
     },
     {
       "type": "uptime",
-      "key": "│ ╚ uptime  │",
+      "key": "  ╚ uptime  │",
       "keyColor": "cyan",
       "format": "\u001b[96m{1} days {2} hours {3} minutes"
     },
@@ -85,49 +85,49 @@
     },
     {
       "type": "title",
-      "key": "│ ╠ host    │",
+      "key": "  ╠ host    │",
       "keyColor": "blue",
       "format": "\u001b[94m{1}@{2}"
     },
     {
       "type": "kernel",
-      "key": "│ ╠ kernel  │",
+      "key": "  ╠ kernel  │",
       "keyColor": "blue",
       "format": "\u001b[94m{1} {2} {4}"
     },
     {
       "type": "packages",
-      "key": "│ ╠ packages│",
+      "key": "  ╠ packages│",
       "keyColor": "blue",
       "outputColor": "blue"
     },
     {
       "type": "de",
-      "key": "│ ╠ de      │",
+      "key": "  ╠ de      │",
       "keyColor": "blue",
       "format": "\u001b[94m{2}"
     },
     {
       "type": "wm",
-      "key": "│ ╠󱂬 wm      │",
+      "key": "  ╠󱂬 wm      │",
       "keyColor": "blue",
       "format": "\u001b[94m{2} ({3})"
     },
     {
       "type": "terminal",
-      "key": "│ ╠ terminal│",
+      "key": "  ╠ terminal│",
       "keyColor": "blue",
       "format": "\u001b[94m{5}"
     },
     {
       "type": "shell",
-      "key": "│ ╠ shell   │",
+      "key": "  ╠ shell   │",
       "keyColor": "blue",
       "format": "\u001b[94m{6}"
     },
     {
       "type": "terminalfont",
-      "key": "│ ╚󰬴 font    │",
+      "key": "  ╚󰬴 font    │",
       "keyColor": "blue",
       "outputColor": "blue"
     },

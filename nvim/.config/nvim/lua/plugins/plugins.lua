@@ -169,7 +169,9 @@ return {
   },
   {
     "hat0uma/csvview.nvim",
-    opts = {},
+  },
+  {
+    "OXY2DEV/patterns.nvim",
   },
   -- {
   --   "alanfortlink/animatedbg.nvim",
