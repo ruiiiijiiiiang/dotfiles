@@ -30,7 +30,7 @@
   "network": {
     "format-wifi": "  {signalStrength}%",
     "format-disconnected": "⚠ Disconnected",
-    "on-click": "nm-connection-editor"
+    "on-click": "sh ~/.config/rofi/wifimenu.sh"
   },
   "bluetooth": {
     "format": " {status}",

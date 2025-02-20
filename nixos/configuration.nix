@@ -111,6 +111,7 @@
     gnumake
     wget
     wl-clipboard
+    libnotify
 
     # niri desktop
     rofi-wayland
@@ -188,6 +189,7 @@
     lua-language-server
 
     # other languages/tools
+    nil
     go
     yaml-language-server
     lldb
