@@ -131,6 +131,7 @@
     kdePackages.filelight
     kdePackages.yakuake
     kdePackages.kolourpaint
+    kdePackages.plasma-mobile
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
     catppuccin-kde
@@ -189,6 +190,7 @@
     lua-language-server
 
     # other languages/tools
+    bash-language-server
     nil
     go
     yaml-language-server

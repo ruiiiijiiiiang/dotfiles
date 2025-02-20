@@ -6,7 +6,7 @@
 ## Rofi   : Power Menu
 
 # CMDs
-lastlogin="$(last $USER | head -n1 | tr -s ' ' | cut -d' ' -f3,4,5,6)"
+lastlogin="$(last "$USER" | head -n1 | tr -s ' ' | cut -d' ' -f3,4,5,6)"
 if [[ "$OS" == "nixos" ]]; then
   uptime="$(uptime | awk '{print $3}' | sed -e 's/,//g')"
 else
@@ -95,22 +95,22 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-$shutdown)
+"$shutdown")
   run_cmd --shutdown
   ;;
-$reboot)
+"$reboot")
   run_cmd --reboot
   ;;
-$hibernate)
+"$hibernate")
   run_cmd --hibernate
   ;;
-$lock)
+"$lock")
   run_cmd --lock
   ;;
-$suspend)
+"$suspend")
   run_cmd --suspend
   ;;
-$logout)
+"$logout")
   run_cmd --logout
   ;;
 esac
