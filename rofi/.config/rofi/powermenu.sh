@@ -7,12 +7,11 @@
 
 # CMDs
 lastlogin="$(last "$USER" | head -n1 | tr -s ' ' | cut -d' ' -f3,4,5,6)"
-if [[ "$OS" == "nixos" ]]; then
-  uptime="$(uptime | awk '{print $3}' | sed -e 's/,//g')"
-else
+if uptime -p &> /dev/null; then
   uptime="$(uptime -p | sed -e 's/up //g')"
+else
+  uptime="$(uptime | awk '{print $3}' | sed -e 's/,//g')"
 fi
-
 host=$(hostname)
 
 # Options

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 while true; do
   hyprctl hyprpaper unload all
 

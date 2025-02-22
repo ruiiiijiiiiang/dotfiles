@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 swayidle -w \
   timeout 600 'swaylock -f -c 000000 -C /home/rui/.config/swaylock/conf' \
