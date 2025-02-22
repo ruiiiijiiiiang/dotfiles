@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -110,8 +110,7 @@
     cmake
     gnumake
     wget
-    wl-clipboard
-    libnotify
+    dig
 
     # niri desktop
     rofi-wayland
@@ -124,6 +123,7 @@
     catppuccin-cursors.frappeLavender
     xwayland-satellite
     brightnessctl
+    libnotify
 
     # kde desktop
     kdePackages.plasma-pa
@@ -168,6 +168,12 @@
     tldr
     delta
     spotify-player
+    imagemagick
+    dust
+
+    # other utilities
+    syncthing
+    wl-clipboard
 
     # web dev
     deno
@@ -175,7 +181,8 @@
     typescript-language-server
     svelte-language-server
     tailwindcss-language-server
-    nodePackages.vscode-json-languageserver
+    vscode-langservers-extracted
+    vscode-js-debug
 
     # rust
     rustup # use rustup to manager all rust tool chain
@@ -190,6 +197,7 @@
     lua-language-server
 
     # other languages/tools
+    lldb
     bash-language-server
     nil
     go
@@ -199,7 +207,7 @@
     python313
     taplo
     marksman
-    imagemagick
+    vimPlugins.vim-markdown-toc
   ];
 
   environment.variables = {

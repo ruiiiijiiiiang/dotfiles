@@ -223,6 +223,7 @@ spawn-at-startup "swaync"
 spawn-at-startup "sh" "-c" "/home/rui/.config/swayidle/idle.sh"
 spawn-at-startup "waybar" "-c" "/home/rui/.config/waybar/config-nixos.jsonc"
 spawn-at-startup "flatpak" "run" "ch.protonmail.protonmail-bridge" "--no-window"
+spawn-at-startup "syncthing"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
