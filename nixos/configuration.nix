@@ -56,7 +56,7 @@
   # services.displayManager.autoLogin.user = "rui";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -237,8 +237,8 @@
   programs.fish.enable = true;
   programs.vim.enable = true;
   programs.lazygit.enable = true;
-  programs.thefuck.enable = true;
   programs.niri.enable = true;
+  programs.thefuck.enable = true;
 
   # List services that you want to enable:
 
@@ -255,7 +255,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "rui" ];
 
