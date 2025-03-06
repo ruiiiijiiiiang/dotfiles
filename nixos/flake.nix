@@ -46,7 +46,9 @@
             unstable.wezterm
             unstable.starship
             unstable.yazi
+            unstable.fzf
             unstable.codeium
+            unstable.helix
           ];
         })
       ];

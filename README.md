@@ -124,6 +124,7 @@ Neovim plugins are managed by LazyVim.
 - [delta](https://github.com/dandavison/delta)
 - [superfile](https://github.com/yorukot/superfile)
 - [posting](https://github.com/darrenburns/posting)
+- [dust](https://github.com/bootandy/dust)
 
 ### Desktop Applications
 

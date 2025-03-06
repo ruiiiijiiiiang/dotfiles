@@ -20,6 +20,10 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.extraHosts = 
+    ''
+      192.168.68.65 rui-arch
+    '';
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -41,6 +45,9 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # List services that you want to enable:
+  services.flatpak.enable = true;
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -87,6 +94,8 @@
     variant = "";
     options = "caps:escape";
   };
+  services.openssh.enable = true;
+  services.openssh.settings.PasswordAuthentication = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rui = {
@@ -143,7 +152,6 @@
 
     # cli
     bat
-    fzf
     stow
     lsd
     fastfetch
@@ -183,6 +191,7 @@
     tailwindcss-language-server
     vscode-langservers-extracted
     vscode-js-debug
+    nodePackages.vscode-json-languageserver
 
     # rust
     rustup # use rustup to manager all rust tool chain
@@ -199,22 +208,17 @@
     # other languages/tools
     lldb
     bash-language-server
+    shellcheck
     nil
     go
     yaml-language-server
+    pyright
     lldb
     ruby_3_4
     python313
     taplo
     marksman
-    vimPlugins.vim-markdown-toc
   ];
-
-  environment.variables = {
-    EDITOR = "nvim";
-    DEVICE = "Surface Pro 4";
-    OS = "nixos";
-  };
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -226,6 +230,12 @@
     material-design-icons
   ];
 
+  environment.variables = {
+    EDITOR = "nvim";
+    DEVICE = "Surface Pro 4";
+    OS = "nixos";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -234,18 +244,12 @@
   #   enableSSHSupport = true;
   # };
   programs.git.enable = true;
-  programs.fish.enable = true;
   programs.vim.enable = true;
-  programs.lazygit.enable = true;
   programs.niri.enable = true;
+  programs.fish.enable = true;
+  programs.lazygit.enable = true;
   programs.thefuck.enable = true;
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  services.flatpak.enable = true;
+  programs.steam.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -253,7 +257,20 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.buildMachines = [{
+    hostName = "rui-arch";
+    system = "x86_64-linux";
+    protocol = "ssh-ng";
+    maxJobs = 5;
+    speedFactor = 10;
+    supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+    mandatoryFeatures = [ ];
+  }];
+  nix.distributedBuilds = true;
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    builders-use-substitutes = true;
+  };
 
   # virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
