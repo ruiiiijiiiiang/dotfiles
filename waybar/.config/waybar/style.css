@@ -1,9 +1,9 @@
 @import "catppuccin-frappe.css";
 
 * {
-  font-family: "Hasklug Nerd Font";
+  font-family: "Hasklug Nerd Font, Feather";
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 6px;
 }
 
@@ -14,10 +14,8 @@ window#waybar {
 }
 
 #custom-launcher,
-#workspaces button,
 #taskbar button,
 #mpris,
-#window,
 #backlight,
 #pulseaudio,
 #network,
@@ -27,103 +25,38 @@ window#waybar {
 #clock,
 #custom-power {
   border: 0;
-  margin: 0 2px;
-  padding: 0 6px;
+  margin: 4px 0;
+  padding: 6px 2px;
   background: alpha(@base, 0.75);
-  border-bottom: 6px solid @lavender;
+  border-right: 6px solid @lavender;
 }
 
 #custom-launcher {
   color: @blue;
-  font-size: 20px;
-  padding-left: 20px;
-  padding-right: 23px;
-  margin-right: 3px;
+  font-size: 24px;
 }
 
-#workspaces button,
 #taskbar button {
-  color: @rosewater;
-  margin: 0 1px;
+  color: @lavender;
+  margin: 2px 0;
+  padding: 6px 2px;
 }
 
-#workspaces button:hover,
-#taskbar button:hover,
-#custom-launcher:hover {
-  background: alpha(@rosewater, 0.3);
-  border-bottom: 6px solid alpha(@rosewater, 0.5);
-}
-
-#workspaces button.active,
 #taskbar button.active {
-  background: alpha(@rosewater, 0.5);
-  border-bottom: 6px solid alpha(@rosewater, 0.8);
+  background: alpha(@lavender, 0.5);
+  border-right: 6px solid alpha(@lavender, 0.8);
 }
 
 #mpris {
   color: @green;
 }
 
-#window {
-  font-size: 20px;
-  color: @lavender;
-}
-
-window#waybar.empty #window {
-  background: none;
-  border: none;
-}
-
-#brightness,
 #backlight {
   color: @flamingo;
 }
 
-#volume,
 #pulseaudio {
   color: @yellow;
-}
-
-#backlight-slider slider,
-#pulseaudio-slider slider {
-  min-height: 14px;
-  border-radius: 100%;
-}
-
-#backlight-slider slider {
-  background: @mauve;
-}
-
-#pulseaudio-slider slider {
-  background: @peach;
-}
-
-#backlight-slider trough,
-#pulseaudio-slider trough {
-  min-width: 90px;
-  min-height: 14px;
-  border: 1px solid @base;
-}
-
-#backlight-slider trough {
-  background: alpha(@flamingo, 0.75);
-}
-
-#pulseaudio-slider trough {
-  background: alpha(@yellow, 0.75);
-}
-
-#backlight-slider highlight,
-#pulseaudio-slider highlight {
-  border: 1px solid @base;
-}
-
-#backlight-slider highlight {
-  background: @flamingo;
-}
-
-#pulseaudio-slider highlight {
-  background: @yellow;
 }
 
 #network {
@@ -138,7 +71,6 @@ window#waybar.empty #window {
 #memory,
 #disk {
   color: @mauve;
-  margin: 0 3px;
 }
 
 #power-profiles-daemon,
@@ -152,6 +84,20 @@ window#waybar.empty #window {
 
 #custom-power {
   color: @red;
-  font-size: 20px;
-  padding: 0 16px;
+  font-size: 24px;
+}
+
+#taskbar button:hover,
+#custom-launcher:hover,
+#mpris:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#system:hover,
+#power:hover,
+#clock:hover,
+#custom-power:hover {
+  background: alpha(@lavender, 0.3);
+  border-right: 6px solid alpha(@lavender, 0.5);
 }

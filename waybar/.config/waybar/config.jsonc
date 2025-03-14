@@ -1,48 +1,45 @@
 {
   "layer": "top",
-  "position": "top",
-  "margin": 8,
-  "group/volume": {
-    "orientation": "horizontal",
-    "modules": [
-      "pulseaudio",
-      "pulseaudio/slider"
-    ]
+  "position": "left",
+  "margin": 4,
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "tooltip-format": "{name} | {title}",
+    "on-click": "activate",
+    "on-scroll-up": "sh ~/.config/waybar/niri-scroller.sh up",
+    "on-scroll-down": "sh ~/.config/waybar/niri-scroller.sh down"
   },
   "pulseaudio": {
     "scroll-step": 5,
-    "format": "{icon} {volume}%",
-    "format-muted": "",
+    "format": "{icon}\n{volume}",
+    "format-muted": "󰝟",
     "format-icons": {
       "default": [
-        "",
-        "",
-        ""
+        "󰕿",
+        "󰖀",
+        "󰕾"
       ]
     },
     "on-click": "pavucontrol"
   },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "device": "pulseaudio"
-  },
   "network": {
-    "format-wifi": "  {signalStrength}%",
-    "format-disconnected": "⚠ Disconnected",
+    "format": "󰣀",
+    "format-eth": "󰈀",
+    "format-wifi": "󰖩\n{signalStrength}",
+    "format-disconnected": "󰖪",
     "on-click": "sh ~/.config/rofi/wifimenu.sh"
   },
   "bluetooth": {
-    "format": " {status}",
-    "format-disabled": "󰂲 off",
-    "format-connected": " {num_connections} connected",
+    "format": "󰂯\n{status}",
+    "format-disabled": "󰂲\noff",
+    "format-connected": "󰂯\n{num_connections}",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "blueman-manager"
   },
   "group/system": {
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "modules": [
       "cpu",
       "memory",
@@ -50,19 +47,19 @@
     ]
   },
   "cpu": {
-    "format": " {usage}%",
+    "format": "\n{usage}",
     "on-click": "missioncenter"
   },
   "memory": {
-    "format": " {percentage}%",
+    "format": "\n{percentage}",
     "on-click": "missioncenter"
   },
   "disk": {
-    "format": " {percentage_used}%",
+    "format": "\n{percentage_used}",
     "on-click": "missioncenter"
   },
   "clock": {
-    "format": "󰃭 {:%a %b %d  %I:%M%p}",
+    "format": "󰃭\n{:%m\n%d\n󰅐\n%I\n%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "custom/power": {

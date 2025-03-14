@@ -4,11 +4,8 @@
   ],
   "modules-left": [
     "custom/launcher",
-    "hyprland/workspaces",
+    "wlr/taskbar",
     "mpris"
-  ],
-  "modules-center": [
-    "hyprland/window"
   ],
   "modules-right": [
     "pulseaudio",
@@ -19,51 +16,23 @@
     "custom/power"
   ],
   "custom/launcher": {
-    "format": "",
+    "format": "󰣇",
     "tooltip": false,
     "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
     "on-click-right": "killall rofi"
   },
-  "hyprland/workspaces": {
-    "format": "{name}: {windows} ",
-    "window-rewrite": {
-      "class<.*zen.*>title<.*youtube.*>": "󰗃",
-      "class<.*zen.*>": "",
-      "class<firefox>": "",
-      "class<org.kde.dolphin>": "",
-      "class<org.wezfurlong.wezterm>": "",
-      "class<code-oss>": "󰨞",
-      "class<codium>": "󰨞",
-      "class<discord>": "",
-      "class<vesktop>": "",
-      "class<goofcord>": "",
-      "class<.*betterbird.*>": "󰇮",
-      "class<spotify>": "󰓇",
-      "class<steam>": "",
-      "class<Slack>": "",
-      "class<org.telegram.desktop>": "",
-      "class<Simplenote>": "",
-      "title<Picture-in-Picture>": "󰗃"
-    },
-    "window-rewrite-default": "󰣆"
-  },
   "mpris": {
-    "format": "{player_icon} {status_icon} {artist} - {title}",
+    "format": "{player_icon}\n{status_icon}",
     "player-icons": {
       "default": "",
-      "spotify": ""
+      "spotify": "󰓇"
     },
     "status-icons": {
       "playing": "▶",
-      "paused": ""
+      "paused": "󰏤"
     },
     "ignored-players": [
       "firefox"
-    ],
-    "max-length": 60
-  },
-  "hyprland/window": {
-    "format": "{initialTitle}",
-    "icon": true
+    ]
   }
 }

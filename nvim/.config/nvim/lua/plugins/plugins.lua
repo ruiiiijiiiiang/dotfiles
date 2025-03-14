@@ -104,10 +104,6 @@ return {
     },
   },
   {
-    "saghen/blink.cmp",
-    enabled = false,
-  },
-  {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
       opts.options = {
@@ -172,6 +168,26 @@ return {
   },
   {
     "OXY2DEV/patterns.nvim",
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      { "igorlfs/nvim-dap-view", opts = {} },
+    },
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require("scrollbar").setup({})
+    end,
+  },
+  {
+    "saghen/blink.cmp",
+    enabled = false,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    enabled = false,
   },
   -- {
   --   "alanfortlink/animatedbg.nvim",

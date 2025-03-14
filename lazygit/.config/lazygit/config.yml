@@ -27,3 +27,7 @@ gui:
       - "#e5c890"
   authorColors:
     "*": "#babbf1"
+
+os:
+  edit: "nvim {{filename}}"
+  editInTerminal: true

@@ -4,8 +4,7 @@
   ],
   "modules-left": [
     "custom/launcher",
-    "wlr/taskbar",
-    "niri/window"
+    "wlr/taskbar"
   ],
   "modules-right": [
     "backlight",
@@ -23,26 +22,11 @@
     "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
     "on-click-right": "pkill rofi"
   },
-  "wlr/taskbar": {
-    "format": " {icon} ",
-    "tooltip-format": "{name} | {title}",
-    "on-click": "activate"
-  },
-  "niri/window": {
-    "icon": true
-  },
-  "group/brightness": {
-    "orientation": "horizontal",
-    "modules": [
-      "backlight",
-      "backlight/slider"
-    ]
-  },
   "backlight": {
     "scroll-step": 10,
     "on-scroll-up": "brightnessctl set +5%",
     "on-scroll-down": "brightnessctl set 5%-",
-    "format": "{icon} {percent}%",
+    "format": "{icon}\n{percent}",
     "format-icons": [
       "",
       "",
@@ -56,19 +40,15 @@
       "󰖨"
     ]
   },
-  "backlight/slider": {
-    "min": 10,
-    "max": 100
-  },
   "group/power": {
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "modules": [
       "power-profiles-daemon",
       "battery"
     ]
   },
   "power-profiles-daemon": {
-    "format": " {icon} ",
+    "format": "{icon}",
     "tooltip-format": "Power profile: {profile}",
     "tooltip": true,
     "format-icons": {
@@ -83,9 +63,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰢝 {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon}\n{capacity}",
+    "format-charging": "󰢝\n{capacity}",
+    "format-plugged": "\n{capacity}",
     "format-icons": [
       " ",
       " ",
