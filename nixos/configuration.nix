@@ -261,8 +261,10 @@
     hostName = "rui-arch";
     system = "x86_64-linux";
     protocol = "ssh-ng";
-    maxJobs = 5;
-    speedFactor = 10;
+    sshUser = "rui";
+    sshKey = "/root/.ssh/id_ed25519";
+    maxJobs = 3;
+    speedFactor = 5;
     supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
     mandatoryFeatures = [ ];
   }];
@@ -271,6 +273,14 @@
     experimental-features = [ "nix-command" "flakes" ];
     builders-use-substitutes = true;
   };
+  nix.optimise.automatic = true;
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
 
   # virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;

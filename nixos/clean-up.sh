@@ -9,4 +9,3 @@ fi
 nix-collect-garbage -d
 sudo nix-store --gc
 sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old
-nix-env -p /nix/var/nix/profiles/system --list-generations
