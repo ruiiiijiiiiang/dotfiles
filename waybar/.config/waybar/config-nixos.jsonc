@@ -19,8 +19,7 @@
   "custom/launcher": {
     "format": "󱄅",
     "tooltip": false,
-    "on-click": "rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi",
-    "on-click-right": "pkill rofi"
+    "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi; fi"
   },
   "backlight": {
     "scroll-step": 10,

@@ -26,9 +26,10 @@ window#waybar {
 #custom-power {
   border: 0;
   margin: 4px 0;
-  padding: 6px 2px;
-  background: alpha(@base, 0.75);
-  border-right: 6px solid @lavender;
+  padding: 6px 4px;
+  background: alpha(@crust, 0.8);
+  border-right: 3px solid alpha(@lavender, 0.5);
+  border-bottom: 6px solid @lavender;
 }
 
 #custom-launcher {
@@ -38,13 +39,10 @@ window#waybar {
 
 #taskbar button {
   color: @lavender;
-  margin: 2px 0;
-  padding: 6px 2px;
 }
 
 #taskbar button.active {
-  background: alpha(@lavender, 0.5);
-  border-right: 6px solid alpha(@lavender, 0.8);
+  background: alpha(@lavender, 0.75);
 }
 
 #mpris {
@@ -99,5 +97,4 @@ window#waybar {
 #clock:hover,
 #custom-power:hover {
   background: alpha(@lavender, 0.3);
-  border-right: 6px solid alpha(@lavender, 0.5);
 }
