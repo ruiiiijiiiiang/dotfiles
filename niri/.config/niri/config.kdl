@@ -530,4 +530,6 @@ binds {
 
 environment {
   DISPLAY ":12"
+  QT_QPA_PLATFORMTHEME "kde"
+  QT_QPA_PLATFORM "wayland"
 }

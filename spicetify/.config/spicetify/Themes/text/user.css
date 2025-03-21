@@ -10,7 +10,7 @@
 
 /* user settings */
 :root {
-    --font-family: "Hasklug Nerd Font", monospace;
+    --font-family: "Maple Mono", monospace;
     --font-weight: 500; /* 200 : 900 */
     --font-size: 16px;
     --line-height: 1.2;

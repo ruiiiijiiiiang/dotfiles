@@ -73,7 +73,7 @@ Thank you for checking out the configuration for my personal development environ
 ## Theme
 
 I am a big fan of the [Catppuccin](https://github.com/catppuccin) theme, specifically the frappe variant.
-I prefer [Hasklug Nerd Font](https://www.nerdfonts.com/font-downloads) for coding.
+I prefer [Maple Mono](https://github.com/subframe7536/maple-font) for coding.
 
 ## Tools
 
@@ -84,8 +84,9 @@ Neovim plugins are managed by LazyVim.
 
 - [hyprland](https://github.com/hyprwm/Hyprland)
 - [waybar](https://github.com/Alexays/Waybar)
-- [rofi](https://github.com/in0ni/rofi-wayland)
+- [rofi-wayland](https://github.com/in0ni/rofi-wayland)
 - [niri](https://github.com/YaLTeR/niri)
+- [sway](https://github.com/swaywm/sway)
 
 ### Development Environment
 

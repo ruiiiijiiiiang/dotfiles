@@ -24,6 +24,20 @@ logout=''
 yes=''
 no=''
 
+lock() {
+  local lock_command=()
+
+  if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
+    lock_command=("hyprlock")
+  elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
+    lock_command=("swaylock" "-f" "-c" "000000" "-C" "/home/rui/.config/swaylock/conf")
+  fi
+
+  if [[ ${#lock_command[@]} -gt 0 ]]; then
+    "${lock_command[@]}"
+  fi
+}
+
 # Rofi CMD
 rofi_cmd() {
   rofi -dmenu \
@@ -60,11 +74,7 @@ run_cmd() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
     if [[ $1 == '--lock' ]]; then
-      if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
-        hyprlock
-      elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
-        swaylock -f -c 000000 -C /home/rui/.config/swaylock/conf
-      fi
+      lock
     elif [[ $1 == '--shutdown' ]]; then
       if [[ $DEVICE == 'Surface Pro 4' ]]; then
         systemctl restart iptsd
@@ -76,8 +86,10 @@ run_cmd() {
       fi
       systemctl reboot
     elif [[ $1 == '--hibernate' ]]; then
+      lock
       systemctl hibernate
     elif [[ $1 == '--suspend' ]]; then
+      lock
       systemctl suspend
     elif [[ $1 == '--logout' ]]; then
       if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then

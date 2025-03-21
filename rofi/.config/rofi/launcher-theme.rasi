@@ -23,7 +23,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Hasklug Nerd Font 14";
+    font:                        "Maple Mono 14";
     background:                  #babbf1c8; /* lavender alpha */
     background-alt:              #babbf1;   /* lavender */
     foreground:                  #303446;   /* base */

@@ -4,7 +4,7 @@
   "margin": 4,
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 24,
+    "icon-size": 30,
     "tooltip-format": "{name} | {title}",
     "on-click": "activate",
     "on-scroll-up": "sh ~/.config/waybar/niri-scroller.sh up",
@@ -28,12 +28,12 @@
     "format-eth": "󰈀",
     "format-wifi": "󰖩\n{signalStrength}",
     "format-disconnected": "󰖪",
-    "on-click": "sh ~/.config/rofi/wifimenu.sh"
+    "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/wifimenu.sh; fi"
   },
   "bluetooth": {
     "format": "󰂯",
     "format-disabled": "󰂲",
-    "format-connected": "󰂯\n{num_connections}",
+    "format-connected": "󰂱\n{num_connections}",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",

@@ -4,7 +4,7 @@ indicator-radius=100
 indicator-thickness=7
 ignore-empty-password
 show-failed-attempts
-font=Hasklug Nerd Font
+font=Maple Mono
 grace=2
 fade-in=0.2
 

@@ -12,7 +12,7 @@
 
 /* customize things here */
 :root {
-	--font: 'Hasklug Nerd Font'; /* UI font name. it must be installed on your system. */
+	--font: 'Maple Mono'; /* UI font name. it must be installed on your system. */
 	letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
 	font-weight: 500; /* UI font weight. */
 	--label-font-weight: 600; /* font weight for panel labels. */
