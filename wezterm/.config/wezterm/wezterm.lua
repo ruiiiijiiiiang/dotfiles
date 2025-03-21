@@ -10,7 +10,7 @@ config.keys = keys
 config.default_prog = { "fish", "-l" }
 
 config.color_scheme = "Catppuccin Frappe"
-config.font = wezterm.font("Maple Mono")
+config.font = wezterm.font("Maple Mono NF")
 config.font_size = 14
 
 config.use_fancy_tab_bar = false

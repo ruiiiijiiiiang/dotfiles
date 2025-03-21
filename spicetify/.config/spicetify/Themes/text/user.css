@@ -10,7 +10,7 @@
 
 /* user settings */
 :root {
-    --font-family: "Maple Mono", monospace;
+    --font-family: "Maple Mono NF", monospace;
     --font-weight: 500; /* 200 : 900 */
     --font-size: 16px;
     --line-height: 1.2;
