@@ -1,7 +1,7 @@
 @import "catppuccin-frappe.css";
 
 * {
-  font-family: "Maple Mono NF";
+  font-family: "Maple Mono", "Symbols Nerd Font";
   font-weight: 500;
   font-size: 20px;
   border-radius: 6px;
@@ -34,7 +34,7 @@ window#waybar {
 
 #custom-launcher {
   color: @blue;
-  font-size: 32px;
+  font-size: 45px;
 }
 
 #taskbar button {
@@ -82,7 +82,7 @@ window#waybar {
 
 #custom-power {
   color: @red;
-  font-size: 32px;
+  font-size: 45px;
 }
 
 #taskbar button:hover,

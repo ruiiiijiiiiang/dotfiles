@@ -4,7 +4,7 @@
   "margin": 4,
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 30,
+    "icon-size": 40,
     "tooltip-format": "{name} | {title}",
     "on-click": "activate",
     "on-scroll-up": "sh ~/.config/waybar/niri-scroller.sh up",
@@ -13,20 +13,20 @@
   "pulseaudio": {
     "scroll-step": 5,
     "format": "{icon}\n{volume}",
-    "format-muted": "󰝟",
+    "format-muted": "󰝟\n0",
     "format-icons": {
       "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
+        "",
+        "",
+        ""
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "network": {
     "format": "󰣀",
     "format-eth": "󰈀",
-    "format-wifi": "󰖩\n{signalStrength}",
+    "format-wifi": "\n{signalStrength}",
     "format-disconnected": "󰖪",
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/wifimenu.sh; fi"
   },
@@ -60,7 +60,7 @@
     "on-click": "missioncenter"
   },
   "clock": {
-    "format": "󰃭\n{:%m\n%d\n󰅐\n%I\n%M}",
+    "format": "\n{:%m\n%d\n\n%I\n%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "custom/power": {

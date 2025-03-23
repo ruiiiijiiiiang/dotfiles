@@ -272,6 +272,12 @@ window-rule {
     default-floating-position x=32 y=10 relative-to="bottom-right"
 }
 
+// Open Betterbird reminders as floating by default.
+window-rule {
+  match app-id="Betterbird" title="Reminders"
+    open-floating true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -323,8 +329,8 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    Mod+Shift+Up         allow-when-locked=true { spawn "pactl" "set-sink-volume" "0" "+5%"; }
-    Mod+Shift+Down       allow-when-locked=true { spawn "pactl" "set-sink-volume" "0" "-5%"; }
+    Mod+Shift+Up         allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+    Mod+Shift+Down       allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
     Mod+Shift+Left       allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
     Mod+Shift+Right      allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
 
