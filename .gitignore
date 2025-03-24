@@ -1,4 +1,5 @@
 yazi/.config/yazi/plugins
 lazy-lock.json
 nixos/flake.lock
+nixos/result
 fish/.config/fish/conf.d/nix.fish

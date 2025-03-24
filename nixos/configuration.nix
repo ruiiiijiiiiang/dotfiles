@@ -228,6 +228,7 @@
     nerdfonts
     font-awesome
     material-design-icons
+    maple-mono
   ];
 
   environment.variables = {
@@ -263,7 +264,7 @@
     protocol = "ssh-ng";
     sshUser = "rui";
     sshKey = "/root/.ssh/id_ed25519";
-    maxJobs = 3;
+    maxJobs = 1;
     speedFactor = 5;
     supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
     mandatoryFeatures = [ ];
@@ -272,9 +273,14 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     builders-use-substitutes = true;
+    auto-optimise-store = true;
+    sandbox = true;
+    substituters = [
+      "rui-arch/nix/store"
+      "https://cache.nixos.org/"
+    ];
   };
   nix.optimise.automatic = true;
-  nix.settings.auto-optimise-store = true;
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -283,8 +289,8 @@
 
 
   # virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "rui" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "rui" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
