@@ -276,7 +276,7 @@
     auto-optimise-store = true;
     sandbox = true;
     substituters = [
-      "rui-arch/nix/store"
+      "http://rui-arch/nix/store"
       "https://cache.nixos.org/"
     ];
   };

@@ -182,10 +182,6 @@ return {
     end,
   },
   {
-    "saghen/blink.cmp",
-    enabled = false,
-  },
-  {
     "rcarriga/nvim-dap-ui",
     enabled = false,
   },

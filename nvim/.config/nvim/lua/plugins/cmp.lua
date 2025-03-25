@@ -30,6 +30,7 @@ local icons = {
 
 return {
   "hrsh7th/nvim-cmp",
+  enabled = false,
   event = "VimEnter",
   dependencies = {
     "neovim/nvim-lspconfig",
