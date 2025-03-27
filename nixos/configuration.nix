@@ -66,7 +66,7 @@
   # services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -147,10 +147,15 @@
     maliit-keyboard
 
     # gui apps
+    wezterm
     libreoffice-qt
     mission-center
 
     # cli
+    neovim
+    starship
+    yazi
+    fzf
     bat
     stow
     lsd
@@ -178,6 +183,7 @@
     spotify-player
     imagemagick
     dust
+    helix
 
     # other utilities
     syncthing
@@ -195,10 +201,6 @@
 
     # rust
     rustup # use rustup to manager all rust tool chain
-    # rustc
-    # cargo
-    # clippy
-    # rust-analyzer
 
     # lua
     lua54Packages.luarocks
@@ -206,6 +208,7 @@
     lua-language-server
 
     # other languages/tools
+    codeium
     lldb
     bash-language-server
     shellcheck
@@ -225,10 +228,8 @@
     noto-fonts-color-emoji
     noto-fonts-monochrome-emoji
     google-fonts
-    nerdfonts
-    font-awesome
-    material-design-icons
-    maple-mono
+    nerd-fonts.symbols-only
+    maple-mono.truetype
   ];
 
   environment.variables = {
@@ -269,16 +270,10 @@
     supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
     mandatoryFeatures = [ ];
   }];
-  nix.distributedBuilds = true;
+  nix.distributedBuilds = true; # use --builders '' to bypass it during nixos-rebuild
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
-    builders-use-substitutes = true;
     auto-optimise-store = true;
-    sandbox = true;
-    substituters = [
-      "http://rui-arch/nix/store"
-      "https://cache.nixos.org/"
-    ];
   };
   nix.optimise.automatic = true;
   nix.gc = {
@@ -286,7 +281,6 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-
 
   # virtualisation.docker.enable = true;
   # virtualisation.virtualbox.host.enable = true;
