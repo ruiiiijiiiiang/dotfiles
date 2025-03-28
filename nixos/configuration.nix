@@ -221,6 +221,10 @@
     python313
     taplo
     marksman
+
+    dive
+    podman-tui
+    podman-compose
   ];
 
   fonts.packages = with pkgs; [
@@ -282,9 +286,17 @@
     options = "--delete-older-than 30d";
   };
 
-  # virtualisation.docker.enable = true;
-  # virtualisation.virtualbox.host.enable = true;
-  # users.extraGroups.vboxusers.members = [ "rui" ];
+  virtualisation = {
+    containers.enable = true;
+    # docker.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+    virtualbox.host.enable = true;
+  };
+  users.extraGroups.vboxusers.members = [ "rui" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

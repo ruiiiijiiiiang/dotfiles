@@ -4,7 +4,7 @@
   "margin": 4,
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 40,
+    "icon-size": 38,
     "tooltip-format": "{name} | {title}",
     "on-click": "activate",
     "on-scroll-up": "sh ~/.config/waybar/niri-scroller.sh up",
