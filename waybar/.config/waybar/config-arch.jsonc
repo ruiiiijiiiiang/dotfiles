@@ -11,6 +11,7 @@
     "pulseaudio",
     "network",
     "bluetooth",
+    "custom/weather",
     "group/system",
     "clock",
     "custom/power"

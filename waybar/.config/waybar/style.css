@@ -20,6 +20,7 @@ window#waybar {
 #pulseaudio,
 #network,
 #bluetooth,
+#custom-weather,
 #system,
 #power,
 #clock,
@@ -65,6 +66,10 @@ window#waybar {
   color: @blue;
 }
 
+#custom-weather {
+  color: @rosewater;
+}
+
 #cpu,
 #memory,
 #disk {
@@ -92,6 +97,7 @@ window#waybar {
 #pulseaudio:hover,
 #network:hover,
 #bluetooth:hover,
+#custom-weather:hover,
 #system:hover,
 #power:hover,
 #clock:hover,

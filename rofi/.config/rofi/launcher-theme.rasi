@@ -81,9 +81,10 @@ inputbar {
     children:                    [ "textbox-prompt-colon", "entry", "dummy", "mode-switcher" ];
 }
 textbox-prompt-colon {
+    font:                        "JetBrains Mono Nerd Font 16";
     enabled:                     true;
     expand:                      false;
-    str:                         "󰍉";
+    str:                         "";
     padding:                     12px;
     padding-right:               0;
     border-radius:               8px 0 0 8px;

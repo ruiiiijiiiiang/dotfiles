@@ -39,6 +39,13 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "blueman-manager"
   },
+  "custom/weather": {
+    "exec": "sh ~/.config/waybar/weather.sh",
+    "interval": 3600,
+    "format": "{}",
+    "tooltip": true,
+    "return-type": "json"
+  },
   "group/system": {
     "orientation": "vertical",
     "modules": [
