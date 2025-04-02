@@ -88,9 +88,4 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, _config, hover, max_wi
   }
 end)
 
-if os.getenv("DESKTOP_SESSION") == "plasma" then
-  config.enable_wayland = false
-  config.front_end = "WebGpu"
-end
-
 return config
