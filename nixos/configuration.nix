@@ -14,6 +14,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  zramSwap.enable = true;
+
   networking.hostName = "rui-nixos"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
@@ -82,7 +84,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.enableRedistributableFirmware = true;
-  hardware.enableAllFirmware = false;
+  hardware.enableAllFirmware = true;
   services.blueman.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -97,11 +99,16 @@
   services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
 
+  # services.tlp.enable = false;
+  # services.iptsd.enable = true;
+  # services.thermald.enable = true;
+  # hardware.sensor.iio.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rui = {
     isNormalUser = true;
     description = "Rui Jiang";
-    extraGroups = [ "networkmanager" "video" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "video" "wheel" ];
   };
 
   # Install firefox.
@@ -221,10 +228,6 @@
     python313
     taplo
     marksman
-
-    dive
-    podman-tui
-    podman-compose
   ];
 
   fonts.packages = with pkgs; [
@@ -285,18 +288,6 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-
-  virtualisation = {
-    containers.enable = true;
-    # docker.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-    virtualbox.host.enable = true;
-  };
-  users.extraGroups.vboxusers.members = [ "rui" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

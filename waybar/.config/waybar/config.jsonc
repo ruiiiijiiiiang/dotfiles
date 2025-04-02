@@ -41,6 +41,7 @@
   },
   "custom/weather": {
     "exec": "sh ~/.config/waybar/weather.sh",
+    "on-click": "sh ~/.config/waybar/weather.sh",
     "interval": 3600,
     "format": "{}",
     "tooltip": true,
