@@ -154,9 +154,6 @@ return {
       })
     end,
   },
-  { "SmiteshP/nvim-navic", opts = {
-    highlight = true,
-  } },
   {
     "nvzone/typr",
     dependencies = "nvzone/volt",
