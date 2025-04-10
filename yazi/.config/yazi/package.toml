@@ -1,42 +1,37 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "600614a"
-hash = "882ed23839778f82dc137248979c8681"
+rev = "a1738e8"
+hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "7707c09"
-hash = "e9cf1bfc03de7fee0f1d4260da0d1dfd"
+rev = "a1738e8"
+hash = "e0ada736ea676c2bbb3ec705a49526ef"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
-rev = "9328205"
-hash = "3e51d1fd8a2e481fcfa8eab1251d1c5f"
+rev = "6b0fc1e"
+hash = "ab115c6cc77f5710c27f39dfa2f3d4d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "6418698"
-hash = "c1a2739e9ef2d837030ccb4267be3ed1"
+rev = "a1738e8"
+hash = "7918aab6a71caf31b58411f789195677"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "6418698"
-hash = "4c7e8fd0266eedee7b619d966bd2d025"
-
-[[plugin.deps]]
-use = "Reledia/glow"
-rev = "5ce76dc"
-hash = "52e5f5c602962e7cbf874da28f52ba45"
-
-[[plugin.deps]]
-use = "Reledia/miller"
-rev = "40e0265"
-hash = "2d6d77583162aaf0a599e7a3091b5878"
+rev = "a1738e8"
+hash = "2f1053f89d1a301a648ab181d0948e38"
 
 [[plugin.deps]]
 use = "imsi32/yatline-catppuccin"
-rev = "dc575da"
+rev = "8cc4773"
 hash = "fd03fb015a28040bca0c0f9a8fe6fd8d"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "73b7842"
+hash = "1b2f25c9a34b98e596c65bd3e84c51ef"
 
 [flavor]
 deps = []

@@ -1,6 +1,6 @@
 # Hello world
 
-Thank you for checking out the configuration for my personal development environment. These are the dotfiles I use across Arch Linux and NixOS. I hope you find some inspiration here.
+Thank you for checking out the configuration for my personal development environment. Feel free to borrow any ideas as you see fit. These are dotfiles I use specifically for my setup. They are not intended to be copied directly.
 
 ## Screenshots
 
@@ -64,7 +64,7 @@ Thank you for checking out the configuration for my personal development environ
 </details>
 <details>
   <summary>Version 9 (current)</summary>
-  Moved to niri on NixOS
+  Moved to niri
 
 ![Screenshot](./screenshots/niri_screenshot_2.png)
 
@@ -72,7 +72,7 @@ Thank you for checking out the configuration for my personal development environ
 
 ## Theme
 
-I am a big fan of the [Catppuccin](https://github.com/catppuccin) theme, specifically the frappe variant.
+I am a big fan of the [Catppuccin](https://github.com/catppuccin) theme, specifically the frappe variant with lavender accent.
 I prefer [Maple Mono](https://github.com/subframe7536/maple-font) for coding.
 
 ## Tools
@@ -102,8 +102,8 @@ Neovim plugins are managed by LazyVim.
   - [tiny-glimmer.nvim](https://github.com/rachartier/tiny-glimmer.nvim)
   - [reactive.nvim](https://github.com/rasulomaroff/reactive.nvim)
   - [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim)
-  - [animatedbg.nvim](https://github.com/alanfortlink/animatedbg.nvim)
   - [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
+  - [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
 
 ### TUI Applications
 
@@ -126,10 +126,13 @@ Neovim plugins are managed by LazyVim.
 - [superfile](https://github.com/yorukot/superfile)
 - [posting](https://github.com/darrenburns/posting)
 - [dust](https://github.com/bootandy/dust)
+- [chafa](https://github.com/hpjansson/chafa)
+- [ouch](https://github.com/ouch-org/ouch)
 
-### Desktop Applications
+### GUI Applications
 
 - [zen-browser](https://github.com/zen-browser/desktop)
-- [vesktop](https://github.com/Vencord/Vesktop)
+- [GoofCord](https://github.com/Milkshiift/GoofCord)
+- [NeoHtop](https://github.com/Abdenasser/neohtop)
 - [spicetify](https://github.com/spicetify/cli)
 - [system24](https://github.com/refact0r/system24)

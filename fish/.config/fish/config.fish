@@ -1,16 +1,6 @@
-# Outside both blocks - Function definitions needed everywhere
-function qcd
-    echo cd (string repeat -n (string length $argv) ../)
-end
+# Global functions and variables
 
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
-end
+set -U fish_user_paths /home/rui/.local/bin /home/rui/.bun/bin /home/rui/.cargo/bin /home/rui/.deno/bin /usr/local/sbin /usr/local/bin /usr/bin /usr/bin/core_perl
 
 # Login shell - Environment setup and one-time initializations
 if status is-login
@@ -19,6 +9,7 @@ if status is-login
     zoxide init fish | source
     starship init fish | source
     fzf --fish | source
+    atuin init fish | source
 end
 
 # Interactive shell - Shell behavior and user interface
@@ -49,13 +40,21 @@ if status is-interactive
         nvim $(command fzf --preview "bat --style=numbers --color=always --line-range :500 {}")
     end
 
+    function qcd
+        echo cd (string repeat -n (string length $argv) ../)
+    end
+
+    function y
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            builtin cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
+    end
+
     function fish_greeting
         sleep 0.1
         fastfetch
-        # if command -v catnap >/dev/null 2>&1
-        #     catnap
-        # else
-        #     fastfetch
-        # end
     end
 end

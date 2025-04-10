@@ -1,39 +1,79 @@
 {
   "layer": "top",
-  "position": "left",
-  "margin": 4,
+  "position": "top",
+  "margin": "4px 8px",
+  "modules-left": [
+    "custom/launcher",
+    "wlr/taskbar",
+    "mpris"
+  ],
+  "modules-center": [
+    "niri/window"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "bluetooth",
+    "custom/weather",
+    "group/system",
+    "clock",
+    "custom/power"
+  ],
+  "custom/launcher": {
+    "format": "󰣇",
+    "tooltip": false,
+    "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi; fi"
+  },
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 38,
+    "icon-size": 30,
     "tooltip-format": "{name} | {title}",
     "on-click": "activate",
     "on-scroll-up": "sh ~/.config/waybar/niri-scroller.sh up",
     "on-scroll-down": "sh ~/.config/waybar/niri-scroller.sh down"
   },
+  "mpris": {
+    "format": "{player_icon}{status_icon}{artist} - {title}",
+    "tooltip-format": "Artist: {artist}\nTitle: {title}\nAlbum: {album}\nLength: {length}",
+    "player-icons": {
+      "default": " ",
+      "spotify": "󰓇 "
+    },
+    "status-icons": {
+      "playing": " ",
+      "paused": " "
+    },
+    "player": "spotify",
+    "max-length": 45
+  },
+  "niri/window": {
+    "icon": true
+  },
   "pulseaudio": {
     "scroll-step": 5,
-    "format": "{icon}\n{volume}",
-    "format-muted": "󰝟\n0",
+    "format": "{icon}{volume}",
+    "format-muted": " ",
     "format-icons": {
       "default": [
-        "",
-        "",
-        ""
+        " ",
+        " ",
+        " "
       ]
     },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "network": {
-    "format": "󰣀",
-    "format-eth": "󰈀",
-    "format-wifi": "\n{signalStrength}",
-    "format-disconnected": "󰖪",
+    "format": "󰣀 ",
+    "format-eth": "󰈀 ",
+    "format-wifi": " {signalStrength}",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format": "{ifname}\n{ipaddr}\n{essid}",
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/wifimenu.sh; fi"
   },
   "bluetooth": {
     "format": "󰂯",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱\n{num_connections}",
+    "format-disabled": " 󰂲 ",
+    "format-connected": "󰂱  {num_connections}",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -48,7 +88,7 @@
     "return-type": "json"
   },
   "group/system": {
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "modules": [
       "cpu",
       "memory",
@@ -56,24 +96,89 @@
     ]
   },
   "cpu": {
-    "format": "\n{usage}",
-    "on-click": "missioncenter"
+    "format": " {usage}% | ",
+    "on-click": "neohtop"
   },
   "memory": {
-    "format": "\n{percentage}",
-    "on-click": "missioncenter"
+    "format": " {percentage}% | ",
+    "on-click": "neohtop"
   },
   "disk": {
-    "format": "\n{percentage_used}",
-    "on-click": "missioncenter"
+    "format": " {percentage_used}%",
+    "on-click": "neohtop"
   },
   "clock": {
-    "format": "\n{:%m\n%d\n\n%I\n%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "󰃭 {:%m\/%d |  %I:%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ef9f76'><b>{}</b></span>",
+        "weekdays": "<span color='#e5c890'><b>{}</b></span>",
+        "days": "<span color='#babbf1'><b>{}</b></span>",
+        "today": "<span background='#ca9ee6' color='#303446'><b>{}</b></span>"
+      }
+    }
   },
   "custom/power": {
     "format": "󰐥",
     "tooltip": false,
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/powermenu.sh; fi"
+  },
+  /* Unused */
+  "backlight": {
+    "scroll-step": 10,
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "format": "{icon}{percent}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      "󰖨 "
+    ]
+  },
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": [
+      "power-profiles-daemon",
+      "battery"
+    ]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": " ",
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
+    }
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}{capacity}",
+    "format-charging": "󰢝 {capacity}",
+    "format-plugged": " {capacity}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
   }
 }

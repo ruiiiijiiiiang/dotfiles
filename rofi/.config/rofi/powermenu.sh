@@ -76,14 +76,8 @@ run_cmd() {
     if [[ $1 == '--lock' ]]; then
       lock
     elif [[ $1 == '--shutdown' ]]; then
-      if [[ $DEVICE == 'Surface Pro 4' ]]; then
-        systemctl restart iptsd
-      fi
       systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
-      if [[ $DEVICE == 'Surface Pro 4' ]]; then
-        systemctl restart iptsd
-      fi
       systemctl reboot
     elif [[ $1 == '--hibernate' ]]; then
       lock

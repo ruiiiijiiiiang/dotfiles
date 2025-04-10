@@ -3,19 +3,19 @@
 * {
   font-family: "Maple Mono", "Symbols Nerd Font";
   font-weight: 500;
-  font-size: 20px;
-  border-radius: 6px;
+  font-size: 18px;
+  border-radius: 8px;
 }
 
-window#waybar {
-  background: transparent;
-  padding: 0;
-  margin: 0;
+window#waybar>box {
+  background: @surface0;
+  padding: 0 8px;
 }
 
 #custom-launcher,
-#taskbar button,
+#taskbar,
 #mpris,
+#window,
 #backlight,
 #pulseaudio,
 #network,
@@ -26,20 +26,36 @@ window#waybar {
 #clock,
 #custom-power {
   border: 0;
-  margin: 4px 0;
-  padding: 6px 4px;
-  background: alpha(@crust, 0.8);
-  border-right: 4px solid alpha(@lavender, 0.5);
-  border-bottom: 6px solid @lavender;
+  margin: 2px 4px;
+  padding: 2px 4px;
+  background: @crust;
+}
+
+#taskbar button:hover,
+#custom-launcher:hover,
+#mpris:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-weather:hover,
+#system:hover,
+#power:hover,
+#clock:hover,
+#custom-power:hover {
+  background: alpha(@lavender, 0.3);
 }
 
 #custom-launcher {
-  color: @blue;
-  font-size: 45px;
+  background: @blue;
+  color: @mantle;
+  font-size: 32px;
+  padding: 2px 8px;
 }
 
 #taskbar button {
-  color: @lavender;
+  border-radius: 8px;
+  padding: 2px 4px;
 }
 
 #taskbar button.active {
@@ -48,6 +64,16 @@ window#waybar {
 
 #mpris {
   color: @green;
+}
+
+#window {
+  background: @lavender;
+  color: @mantle;
+}
+
+window#waybar.empty #window {
+  background: none;
+  border: none;
 }
 
 #backlight {
@@ -59,7 +85,7 @@ window#waybar {
 }
 
 #network {
-  color: @green;
+  color: @sky;
 }
 
 #bluetooth {
@@ -82,25 +108,12 @@ window#waybar {
 }
 
 #clock {
-  color: @sapphire;
+  color: @green;
 }
 
 #custom-power {
-  color: @red;
-  font-size: 45px;
-}
-
-#taskbar button:hover,
-#custom-launcher:hover,
-#mpris:hover,
-#backlight:hover,
-#pulseaudio:hover,
-#network:hover,
-#bluetooth:hover,
-#custom-weather:hover,
-#system:hover,
-#power:hover,
-#clock:hover,
-#custom-power:hover {
-  background: alpha(@lavender, 0.3);
+  background: @red;
+  color: @mantle;
+  font-size: 32px;
+  padding: 2px 8px;
 }

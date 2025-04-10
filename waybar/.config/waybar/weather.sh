@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-WEATHER_INFO=$(curl -s "wttr.in/?format=\"%c%20%t\"" | sed 's/"//g')
+LOCATION="houston"
+WEATHER_INFO=$(curl -s --connect-timeout 5 --retry 3 "wttr.in/$LOCATION?format=\"%c%20%t%20%h%20%w%20%S%20%s\"" | sed 's/"//g')
 
-# Extract the symbol and temperature
 SYMBOL=$(echo "$WEATHER_INFO" | awk '{print $1}')
-TEMPERATURE_RAW=$(echo "$WEATHER_INFO" | awk '{print $2}')
-# Remove the degree symbol from the temperature and ensure 2 digits
-TEMPERATURE=$(echo "$TEMPERATURE_RAW" | sed 's/°//g' | awk '{printf "%02d", $1}')
+TEMPERATURE=$(echo "$WEATHER_INFO" | awk '{print $2}' | sed 's/+//g; s/F//g')
+HUMIDITY=$(echo "$WEATHER_INFO" | awk '{print $3}')
+WIND_SPEED=$(echo "$WEATHER_INFO" | awk '{print $4}')
+SUN_RISE=$(echo "$WEATHER_INFO" | awk '{print $5}')
+SUN_SET=$(echo "$WEATHER_INFO" | awk '{print $6}')
 
-WAYBAR_OUTPUT=$(printf '{"text": "%s\\n%s", "tooltip": "Weather: %s %s°F"}' "$SYMBOL" "$TEMPERATURE" "$SYMBOL" "$TEMPERATURE")
+WAYBAR_OUTPUT=$(printf '{"text": "%s %s", "tooltip": "Weather: %s %s\\nHumidity: %s\\nWind: %s\\nSunrise: %s\\nSunset: %s"}' "$SYMBOL" "$TEMPERATURE" "$SYMBOL" "$TEMPERATURE" "$HUMIDITY" "$WIND_SPEED" "$SUN_RISE" "$SUN_SET")
 echo "$WAYBAR_OUTPUT"
