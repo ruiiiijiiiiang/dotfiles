@@ -1,7 +1,11 @@
+local frappe = require("catppuccin.palettes").get_palette("frappe")
 return {
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
   { "nvzone/showkeys", cmd = "ShowkeysToggle" },
+  { "hat0uma/csvview.nvim" },
+  { "OXY2DEV/patterns.nvim" },
+  { "lewis6991/gitsigns.nvim", enabled = true },
   { "mrjones2014/smart-splits.nvim", lazy = false },
   {
     "rasulomaroff/reactive.nvim",
@@ -92,7 +96,6 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
-    version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
     opts = {
       options = {
@@ -108,18 +111,17 @@ return {
     opts = function(_, opts)
       opts.options = {
         section_separators = { left = "▓▒░", right = "░▒▓" },
-        component_separators = { left = "", right = "" },
       }
       opts.sections.lualine_a = {
         {
           opts.sections.lualine_a[1],
-          separator = { left = "", right = "▓▒░" },
+          separator = { left = "", right = "▓▒░" },
         },
       }
       opts.sections.lualine_z = {
         {
           opts.sections.lualine_z[1],
-          separator = { left = "░▒▓", right = "" },
+          separator = { left = "░▒▓", right = "" },
         },
       }
     end,
@@ -142,7 +144,6 @@ return {
     "rachartier/tiny-glimmer.nvim",
     event = "TextYankPost",
     config = function()
-      local frappe = require("catppuccin.palettes").get_palette("frappe")
       require("tiny-glimmer").setup({
         default_animation = "fade",
         animations = {
@@ -155,18 +156,6 @@ return {
     end,
   },
   {
-    "nvzone/typr",
-    dependencies = "nvzone/volt",
-    opts = {},
-    cmd = { "Typr", "TyprStats" },
-  },
-  {
-    "hat0uma/csvview.nvim",
-  },
-  {
-    "OXY2DEV/patterns.nvim",
-  },
-  {
     "mfussenegger/nvim-dap",
     dependencies = {
       { "igorlfs/nvim-dap-view", opts = {} },
@@ -174,18 +163,31 @@ return {
   },
   {
     "petertriho/nvim-scrollbar",
+    dependencies = { "lewis6991/gitsigns.nvim" },
     config = function()
-      require("scrollbar").setup({})
+      require("gitsigns").setup()
+      require("scrollbar").setup({
+        handle = {
+          color = frappe.lavender,
+        },
+        marks = {
+          Cursor = {
+            color = frappe.base,
+          },
+        },
+      })
     end,
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    enabled = false,
   },
   -- {
   --   "alanfortlink/animatedbg.nvim",
   --   config = function()
   --     require("animatedbg-nvim").setup({})
   --   end,
+  -- },
+  -- {
+  --   "nvzone/typr",
+  --   dependencies = "nvzone/volt",
+  --   opts = {},
+  --   cmd = { "Typr", "TyprStats" },
   -- },
 }
