@@ -10,6 +10,9 @@ config.keys = keys
 config.default_prog = { "fish", "-l" }
 
 config.color_scheme = "Catppuccin Frappe"
+local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
+local accent = "#babbf1" -- lavender
+
 config.font = wezterm.font("Maple Mono")
 config.font_size = 14
 
@@ -50,25 +53,23 @@ local function tab_title(tab_info)
   return title
 end
 
-local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
 wezterm.on("format-tab-title", function(tab, tabs, panes, _config, hover, max_width)
   local edge_background = color_scheme.tab_bar.background
-  local edge_foreground = color_scheme.tab_bar.inactive_tab.fg_color
-  local text_background = color_scheme.tab_bar.inactive_tab.fg_color
-  local text_foreground = color_scheme.tab_bar.inactive_tab.bg_color
+  local edge_foreground = color_scheme.tab_bar.new_tab.bg_color
+  local text_background = color_scheme.tab_bar.new_tab.bg_color
+  local text_foreground = color_scheme.tab_bar.new_tab_hover.fg_color
   local left_edge = ""
   local right_edge = ""
   local italic = false
 
   if tab.is_active then
-    edge_foreground = color_scheme.tab_bar.active_tab.bg_color
-    text_background = color_scheme.tab_bar.active_tab.bg_color
+    edge_foreground = accent
+    text_background = accent
     text_foreground = color_scheme.tab_bar.active_tab.fg_color
     italic = true
   elseif hover then
-    edge_foreground = color_scheme.tab_bar.inactive_tab_hover.bg_color
-    text_background = color_scheme.tab_bar.inactive_tab_hover.bg_color
-    text_foreground = color_scheme.tab_bar.inactive_tab_hover.fg_color
+    edge_foreground = color_scheme.tab_bar.new_tab_hover.bg_color
+    text_background = color_scheme.tab_bar.new_tab_hover.bg_color
   end
 
   local title = tab_title(tab)

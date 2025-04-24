@@ -36,6 +36,10 @@ if status is-interactive
         z $argv
     end
 
+    function rm
+        command rm -Iv $argv
+    end
+
     function fzf
         nvim $(command fzf --preview "bat --style=numbers --color=always --line-range :500 {}")
     end

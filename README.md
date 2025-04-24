@@ -117,6 +117,7 @@ Neovim plugins are managed by LazyVim.
 - [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 - [bat](https://github.com/sharkdp/bat)
 - [lazygit](https://github.com/jesseduffield/lazygit)
+- [atuin](https://github.com/atuinsh/atuin)
 - [stow](https://github.com/aspiers/stow)
 - [btop](https://github.com/aristocratos/btop)
 - [clipboard](https://github.com/Slackadays/Clipboard)

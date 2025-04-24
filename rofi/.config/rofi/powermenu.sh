@@ -26,16 +26,12 @@ no=''
 
 lock() {
   local lock_command=()
-
   if [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
     lock_command=("hyprlock")
   elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
-    lock_command=("swaylock" "-f" "-c" "000000" "-C" "/home/rui/.config/swaylock/conf")
+    lock_command=("swaylock" "-f")
   fi
-
-  if [[ ${#lock_command[@]} -gt 0 ]]; then
-    "${lock_command[@]}"
-  fi
+  "${lock_command[@]}"
 }
 
 # Rofi CMD

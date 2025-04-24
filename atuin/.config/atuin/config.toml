@@ -65,7 +65,7 @@ sync_address = "http://192.168.68.80:8888"
 
 ## which style to use
 ## possible values: auto, full, compact
-# style = "auto"
+style = "full"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
@@ -96,7 +96,7 @@ sync_address = "http://192.168.68.80:8888"
 # ctrl_n_shortcuts = false
 
 ## default history list format - can also be specified with the --format arg
-# history_format = "{time}\t{command}\t{duration}"
+history_format = "{time}\t{host}\t{command}\t{duration}"
 
 ## prevent commands matching any of these regexes from being written to history.
 ## Note that these regular expressions are unanchored, i.e. if they don't start
@@ -155,12 +155,12 @@ enter_accept = true
 ## keybinding is defined.  If this is set to "emacs", "vim-insert", or
 ## "vim-normal", the startup keymap mode in the Atuin search is forced to be
 ## the specified one.
-# keymap_mode = "auto"
+keymap_mode = "vim-normal"
 
 ## Cursor style in each keymap mode.  If specified, the cursor style is changed
 ## in entering the cursor shape.  Available values are "default" and
 ## "{blink,steady}-{block,underline,bar}".
-# keymap_cursor = { emacs = "blink-block", vim_insert = "blink-block", vim_normal = "steady-block" }
+keymap_cursoe = { emacs = "blink-block", vim_insert = "blink-bar", vim_normal = "steady-block" }
 
 # network_connect_timeout = 5
 # network_timeout = 5
@@ -174,27 +174,31 @@ enter_accept = true
 
 [stats]
 ## Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
-# common_subcommands = [
-#   "apt",
-#   "cargo",
-#   "composer",
-#   "dnf",
-#   "docker",
-#   "git",
-#   "go",
-#   "ip",
-#   "kubectl",
-#   "nix",
-#   "nmcli",
-#   "npm",
-#   "pecl",
-#   "pnpm",
-#   "podman",
-#   "port",
-#   "systemctl",
-#   "tmux",
-#   "yarn",
-# ]
+common_subcommands = [
+  "apt",
+  "cargo",
+  "composer",
+  "dnf",
+  "docker",
+  "git",
+  "go",
+  "ip",
+  "kubectl",
+  "nix",
+  "nmcli",
+  "npm",
+  "pecl",
+  "pnpm",
+  "podman",
+  "port",
+  "systemctl",
+  "tmux",
+  "yarn",
+
+  "pacman",
+  "yay",
+  "brew",
+]
 
 ## Set commands that should be totally stripped and ignored from stats
 # common_prefix = ["sudo"]
@@ -248,7 +252,7 @@ records = true
 ## The port that should be used for TCP on non unix systems
 # tcp_port = 8889
 
-# [theme]
+[theme]
 ## Color theme to use for rendering in the terminal.
 ## There are some built-in themes, including the base theme ("default"),
 ## "autumn" and "marine". You can add your own themes to the "./themes" subdirectory of your
@@ -258,7 +262,7 @@ records = true
 ##    https://ogeon.github.io/docs/palette/master/palette/named/index.html
 ## If you provide a custom theme file, it should be  called "NAME.toml" and the theme below
 ## should be the stem, i.e. `theme = "NAME"` for your chosen NAME.
-# name = "autumn"
+name = "catppuccin-frappe-lavender"
 
 ## Whether the theme manager should output normal or extra information to help fix themes.
 ## Boolean, true or false. If unset, left up to the theme manager.
