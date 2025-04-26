@@ -4,11 +4,10 @@
   font-family: "Maple Mono", "Symbols Nerd Font";
   font-weight: 500;
   font-size: 18px;
-  border-radius: 8px;
 }
 
-window#waybar>box {
-  background: @surface0;
+window#waybar {
+  background: @base;
   padding: 0 8px;
 }
 
@@ -26,9 +25,11 @@ window#waybar>box {
 #clock,
 #custom-power {
   border: 0;
-  margin: 2px 4px;
+  margin: 2px 2px;
   padding: 2px 4px;
   background: @crust;
+  border: 2px solid @surface2;
+  border-radius: 4px;
 }
 
 #taskbar button:hover,
@@ -85,7 +86,7 @@ window#waybar.empty #window {
 }
 
 #network {
-  color: @sky;
+  color: @green;
 }
 
 #bluetooth {
@@ -108,7 +109,7 @@ window#waybar.empty #window {
 }
 
 #clock {
-  color: @green;
+  color: @sky;
 }
 
 #custom-power {

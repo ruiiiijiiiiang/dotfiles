@@ -63,10 +63,17 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 9 (current)</summary>
+  <summary>Version 9</summary>
   Moved to niri
 
 ![Screenshot](./screenshots/niri_screenshot_2.png)
+
+</details>
+<details>
+  <summary>Version 10 (current)</summary>
+  Ditched NixOS
+
+![Screenshot](./screenshots/Screenshot_from_2025-04-25_23-12-41.png)
 
 </details>
 
