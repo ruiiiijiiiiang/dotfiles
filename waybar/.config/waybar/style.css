@@ -29,7 +29,6 @@ window#waybar {
   padding: 2px 4px;
   background: @crust;
   border: 2px solid @surface2;
-  border-radius: 4px;
 }
 
 #taskbar button:hover,
@@ -55,7 +54,7 @@ window#waybar {
 }
 
 #taskbar button {
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 2px 4px;
 }
 

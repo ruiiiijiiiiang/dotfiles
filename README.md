@@ -71,9 +71,9 @@ Thank you for checking out the configuration for my personal development environ
 </details>
 <details>
   <summary>Version 10 (current)</summary>
-  Ditched NixOS
+  Ditched NixOS; updated discord to the newest UI
 
-![Screenshot](./screenshots/Screenshot_from_2025-04-25_23-12-41.png)
+![Screenshot](./screenshots/Screenshot_from_2025-04-29_21-22-05.png)
 
 </details>
 

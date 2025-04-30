@@ -8,76 +8,149 @@
 */
 
 /* import theme modules */
-@import url('https://refact0r.github.io/system24/src/main.css'); /* main theme css. DO NOT REMOVE */
+@import url('https://refact0r.github.io/system24/build/system24.css'); /* main theme css. DO NOT REMOVE */
 
 /* customize things here */
-:root {
+body {
 	--font: 'Maple Mono', 'Symbols Nerd Font', monospace; /* UI font name. it must be installed on your system. */
 	letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
 	font-weight: 500; /* UI font weight. */
-	--label-font-weight: 600; /* font weight for panel labels. */
-	--corner-text: 'catppuccin24'; /* custom text to display in the corner. only works on windows. */
-	--pad: 16px; /* padding between panels. */
-	--txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
-	--panel-roundness: 8px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
 
-	/* background colors */
-	--bg-0: oklch(32.91% 0.0324 274.76); /* main background color. */ /* Catppuccin Base */
-	--bg-1: oklch(29.73% 0.0294 276.21); /* background color for secondary elements like code blocks, embeds, etc. */ /* Catppuccin Mantle */
-	--bg-2: oklch(39.49% 0.0342 275.9); /* color of neutral buttons. */ /* Catppuccin Surface 0 */
-	--bg-3: oklch(46.01% 0.0367 272.97); /* color of neutral buttons when hovered. */ /* Catppuccin Surface 1 */
+    /* sizes */
+  --gap: 12px; /* spacing between panels */
+  --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+  --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+  --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
 
-	/* state modifiers */
-	--hover: color-mix(in oklch, var(--txt-3), transparent 80%); /* color of hovered elements. */
-	--active: color-mix(in oklch, var(--txt-3), transparent 60%); /* color of elements when clicked. */
-	--selected: var(--active); /* color of selected elements. */
+  /* animation/transition options */
+  --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+  --list-item-transition: 0.2s ease; /* transition for list items */
+  --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
 
-	/* text colors */
-	--txt-dark: var(--bg-0); /* color of dark text on colored backgrounds. */
-	--txt-link: var(--cyan); /* color of links. */
-	--txt-0: oklch(96.19% 0.0526 273.35); /* color of bright/white text. */ /* +10% lightness from Text */
-	--txt-1: oklch(86.19% 0.0526 273.35); /* main text color. */ /* Catppuccin Text */
-	--txt-2: oklch(69.7% 0.0464 273.78); /* color of secondary text like channel list. */ /* Catppuccin Overlay 2 */
-	--txt-3: oklch(52.11% 0.0386 274); /* color of muted text. */ /* Catppuccin Surface 2 */
+  /* top bar options */
+  --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+  --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+  --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+  --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
 
-	/* accent colors */
-	--acc-0: var(--lavender); /* main accent color. */
-	--acc-1: var(--lavender-1); /* color of accent buttons when hovered. */
-	--acc-2: var(--lavender-2); /* color of accent buttons when clicked. */
+  /* window controls */
+  --custom-window-controls: off; /* off: default window controls, on: custom window controls */
+  --window-control-size: 14px; /* size of custom window controls */
 
-	/* borders */
-	--border-width: 2px; /* panel border thickness. */
-	--border-color: var(--bg-2); /* panel border color. */
-	--border-hover-color: var(--acc-0); /* panel border color when hovered. */
-	--border-transition: 0.2s ease; /* panel border transition. */
+  /* dms button options */
+  --custom-dms-icon: hide; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+  --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
+  --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+  --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
+  --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+  --custom-dms-background: image; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+  --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/refs/heads/main/assets/logos/exports/macchiato_square.png'); /* url of the background image */
+  --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+  --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
 
-	/* status dot colors */
-	--online-dot: var(--cyan); /* color of online dot. */
-	--dnd-dot: var(--pink); /* color of do not disturb dot. */
-	--idle-dot: var(--yellow); /* color of idle dot. */
-	--streaming-dot: var(--purple); /* color of streaming dot. */
+  /* background image options */
+  --background-image: off; /* off: no background image, on: enable background image (must set url variable below) */
+  --background-image-url: url(''); /* url of the background image */
 
-	/* mention/ping and message colors */
-	--mention-txt: var(--acc-0); /* color of mention text. */
-	--mention-bg: color-mix(in oklch, var(--acc-0), transparent 90%); /* background highlight of mention text. */
-	--mention-overlay: color-mix(in oklch, var(--acc-0), transparent 90%); /* overlay color of messages that mention you. */
-	--mention-hover-overlay: color-mix(in oklch, var(--acc-0), transparent 95%); /* overlay color of messages that mention you when hovered. */
-	--reply-overlay: var(--active); /* overlay color of message you are replying to. */
-	--reply-hover-overlay: var(--hover); /* overlay color of message you are replying to when hovered. */
+  /* transparency/blur options */
+  /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+  --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+  --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+  --panel-blur: off; /* off: no changes, on: blur the background of panels */
+  --blur-amount: 12px; /* amount of blur */
+  --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
 
-	/* color shades */
-	--pink: oklch(71.71% 0.1244 19.39);        /* Catppuccin Red */
-	--pink-1: oklch(61.71% 0.1244 19.39);      /* -10% Lightness from Red */
-	--pink-2: oklch(51.71% 0.1244 19.39);      /* -20% Lightness from Red */
-	--purple: oklch(76.48% 0.1108 311.74);     /* Catppuccin Mauve */
-	--purple-1: oklch(66.48% 0.1108 311.74);   /* -10% Lightness from Mauve */
-	--purple-2: oklch(56.48% 0.1108 311.74);   /* -20% Lightness from Mauve */
-	--cyan: oklch(77.96% 0.0727 227.88);       /* Catppuccin Sapphire */
-	--yellow: oklch(84.43% 0.0795 83.47);      /* Catppuccin Yellow */
-	--green: oklch(81.24% 0.1071 133.39);      /* Catppuccin Green */
-	--green-1: oklch(71.24% 0.1071 133.39);    /* -10% Lightness from Green */
-	--green-2: oklch(61.24% 0.1071 133.39);    /* -20% Lightness from Green */
-	--lavender: oklch(80.99% 0.0759 283.74);   /* Catppuccin Lavender */
-	--lavender-1: oklch(70.99% 0.0759 283.74); /* -10% Lightness from Lavender */
-	--lavender-2: oklch(60.99% 0.0759 283.74); /* -20% Lightness from Lavender */
+  /* other options */
+  --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+
+  /* unrounding options */
+  --unrounding: on; /* off: default, on: remove rounded corners from panels */
+
+  /* styling options */
+  --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+  --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
+  --ascii-loader: system24; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
+
+  /* panel labels */
+  --panel-labels: on; /* off: default, on: add labels to panels */
+  --label-color: var(--text-muted); /* color of labels */
+  --label-font-weight: 500; /* font weight of labels */
+}
+
+:root {
+  --colors: on; /* off: discord default colors, on: midnight custom colors */
+
+  /* text colors */
+  --text-0: #232634; /* text on colored elements */
+  --text-1: #b5bfe2; /* other normally white text */
+  --text-2: #b5bfe2; /* headings and important text */
+  --text-3: #c6d0f5; /* normal text */
+  --text-4: #737994; /* icon buttons and channels */
+  --text-5: #838ba7; /* muted channels/chats and timestamps */
+
+  /* background and dark colors */
+  --bg-1: #51576d; /* dark buttons when clicked */
+  --bg-2: #414559; /* dark buttons */
+  --bg-3: #292c3c; /* spacing, secondary elements */
+  --bg-4: #303446; /* main background color */
+  --hover: hsla(239, 66%, 84%, 0.1); /* channels and buttons when hovered */
+  --active: hsla(239, 66%, 84%, 0.2); /* channels and buttons when clicked or selected */
+  --active-2: hsla(239, 66%, 84%, 0.3); /* extra state for transparent buttons */
+  --message-hover: hsla(239, 66%, 84%, 0.1); /* messages when hovered */
+
+  /* accent colors */
+  --accent-1: var(--purple-1); /* links and other accent text */
+  --accent-2: var(--purple-2); /* small accent elements */
+  --accent-3: var(--purple-3); /* accent buttons */
+  --accent-4: var(--purple-4); /* accent buttons when hovered */
+  --accent-5: var(--purple-5); /* accent buttons when clicked */
+  --accent-new: var(--accent-2); /* stuff that's normally red like mute/deafen buttons */
+  --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+  --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+  --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+  --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+  /* status indicator colors */
+  --online: var(--green-2); /* change to #43a25a for default */
+  --dnd: var(--red-2); /* change to #d83a42 for default */
+  --idle: var(--yellow-2); /* change to #ca9654 for default */
+  --streaming: var(--purple-2); /* change to #593695 for default */
+  --offline: var(--text-4); /* change to #83838b for default offline color */
+
+  /* border colors */
+  --border-light: var(--hover); /* general light border color */
+  --border: var(--active); /* general normal border color */
+  --border-hover: var(--accent-2); /* border color of panels when hovered */
+  --button-border: var(--accent-1); /* neutral border color of buttons */
+
+  /* base colors */
+  --red-1: hsl(359, 68%, 71%);
+  --red-2: hsl(359, 68%, 71%);
+  --red-3: hsl(359, 68%, 71%);
+  --red-4: hsl(359, 68%, 66%);
+  --red-5: hsl(359, 68%, 61%);
+
+  --green-1: hsl(96, 44%, 63%);
+  --green-2: hsl(96, 44%, 63%);
+  --green-3: hsl(96, 44%, 63%);
+  --green-4: hsl(96, 44%, 58%);
+  --green-5: hsl(96, 44%, 53%);
+
+  --blue-1: hsl(222, 74%, 69%);
+  --blue-2: hsl(222, 74%, 69%);
+  --blue-3: hsl(222, 74%, 69%);
+  --blue-4: hsl(222, 74%, 64%);
+  --blue-5: hsl(222, 74%, 59%);
+
+  --yellow-1: hsl(40, 62%, 73%);
+  --yellow-2: hsl(40, 62%, 73%);
+  --yellow-3: hsl(40, 62%, 73%);
+  --yellow-4: hsl(40, 62%, 68%);
+  --yellow-5: hsl(40, 62%, 63%);
+
+  --purple-1: hsl(239, 66%, 84%);
+  --purple-2: hsl(239, 66%, 84%);
+  --purple-3: hsl(239, 66%, 84%);
+  --purple-4: hsl(239, 66%, 80%);
+  --purple-5: hsl(239, 66%, 74%);
 }

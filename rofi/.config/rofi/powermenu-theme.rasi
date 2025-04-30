@@ -41,7 +41,7 @@ window {
     y-offset:                    0px;
 
     padding:                     0px;
-    border-radius:               16px;
+    // border-radius:               16px;
     cursor:                      "default";
     background-color:            @background;
     border-color:                @selected;
@@ -78,7 +78,7 @@ dummy {
 prompt {
     enabled:                     true;
     padding:                     15px;
-    border-radius:               8px;
+    // border-radius:               8px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -106,7 +106,7 @@ listview {
 element {
     enabled:                     true;
     padding:                     35px 10px;
-    border-radius:               8px;
+    // border-radius:               8px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     cursor:                      pointer;

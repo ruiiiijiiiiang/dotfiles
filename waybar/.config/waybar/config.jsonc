@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "margin": "4px 10px 0 10px",
+  "margin": "4px 6px 0 6px",
   "modules-left": [
     "custom/launcher",
     "wlr/taskbar",

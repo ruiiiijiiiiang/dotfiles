@@ -2,5 +2,5 @@
 
 kwalletd6 &
 waybar &
-~/.config/niri/change-wallpaper.sh &
+/home/rui/.config/niri/change-wallpaper.sh &
 protonmail-bridge --no-window &
