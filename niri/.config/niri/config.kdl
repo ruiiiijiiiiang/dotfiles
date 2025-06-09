@@ -103,6 +103,10 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "DP-3" {
+  position x=-1920 y=0
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -218,6 +222,7 @@ layout {
 // See the binds section below for more spawn examples.
 spawn-at-startup "~/.config/niri/start-environment.sh"
 spawn-at-startup "~/.config/swayidle/idle.sh"
+spawn-at-startup "~/.config/niri/change-wallpaper.sh"
 spawn-at-startup "swaync"
 spawn-at-startup "syncthing" "--no-browser"
 spawn-at-startup "bash" "-c" "xwayland-satellite $DISPLAY"
@@ -325,14 +330,16 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    Mod+Shift+Up         allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    Mod+Shift+Down       allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    Mod+Shift+Left       allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
-    Mod+Shift+Right      allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
+    XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    Mod+Shift+Up          allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+    Mod+Shift+Down        allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
+    Mod+Shift+Left        allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    Mod+Shift+Right       allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
 
     Mod+Q { close-window; }
 

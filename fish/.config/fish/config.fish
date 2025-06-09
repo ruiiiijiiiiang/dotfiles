@@ -5,11 +5,11 @@ set -U fish_user_paths /home/rui/.local/bin /home/rui/.bun/bin /home/rui/.cargo/
 # Login shell - Environment setup and one-time initializations
 if status is-login
     # Tool initializations
-    thefuck --alias | source
     zoxide init fish | source
     starship init fish | source
     fzf --fish | source
     atuin init fish | source
+    pay-respects fish --alias | source
 end
 
 # Interactive shell - Shell behavior and user interface

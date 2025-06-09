@@ -61,7 +61,8 @@
       "type": "battery",
       "key": "  ╠ battery │",
       "keyColor": "cyan",
-      "outputColor": "cyan"
+      "outputColor": "cyan",
+      "format": "\u001b[96m{12}:{13}:{14} ({5} {4}\u001b[96m)"
     },
     {
       "type": "uptime",

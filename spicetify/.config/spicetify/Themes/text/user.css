@@ -21,12 +21,12 @@
   --font-size-multiplier-header: 4;
 
   --display-card-image: block; /* none | block */
-  --display-coverart-image: none; /* none | block */
-  --display-header-image: none; /* none | block */
+  --display-coverart-image: block; /* none | block */
+  --display-header-image: block; /* none | block */
   --display-sidebar-image: block; /* none | block */
-  --display-tracklist-image: none; /* none | block */
+  --display-tracklist-image: block; /* none | block */
   --display-spicetify-banner-ascii: block; /* none | block */
-  --display-music-banner-ascii: none; /* none | block */
+  --display-music-banner-ascii: block; /* none | block */
 
   --border-radius: 0px;
   --border-width: 2px;

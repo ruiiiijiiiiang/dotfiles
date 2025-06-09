@@ -3,59 +3,65 @@
 * {
   font-family: "Maple Mono", "Symbols Nerd Font";
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-height: 0;
 }
 
 window#waybar {
   background: @base;
-  padding: 0 8px;
 }
 
-#custom-launcher,
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  color: @base;
+  background: @surface0;
+  font-size: 1.5em;
+}
+
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+  color: @surface0;
+  background: @base;
+  font-size: 1.5em;
+}
+
+#launcher,
 #taskbar,
 #mpris,
-#window,
 #backlight,
 #pulseaudio,
 #network,
 #bluetooth,
 #custom-weather,
 #system,
-#power,
-#clock,
-#custom-power {
-  border: 0;
-  margin: 2px 2px;
-  padding: 2px 4px;
-  background: @crust;
-  border: 2px solid @surface2;
+#battery,
+#clock {
+  background: @surface0;
 }
 
-#taskbar button:hover,
-#custom-launcher:hover,
-#mpris:hover,
-#backlight:hover,
-#pulseaudio:hover,
-#network:hover,
-#bluetooth:hover,
-#custom-weather:hover,
-#system:hover,
-#power:hover,
-#clock:hover,
-#custom-power:hover {
-  background: alpha(@lavender, 0.3);
+#custom-launcher-arrow-left,
+#custom-launcher-arrow-right {
+  color: @blue;
+  background: @base;
+  font-size: 1.5em;
 }
 
 #custom-launcher {
   background: @blue;
   color: @mantle;
-  font-size: 32px;
-  padding: 2px 8px;
+  font-size: 1.5em;
 }
 
 #taskbar button {
-  border-radius: 4px;
-  padding: 2px 4px;
+  border-radius: 0;
+  padding: 0 6px;
+}
+
+#taskbar button:hover {
+  background: alpha(@lavender, 0.3);
 }
 
 #taskbar button.active {
@@ -64,6 +70,25 @@ window#waybar {
 
 #mpris {
   color: @green;
+}
+
+#custom-left-window-arrow-left {
+  color: @base;
+  background: @lavender;
+  font-size: 1.5em;
+}
+
+#custom-left-window-arrow-right {
+  color: @lavender;
+  background: @base;
+  font-size: 1.5em;
+}
+
+#custom-center-window-arrow-left,
+#custom-center-window-arrow-right {
+  color: @lavender;
+  background: @base;
+  font-size: 1.5em;
 }
 
 #window {
@@ -111,9 +136,15 @@ window#waybar.empty #window {
   color: @sky;
 }
 
+#custom-power-arrow-left,
+#custom-power-arrow-right {
+  color: @red;
+  background: @base;
+  font-size: 1.5em;
+}
+
 #custom-power {
   background: @red;
   color: @mantle;
-  font-size: 32px;
-  padding: 2px 8px;
+  font-size: 1.5em;
 }

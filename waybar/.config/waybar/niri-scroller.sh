@@ -3,7 +3,7 @@
 direction="$1"
 
 if [[ "$direction" == "down" ]]; then
-	niri msg action focus-column-right
+  niri msg action focus-column-right
 elif [[ "$direction" == "up" ]]; then
-	niri msg action focus-column-left
+  niri msg action focus-column-left
 fi

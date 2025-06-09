@@ -1,32 +1,42 @@
 {
   "layer": "top",
   "position": "top",
-  "margin": "4px 6px 0 6px",
-  "modules-left": [
-    "custom/launcher",
-    "wlr/taskbar",
-    "mpris"
-  ],
-  "modules-center": [
-    "niri/window"
-  ],
-  "modules-right": [
-    "pulseaudio",
-    "network",
-    // "bluetooth",
-    "custom/weather",
-    "group/system",
-    "clock",
-    "custom/power"
-  ],
-  "custom/launcher": {
-    "format": "󰣇",
-    "tooltip": false,
-    "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi; fi"
+  "margin": "4px 8px 0 8px",
+  "custom/left-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+  "group/launcher": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/launcher-arrow-left",
+      "custom/launcher",
+      "custom/launcher-arrow-right"
+    ]
+  },
+  "custom/launcher-arrow-left": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/launcher-arrow-right": {
+    "format": "",
+    "tooltip": false
   },
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 30,
+    "icon-size": 24,
     "tooltip-format": "{name} | {title}",
     "on-click": "activate",
     "on-scroll-up": "sh ~/.config/waybar/niri-scroller.sh up",
@@ -45,9 +55,6 @@
     },
     "player": "spotify",
     "max-length": 45
-  },
-  "niri/window": {
-    "icon": true
   },
   "pulseaudio": {
     "scroll-step": 5,
@@ -71,9 +78,9 @@
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/wifimenu.sh; fi"
   },
   "bluetooth": {
-    "format": "󰂯",
+    "format": " 󰂯 ",
     "format-disabled": " 󰂲 ",
-    "format-connected": "󰂱  {num_connections}",
+    "format-connected": " 󰂱 {num_connections}",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -96,19 +103,19 @@
     ]
   },
   "cpu": {
-    "format": " {usage}% | ",
-    "on-click": "neohtop"
+    "format": " {usage} ",
+    "on-click": "NeoHtop"
   },
   "memory": {
-    "format": " {percentage}% | ",
-    "on-click": "neohtop"
+    "format": " {percentage} ",
+    "on-click": "NeoHtop"
   },
   "disk": {
-    "format": " {percentage_used}%",
-    "on-click": "neohtop"
+    "format": " {percentage_used}",
+    "on-click": "NeoHtop"
   },
   "clock": {
-    "format": "󰃭 {:%m\/%d |  %I:%M}",
+    "format": "󰃭 {:%m\/%d  %I:%M}",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month",
@@ -123,62 +130,17 @@
       }
     }
   },
+  "custom/power-arrow-left": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/power-arrow-right": {
+    "format": "",
+    "tooltip": false
+  },
   "custom/power": {
-    "format": "󰐥",
+    "format": " 󰐥 ",
     "tooltip": false,
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/powermenu.sh; fi"
-  },
-  /* Unused */
-  "backlight": {
-    "scroll-step": 10,
-    "on-scroll-up": "brightnessctl set +5%",
-    "on-scroll-down": "brightnessctl set 5%-",
-    "format": "{icon}{percent}",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      "󰖨 "
-    ]
-  },
-  "group/power": {
-    "orientation": "horizontal",
-    "modules": [
-      "power-profiles-daemon",
-      "battery"
-    ]
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}",
-    "tooltip": true,
-    "format-icons": {
-      "default": " ",
-      "performance": " ",
-      "balanced": " ",
-      "power-saver": " "
-    }
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon}{capacity}",
-    "format-charging": "󰢝 {capacity}",
-    "format-plugged": " {capacity}",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ]
   }
 }

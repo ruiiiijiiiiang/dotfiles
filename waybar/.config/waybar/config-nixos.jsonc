@@ -1,0 +1,111 @@
+{
+  "include": [
+    "/home/rui/.config/waybar/config.jsonc"
+  ],
+  "modules-left": [
+    "group/launcher",
+    "custom/right-arrow-dark",
+    "wlr/taskbar",
+    "custom/right-arrow-light",
+    "custom/left-window-arrow-left",
+    "niri/window",
+    "custom/left-window-arrow-right"
+  ],
+  "modules-right": [
+    "custom/left-arrow-light",
+    "backlight",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
+    "pulseaudio",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
+    "network",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
+    "bluetooth",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
+    "custom/weather",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
+    "group/system",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
+    "group/battery",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
+    "clock",
+    "custom/left-arrow-dark",
+    "custom/power-arrow-left",
+    "custom/power",
+    "custom/power-arrow-right"
+  ],
+  "custom/launcher": {
+    "format": " 󱄅 ",
+    "tooltip": false,
+    "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else rofi -show drun -theme ~/.config/rofi/launcher-theme.rasi; fi"
+  },
+  "custom/left-window-arrow-left": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-window-arrow-right": {
+    "format": "",
+    "tooltip": false
+  },
+  "niri/window": {
+    "max-length": 75
+  },
+  "backlight": {
+    "scroll-step": 5,
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "format": "{icon}{percent}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      "󰖨 "
+    ]
+  },
+  "group/battery": {
+    "orientation": "horizontal",
+    "modules": [
+      "power-profiles-daemon",
+      "battery"
+    ]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "󱓞 ",
+      "performance": "󱓞 ",
+      "balanced": " ",
+      "power-saver": " "
+    }
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}{capacity}",
+    "format-charging": "󰢝 {capacity}",
+    "format-plugged": " {capacity}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
+  }
+}

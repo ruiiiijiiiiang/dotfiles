@@ -178,6 +178,26 @@ return {
       })
     end,
   },
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+  },
+  {
+    "kawre/leetcode.nvim",
+    -- build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
+    dependencies = {
+      -- "nvim-telescope/telescope.nvim",
+      "ibhagwan/fzf-lua",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {
+      lang = "typescript",
+      picker = { provider = nil },
+    },
+  },
   -- {
   --   "alanfortlink/animatedbg.nvim",
   --   config = function()
