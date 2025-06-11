@@ -29,6 +29,7 @@
     rsync
     dust
     wl-clipboard
+    dysk
 
     # --- Development & General Utilities ---
     unzip
@@ -50,6 +51,7 @@
     gdb
     cmake
     gnumake
+    easyeffects
 
     # niri desktop
     rofi-wayland
@@ -77,6 +79,7 @@
     wezterm
     libreoffice-qt
     mission-center
+    neohtop
 
     # tui apps
     fzf
@@ -84,7 +87,6 @@
     lsd
     fastfetch
     fd
-    clipboard-jh
     silver-searcher
     glow
     miller
@@ -101,7 +103,6 @@
     starship
     termscp
     ncspot
-    neohtop
 
     # web dev
     deno

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if [[ $OS == "arch" ]]; then
-	kwalletd6 &
 	waybar -c ~/.config/waybar/config-arch.jsonc &
+	kwalletd6 &
 	protonmail-bridge --no-window &
 elif [[ $OS == "nixos" ]]; then
 	waybar -c ~/.config/waybar/config-nixos.jsonc &

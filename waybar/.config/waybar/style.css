@@ -8,27 +8,14 @@
   padding: 0;
   border: none;
   min-height: 0;
+  border-radius: 0;
 }
 
 window#waybar {
   background: @base;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-  color: @base;
-  background: @surface0;
-  font-size: 1.5em;
-}
-
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-  color: @surface0;
-  background: @base;
-  font-size: 1.5em;
-}
-
-#launcher,
+#workspaces,
 #taskbar,
 #mpris,
 #backlight,
@@ -43,20 +30,51 @@ window#waybar {
 }
 
 #custom-launcher-arrow-left,
+#custom-launcher-arrow-right,
+#custom-launcher,
+#custom-right-arrow-dark,
+#custom-left-arrow-dark,
+#custom-right-arrow-light,
+#custom-left-arrow-light,
+#custom-left-window-arrow-left,
+#custom-left-window-arrow-right,
+#custom-center-window-arrow-left,
+#custom-center-window-arrow-right,
+#custom-power-arrow-left,
+#custom-power-arrow-right,
+#custom-power {
+  font-size: 1.5em;
+}
+
+#custom-launcher-arrow-left,
 #custom-launcher-arrow-right {
   color: @blue;
   background: @base;
-  font-size: 1.5em;
 }
 
 #custom-launcher {
   background: @blue;
   color: @mantle;
-  font-size: 1.5em;
+}
+
+#workspaces button {
+  margin: 0 4px;
+  color: @teal;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  color: @base;
+  background: @surface0;
+}
+
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+  color: @surface0;
+  background: @base;
 }
 
 #taskbar button {
-  border-radius: 0;
   padding: 0 6px;
 }
 
@@ -75,20 +93,17 @@ window#waybar {
 #custom-left-window-arrow-left {
   color: @base;
   background: @lavender;
-  font-size: 1.5em;
 }
 
 #custom-left-window-arrow-right {
   color: @lavender;
   background: @base;
-  font-size: 1.5em;
 }
 
 #custom-center-window-arrow-left,
 #custom-center-window-arrow-right {
   color: @lavender;
   background: @base;
-  font-size: 1.5em;
 }
 
 #window {
@@ -127,7 +142,6 @@ window#waybar.empty #window {
   color: @mauve;
 }
 
-#power-profiles-daemon,
 #battery {
   color: @peach;
 }
@@ -140,11 +154,9 @@ window#waybar.empty #window {
 #custom-power-arrow-right {
   color: @red;
   background: @base;
-  font-size: 1.5em;
 }
 
 #custom-power {
   background: @red;
   color: @mantle;
-  font-size: 1.5em;
 }

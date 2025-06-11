@@ -18,14 +18,6 @@
     "format": "",
     "tooltip": false
   },
-  "group/launcher": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/launcher-arrow-left",
-      "custom/launcher",
-      "custom/launcher-arrow-right"
-    ]
-  },
   "custom/launcher-arrow-left": {
     "format": "",
     "tooltip": false
@@ -34,13 +26,20 @@
     "format": "",
     "tooltip": false
   },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": " 󰷜 ",
+      "default": " 󰍹 "
+    }
+  },
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 24,
     "tooltip-format": "{name} | {title}",
     "on-click": "activate",
-    "on-scroll-up": "sh ~/.config/waybar/niri-scroller.sh up",
-    "on-scroll-down": "sh ~/.config/waybar/niri-scroller.sh down"
+    "on-scroll-up": "niri msg action focus-column-right",
+    "on-scroll-down": "niri msg action focus-column-left"
   },
   "mpris": {
     "format": "{player_icon}{status_icon}{artist} - {title}",

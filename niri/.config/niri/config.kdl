@@ -222,7 +222,7 @@ layout {
 // See the binds section below for more spawn examples.
 spawn-at-startup "~/.config/niri/start-environment.sh"
 spawn-at-startup "~/.config/swayidle/idle.sh"
-spawn-at-startup "~/.config/niri/change-wallpaper.sh"
+spawn-at-startup "swaybg" "-i" "/home/rui/Pictures/wallpaper.png" "-m" "fill"
 spawn-at-startup "swaync"
 spawn-at-startup "syncthing" "--no-browser"
 spawn-at-startup "bash" "-c" "xwayland-satellite $DISPLAY"
@@ -264,6 +264,7 @@ window-rule {
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    match app-id=r#"zen"#
     default-column-width { proportion 1.0; }
 }
 

@@ -3,7 +3,12 @@
     "~/dotfiles/waybar/.config/waybar/config.jsonc"
   ],
   "modules-left": [
-    "group/launcher",
+    "custom/launcher-arrow-left",
+    "custom/launcher",
+    "custom/launcher-arrow-right",
+    "custom/right-arrow-dark",
+    "niri/workspaces",
+    "custom/right-arrow-light",
     "custom/right-arrow-dark",
     "wlr/taskbar",
     "custom/right-arrow-light"
