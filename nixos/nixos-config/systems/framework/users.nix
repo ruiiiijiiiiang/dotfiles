@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   users.users.rui = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     group = "rui";
+    home = "/home/rui";
   };
 
   users.groups.rui = {

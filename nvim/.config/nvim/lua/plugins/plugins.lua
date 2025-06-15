@@ -7,6 +7,7 @@ return {
   { "OXY2DEV/patterns.nvim" },
   { "lewis6991/gitsigns.nvim", enabled = true },
   { "mrjones2014/smart-splits.nvim", lazy = false },
+  { "AndrewRadev/switch.vim" },
   {
     "rasulomaroff/reactive.nvim",
     config = function()
@@ -197,6 +198,12 @@ return {
       lang = "typescript",
       picker = { provider = nil },
     },
+  },
+  {
+    "MonsieurTib/package-ui.nvim",
+    config = function()
+      require("package-ui").setup()
+    end,
   },
   -- {
   --   "alanfortlink/animatedbg.nvim",

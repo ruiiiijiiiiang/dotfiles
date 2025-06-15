@@ -12,7 +12,7 @@
 }
 
 window#waybar {
-  background: @base;
+  background: transparent;
 }
 
 #workspaces,
@@ -24,9 +24,12 @@ window#waybar {
 #bluetooth,
 #custom-weather,
 #system,
-#battery,
+#mobile-power,
 #clock {
   background: @surface0;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: @lavender;
 }
 
 #custom-launcher-arrow-left,
@@ -55,6 +58,10 @@ window#waybar {
 #custom-launcher {
   background: @blue;
   color: @mantle;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: @base;
 }
 
 #workspaces button {
@@ -66,6 +73,9 @@ window#waybar {
 #custom-left-arrow-dark {
   color: @base;
   background: @surface0;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: @lavender;
 }
 
 #custom-right-arrow-light,
@@ -142,6 +152,7 @@ window#waybar.empty #window {
   color: @mauve;
 }
 
+#power-profiles-daemon,
 #battery {
   color: @peach;
 }
@@ -159,4 +170,8 @@ window#waybar.empty #window {
 #custom-power {
   background: @red;
   color: @mantle;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: @base;
 }

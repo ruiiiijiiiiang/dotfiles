@@ -36,7 +36,7 @@
     "group/system",
     "custom/left-arrow-dark",
     "custom/left-arrow-light",
-    "group/battery",
+    "group/mobile-power",
     "custom/left-arrow-dark",
     "custom/left-arrow-light",
     "clock",
@@ -79,7 +79,7 @@
       "󰖨 "
     ]
   },
-  "group/battery": {
+  "group/mobile-power": {
     "orientation": "horizontal",
     "modules": [
       "power-profiles-daemon",

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
 {
   networking.hostName = "rui-nixos"; # Define your hostname.

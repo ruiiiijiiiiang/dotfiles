@@ -118,7 +118,7 @@ Neovim plugins are managed by LazyVim.
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [yazi](https://github.com/sxyazi/yazi)
 - [lsd](https://github.com/lsd-rs/lsd)
-- [thefuck](https://github.com/nvbn/thefuck)
+- [pay-respects](https://github.com/iffse/pay-respects)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
@@ -134,7 +134,6 @@ Neovim plugins are managed by LazyVim.
 - [superfile](https://github.com/yorukot/superfile)
 - [posting](https://github.com/darrenburns/posting)
 - [dust](https://github.com/bootandy/dust)
-- [chafa](https://github.com/hpjansson/chafa)
 - [ouch](https://github.com/ouch-org/ouch)
 
 ### GUI Applications

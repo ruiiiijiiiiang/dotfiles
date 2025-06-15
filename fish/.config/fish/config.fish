@@ -58,7 +58,6 @@ if status is-interactive
     end
 
     function fish_greeting
-        sleep 0.1
         fastfetch
     end
 end

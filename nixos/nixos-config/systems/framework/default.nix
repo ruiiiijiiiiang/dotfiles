@@ -3,7 +3,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -34,8 +34,9 @@
   };
 
   environment.variables = {
-    EDITOR = "nvim";
     OS = "nixos";
+    EDITOR = "nvim";
+    NH_FLAKE = "/home/rui/nixos-config/";
   };
 
   # Copy the NixOS configuration file and link it from the resulting system

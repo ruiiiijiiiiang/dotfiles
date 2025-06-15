@@ -1,15 +1,15 @@
 add_newline = true
 
 format = """\
-[󱞬 ](lavender)[](teal)$os$username$sudo\
+[󱞬 ](lavender)[](teal)$os$username$sudo\
 [▓▒░](fg:teal bg:sapphire)$directory\
 [▓▒░](fg:sapphire bg:blue)$cmd_duration$status\
-[](blue)$fill\
-[ ](flamingo)$git_branch$git_status\
+[](blue)$fill\
+[ ](flamingo)$git_branch$git_status\
 [▓▒░](fg:flamingo bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
 [▓▒░](fg:yellow bg:maroon)$package\
 [▓▒░](fg:maroon bg:mauve)$time\
-[](mauve)
+[](mauve)
 [󱞪 ](lavender)$character\
 """
 

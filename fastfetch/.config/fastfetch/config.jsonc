@@ -100,7 +100,7 @@
       "type": "packages",
       "key": "  ╠ packages│",
       "keyColor": "blue",
-      "outputColor": "blue"
+      "format": "\u001b[94m{1}"
     },
     {
       "type": "de",
