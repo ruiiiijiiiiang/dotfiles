@@ -1,15 +1,15 @@
 # =================================================================================================
 # Global hotkeys (cannot conflict with other hotkeys)
 confirm = ['enter', 'l', '']
-quit = ['q', 'esc', '']      # also know as, theprimeagen troller
+quit = ['q', 'esc', '']
 # movement
 list_up = ['k', '']
 list_down = ['j', '']
 page_up = ['ctrl+b', '']
 page_down = ['ctrl+f', '']
 # file panel control
-create_new_file_panel = ['n', '']
 close_file_panel = ['w', '']
+create_new_file_panel = ['n', '']
 next_file_panel = ['tab', '']
 previous_file_panel = ['shift+tab', '']
 toggle_file_preview_panel = ['f', '']
@@ -19,13 +19,13 @@ toggle_reverse_sort = ['R', '']
 focus_on_process_bar = ['ctrl+p', '']
 focus_on_sidebar = ['ctrl+s', '']
 focus_on_metadata = ['ctrl+m', '']
-# create file/directory and rename
+# create file/directory and rename 
 file_panel_item_create = ['a', '']
 file_panel_item_rename = ['r', '']
-# file operations
+# file operate
 copy_items = ['y', '']
-cut_items = ['x', '']
 paste_items = ['p', '']
+cut_items = ['x', '']
 delete_items = ['d', '']
 # compress and extract
 extract_file = ['ctrl+e', '']
@@ -39,6 +39,7 @@ toggle_dot_file = ['.', '']
 change_panel_mode = ['m', '']
 open_help_menu = ['?', '']
 open_command_line = [':', '']
+open_spf_prompt = ['>', '']
 copy_path = ['Y', '']
 copy_present_working_directory = ['c', '']
 toggle_footer = ['F', '']
@@ -51,7 +52,7 @@ cancel_typing = ['esc', '']
 parent_directory = ['-', 'h', '']
 search_bar = ['/', '']
 # =================================================================================================
-# Select mode hotkeys (can conflict with other modes, cannot conflict with global hotkeys)
+# Select mode hotkeys (can conflict with other modes, cananot conflict with global hotkeys)
 file_panel_select_mode_items_select_down = ['J', '']
 file_panel_select_mode_items_select_up = ['K', '']
 file_panel_select_all_items = ['A', '']

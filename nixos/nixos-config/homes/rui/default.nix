@@ -3,6 +3,7 @@
 let
   username = "rui";
   homePath = "/home/${username}";
+  flakePath = "${homePath}/nixos-config";
   dotfilesPath = "${homePath}/dotfiles";
 in {
   home.username = username;
@@ -10,7 +11,14 @@ in {
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
-
+  programs.nh = {
+    enable = true;
+    flake = flakePath;
+    clean = {
+      enable = true;
+      dates = "weekly";
+    };
+  };
 
   home.file = {
     ".config/atuin".source =

@@ -187,7 +187,6 @@
   programs.tcpdump.enable = true;
   programs.neovim.enable = true;
   programs.bat.enable = true;
-  programs.nh.enable = true;
   programs.direnv.enable = true;
 
   fonts = {

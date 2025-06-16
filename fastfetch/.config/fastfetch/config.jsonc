@@ -5,7 +5,7 @@
   },
   "logo": {
     "padding": {
-      "top": 1
+      "top": 2
     },
     "color": {
       "1": "cyan",
@@ -61,8 +61,13 @@
       "type": "battery",
       "key": "  ╠ battery │",
       "keyColor": "cyan",
-      "outputColor": "cyan",
       "format": "\u001b[96m{12}:{13}:{14} ({5} {4}\u001b[96m)"
+    },
+    {
+      "type": "localip",
+      "key": "  ╠󰩠 IP      │",
+      "keyColor": "cyan",
+      "outputColor": "cyan"
     },
     {
       "type": "uptime",
@@ -128,9 +133,16 @@
     },
     {
       "type": "terminalfont",
-      "key": "  ╚󰬴 font    │",
+      "key": "  ╠󰬴 font    │",
       "keyColor": "blue",
       "outputColor": "blue"
+    },
+    {
+      "type": "command",
+      "key": "  ╚󰃫 birthday│",
+      "keyColor": "blue",
+      "outputColor": "blue",
+      "text": "birth_install=$(stat -c %W /); echo $(date -d @$birth_install '+%b %d %Y')"
     },
     {
       "type": "custom",

@@ -1,5 +1,8 @@
 yazi/.config/yazi/plugins
 lazy-lock.json
 nixos/nixos-config/flake.lock
+nixos/nixos-config/result
+superfile/.config/superfile/theme/
+!superfile/.config/superfile/theme/catppuccin-frappe.toml
 .stfolder
 .stignore

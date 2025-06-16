@@ -12,7 +12,7 @@
 }
 
 window#waybar {
-  background: transparent;
+  background: @base;
 }
 
 #workspaces,
@@ -27,9 +27,8 @@ window#waybar {
 #mobile-power,
 #clock {
   background: @surface0;
-  border-bottom-style: solid;
-  border-width: 2px;
-  border-color: @lavender;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
 }
 
 #custom-launcher-arrow-left,
@@ -51,37 +50,34 @@ window#waybar {
 
 #custom-launcher-arrow-left,
 #custom-launcher-arrow-right {
-  color: @blue;
   background: @base;
+  color: @blue;
 }
 
 #custom-launcher {
   background: @blue;
   color: @mantle;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-width: 2px;
-  border-color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
 
 #workspaces button {
-  margin: 0 4px;
   color: @teal;
+  margin: 0 4px;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-  color: @base;
   background: @surface0;
-  border-bottom-style: solid;
-  border-width: 2px;
-  border-color: @lavender;
+  color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
 }
 
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-  color: @surface0;
   background: @base;
+  color: @surface0;
 }
 
 #taskbar button {
@@ -101,24 +97,32 @@ window#waybar {
 }
 
 #custom-left-window-arrow-left {
-  color: @base;
   background: @lavender;
+  color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
 
 #custom-left-window-arrow-right {
-  color: @lavender;
   background: @base;
+  color: @lavender;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
 
 #custom-center-window-arrow-left,
 #custom-center-window-arrow-right {
-  color: @lavender;
   background: @base;
+  color: @lavender;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
 
 #window {
   background: @lavender;
   color: @mantle;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
 
 window#waybar.empty #window {
@@ -163,15 +167,15 @@ window#waybar.empty #window {
 
 #custom-power-arrow-left,
 #custom-power-arrow-right {
-  color: @red;
   background: @base;
+  color: @red;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
 
 #custom-power {
   background: @red;
   color: @mantle;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-width: 2px;
-  border-color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
