@@ -7,19 +7,19 @@
 
 # CMDs
 lastlogin="$(last "$USER" | head -n1 | tr -s ' ' | cut -d' ' -f3,4,5,6)"
-if uptime -p &> /dev/null; then
+if uptime -p &>/dev/null; then
   uptime="$(uptime -p | sed -e 's/up //g')"
 else
-  uptime="$(uptime | awk '{print $3}' | sed -e 's/,//g')"
+  uptime="$(uptime | awk -F'( |,|:)+' '{d=h=m=0; if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}')"
 fi
 host=$(hostname)
 
 # Options
-hibernate=''
+suspend=''
 shutdown=''
 reboot=''
 lock=''
-suspend=''
+hibernate=''
 logout=''
 yes=''
 no=''

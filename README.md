@@ -70,10 +70,17 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 10 (current)</summary>
+  <summary>Version 10</summary>
   Ditched NixOS; updated discord to the newest UI
 
 ![Screenshot](./screenshots/Screenshot_from_2025-04-29_21-22-05.png)
+
+</details>
+<details>
+  <summary>Version 11 (current)</summary>
+  Back to NixOS; new waybar design
+
+![Screenshot](./screenshots/Screenshot_from_2025-06-19_23-06-09.png)
 
 </details>
 
@@ -134,11 +141,12 @@ Neovim plugins are managed by LazyVim.
 - [superfile](https://github.com/yorukot/superfile)
 - [posting](https://github.com/darrenburns/posting)
 - [dust](https://github.com/bootandy/dust)
-- [ouch](https://github.com/ouch-org/ouch)
+- [ncspot](https://github.com/hrkfdn/ncspot)
 
 ### GUI Applications
 
 - [zen-browser](https://github.com/zen-browser/desktop)
+- [zed](https://github.com/zed-industries/zed)
 - [GoofCord](https://github.com/Milkshiift/GoofCord)
 - [NeoHtop](https://github.com/Abdenasser/neohtop)
 - [spicetify](https://github.com/spicetify/cli)

@@ -1,7 +1,16 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "display": {
-    "separator": " "
+    "separator": "",
+    "constants": [
+      "\u001b[1m",                        // {$1}: bold
+      "\u001b[36m",                       // {$2}: cyan
+      "\u001b[94m",                       // {$3}: blue
+      "                                ", // {$4}: spaces
+      "\u001b[33D",                       // {$5}: move cursor left
+      "\u001b[4m",                        // {$6}: start underline
+      "\u001b[24m"                        // {$7}: stop underline
+    ]
   },
   "logo": {
     "padding": {
@@ -15,142 +24,142 @@
   "modules": [
     {
       "type": "custom",
-      "format": "\u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m "
+      "format": " \u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m "
     },
     {
       "type": "custom",
-      "format": "\u001b[36m╭────────────┬──────Hardware───────────────────╮"
+      "format": "{$2}╭────────────┬──────Hardware──────────────────╮"
     },
     {
       "type": "host",
-      "key": " PC         │",
+      "key": "│{$6} PC        │{$7}",
       "keyColor": "cyan",
-      "format": "\u001b[1;96m{2}"
+      "format": "{$1}{$2}{$6}{$4}{$7}│{$5}{$6}{5}{$7}"
     },
     {
       "type": "cpu",
-      "key": "  ╠ cpu     │",
+      "key": "│ ╠ cpu     │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1}"
+      "format": "{$2}{$4}│{$5}{1}"
     },
     {
       "type": "gpu",
-      "key": "  ╠ gpu     │",
+      "key": "│ ╠ gpu     │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} {2}"
+      "format": "{$2}{$4}│{$5}{1} {2}"
     },
     {
       "type": "memory",
-      "key": "  ╠ ram     │",
+      "key": "│ ╠ ram     │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
+      "format": "{$2}{$4}│{$5}{1} / {2} ({3}{$2})"
     },
     {
       "type": "swap",
-      "key": "  ╠ swap    │",
+      "key": "│ ╠ swap    │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
+      "format": "{$2}{$4}│{$5}{1} / {2} ({3}{$2})"
     },
     {
       "type": "disk",
-      "key": "  ╠ disk    │",
+      "key": "│ ╠ disk    │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} / {2} ({3}\u001b[96m)"
+      "format": "{$2}{$4}│{$5}{1} / {2} ({3}{$2})"
     },
     {
       "type": "battery",
-      "key": "  ╠ battery │",
+      "key": "│ ╠ battery │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{12}:{13}:{14} ({5} {4}\u001b[96m)"
+      "format": "{$2}{$4}│{$5}{12} hours {13} minutes ({4}{$2})"
     },
     {
       "type": "localip",
-      "key": "  ╠󰩠 IP      │",
+      "key": "│ ╠󰩠 ip      │",
       "keyColor": "cyan",
-      "outputColor": "cyan"
+      "format": "{$2}{$4}│{$5}{1}"
     },
     {
       "type": "uptime",
-      "key": "  ╚ uptime  │",
+      "key": "│ ╚ uptime  │",
       "keyColor": "cyan",
-      "format": "\u001b[96m{1} days {2} hours {3} minutes"
+      "format": "{$2}{$4}│{$5}{1} days {2} hours {3} minutes"
     },
     {
       "type": "custom",
-      "format": "\u001b[36m╰────────────┴─────────────────────────────────╯"
+      "format": "\u001b[36m╰────────────┴────────────────────────────────╯"
     },
     {
       "type": "custom",
-      "format": "\u001b[34m╭────────────┬──────Software───────────────────╮"
+      "format": "\u001b[34m╭────────────┬─────Software───────────────────╮"
     },
     {
       "type": "os",
-      "key": " OS         │",
+      "key": "│{$6} OS        │{$7}",
       "keyColor": "blue",
-      "format": "\u001b[1;94m{3}"
+      "format": "{$1}{$3}{$6}{$4}{$7}│{$5}{$6}{3}{$7}"
     },
     {
       "type": "title",
-      "key": "  ╠ host    │",
+      "key": "│ ╠ host    │",
       "keyColor": "blue",
-      "format": "\u001b[94m{1}@{2}"
+      "format": "{$3}{$4}│{$5}{1}@{2}"
     },
     {
       "type": "kernel",
-      "key": "  ╠ kernel  │",
+      "key": "│ ╠ kernel  │",
       "keyColor": "blue",
-      "format": "\u001b[94m{1} {2} {4}"
+      "format": "{$3}{$4}│{$5}{1} {2} {4}"
     },
     {
       "type": "packages",
-      "key": "  ╠ packages│",
+      "key": "│ ╠ packages│",
       "keyColor": "blue",
-      "format": "\u001b[94m{1}"
+      "format": "{$3}{$4}│{$5}{1}"
     },
     {
       "type": "de",
-      "key": "  ╠ de      │",
+      "key": "│ ╠ de      │",
       "keyColor": "blue",
-      "format": "\u001b[94m{2}"
+      "format": "{$3}{$4}│{$5}{2}"
     },
     {
       "type": "wm",
-      "key": "  ╠󱂬 wm      │",
+      "key": "│ ╠󱂬 wm      │",
       "keyColor": "blue",
-      "format": "\u001b[94m{2} ({3})"
+      "format": "{$3}{$4}│{$5}{2} ({3})"
     },
     {
       "type": "terminal",
-      "key": "  ╠ terminal│",
+      "key": "│ ╠ terminal│",
       "keyColor": "blue",
-      "format": "\u001b[94m{5}"
+      "format": "{$3}{$4}│{$5}{5}"
     },
     {
       "type": "shell",
-      "key": "  ╠ shell   │",
+      "key": "│ ╠ shell   │",
       "keyColor": "blue",
-      "format": "\u001b[94m{6}"
+      "format": "{$3}{$4}│{$5}{6}"
     },
     {
       "type": "terminalfont",
-      "key": "  ╠󰬴 font    │",
+      "key": "│ ╠󰬴 font    │",
       "keyColor": "blue",
-      "outputColor": "blue"
+      "format": "{$3}{$4}│{$5}{1}"
     },
     {
       "type": "command",
-      "key": "  ╚󰃫 birthday│",
+      "key": "│ ╚󰃫 birthday│",
       "keyColor": "blue",
-      "outputColor": "blue",
-      "text": "birth_install=$(stat -c %W /); echo $(date -d @$birth_install '+%b %d %Y')"
+      "text": "birth_install=$(stat -c %W /); echo $(date -d @$birth_install '+%b %d %Y')",
+      "format": "{$3}{$4}│{$5}{1}"
     },
     {
       "type": "custom",
-      "format": "\u001b[34m╰────────────┴─────────────────────────────────╯"
+      "format": "\u001b[34m╰────────────┴────────────────────────────────╯"
     },
     {
       "type": "custom",
-      "format": "\u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m "
+      "format": " \u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m "
     }
   ]
 }

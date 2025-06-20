@@ -1,5 +1,10 @@
 @import "catppuccin-frappe.css";
 
+@define-color shade_0 mix(@crust, @lavender, 0.5);
+@define-color shade_1 mix(@crust, @lavender, 0.4);
+@define-color shade_2 mix(@crust, @lavender, 0.3);
+@define-color shade_3 mix(@crust, @lavender, 0.2);
+
 * {
   font-family: "Maple Mono", "Symbols Nerd Font";
   font-weight: 500;
@@ -16,49 +21,55 @@ window#waybar {
 }
 
 #workspaces,
-#taskbar,
-#mpris,
-#backlight,
-#pulseaudio,
-#network,
-#bluetooth,
-#custom-weather,
-#system,
-#mobile-power,
-#clock {
-  background: @surface0;
+#taskbar {
+  background: @surface1;
   border-top: 2px solid @base;
   border-bottom: 2px solid @lavender;
 }
 
-#custom-launcher-arrow-left,
-#custom-launcher-arrow-right,
-#custom-launcher,
-#custom-right-arrow-dark,
-#custom-left-arrow-dark,
-#custom-right-arrow-light,
-#custom-left-arrow-light,
-#custom-left-window-arrow-left,
-#custom-left-window-arrow-right,
-#custom-center-window-arrow-left,
-#custom-center-window-arrow-right,
-#custom-power-arrow-left,
-#custom-power-arrow-right,
-#custom-power {
-  font-size: 1.5em;
+#system,
+#clock {
+  background: @shade_0;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
 }
 
-#custom-launcher-arrow-left,
-#custom-launcher-arrow-right {
-  background: @base;
-  color: @blue;
+#network,
+#pulseaudio {
+  background: @shade_1;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#bluetooth,
+#custom-weather {
+  background: @shade_2;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#backlight,
+#mobile-power {
+  background: @shade_3;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#custom-launcher,
+#custom-power {
+  color: @mantle;
+  font-size: 1.5em;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @base;
 }
 
 #custom-launcher {
   background: @blue;
-  color: @mantle;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @base;
+}
+
+#custom-power {
+  background: @red;
+  padding-right: 8px;
 }
 
 #workspaces button {
@@ -66,59 +77,24 @@ window#waybar {
   margin: 0 4px;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-  background: @surface0;
-  color: @base;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @lavender;
-}
-
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-  background: @base;
-  color: @surface0;
-}
-
 #taskbar button {
   padding: 0 6px;
 }
 
 #taskbar button:hover {
-  background: alpha(@lavender, 0.3);
+  background: @overlay1;
 }
 
 #taskbar button.active {
-  background: alpha(@lavender, 0.75);
+  background: @overlay0;
 }
 
 #mpris {
   color: @green;
 }
 
-#custom-left-window-arrow-left {
-  background: @lavender;
-  color: @base;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @base;
-}
-
-#custom-left-window-arrow-right {
-  background: @base;
-  color: @lavender;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @base;
-}
-
-#custom-center-window-arrow-left,
-#custom-center-window-arrow-right {
-  background: @base;
-  color: @lavender;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @base;
-}
-
 #window {
+  padding-left: 8px;
   background: @lavender;
   color: @mantle;
   border-top: 2px solid @base;
@@ -147,13 +123,13 @@ window#waybar.empty #window {
 }
 
 #custom-weather {
-  color: @rosewater;
+  color: @mauve;
 }
 
 #cpu,
 #memory,
 #disk {
-  color: @mauve;
+  color: @maroon;
 }
 
 #power-profiles-daemon,
@@ -165,17 +141,115 @@ window#waybar.empty #window {
   color: @sky;
 }
 
-#custom-power-arrow-left,
-#custom-power-arrow-right {
-  background: @base;
-  color: @red;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @base;
+#custom-left-arrow-foreground,
+#custom-right-arrow-foreground,
+#custom-left-arrow-background,
+#custom-right-arrow-background,
+#custom-left-arrow-foreground-shade-0,
+#custom-right-arrow-foreground-shade-0,
+#custom-left-arrow-background-shade-0,
+#custom-right-arrow-background-shade-0,
+#custom-left-arrow-foreground-shade-1,
+#custom-right-arrow-foreground-shade-1,
+#custom-left-arrow-background-shade-1,
+#custom-right-arrow-background-shade-1,
+#custom-left-arrow-foreground-shade-2,
+#custom-right-arrow-foreground-shade-2,
+#custom-left-arrow-background-shade-2,
+#custom-right-arrow-background-shade-2,
+#custom-left-arrow-foreground-shade-3,
+#custom-right-arrow-foreground-shade-3,
+#custom-left-arrow-background-shade-3,
+#custom-right-arrow-background-shade-3,
+#custom-launcher-arrow-left,
+#custom-launcher-arrow-right,
+#custom-window-arrow-foreground,
+#custom-power-arrow-foreground {
+  font-size: 1.5em;
 }
 
-#custom-power {
-  background: @red;
-  color: @mantle;
+#custom-left-arrow-foreground,
+#custom-right-arrow-foreground {
+  background: @base;
+  color: @surface1;
+}
+
+#custom-left-arrow-background,
+#custom-right-arrow-background {
+  background: @surface1;
+  color: @base;
   border-top: 2px solid @base;
-  border-bottom: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#custom-left-arrow-foreground-shade-0,
+#custom-right-arrow-foreground-shade-0 {
+  background: @base;
+  color: @shade_0;
+}
+
+#custom-left-arrow-background-shade-0,
+#custom-right-arrow-background-shade-0 {
+  background: @shade_0;
+  color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#custom-left-arrow-foreground-shade-1,
+#custom-right-arrow-foreground-shade-1 {
+  background: @base;
+  color: @shade_1;
+}
+
+#custom-left-arrow-background-shade-1,
+#custom-right-arrow-background-shade-1 {
+  background: @shade_1;
+  color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#custom-left-arrow-foreground-shade-2,
+#custom-right-arrow-foreground-shade-2 {
+  background: @base;
+  color: @shade_2;
+}
+
+#custom-left-arrow-background-shade-2,
+#custom-right-arrow-background-shade-2 {
+  background: @shade_2;
+  color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#custom-left-arrow-foreground-shade-3,
+#custom-right-arrow-foreground-shade-3 {
+  background: @base;
+  color: @shade_3;
+}
+
+#custom-left-arrow-background-shade-3,
+#custom-right-arrow-background-shade-3 {
+  background: @shade_3;
+  color: @base;
+  border-top: 2px solid @base;
+  border-bottom: 2px solid @lavender;
+}
+
+#custom-launcher-arrow-left,
+#custom-launcher-arrow-right {
+  background: @base;
+  color: @blue;
+}
+
+#custom-window-arrow-foreground {
+  background: @base;
+  color: @lavender;
+}
+
+#custom-power-arrow-foreground {
+  background: @base;
+  color: @red;
 }

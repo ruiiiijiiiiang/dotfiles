@@ -2,37 +2,6 @@
   "layer": "top",
   "position": "top",
   "margin": "4px 8px 0 8px",
-  "custom/left-arrow-dark": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/left-arrow-light": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-dark": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-light": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/launcher-arrow-left": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/launcher-arrow-right": {
-    "format": "",
-    "tooltip": false
-  },
-  "niri/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": " 󰷜 ",
-      "default": " 󰍹 "
-    }
-  },
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 24,
@@ -41,19 +10,12 @@
     "on-scroll-up": "niri msg action focus-column-right",
     "on-scroll-down": "niri msg action focus-column-left"
   },
-  "mpris": {
-    "format": "{player_icon}{status_icon}{artist} - {title}",
-    "tooltip-format": "Artist: {artist}\nTitle: {title}\nAlbum: {album}\nLength: {length}",
-    "player-icons": {
-      "default": " ",
-      "spotify": "󰓇 "
-    },
-    "status-icons": {
-      "playing": " ",
-      "paused": " "
-    },
-    "player": "spotify",
-    "max-length": 45
+  "niri/window": {
+    "icon": true,
+    "max-length": 75,
+    "rewrite": {
+      "(.*) Zen Browser": "Zen Browser"
+    }
   },
   "pulseaudio": {
     "scroll-step": 5,
@@ -77,9 +39,12 @@
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/wifimenu.sh; fi"
   },
   "bluetooth": {
-    "format": " 󰂯 ",
-    "format-disabled": " 󰂲 ",
-    "format-connected": " 󰂱 {num_connections}",
+    "format": "{icon}{num_connections}",
+    "format-icons": {
+      "on": "󰂯 ",
+      "off": "󰂲 ",
+      "connected": "󰂱 "
+    },
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -114,32 +79,142 @@
     "on-click": "NeoHtop"
   },
   "clock": {
-    "format": "󰃭 {:%m\/%d  %I:%M}",
+    "format": "󰃭 {:%m\/%d  %H:%M}",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
       "on-scroll": 1,
-      "on-click-right": "mode",
+      "weeks-pos": "right",
       "format": {
         "months": "<span color='#ef9f76'><b>{}</b></span>",
         "weekdays": "<span color='#e5c890'><b>{}</b></span>",
         "days": "<span color='#babbf1'><b>{}</b></span>",
-        "today": "<span background='#ca9ee6' color='#303446'><b>{}</b></span>"
+        "weeks": "<span color='#81c8be'><b>W{}</b></span>",
+        "today": "<span background='#ca9ee6' color='#303446'><b><u>{}</u></b></span>"
       }
     }
   },
-  "custom/power-arrow-left": {
-    "format": "",
-    "tooltip": false
+  "mpris": {
+    "format": "{player_icon}{status_icon}{artist} - {title}",
+    "tooltip-format": "Artist: {artist}\nTitle: {title}\nAlbum: {album}\nLength: {length}",
+    "player-icons": {
+      "default": " ",
+      "spotify": "󰓇 "
+    },
+    "status-icons": {
+      "playing": " ",
+      "paused": " "
+    },
+    "player": "spotify",
+    "max-length": 45
   },
-  "custom/power-arrow-right": {
-    "format": "",
-    "tooltip": false
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": " 󰷜 ",
+      "default": " 󰍹 "
+    }
   },
   "custom/power": {
     "format": " 󰐥 ",
     "tooltip": false,
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/powermenu.sh; fi"
+  },
+  "custom/left-arrow-foreground": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-background": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-foreground": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-background": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-foreground-shade-0": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-background-shade-0": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-foreground-shade-0": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-background-shade-0": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-foreground-shade-1": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-background-shade-1": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-foreground-shade-1": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-background-shade-1": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-foreground-shade-2": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-background-shade-2": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-foreground-shade-2": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-background-shade-2": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-foreground-shade-3": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-background-shade-3": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-foreground-shade-3": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-background-shade-3": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/launcher-arrow-left": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/launcher-arrow-right": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/window-arrow-foreground": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/power-arrow-foreground": {
+    "format": "",
+    "tooltip": false
   }
 }

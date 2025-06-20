@@ -15,6 +15,7 @@
     fastfetch
 
     # --- System & Process Monitoring ---
+    sysstat
     btop
     bottom
     htop
@@ -55,6 +56,7 @@
     gnupg
     posting
     imagemagick
+    pastel
 
     # --- File & Text Search/Manipulation CLI Tools ---
     fzf
@@ -81,7 +83,6 @@
     kdePackages.filelight
     kdePackages.kolourpaint
     kdePackages.yakuake
-    brave
     ungoogled-chromium
 
     # --- Desktop Environment: Niri (Wayland) ---
@@ -106,7 +107,6 @@
     ncspot
     spicetify-cli
     cava
-    pipes
 
     # --- Development Tools: Compilers, Debuggers, Build Systems ---
     gcc
@@ -170,6 +170,8 @@
     cmatrix
     cbonsai
     tty-clock
+    astroterm
+    pipes
   ];
 
   programs.git.enable = true;
