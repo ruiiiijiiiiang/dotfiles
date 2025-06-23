@@ -40,8 +40,8 @@ in {
     ".config/niri".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/niri/.config/niri";
 
-    # "nixos-config".source =
-    #   config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nixos/nixos-config";
+    "nixos-config".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nixos/nixos-config";
 
     ".config/nvim".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nvim/.config/nvim";

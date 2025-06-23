@@ -34,6 +34,9 @@
   ],
   "modules-right": [
     "custom/left-arrow-foreground",
+    "tray",
+    "custom/left-arrow-background",
+    "custom/left-arrow-foreground",
     "niri/workspaces",
     "custom/left-arrow-background",
     "custom/power-arrow-foreground",

@@ -21,7 +21,8 @@ window#waybar {
 }
 
 #workspaces,
-#taskbar {
+#taskbar,
+#tray {
   background: @surface1;
   border-top: 2px solid @base;
   border-bottom: 2px solid @lavender;

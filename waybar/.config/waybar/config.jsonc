@@ -109,6 +109,10 @@
     "player": "spotify",
     "max-length": 45
   },
+  "tray": {
+    "icon-size": 24,
+    "spacing": 12
+  },
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {

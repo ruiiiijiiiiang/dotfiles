@@ -17,7 +17,6 @@
   services.flatpak.packages = [
     "app.zen_browser.zen"
     "eu.betterbird.Betterbird"
-    "ch.protonmail.protonmail-bridge"
     "io.github.milkshiift.GoofCord"
     "com.spotify.Client"
   ];

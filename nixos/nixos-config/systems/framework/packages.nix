@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     # --- System Core & Essentials ---
     linux-firmware
-    libnotify
 
     # --- System Information & Diagnostics ---
     pciutils
@@ -77,15 +76,18 @@
     wezterm
 
     # --- GUI Applications ---
+    protonmail-bridge-gui
     zed-editor
     libreoffice-qt
     kdePackages.kate
     kdePackages.filelight
     kdePackages.kolourpaint
     kdePackages.yakuake
+    kdePackages.qtdeclarative
     ungoogled-chromium
 
     # --- Desktop Environment: Niri (Wayland) ---
+    libnotify
     rofi-wayland
     swaybg
     swaynotificationcenter
@@ -124,8 +126,9 @@
     tailwindcss-language-server
     vscode-langservers-extracted
     vscode-js-debug
-    nodePackages.vscode-json-languageserver
     vtsls
+    nodePackages.vscode-json-languageserver
+    nodePackages.prettier
 
     # Rust
     rustup
@@ -138,6 +141,8 @@
     # Python
     python313
     pyright
+    ruff
+    python313Packages.debugpy
 
     # Go
     go
@@ -151,6 +156,7 @@
     # Shell Scripting
     bash-language-server
     shellcheck
+    shfmt
 
     # Other Languages/Tools
     codeium
