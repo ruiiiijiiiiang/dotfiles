@@ -19,5 +19,6 @@
     "eu.betterbird.Betterbird"
     "io.github.milkshiift.GoofCord"
     "com.spotify.Client"
+    "org.upscayl.Upscayl"
   ];
 }

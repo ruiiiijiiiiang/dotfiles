@@ -14,11 +14,22 @@
     "icon": true,
     "max-length": 75,
     "rewrite": {
-      "(.*) Zen Browser": "Zen Browser"
+      "(.*) Zen Browser": "Zen Browser",
+      "(.*) Betterbird": "Betterbird",
+      "(.*) Slack": "Slack",
+      "(.*) Chromium": "Chromium",
+      "(.*) Okular": "Okular"
     }
   },
+  "custom/updates": {
+    "exec": "sh ~/.config/waybar/updates.sh",
+    "on-click": "sh ~/.config/waybar/updates.sh",
+    "interval": 3600,
+    "format": "{}",
+    "tooltip": false,
+    "return-type": "json"
+  },
   "pulseaudio": {
-    "scroll-step": 5,
     "format": "{icon}{volume}",
     "format-muted": " ",
     "format-icons": {
@@ -28,10 +39,12 @@
         " "
       ]
     },
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    "on-scroll-up": "swayosd-client --output-volume raise",
+    "on-scroll-down": "swayosd-client --output-volume lower",
+    "on-click": "swayosd-client --output-volume mute-toggle"
   },
   "network": {
-    "format": "󰣀 ",
+    "format": " ",
     "format-eth": "󰈀 ",
     "format-wifi": " {signalStrength}",
     "format-disconnected": "󰖪 ",
@@ -108,6 +121,26 @@
     },
     "player": "spotify",
     "max-length": 45
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon} {text}",
+    "format-icons": {
+      "notification": "<span foreground='#e78284'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='#e78284'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='#e78284'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='#e78284'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
   "tray": {
     "icon-size": 24,
@@ -202,6 +235,22 @@
     "tooltip": false
   },
   "custom/right-arrow-background-shade-3": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-foreground-shade-4": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-background-shade-4": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-foreground-shade-4": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-background-shade-4": {
     "format": "",
     "tooltip": false
   },

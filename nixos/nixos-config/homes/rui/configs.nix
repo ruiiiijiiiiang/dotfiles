@@ -48,6 +48,8 @@ in {
 
     ".config/posting".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/posting/.config/posting";
+    ".local/share/posting/themes".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/posting/.local/share/posting/themes";
 
     ".config/rofi".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/rofi/.config/rofi";
@@ -61,12 +63,14 @@ in {
     ".config/superfile".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/superfile/.config/superfile";
 
-    ".config/swayidle".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/sway/.config/swayidle";
     ".config/swaylock".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/sway/.config/swaylock";
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/swaylock/.config/swaylock";
+
     ".config/swaync".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/sway/.config/swaync";
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/swaync/.config/swaync";
+
+    ".config/swayosd".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/swayosd/.config/swayosd";
 
     ".config/waybar".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/waybar/.config/waybar";

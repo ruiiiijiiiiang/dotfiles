@@ -97,14 +97,12 @@ output "eDP-1" {
 }
 
 output "Dell Inc. AW3423DWF 9Y252S3" {
-  position x=0 y=-1252
-  mode "3440x1440@119.998"
-  scale 1.15
+  position x=0 y=-1440
+  mode "3440x1440@112"
 }
 
 output "ViewSonic Corporation VA1655-FHD WMM221720733" {
-  position x=0 y=1280
-  scale 1.15
+  position x=1920 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -325,16 +323,16 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute      allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
-    Mod+Shift+Up          allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    Mod+Shift+Down        allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    Mod+Shift+Left        allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
-    Mod+Shift+Right       allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    XF86AudioMute         allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
+    Mod+Shift+Up          allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
+    Mod+Shift+Down        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    Mod+Shift+Left        allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
+    Mod+Shift+Right       allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
 
     Mod+Q { close-window; }
 

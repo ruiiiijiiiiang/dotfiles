@@ -1,11 +1,16 @@
 { ... }:
 
 {
+  services.power-profiles-daemon.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  security.pam.services.sddm.enableKwallet = true;
+  security.pam.services.rui.kwallet.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -26,6 +31,5 @@
     jack.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+  services.blueman.enable = true;
 }

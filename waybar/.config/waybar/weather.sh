@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-LOCATION="houston"
-WEATHER_INFO=$(curl -s --connect-timeout 5 --retry 3 "wttr.in/$LOCATION?format=\"%c%20%t%20%h%20%w%20%S%20%s\"" | sed 's/"//g')
+location="houston"
+weather_info=$(curl -s --connect-timeout 5 --retry 3 "wttr.in/$location?format=\"%c%20%t%20%h%20%w%20%S%20%s\"" | sed 's/"//g')
 
-SYMBOL=$(echo "$WEATHER_INFO" | awk '{print $1}')
-TEMPERATURE=$(echo "$WEATHER_INFO" | awk '{print $2}' | sed 's/+//g; s/°//g; s/F//g')
-HUMIDITY=$(echo "$WEATHER_INFO" | awk '{print $3}')
-WIND_SPEED=$(echo "$WEATHER_INFO" | awk '{print $4}')
-SUN_RISE=$(echo "$WEATHER_INFO" | awk '{print $5}')
-SUN_SET=$(echo "$WEATHER_INFO" | awk '{print $6}')
+symbol=$(echo "$weather_info" | awk '{print $1}')
+temperature=$(echo "$weather_info" | awk '{print $2}' | sed 's/+//g; s/°//g; s/F//g')
+humidity=$(echo "$weather_info" | awk '{print $3}')
+wind_speed=$(echo "$weather_info" | awk '{print $4}')
+sun_rise=$(echo "$weather_info" | awk '{print $5}')
+sun_set=$(echo "$weather_info" | awk '{print $6}')
 
 declare -A symbol_map
 symbol_map["✨"]=""
@@ -17,9 +17,9 @@ symbol_map["⛅️"]=""
 symbol_map["☀️"]=""
 symbol_map["☁️"]=""
 symbol_map["🌫"]=""
-if [[ -v symbol_map["$SYMBOL"] ]]; then
-  SYMBOL=${symbol_map[$SYMBOL]}
+if [[ -v symbol_map["$symbol"] ]]; then
+	symbol=${symbol_map[$symbol]}
 fi
 
-WAYBAR_OUTPUT=$(printf '{"text": "%s %s", "tooltip": "Weather: %s %s\\nHumidity: %s\\nWind: %s\\nSunrise: %s\\nSunset: %s"}' "$SYMBOL" "$TEMPERATURE" "$SYMBOL" "$TEMPERATURE" "$HUMIDITY" "$WIND_SPEED" "$SUN_RISE" "$SUN_SET")
-echo "$WAYBAR_OUTPUT"
+output=$(printf '{"text": "%s %s", "tooltip": "Weather: %s %s\\nHumidity: %s\\nWind: %s\\nSunrise: %s\\nSunset: %s"}' "$symbol" "$temperature" "$symbol" "$temperature" "$humidity" "$wind_speed" "$sun_rise" "$sun_set")
+echo "$output"

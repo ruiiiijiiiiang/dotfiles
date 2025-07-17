@@ -1,7 +1,7 @@
-name: "catppuccin-frappe-lavender"  # use this name in your config file
+name: "catppuccin-frappe-lavender"
 primary: "#babbf1" # buttons, fixed table columns
 secondary: "#babbf1"  # method selector, some minor labels
-accent: "#babbf1"  # header text, scrollbars, cursors, focus highlights
+accent: "#e6e6fa"  # header text, scrollbars, cursors, focus highlights
 background: "#303446" # background colors
 surface: "#414559"  # panels, etc
 error: "#e78284"  # error messages

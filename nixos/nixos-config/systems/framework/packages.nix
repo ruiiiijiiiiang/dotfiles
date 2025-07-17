@@ -56,6 +56,9 @@
     posting
     imagemagick
     pastel
+    superfile
+    broot
+    xplr
 
     # --- File & Text Search/Manipulation CLI Tools ---
     fzf
@@ -85,6 +88,8 @@
     kdePackages.yakuake
     kdePackages.qtdeclarative
     ungoogled-chromium
+    sniffnet
+    yaak
 
     # --- Desktop Environment: Niri (Wayland) ---
     libnotify
@@ -93,9 +98,9 @@
     swaynotificationcenter
     swayidle
     swaylock-effects
+    swayosd
     waybar
     brightnessctl
-    blueman
     pavucontrol
     xwayland-satellite
     catppuccin-cursors.frappeLavender

@@ -1,0 +1,17 @@
+window#osd {
+  border: 2px solid #8caaee;
+  border-radius: 0;
+  background: #303446;
+}
+
+window#osd image {
+  color: #babbf1;
+}
+
+window#osd trough {
+  background: #babbf140;
+}
+
+window#osd progress {
+  background: #babbf1;
+}

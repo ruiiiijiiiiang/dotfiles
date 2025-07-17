@@ -108,26 +108,6 @@ return {
     },
   },
   {
-    "nvim-lualine/lualine.nvim",
-    opts = function(_, opts)
-      opts.options = {
-        section_separators = { left = "▓▒░", right = "░▒▓" },
-      }
-      opts.sections.lualine_a = {
-        {
-          opts.sections.lualine_a[1],
-          separator = { left = "", right = "▓▒░" },
-        },
-      }
-      opts.sections.lualine_z = {
-        {
-          opts.sections.lualine_z[1],
-          separator = { left = "░▒▓", right = "" },
-        },
-      }
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
@@ -185,6 +165,12 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {
       restriction_mode = "hint",
+      disabled_keys = {
+        ["<Up>"] = false,
+        ["<Down>"] = false,
+        ["<Left>"] = false,
+        ["<Right>"] = false,
+      },
     },
   },
   {
@@ -203,6 +189,14 @@ return {
     "MonsieurTib/package-ui.nvim",
     config = function()
       require("package-ui").setup()
+    end,
+  },
+  {
+    "code-biscuits/nvim-biscuits",
+    config = function()
+      require("nvim-biscuits").setup({
+        show_on_start = true,
+      })
     end,
   },
   -- {

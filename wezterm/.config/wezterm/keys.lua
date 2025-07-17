@@ -120,6 +120,16 @@ local keys = {
     action = act.ScrollByPage(1),
   },
   {
+    key = "h",
+    mods = "ALT|SHIFT",
+    action = act.MoveTabRelative(-1),
+  },
+  {
+    key = "l",
+    mods = "ALT|SHIFT",
+    action = act.MoveTabRelative(1),
+  },
+  {
     key = "l",
     mods = "CTRL|SHIFT",
     action = wezterm.action.DisableDefaultAssignment,
