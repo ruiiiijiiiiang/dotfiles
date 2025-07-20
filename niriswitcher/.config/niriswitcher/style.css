@@ -1,0 +1,29 @@
+:root {
+  --bg-color: rgba(48, 52, 70, 0.75);
+  --border-color: rgb(140, 170, 238);
+  --indicator-color: rgb(35, 38, 52);
+  --indicator-focus-color: rgb(186, 187, 241);
+  --highlight-color: rgb(186, 187, 241);
+  --label-color: rgb(198, 208, 245);
+  --label-background-color: rgb(35, 38, 52);
+}
+
+#niriswitcher {
+  font-family: "Maple Mono";
+  font-size: 16px;
+}
+
+#main-view {
+  border-radius: 0;
+  border-width: 2px;
+}
+
+#workspace-name {
+  color: var(--label-color);
+  background-color: var(--label-background-color);
+  border-radius: 0;
+}
+
+.application.selected .application-icon {
+  border-radius: 0;
+}

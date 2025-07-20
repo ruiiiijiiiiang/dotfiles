@@ -96,11 +96,15 @@ Neovim plugins are managed by LazyVim.
 
 ### Desktop Environment
 
-- [hyprland](https://github.com/hyprwm/Hyprland)
+- [niri](https://github.com/YaLTeR/niri)
 - [waybar](https://github.com/Alexays/Waybar)
 - [rofi-wayland](https://github.com/in0ni/rofi-wayland)
-- [niri](https://github.com/YaLTeR/niri)
-- [sway](https://github.com/swaywm/sway)
+- [niriswitcher](https://github.com/isaksamsten/niriswitcher)
+- [swaybg](https://github.com/swaywm/swaybg)
+- [swaylock](https://github.com/swaywm/swaylock)
+- [swayidle](https://github.com/swaywm/swayidle)
+- [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- [swayosd](https://github.com/ErikReider/SwayOSD)
 
 ### Development Environment
 

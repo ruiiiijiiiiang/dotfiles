@@ -191,14 +191,6 @@ return {
       require("package-ui").setup()
     end,
   },
-  {
-    "code-biscuits/nvim-biscuits",
-    config = function()
-      require("nvim-biscuits").setup({
-        show_on_start = true,
-      })
-    end,
-  },
   -- {
   --   "alanfortlink/animatedbg.nvim",
   --   config = function()

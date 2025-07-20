@@ -1,0 +1,5 @@
+[keys]
+modifier = "Super"
+
+[keys.window]
+close = ""

@@ -532,6 +532,11 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     // Mod+Shift+P { power-off-monitors; }
+
+    Mod+Tab repeat=false { spawn "niriswitcherctl" "show" "--window"; }
+    Mod+Shift+Tab repeat=false { spawn "niriswitcherctl" "show" "--window"; }
+    Mod+Grave repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
+    Mod+Shift+Grave repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
 }
 
 environment {

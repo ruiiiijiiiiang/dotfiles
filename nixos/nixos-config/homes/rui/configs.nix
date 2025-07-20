@@ -40,6 +40,9 @@ in {
     ".config/niri".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/niri/.config/niri";
 
+    ".config/niriswitcher".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/niriswitcher/.config/niriswitcher";
+
     "nixos-config".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nixos/nixos-config";
 
