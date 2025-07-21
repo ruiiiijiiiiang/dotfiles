@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 get_pacman_updates() {
-	if command -v yay &>/dev/null; then
-		updates=$(yay -Qu 2>/dev/null | wc -l)
+	if command -v pacman &>/dev/null; then
+		updates=$(pacman -Qu 2>/dev/null | wc -l)
 		echo "$updates"
 	else
 		echo "0"

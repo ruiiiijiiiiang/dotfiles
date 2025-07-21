@@ -18,7 +18,8 @@
       "(.*) Betterbird": "Betterbird",
       "(.*) Slack": "Slack",
       "(.*) Chromium": "Chromium",
-      "(.*) Okular": "Okular"
+      "(.*) Okular": "Okular",
+      "Discord (.*)": "Discord"
     }
   },
   "custom/updates": {
