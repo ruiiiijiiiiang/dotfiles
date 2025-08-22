@@ -1,9 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  services.resolved.enable = true;
+
   services.power-profiles-daemon.enable = true;
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -22,7 +23,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -32,4 +32,19 @@
   };
 
   services.blueman.enable = true;
+
+  services.protonmail-bridge.enable = true;
+
+  services.dbus.packages = [
+    pkgs.kdePackages.xdg-desktop-portal-kde
+    pkgs.xdg-desktop-portal
+  ];
+  xdg.portal = {
+    enable = true;
+    config.common.default-portal = "kde";
+    extraPortals = [
+      pkgs.kdePackages.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal
+    ];
+  };
 }

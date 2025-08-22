@@ -1,0 +1,32 @@
+{
+  "colorSchema": "/home/rui/.noxdir/catppuccin-frappe-lavender.json",
+  "exclude": null,
+  "noEmptyDirs": false,
+  "noHidden": false,
+  "simpleColor": false,
+  "useCache": true,
+  "bindings": {
+    "driveBindings": {
+      "levelDown": null,
+      "sortTotalCap": null
+    },
+    "dirBindings": {
+      "levelUp": null,
+      "levelDown": null,
+      "delete": null,
+      "topFiles": null,
+      "topDirs": null,
+      "filesOnly": null,
+      "dirsOnly": null,
+      "nameFilter": null,
+      "chart": null,
+      "diff": null
+    },
+    "explore": null,
+    "quit": null,
+    "refresh": null,
+    "help": null,
+    "diff": null,
+    "config": null
+  }
+}

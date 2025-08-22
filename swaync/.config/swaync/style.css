@@ -162,7 +162,7 @@ slider {
   border-radius: 0;
   border: 2px solid #8caaee;
   margin: 18px;
-  background-color: #303446bf;
+  background-color: rgba(48, 52, 70, 0.75);
   color: #c6d0f5;
   padding: 14px;
 }

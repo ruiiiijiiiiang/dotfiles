@@ -4,7 +4,6 @@
 @define-color shade_1 mix(@crust, @lavender, 0.4);
 @define-color shade_2 mix(@crust, @lavender, 0.32);
 @define-color shade_3 mix(@crust, @lavender, 0.26);
-@define-color shade_4 mix(@crust, @lavender, 0.22);
 
 * {
   font-family: "Maple Mono", "Symbols Nerd Font";
@@ -37,29 +36,22 @@ window#waybar {
 }
 
 #network,
-#pulseaudio {
+#custom-weather {
   background: @shade_1;
   border-top: 2px solid @base;
   border-bottom: 2px solid @lavender;
 }
 
-#bluetooth,
-#custom-weather {
-  background: @shade_2;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @lavender;
-}
-
-#custom-updates,
+#pulseaudio,
 #custom-notification {
-  background: @shade_3;
+  background: @shade_2;
   border-top: 2px solid @base;
   border-bottom: 2px solid @lavender;
 }
 
 #backlight,
 #mobile-power {
-  background: @shade_4;
+  background: @shade_3;
   border-top: 2px solid @base;
   border-bottom: 2px solid @lavender;
 }
@@ -250,20 +242,6 @@ window#waybar.empty #window {
 #custom-left-arrow-background-shade-3,
 #custom-right-arrow-background-shade-3 {
   background: @shade_3;
-  color: @base;
-  border-top: 2px solid @base;
-  border-bottom: 2px solid @lavender;
-}
-
-#custom-left-arrow-foreground-shade-4,
-#custom-right-arrow-foreground-shade-4 {
-  background: @base;
-  color: @shade_4;
-}
-
-#custom-left-arrow-background-shade-4,
-#custom-right-arrow-background-shade-4 {
-  background: @shade_4;
   color: @base;
   border-top: 2px solid @base;
   border-bottom: 2px solid @lavender;

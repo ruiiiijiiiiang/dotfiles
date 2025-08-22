@@ -10,11 +10,8 @@
     "custom/right-arrow-foreground"
   ],
   "modules-center": [
-    "custom/left-arrow-foreground-shade-3",
-    "custom/updates",
-    "custom/left-arrow-background-shade-3",
     "custom/left-arrow-foreground-shade-2",
-    "bluetooth",
+    "pulseaudio",
     "custom/left-arrow-background-shade-2",
     "custom/left-arrow-foreground-shade-1",
     "network",
@@ -29,14 +26,11 @@
     "clock",
     "custom/right-arrow-foreground-shade-0",
     "custom/right-arrow-background-shade-1",
-    "pulseaudio",
+    "custom/weather",
     "custom/right-arrow-foreground-shade-1",
     "custom/right-arrow-background-shade-2",
-    "custom/weather",
-    "custom/right-arrow-foreground-shade-2",
-    "custom/right-arrow-background-shade-3",
     "custom/notification",
-    "custom/right-arrow-foreground-shade-3"
+    "custom/right-arrow-foreground-shade-2"
   ],
   "modules-right": [
     "custom/left-arrow-foreground",

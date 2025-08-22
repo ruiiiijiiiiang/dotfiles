@@ -1,7 +1,10 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "libxml2-2.13.8" # Required for PacketTracer
+  ];
 
   environment.systemPackages = with pkgs; [
     # --- System Core & Essentials ---
@@ -12,6 +15,7 @@
     usbutils
     hwinfo
     fastfetch
+    kmon
 
     # --- System & Process Monitoring ---
     sysstat
@@ -40,7 +44,7 @@
     rsync
     dust
     dysk
-    wl-clipboard
+    inputs.noxdir.packages.${pkgs.stdenv.system}.default
 
     # --- Archiving & Compression ---
     unzip
@@ -59,6 +63,7 @@
     superfile
     broot
     xplr
+    inputs.file-clipper.packages.${pkgs.stdenv.system}.default
 
     # --- File & Text Search/Manipulation CLI Tools ---
     fzf
@@ -79,7 +84,7 @@
     wezterm
 
     # --- GUI Applications ---
-    protonmail-bridge-gui
+    vivaldi
     zed-editor
     libreoffice-qt
     kdePackages.kate
@@ -90,10 +95,13 @@
     ungoogled-chromium
     sniffnet
     yaak
+    ciscoPacketTracer8
+    wireshark
 
     # --- Desktop Environment: Niri (Wayland) ---
     libnotify
     rofi-wayland
+    niriswitcher
     swaybg
     swaynotificationcenter
     swayidle
@@ -104,6 +112,7 @@
     pavucontrol
     xwayland-satellite
     catppuccin-cursors.frappeLavender
+    wl-clipboard
 
     # --- Desktop Environment: KDE Plasma (Core & Theming) ---
     kdePackages.plasma-pa

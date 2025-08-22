@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 location="houston"
-weather_info=$(curl -s --connect-timeout 5 --retry 3 "wttr.in/$location?format=\"%c%20%t%20%h%20%w%20%S%20%s\"" | sed 's/"//g')
+weather_info=$(curl -s --connect-timeout 5 --retry 3 "wttr.in/$location?u&format=\"%c%20%t%20%h%20%w%20%S%20%s\"" | sed 's/"//g')
 
 symbol=$(echo "$weather_info" | awk '{print $1}')
 temperature=$(echo "$weather_info" | awk '{print $2}' | sed 's/+//g; s/°//g; s/F//g')

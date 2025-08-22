@@ -1,16 +1,31 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" "mt7921e" ];
-  boot.kernelModules = [ "kvm-amd" "mt7921e" ];
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "thunderbolt"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [
+    "amdgpu"
+    "mt7921e"
+  ];
+  boot.kernelModules = [
+    "kvm-amd"
+    "mt7921e"
+  ];
   boot.extraModulePackages = [ ];
 
   boot.kernelParams = [
@@ -22,37 +37,67 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/7279-99D8";
     fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
+    options = [
+      "fmask=0022"
+      "dmask=0022"
+    ];
   };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
     fsType = "btrfs";
-    options = [ "noatime" "compress=zstd" "ssd" "subvol=@" ];
+    options = [
+      "noatime"
+      "compress=zstd"
+      "ssd"
+      "subvol=@"
+    ];
   };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
     fsType = "btrfs";
-    options = [ "noatime" "compress=zstd" "ssd" "subvol=@home" ];
+    options = [
+      "noatime"
+      "compress=zstd"
+      "ssd"
+      "subvol=@home"
+    ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
     fsType = "btrfs";
-    options = [ "noatime" "compress=zstd" "ssd" "subvol=@nix" ];
+    options = [
+      "noatime"
+      "compress=zstd"
+      "ssd"
+      "subvol=@nix"
+    ];
   };
 
   fileSystems."/tmp" = {
     device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
     fsType = "btrfs";
-    options = [ "noatime" "compress=zstd" "ssd" "subvol=@tmp" "nodatacow" ];
+    options = [
+      "noatime"
+      "compress=zstd"
+      "ssd"
+      "subvol=@tmp"
+      "nodatacow"
+    ];
   };
 
   fileSystems."/var/log" = {
     device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
     fsType = "btrfs";
-    options = [ "noatime" "compress=zstd" "ssd" "subvol=@log" "nodatacow" ];
+    options = [
+      "noatime"
+      "compress=zstd"
+      "ssd"
+      "subvol=@log"
+      "nodatacow"
+    ];
   };
 
   swapDevices = [

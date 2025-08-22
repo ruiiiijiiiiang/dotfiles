@@ -22,14 +22,6 @@
       "Discord (.*)": "Discord"
     }
   },
-  "custom/updates": {
-    "exec": "sh ~/.config/waybar/updates.sh",
-    "on-click": "sh ~/.config/waybar/updates.sh",
-    "interval": 3600,
-    "format": "{}",
-    "tooltip": false,
-    "return-type": "json"
-  },
   "pulseaudio": {
     "format": "{icon}{volume}",
     "format-muted": " {volume}",
@@ -236,22 +228,6 @@
     "tooltip": false
   },
   "custom/right-arrow-background-shade-3": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/left-arrow-foreground-shade-4": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/left-arrow-background-shade-4": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-foreground-shade-4": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-background-shade-4": {
     "format": "",
     "tooltip": false
   },

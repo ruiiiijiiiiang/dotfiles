@@ -60,6 +60,10 @@ return {
     config = function()
       require("catppuccin").setup({
         flavour = "frappe",
+        float = {
+          solid = true,
+          transparent = true,
+        },
         styles = {
           comments = { "italic" },
           conditionals = { "italic" },
@@ -97,6 +101,12 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
+    init = function()
+      local bufline = require("catppuccin.groups.integrations.bufferline")
+      function bufline.get()
+        return bufline.get_theme()
+      end
+    end,
     dependencies = "nvim-tree/nvim-web-devicons",
     opts = {
       options = {
@@ -147,6 +157,7 @@ return {
     dependencies = { "lewis6991/gitsigns.nvim" },
     config = function()
       require("gitsigns").setup()
+      require("scrollbar.handlers.gitsigns").setup()
       require("scrollbar").setup({
         handle = {
           color = frappe.lavender,
@@ -181,16 +192,21 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = {
-      lang = "typescript",
+      lang = "python3",
       picker = { provider = nil },
     },
   },
   {
-    "MonsieurTib/package-ui.nvim",
-    config = function()
-      require("package-ui").setup()
-    end,
-  },
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        sh = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
+        bash = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
+        zsh = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
+        lua = { { "stylua", extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } } },
+      }
+    }
+  }
   -- {
   --   "alanfortlink/animatedbg.nvim",
   --   config = function()

@@ -4,7 +4,8 @@ let
   username = "rui";
   homePath = "/home/${username}";
   flakePath = "${homePath}/nixos-config";
-in {
+in
+{
   imports = [
     ./configs.nix
     ./services
@@ -24,6 +25,7 @@ in {
     };
   };
 
+  # Hide nm-applet tray icon
   home.file.".config/autostart/nm-applet.desktop".text = ''
     [Desktop Entry]
     Name=NetworkManager Applet

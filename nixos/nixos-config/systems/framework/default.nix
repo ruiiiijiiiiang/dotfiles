@@ -1,4 +1,3 @@
-
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
@@ -7,31 +6,13 @@
 
 {
   imports = [
-     ./hardware.nix
-     ./network.nix
-     ./services.nix
-     ./packages.nix
-     ./users.nix
+    ./hardware.nix
+    ./network.nix
+    ./nixos.nix
+    ./services.nix
+    ./packages.nix
+    ./users.nix
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    auto-optimise-store = true;
-  };
-  nix.optimise.automatic = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
 
   environment.variables = {
     OS = "nixos";

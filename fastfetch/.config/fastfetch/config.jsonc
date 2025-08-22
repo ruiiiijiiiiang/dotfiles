@@ -129,6 +129,12 @@
       "format": "{$3}{$4}│{$5}{2} ({3})"
     },
     {
+      "type": "terminalfont",
+      "key": "│ ╠󰬴 font    │",
+      "keyColor": "blue",
+      "format": "{$3}{$4}│{$5}{1}"
+    },
+    {
       "type": "terminal",
       "key": "│ ╠ terminal│",
       "keyColor": "blue",
@@ -136,22 +142,9 @@
     },
     {
       "type": "shell",
-      "key": "│ ╠ shell   │",
+      "key": "│ ╚ shell   │",
       "keyColor": "blue",
       "format": "{$3}{$4}│{$5}{6}"
-    },
-    {
-      "type": "terminalfont",
-      "key": "│ ╠󰬴 font    │",
-      "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{1}"
-    },
-    {
-      "type": "command",
-      "key": "│ ╚󰃫 birthday│",
-      "keyColor": "blue",
-      "text": "birth_install=$(stat -c %W /); echo $(date -d @$birth_install '+%b %d %Y')",
-      "format": "{$3}{$4}│{$5}{1}"
     },
     {
       "type": "custom",

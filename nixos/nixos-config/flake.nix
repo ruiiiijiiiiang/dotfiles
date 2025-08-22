@@ -15,9 +15,20 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    file-clipper.url = "github:ruiiiijiiiiang/file_clipper";
+    noxdir.url = "github:crumbyte/noxdir";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, catppuccin, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-flatpak,
+      catppuccin,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
