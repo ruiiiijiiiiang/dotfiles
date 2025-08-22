@@ -46,6 +46,9 @@ in {
     "nixos-config".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nixos/nixos-config";
 
+    ".noxdir".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/noxdir/.noxdir";
+
     ".config/nvim".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nvim/.config/nvim";
 

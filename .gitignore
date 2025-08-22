@@ -4,6 +4,7 @@ nixos/nixos-config/flake.lock
 nixos/nixos-config/result
 superfile/.config/superfile/theme/
 !superfile/.config/superfile/theme/catppuccin-frappe.toml
+noxdir/.noxdir/cache
 ncspot/.config/ncspot/userstate.cbor
 .stfolder
 .stignore
