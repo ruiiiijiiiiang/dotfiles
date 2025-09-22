@@ -15,6 +15,7 @@
     "max-length": 75,
     "rewrite": {
       "(.*) Zen Browser": "Zen Browser",
+      "(.*) Vivaldi": "Vivaldi",
       "(.*) Betterbird": "Betterbird",
       "(.*) Slack": "Slack",
       "(.*) Chromium": "Chromium",

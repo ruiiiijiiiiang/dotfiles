@@ -15,27 +15,27 @@
     options = "--delete-older-than 30d";
   };
 
-  systemd.user.services."flake-update" = {
-    Unit = {
+  systemd.user.services.flake-update = {
+    unitConfig = {
       Description = "Update Nix flakes automatically";
     };
-    Service = {
+    serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.nix}/bin/nix flake update /home/rui/nixos-config";
+      ExecStart = "${pkgs.nix}/bin/nix flake update --flake /home/rui/nixos-config";
       WorkingDirectory = "/home/rui/nixos-config";
     };
+    wantedBy = [ "default.target" ];
   };
 
-  systemd.user.timers."flake-update" = {
-    Unit = {
-      Description = "Run flake-update weekly";
+  systemd.user.timers.flake-update = {
+    unitConfig = {
+      Description = "Run flake-update daily";
     };
-    Timer = {
-      OnCalendar = "weekly";
+    timerConfig = {
+      OnCalendar = "daily";
       Persistent = true;
+      Unit = "flake-update.service";
     };
-    Install = {
-      WantedBy = [ "timers.target" ];
-    };
+    wantedBy = [ "timers.target" ];
   };
 }

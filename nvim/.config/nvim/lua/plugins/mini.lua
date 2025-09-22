@@ -1,30 +1,30 @@
 return {
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     config = function()
       require("mini.ai").setup({})
     end,
   },
   {
-    "echasnovski/mini.cursorword",
+    "nvim-mini/mini.cursorword",
     config = function()
       require("mini.cursorword").setup({})
     end,
   },
   {
-    "echasnovski/mini.splitjoin",
+    "nvim-mini/mini.splitjoin",
     config = function()
       require("mini.splitjoin").setup({})
     end,
   },
   {
-    "echasnovski/mini.bracketed",
+    "nvim-mini/mini.bracketed",
     config = function()
       require("mini.bracketed").setup({})
     end,
   },
   {
-    "echasnovski/mini.move",
+    "nvim-mini/mini.move",
     config = function()
       require("mini.move").setup({
         mappings = {

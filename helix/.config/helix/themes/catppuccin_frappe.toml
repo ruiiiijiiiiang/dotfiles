@@ -1,0 +1,5 @@
+inherits = "catppuccin_frappe"
+
+"ui.statusline.normal" = {fg = "crust", bg = "blue", modifiers = ["bold"]}
+"ui.statusline.insert" = {fg = "crust", bg = "green", modifiers = ["bold"]}
+"ui.statusline.select" = {fg = "crust", bg = "mauve", modifiers = ["bold"]}

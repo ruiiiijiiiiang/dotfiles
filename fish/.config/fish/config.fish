@@ -10,6 +10,7 @@ if status is-login
     fzf --fish | source
     atuin init fish | source
     pay-respects fish --alias | source
+    carapace _carapace | source
 end
 
 # Interactive shell - Shell behavior and user interface
@@ -57,6 +58,28 @@ if status is-interactive
         rm -f -- "$tmp"
     end
 
+    function open
+        if command -q open
+            command open $argv &
+        else if command -q xdg-open
+            xdg-open $argv &
+        else
+            echo "Error: Neither 'open' nor 'xdg-open' command found." >&2
+            return 1
+        end
+    end
+
+    function hx
+        if command -q hx
+            command hx $argv
+        else if command -q helix
+            helix $argv
+        else
+            echo "Helix not installed"
+            return 1
+        end
+    end
+
     function fish_greeting
         fastfetch
     end
@@ -65,13 +88,12 @@ end
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /home/rui/miniconda3/bin/conda
-    eval /home/rui/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+    eval /home/rui/miniconda3/bin/conda "shell.fish" hook $argv | source
 else
     if test -f "/home/rui/miniconda3/etc/fish/conf.d/conda.fish"
         . "/home/rui/miniconda3/etc/fish/conf.d/conda.fish"
     else
-        set -x PATH "/home/rui/miniconda3/bin" $PATH
+        set -x PATH /home/rui/miniconda3/bin $PATH
     end
 end
 # <<< conda initialize <<<
-

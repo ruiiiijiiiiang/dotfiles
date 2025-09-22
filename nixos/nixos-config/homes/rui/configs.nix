@@ -28,6 +28,9 @@ in {
     ".gitconfig".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/git/.gitconfig";
 
+    ".config/helix".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/helix/.config/helix";
+
     ".config/lazygit".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/lazygit/.config/lazygit";
 
@@ -86,5 +89,8 @@ in {
 
     ".config/yazi".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/yazi/.config/yazi";
+
+    ".config/zed/settings.json".source =
+      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/zed/.config/zed/settings.json";
   };
 }

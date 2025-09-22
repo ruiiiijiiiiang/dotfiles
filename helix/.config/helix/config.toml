@@ -1,0 +1,41 @@
+theme = "catppuccin_frappe"
+
+[editor]
+line-number = "relative"
+cursorline = true
+cursorcolumn = true
+color-modes = true
+mouse = false
+bufferline = "multiple"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = ["diagnostics"]
+right = ["selections", "register", "separator", "position", "position-percentage", "total-line-numbers", "separator", "file-type", "file-indent-style", "file-encoding"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+character = "⸽"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·"

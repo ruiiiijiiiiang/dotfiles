@@ -8,6 +8,5 @@
     ./swaync.nix
     ./swayosd.nix
     ./waybar.nix
-    ./xwayland-satellite.nix
   ];
 }

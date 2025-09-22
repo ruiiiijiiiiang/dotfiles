@@ -3,15 +3,20 @@
 {
   users.users.rui = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
     group = "rui";
     home = "/home/rui";
   };
 
   users.groups.rui = {
     name = "rui";
-    members = [ "rui "];
+    members = [ "rui" ];
   };
+
+  users.extraGroups.vboxusers.members = [ "rui" ];
 
   time.timeZone = "America/Chicago";
 

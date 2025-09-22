@@ -22,7 +22,7 @@
     btop
     bottom
     htop
-    neohtop
+    # neohtop
     glances
     iotop
     lsof
@@ -37,6 +37,7 @@
     mtr
     wget
     networkmanagerapplet
+    nssTools
 
     # --- Disk & Filesystem Utilities ---
     tree
@@ -64,6 +65,8 @@
     broot
     xplr
     inputs.file-clipper.packages.${pkgs.stdenv.system}.default
+    asciinema_3
+    carapace
 
     # --- File & Text Search/Manipulation CLI Tools ---
     fzf
@@ -100,7 +103,7 @@
 
     # --- Desktop Environment: Niri (Wayland) ---
     libnotify
-    rofi-wayland
+    rofi
     niriswitcher
     swaybg
     swaynotificationcenter

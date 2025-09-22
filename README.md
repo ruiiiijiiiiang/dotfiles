@@ -98,7 +98,7 @@ Neovim plugins are managed by LazyVim.
 
 - [niri](https://github.com/YaLTeR/niri)
 - [waybar](https://github.com/Alexays/Waybar)
-- [rofi-wayland](https://github.com/in0ni/rofi-wayland)
+- [rofi](https://github.com/davatorium/rofi)
 - [niriswitcher](https://github.com/isaksamsten/niriswitcher)
 - [swaybg](https://github.com/swaywm/swaybg)
 - [swaylock](https://github.com/swaywm/swaylock)
@@ -125,6 +125,7 @@ Neovim plugins are managed by LazyVim.
 
 ### TUI Applications
 
+- [file_clipper](https://github.com/ruiiiijiiiiang/file_clipper)
 - [starship](https://github.com/starship/starship)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [yazi](https://github.com/sxyazi/yazi)
@@ -146,6 +147,7 @@ Neovim plugins are managed by LazyVim.
 - [posting](https://github.com/darrenburns/posting)
 - [dust](https://github.com/bootandy/dust)
 - [ncspot](https://github.com/hrkfdn/ncspot)
+- [noxdir](https://github.com/crumbyte/noxdir)
 
 ### GUI Applications
 

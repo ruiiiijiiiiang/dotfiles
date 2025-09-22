@@ -1,0 +1,44 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash"
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
+  "minimap": {
+    "show": "auto"
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "terminal": {
+    "shell": {
+      "with_arguments": {
+        "program": "fish",
+        "args": ["-l"]
+      }
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Frappé",
+    "dark": "Catppuccin Frappé"
+  },
+  "icon_theme": "Catppuccin Frappé",
+  "ui_font_family": "Maple Mono",
+  "buffer_font_family": "Maple Mono"
+}

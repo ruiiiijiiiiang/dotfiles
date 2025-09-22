@@ -3,11 +3,11 @@ return {
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
   { "nvzone/showkeys", cmd = "ShowkeysToggle" },
-  { "hat0uma/csvview.nvim" },
   { "OXY2DEV/patterns.nvim" },
   { "lewis6991/gitsigns.nvim", enabled = true },
   { "mrjones2014/smart-splits.nvim", lazy = false },
   { "AndrewRadev/switch.vim" },
+  { "hat0uma/csvview.nvim", opts = {} },
   {
     "rasulomaroff/reactive.nvim",
     config = function()
@@ -60,6 +60,7 @@ return {
     config = function()
       require("catppuccin").setup({
         flavour = "frappe",
+        transparent_background = true,
         float = {
           solid = true,
           transparent = true,

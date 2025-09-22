@@ -98,7 +98,6 @@ output "eDP-1" {
 
 output "Dell Inc. AW3423DWF 9Y252S3" {
   position x=0 y=-1440
-  mode "3440x1440@112"
 }
 
 output "ViewSonic Corporation VA1655-FHD WMM221720733" {
@@ -260,20 +259,25 @@ window-rule {
     default-column-width { proportion 1.0; }
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
+// Open picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"zen"# title="^Picture-in-Picture$"
+    match title="^Picture-in-Picture$"
+    match title="^Picture in picture$"
     open-floating true
     default-floating-position x=32 y=10 relative-to="bottom-right"
+    default-column-width { fixed 854; }
+    default-window-height { fixed 480; }
 }
 
 // Open Betterbird reminders as floating by default.
 window-rule {
   match app-id="Betterbird" title="Reminders"
     open-floating true
+}
+
+window-rule {
+  match title="^waykeypedia$"
+  open-floating true
 }
 
 // Example: block out two password managers from screen capture.
@@ -540,7 +544,6 @@ binds {
 }
 
 environment {
-  DISPLAY ":12"
   QT_QPA_PLATFORMTHEME "kde"
   QT_QPA_PLATFORM "wayland"
 }

@@ -10,6 +10,7 @@ config.keys = keys
 config.default_prog = { "fish", "-l" }
 
 config.color_scheme = "Catppuccin Frappe"
+config.window_background_opacity = 0.9
 local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
 local accent = "#babbf1" -- lavender
 
@@ -55,7 +56,7 @@ local function tab_title(tab_info)
   return title
 end
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, _config, hover, max_width)
+wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
   local edge_background = color_scheme.tab_bar.background
   local edge_foreground = color_scheme.tab_bar.new_tab.bg_color
   local text_background = color_scheme.tab_bar.new_tab.bg_color

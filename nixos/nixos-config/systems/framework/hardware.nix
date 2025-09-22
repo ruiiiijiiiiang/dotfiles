@@ -23,8 +23,10 @@
     "mt7921e"
   ];
   boot.kernelModules = [
-    "kvm-amd"
     "mt7921e"
+  ];
+  boot.blacklistedKernelModules = [
+    "kvm-amd" # "kvm-amd" conflicts with virtualbox
   ];
   boot.extraModulePackages = [ ];
 
