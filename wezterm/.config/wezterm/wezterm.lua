@@ -1,11 +1,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
-local keys = require("keys")
-
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.keys = keys
+config.keys = require("keys")
 
 config.default_prog = { "fish", "-l" }
 
@@ -42,8 +39,12 @@ local function tab_title(tab_info)
     title = title:gsub("^nv ", " "):gsub("^nvim ", " ")
   elseif title:find("^vim ") then
     title = title:gsub("^vim ", " ")
-  elseif title:find("^yay ") or title:find("^pacman ") then
-    title = title:gsub("^yay ", " "):gsub("^pacman ", " ")
+  elseif title:find("^cargo ") then
+    title = title:gsub("^cargo ", " ")
+  elseif title:find("^yay ") or title:find("^pacman ")  or title:find("^paru ")then
+    title = title:gsub("^yay ", " "):gsub("^pacman ", " "):gsub("^paru ", " ")
+  elseif title:find("^nix") or title:find("^nh ") then
+    title = title:gsub("^nix", "󱄅 "):gsub("^nh", "󱄅 ")
   elseif title:find("^Yazi:") then
     title = title:gsub("^Yazi:", " ")
   elseif title:find("^deno ") then
@@ -90,6 +91,19 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
     { Foreground = { Color = edge_foreground } },
     { Text = right_edge },
   }
+end)
+
+wezterm.on('update-right-status', function(window, pane)
+  local cwd = pane:get_current_working_dir().file_path
+  local cells = {
+    { Background = { Color = color_scheme.tab_bar.background } },
+    { Foreground = { Color = accent } },
+    { Text = "" },
+    { Background = { Color = accent } },
+    { Foreground = { Color = color_scheme.tab_bar.background } },
+    { Text = '  ' .. cwd .. ' ' },
+  }
+  window:set_right_status(wezterm.format(cells))
 end)
 
 return config

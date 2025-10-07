@@ -20,23 +20,7 @@ return {
     "folke/which-key.nvim",
     lazy = false,
     opts = {
-      preset = "modern",
-      spec = {
-        {
-          "<leader>C",
-          group = "CodeSnap",
-          mode = "x",
-        },
-        {
-          "<leader>gS",
-          icon = {
-            icon = "",
-            color = "blue",
-          },
-          mode = "n",
-          desc = "Toggle Split/Join",
-        },
-      },
+      preset = "helix",
     },
   },
   {
@@ -62,7 +46,7 @@ return {
         flavour = "frappe",
         transparent_background = true,
         float = {
-          solid = true,
+          solid = false,
           transparent = true,
         },
         styles = {
@@ -75,9 +59,7 @@ return {
           types = { "bold" },
         },
         dim_inactive = {
-          enabled = true,
-          shade = "light",
-          percentage = 0.6,
+          enabled = false,
         },
         integrations = {
           native_lsp = {
@@ -88,6 +70,23 @@ return {
               warnings = { "underdashed" },
             },
           },
+          colorful_winsep = {
+            enabled = true,
+            color = "lavender",
+          },
+          dropbar = {
+            enabled = true,
+            color_mode = true,
+          },
+          illuminate = {
+            lsp = true,
+          },
+          overseer = true,
+          snacks = {
+            enabled = true,
+            indent_scope_color = "subtext0",
+          },
+          which_key = true,
         },
       })
     end,
@@ -103,7 +102,7 @@ return {
   {
     "akinsho/bufferline.nvim",
     init = function()
-      local bufline = require("catppuccin.groups.integrations.bufferline")
+      local bufline = require("catppuccin.special.bufferline")
       function bufline.get()
         return bufline.get_theme()
       end
@@ -207,7 +206,25 @@ return {
         lua = { { "stylua", extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } } },
       }
     }
-  }
+  },
+  {
+    "chrisgrieser/nvim-rip-substitute",
+    cmd = "RipSubstitute",
+    opts = {},
+    keys = {
+      {
+        "<leader>fs",
+        function() require("rip-substitute").sub() end,
+        mode = { "n", "x" },
+        desc = "Substitute",
+      },
+    },
+  },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "WinLeave" },
+  },
   -- {
   --   "alanfortlink/animatedbg.nvim",
   --   config = function()

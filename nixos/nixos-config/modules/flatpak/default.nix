@@ -15,10 +15,9 @@
   services.flatpak.update.auto.onCalendar = "weekly";
 
   services.flatpak.packages = [
-    "app.zen_browser.zen"
-    "eu.betterbird.Betterbird"
     "io.github.milkshiift.GoofCord"
     "com.spotify.Client"
     "org.upscayl.Upscayl"
+    "com.simplenote.Simplenote"
   ];
 }

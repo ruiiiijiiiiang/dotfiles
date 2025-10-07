@@ -22,7 +22,7 @@
     btop
     bottom
     htop
-    # neohtop
+    neohtop
     glances
     iotop
     lsof
@@ -38,6 +38,7 @@
     wget
     networkmanagerapplet
     nssTools
+    rustscan
 
     # --- Disk & Filesystem Utilities ---
     tree
@@ -67,6 +68,8 @@
     inputs.file-clipper.packages.${pkgs.stdenv.system}.default
     asciinema_3
     carapace
+    gh
+    gemini-cli
 
     # --- File & Text Search/Manipulation CLI Tools ---
     fzf
@@ -87,6 +90,7 @@
     wezterm
 
     # --- GUI Applications ---
+    inputs.zen-browser.packages.${pkgs.stdenv.system}.default
     vivaldi
     zed-editor
     libreoffice-qt
@@ -222,10 +226,16 @@
       google-fonts
       nerd-fonts.symbols-only
       maple-mono.truetype
+      liberation_ttf
     ];
     fontconfig = {
       defaultFonts = {
         monospace = [ "maple-mono" ];
+        sansSerif = [ "Noto Sans" ];
+        serif = [
+          "Liberation Serif"
+          "Noto Serif"
+        ];
       };
     };
   };

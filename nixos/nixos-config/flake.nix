@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     file-clipper.url = "github:ruiiiijiiiiang/file_clipper";
     noxdir.url = "github:crumbyte/noxdir";
   };

@@ -1,15 +1,15 @@
 add_newline = true
 
 format = """\
-[󱞬 ](lavender)[](teal)$os$username$sudo\
+[󱞬 ](lavender)[](teal)$os$username$sudo\
 [▓▒░](fg:teal bg:sapphire)$directory\
 [▓▒░](fg:sapphire bg:blue)$cmd_duration$status\
-[](blue)$fill\
-[ ](flamingo)$git_branch$git_status\
+[](blue)[󰮯  ](yellow)$fill [  ](red)\
+[ ](flamingo)$git_branch$git_status\
 [▓▒░](fg:flamingo bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
 [▓▒░](fg:yellow bg:maroon)$package\
 [▓▒░](fg:maroon bg:mauve)$time\
-[](mauve)
+[](mauve)
 [󱞪 ](lavender)$character\
 """
 
@@ -157,7 +157,7 @@ format = "[$symbol$version]($style)"
 style = "fg:crust bg:maroon"
 
 [fill]
-symbol = "󰈺 "
+symbol = "󰊠  "
 style = "lavender bold"
 
 [time]

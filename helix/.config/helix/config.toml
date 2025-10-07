@@ -7,6 +7,9 @@ cursorcolumn = true
 color-modes = true
 mouse = false
 bufferline = "multiple"
+trim-final-newlines = true
+trim-trailing-whitespace = true
+popup-border = "all"
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
@@ -29,8 +32,13 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[editor.whitespace]
-render = "all"
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "all"
+nnbsp = "all"
+newline = "all"
+tabpad = "all"
 
 [editor.whitespace.characters]
 space = "·"
@@ -39,3 +47,7 @@ nnbsp = "␣"
 tab = "→"
 newline = "⏎"
 tabpad = "·"
+
+[keys.normal]
+"*" = ["move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
+"#" = ["move_prev_word_start", "move_next_word_end", "search_selection", "search_prev"]
