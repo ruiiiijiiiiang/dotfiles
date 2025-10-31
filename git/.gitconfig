@@ -5,6 +5,7 @@
   preloadindex = true
   fscache = true
   pager = delta
+  editor = nvim
 [include]
   path = "~/.config/delta/catppuccin.gitconfig"
 [alias]

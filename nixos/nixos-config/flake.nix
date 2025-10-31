@@ -18,7 +18,9 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     file-clipper.url = "github:ruiiiijiiiiang/file_clipper";
+    lazynmap.url = "github:ruiiiijiiiiang/lazynmap";
     noxdir.url = "github:crumbyte/noxdir";
+    doxx.url = "github:bgreenwell/doxx";
   };
 
   outputs =

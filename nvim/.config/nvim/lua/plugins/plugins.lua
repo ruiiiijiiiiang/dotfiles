@@ -203,9 +203,9 @@ return {
         sh = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
         bash = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
         zsh = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
-        lua = { { "stylua", extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } } },
-      }
-    }
+        -- lua = { { "stylua", extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } } },
+      },
+    },
   },
   {
     "chrisgrieser/nvim-rip-substitute",
@@ -214,7 +214,9 @@ return {
     keys = {
       {
         "<leader>fs",
-        function() require("rip-substitute").sub() end,
+        function()
+          require("rip-substitute").sub()
+        end,
         mode = { "n", "x" },
         desc = "Substitute",
       },
@@ -224,6 +226,23 @@ return {
     "nvim-zh/colorful-winsep.nvim",
     config = true,
     event = { "WinLeave" },
+  },
+  {
+    "2kabhishek/nerdy.nvim",
+    dependencies = {
+      "folke/snacks.nvim",
+    },
+    cmd = "Nerdy",
+    opts = {
+      max_recents = 30,
+      add_default_keybindings = true,
+      copy_to_clipboard = false,
+    },
+  },
+  {
+    "XXiaoA/atone.nvim",
+    cmd = "Atone",
+    opts = {},
   },
   -- {
   --   "alanfortlink/animatedbg.nvim",

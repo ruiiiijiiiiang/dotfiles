@@ -11,6 +11,7 @@ if status is-login
     atuin init fish | source
     pay-respects fish --alias | source
     carapace _carapace | source
+    navi widget fish | source
 end
 
 # Interactive shell - Shell behavior and user interface
@@ -78,6 +79,20 @@ if status is-interactive
             echo "Helix not installed"
             return 1
         end
+    end
+
+    function pa
+        env PATH="/usr/bin:$PATH" \
+            LD_PRELOAD="" \
+            LD_LIBRARY_PATH="" \
+            PKG_CONFIG_PATH="" \
+            PKG_CONFIG_LIBDIR="" \
+            CFLAGS="" \
+            CXXFLAGS="" \
+            LDFLAGS="" \
+            MAKEFLAGS="" \
+            CC="" \
+            paru $argv
     end
 
     function fish_greeting

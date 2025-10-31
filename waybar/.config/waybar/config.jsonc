@@ -40,8 +40,14 @@
   "network": {
     "format": " ",
     "format-eth": "󰈀 ",
-    "format-wifi": " {signalStrength}",
+    "format-wifi": "{icon}{signalStrength}",
     "format-disconnected": "󰖪 ",
+    "format-icons": [
+      "󰤟 ",
+      "󰤢 ",
+      "󰤥 ",
+      "󰤨 "
+    ],
     "tooltip-format": "{ifname}\n{ipaddr}\n{essid}",
     "on-click": "if pgrep -x rofi > /dev/null; then pkill rofi; else sh ~/.config/rofi/wifimenu.sh; fi"
   },

@@ -70,6 +70,10 @@
     carapace
     gh
     gemini-cli
+    navi
+    smassh
+    inputs.lazynmap.packages.${pkgs.stdenv.system}.default
+    inputs.doxx.packages.${pkgs.stdenv.system}.default
 
     # --- File & Text Search/Manipulation CLI Tools ---
     fzf
@@ -104,6 +108,7 @@
     yaak
     ciscoPacketTracer8
     wireshark
+    telegram-desktop
 
     # --- Desktop Environment: Niri (Wayland) ---
     libnotify

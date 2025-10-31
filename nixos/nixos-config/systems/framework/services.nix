@@ -60,7 +60,6 @@
   };
 
   virtualisation = {
-    virtualbox.host.enable = true;
     vmware.host.enable = true;
   };
 }

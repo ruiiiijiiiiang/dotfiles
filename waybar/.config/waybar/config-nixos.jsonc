@@ -11,7 +11,7 @@
   ],
   "modules-center": [
     "custom/left-arrow-foreground-shade-3",
-    "backlight",
+    "group/mobile-power",
     "custom/left-arrow-background-shade-3",
     "custom/left-arrow-foreground-shade-2",
     "pulseaudio",
@@ -35,7 +35,7 @@
     "custom/notification",
     "custom/right-arrow-foreground-shade-2",
     "custom/right-arrow-background-shade-3",
-    "group/mobile-power",
+    "backlight",
     "custom/right-arrow-foreground-shade-3"
   ],
   "modules-right": [

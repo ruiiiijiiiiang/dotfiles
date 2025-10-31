@@ -1,96 +1,44 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
-  dotfilesPath = "${config.home.homeDirectory}/dotfiles";
+  mapToPath = { name, paths }:
+  builtins.listToAttrs (
+    map (path: {
+      name = path;
+      value.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/${name}/${path}";
+    }) paths
+  );
+  links = lib.mkMerge (map mapToPath [
+    { name = "atuin"; paths = [".config/atuin"]; }
+    { name = "delta"; paths = [".config/delta"]; }
+    { name = "bat"; paths = [".config/bat"]; }
+    { name = "bottom"; paths = [".config/bottom"]; }
+    { name = "btop"; paths = [".config/btop"]; }
+    { name = "fastfetch"; paths = [".config/fastfetch"]; }
+    { name = "fish"; paths = [".config/fish"]; }
+    { name = "git"; paths = [".gitconfig"]; }
+    { name = "helix"; paths  = [".config/helix"]; }
+    { name = "lazygit"; paths = [".config/lazygit"]; }
+    { name = "lsd"; paths = [".config/lsd"]; }
+    { name = "ncspot"; paths = [".config/ncspot"]; }
+    { name = "niri"; paths = [".config/niri"]; }
+    { name = "niriswitcher"; paths = [".config/niriswitcher"]; }
+    { name = "nixos"; paths = ["nixos-config"]; }
+    { name = "noxdir"; paths = [".noxdir"]; }
+    { name = "nvim"; paths = [".config/nvim"]; }
+    { name = "posting"; paths = [".config/posting" ".local/share/posting/themes"]; }
+    { name = "rofi"; paths = [".config/rofi"]; }
+    { name = "spicetify"; paths = [".config/spicetify/Themes/text"]; }
+    { name = "starship"; paths = [".config/starship.toml"]; }
+    { name = "superfile"; paths = [".config/superfile"]; }
+    { name = "swaylock"; paths = [".config/swaylock"]; }
+    { name = "swaync"; paths = [".config/swaync"]; }
+    { name = "swayosd"; paths = [".config/swayosd"]; }
+    { name = "waybar"; paths = [".config/waybar"]; }
+    { name = "wezterm"; paths = [".config/wezterm"]; }
+    { name = "yazi"; paths = [".config/yazi"]; }
+    { name = "zed"; paths = [".config/zed/settings.json"]; }
+  ]);
 in {
-  home.file = {
-    ".config/atuin".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/atuin/.config/atuin";
-
-    ".config/delta".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/delta/.config/delta";
-
-    ".config/bat".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/bat/.config/bat";
-
-    ".config/bottom".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/bottom/.config/bottom";
-
-    ".config/btop".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/btop/.config/btop";
-
-    ".config/fastfetch".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/fastfetch/.config/fastfetch";
-
-    ".config/fish".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/fish/.config/fish";
-
-    ".gitconfig".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/git/.gitconfig";
-
-    ".config/helix".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/helix/.config/helix";
-
-    ".config/lazygit".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/lazygit/.config/lazygit";
-
-    ".config/lsd".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/lsd/.config/lsd";
-
-    ".config/ncspot".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/ncspot/.config/ncspot";
-
-    ".config/niri".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/niri/.config/niri";
-
-    ".config/niriswitcher".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/niriswitcher/.config/niriswitcher";
-
-    "nixos-config".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nixos/nixos-config";
-
-    ".noxdir".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/noxdir/.noxdir";
-
-    ".config/nvim".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/nvim/.config/nvim";
-
-    ".config/posting".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/posting/.config/posting";
-    ".local/share/posting/themes".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/posting/.local/share/posting/themes";
-
-    ".config/rofi".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/rofi/.config/rofi";
-
-    ".config/spicetify/Themes/text".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/spicetify/.config/spicetify/Themes/text";
-
-    ".config/starship.toml".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/starship/.config/starship.toml";
-
-    ".config/superfile".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/superfile/.config/superfile";
-
-    ".config/swaylock".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/swaylock/.config/swaylock";
-
-    ".config/swaync".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/swaync/.config/swaync";
-
-    ".config/swayosd".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/swayosd/.config/swayosd";
-
-    ".config/waybar".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/waybar/.config/waybar";
-
-    ".config/wezterm".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/wezterm/.config/wezterm";
-
-    ".config/yazi".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/yazi/.config/yazi";
-
-    ".config/zed/settings.json".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/zed/.config/zed/settings.json";
-  };
+  home.file = links;
 }
