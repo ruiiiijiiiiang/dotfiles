@@ -1,14 +1,14 @@
 { config, lib, ... }:
 
 let
-  mapToPath = { name, paths }:
+  linkConfig = { name, paths }:
   builtins.listToAttrs (
     map (path: {
       name = path;
       value.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/${name}/${path}";
     }) paths
   );
-  links = lib.mkMerge (map mapToPath [
+  links = lib.mkMerge (map linkConfig [
     { name = "atuin"; paths = [".config/atuin"]; }
     { name = "delta"; paths = [".config/delta"]; }
     { name = "bat"; paths = [".config/bat"]; }
