@@ -25,3 +25,10 @@
 --   -- Digits
 --   "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
 -- } })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("no_auto_comment", {}),
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})

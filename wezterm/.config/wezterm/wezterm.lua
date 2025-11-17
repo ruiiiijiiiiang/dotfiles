@@ -7,7 +7,7 @@ config.keys = require("keys")
 config.default_prog = { "fish", "-l" }
 
 config.color_scheme = "Catppuccin Frappe"
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
 local accent = "#babbf1" -- lavender
 
@@ -41,7 +41,7 @@ local function tab_title(tab_info)
     title = title:gsub("^vim ", " ")
   elseif title:find("^cargo ") then
     title = title:gsub("^cargo ", " ")
-  elseif title:find("^yay ") or title:find("^pacman ")  or title:find("^paru ")then
+  elseif title:find("^yay ") or title:find("^pacman ") or title:find("^paru ") then
     title = title:gsub("^yay ", " "):gsub("^pacman ", " "):gsub("^paru ", " ")
   elseif title:find("^nix") or title:find("^nh ") then
     title = title:gsub("^nix", "󱄅 "):gsub("^nh", "󱄅 ")
@@ -93,7 +93,7 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
   }
 end)
 
-wezterm.on('update-right-status', function(window, pane)
+wezterm.on("update-right-status", function(window, pane)
   local cwd = pane:get_current_working_dir().file_path
   local cells = {
     { Background = { Color = color_scheme.tab_bar.background } },
@@ -101,7 +101,7 @@ wezterm.on('update-right-status', function(window, pane)
     { Text = "" },
     { Background = { Color = accent } },
     { Foreground = { Color = color_scheme.tab_bar.background } },
-    { Text = '  ' .. cwd .. ' ' },
+    { Text = "  " .. cwd .. " " },
   }
   window:set_right_status(wezterm.format(cells))
 end)

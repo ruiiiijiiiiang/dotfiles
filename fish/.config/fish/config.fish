@@ -31,6 +31,11 @@ if status is-interactive
 
     # Interactive functions
     function run-ls-on-cd -v PWD
+        set current_repository (git rev-parse --show-toplevel 2> /dev/null)
+        if [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]
+            onefetch
+        end
+        set -gx last_repository $current_repository
         command lsd -l
     end
 
@@ -81,7 +86,7 @@ if status is-interactive
         end
     end
 
-    function pa
+    function ya
         env PATH="/usr/bin:$PATH" \
             LD_PRELOAD="" \
             LD_LIBRARY_PATH="" \
@@ -92,7 +97,7 @@ if status is-interactive
             LDFLAGS="" \
             MAKEFLAGS="" \
             CC="" \
-            paru $argv
+            yay $argv
     end
 
     function fish_greeting

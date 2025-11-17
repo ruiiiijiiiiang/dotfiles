@@ -65,13 +65,16 @@
     superfile
     broot
     xplr
-    inputs.file-clipper.packages.${pkgs.stdenv.system}.default
     asciinema_3
     carapace
     gh
-    gemini-cli
     navi
     smassh
+    onefetch
+    crush
+    gemini-cli
+    github-copilot-cli
+    inputs.file_clipper.packages.${pkgs.stdenv.system}.default
     inputs.lazynmap.packages.${pkgs.stdenv.system}.default
     inputs.doxx.packages.${pkgs.stdenv.system}.default
 
@@ -99,6 +102,7 @@
     zed-editor
     libreoffice-qt
     kdePackages.kate
+    kdePackages.kcalc
     kdePackages.filelight
     kdePackages.kolourpaint
     kdePackages.yakuake
@@ -109,6 +113,9 @@
     ciscoPacketTracer8
     wireshark
     telegram-desktop
+    protonmail-bridge-gui
+    logseq
+    obsidian
 
     # --- Desktop Environment: Niri (Wayland) ---
     libnotify
@@ -160,6 +167,7 @@
     rustup
 
     # Lua
+    lua51Packages.luarocks
     lua54Packages.luarocks
     stylua
     lua-language-server
@@ -178,6 +186,7 @@
 
     # Nix
     nil
+    statix
 
     # Shell Scripting
     bash-language-server
@@ -206,22 +215,24 @@
     pipes
   ];
 
-  programs.git.enable = true;
-  programs.vim.enable = true;
-  programs.niri.enable = true;
-  programs.fish.enable = true;
-  programs.lazygit.enable = true;
-  programs.htop.enable = true;
-  programs.pay-respects.enable = true;
-  programs.firefox.enable = true;
-  programs.steam.enable = true;
-  programs.zoxide.enable = true;
-  programs.yazi.enable = true;
-  programs.wireshark.enable = true;
-  programs.tcpdump.enable = true;
-  programs.neovim.enable = true;
-  programs.bat.enable = true;
-  programs.direnv.enable = true;
+  programs = {
+    git.enable = true;
+    vim.enable = true;
+    niri.enable = true;
+    fish.enable = true;
+    lazygit.enable = true;
+    htop.enable = true;
+    pay-respects.enable = true;
+    firefox.enable = true;
+    steam.enable = true;
+    zoxide.enable = true;
+    yazi.enable = true;
+    wireshark.enable = true;
+    tcpdump.enable = true;
+    neovim.enable = true;
+    bat.enable = true;
+    direnv.enable = true;
+  };
 
   fonts = {
     packages = with pkgs; [

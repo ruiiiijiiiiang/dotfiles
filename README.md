@@ -122,6 +122,8 @@ Neovim plugins are managed by LazyVim.
   - [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim)
   - [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
   - [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
+  - [nerdy.nvim](https://github.com/2KAbhishek/nerdy.nvim)
+  - [nvim-rip-substitute](https://github.com/chrisgrieser/nvim-rip-substitute)
 
 ### TUI Applications
 
@@ -133,21 +135,21 @@ Neovim plugins are managed by LazyVim.
 - [pay-respects](https://github.com/iffse/pay-respects)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
-- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
+- [systemctl-tui](https://github.com/rgwood/systemctl-tui)
 - [bat](https://github.com/sharkdp/bat)
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [atuin](https://github.com/atuinsh/atuin)
 - [stow](https://github.com/aspiers/stow)
 - [btop](https://github.com/aristocratos/btop)
-- [clipboard](https://github.com/Slackadays/Clipboard)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
-- [catnap](https://github.com/iinsertNameHere/catnap)
 - [delta](https://github.com/dandavison/delta)
 - [superfile](https://github.com/yorukot/superfile)
 - [posting](https://github.com/darrenburns/posting)
 - [dust](https://github.com/bootandy/dust)
 - [ncspot](https://github.com/hrkfdn/ncspot)
 - [noxdir](https://github.com/crumbyte/noxdir)
+- [onefetch](https://github.com/o2sh/onefetch)
+- [scooter](https://github.com/thomasschafer/scooter)
 
 ### GUI Applications
 

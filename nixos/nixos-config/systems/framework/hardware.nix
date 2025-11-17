@@ -6,100 +6,104 @@
 }:
 
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.availableKernelModules = [
-    "nvme"
-    "xhci_pci"
-    "thunderbolt"
-    "usb_storage"
-    "sd_mod"
-  ];
-  boot.initrd.kernelModules = [
-    "amdgpu"
-    "mt7921e"
-  ];
-  boot.kernelModules = [
-    "mt7921e"
-  ];
-  boot.blacklistedKernelModules = [
-    "kvm-amd" # "kvm-amd" conflicts with virtualbox
-  ];
-  boot.extraModulePackages = [ ];
+    initrd.availableKernelModules = [
+      "nvme"
+      "xhci_pci"
+      "thunderbolt"
+      "usb_storage"
+      "sd_mod"
+    ];
+    initrd.kernelModules = [
+      "amdgpu"
+      "mt7921e"
+    ];
+    kernelModules = [
+      "mt7921e"
+    ];
+    blacklistedKernelModules = [
+      "kvm-amd" # "kvm-amd" conflicts with virtualbox
+    ];
+    extraModulePackages = [ ];
 
-  boot.kernelParams = [
-    "quiet"
-    "splash"
-    "resume=UUID=e01c20a2-fff9-4685-ab9d-1c20da55f6a0"
-  ];
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/7279-99D8";
-    fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
+    kernelParams = [
+      "quiet"
+      "splash"
+      "resume=UUID=e01c20a2-fff9-4685-ab9d-1c20da55f6a0"
     ];
   };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
-    fsType = "btrfs";
-    options = [
-      "noatime"
-      "compress=zstd"
-      "ssd"
-      "subvol=@"
-    ];
-  };
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-uuid/7279-99D8";
+      fsType = "vfat";
+      options = [
+        "fmask=0022"
+        "dmask=0022"
+      ];
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
-    fsType = "btrfs";
-    options = [
-      "noatime"
-      "compress=zstd"
-      "ssd"
-      "subvol=@home"
-    ];
-  };
+    "/" = {
+      device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
+      fsType = "btrfs";
+      options = [
+        "noatime"
+        "compress=zstd"
+        "ssd"
+        "subvol=@"
+      ];
+    };
 
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
-    fsType = "btrfs";
-    options = [
-      "noatime"
-      "compress=zstd"
-      "ssd"
-      "subvol=@nix"
-    ];
-  };
+    "/home" = {
+      device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
+      fsType = "btrfs";
+      options = [
+        "noatime"
+        "compress=zstd"
+        "ssd"
+        "subvol=@home"
+      ];
+    };
 
-  fileSystems."/tmp" = {
-    device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
-    fsType = "btrfs";
-    options = [
-      "noatime"
-      "compress=zstd"
-      "ssd"
-      "subvol=@tmp"
-      "nodatacow"
-    ];
-  };
+    "/nix" = {
+      device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
+      fsType = "btrfs";
+      options = [
+        "noatime"
+        "compress=zstd"
+        "ssd"
+        "subvol=@nix"
+      ];
+    };
 
-  fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
-    fsType = "btrfs";
-    options = [
-      "noatime"
-      "compress=zstd"
-      "ssd"
-      "subvol=@log"
-      "nodatacow"
-    ];
+    "/tmp" = {
+      device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
+      fsType = "btrfs";
+      options = [
+        "noatime"
+        "compress=zstd"
+        "ssd"
+        "subvol=@tmp"
+        "nodatacow"
+      ];
+    };
+
+    "/var/log" = {
+      device = "/dev/disk/by-uuid/e1da5afa-cc18-4576-be7d-4edb5f93d857";
+      fsType = "btrfs";
+      options = [
+        "noatime"
+        "compress=zstd"
+        "ssd"
+        "subvol=@log"
+        "nodatacow"
+      ];
+    };
   };
 
   swapDevices = [
@@ -109,9 +113,11 @@
   zramSwap.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.enableRedistributableFirmware = true;
-  hardware.bluetooth.enable = true;
+  hardware = {
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    enableRedistributableFirmware = true;
+    bluetooth.enable = true;
+  };
 
   services.fstrim.enable = true;
   services.fwupd.enable = true;

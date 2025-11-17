@@ -12,9 +12,11 @@ in
     ./services
   ];
 
-  home.username = username;
-  home.homeDirectory = homePath;
-  home.stateVersion = "25.05";
+  home = {
+    inherit username;
+    homeDirectory = homePath;
+    stateVersion = "25.05";
+  };
 
   programs.home-manager.enable = true;
   programs.nh = {

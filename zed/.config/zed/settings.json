@@ -9,8 +9,8 @@
 {
   "agent": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+      "provider": "copilot_chat",
+      "model": "claude-3.5-sonnet"
     }
   },
   "features": {

@@ -1,22 +1,24 @@
 { ... }:
 
 {
-  users.users.rui = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-    ];
-    group = "rui";
-    home = "/home/rui";
-  };
+  users = {
+    users.rui = {
+      isNormalUser = true;
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
+      group = "rui";
+      home = "/home/rui";
+    };
 
-  users.groups.rui = {
-    name = "rui";
-    members = [ "rui" ];
-  };
+    groups.rui = {
+      name = "rui";
+      members = [ "rui" ];
+    };
 
-  users.extraGroups.vboxusers.members = [ "rui" ];
+    extraGroups.vboxusers.members = [ "rui" ];
+  };
 
   time.timeZone = "America/Chicago";
 

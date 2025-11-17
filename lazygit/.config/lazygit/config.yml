@@ -1,8 +1,7 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never --line-numbers --side-by-side
-
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --line-numbers --side-by-side
 gui:
   nerdFontsVersion: "3"
   theme:
@@ -27,7 +26,6 @@ gui:
       - "#e5c890"
   authorColors:
     "*": "#babbf1"
-
 os:
   edit: "nvim {{filename}}"
   editInTerminal: true
