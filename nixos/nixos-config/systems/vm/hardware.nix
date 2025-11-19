@@ -8,9 +8,9 @@
 
 {
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-
+    loader.grub.enable = true;
+    loader.grub.device = "/dev/sda";
+    
     initrd.availableKernelModules = [
       "ata_piix"
       "mptspi"
@@ -18,28 +18,18 @@
       "ehci_pci"
       "sd_mod"
       "sr_mod"
-      "virtio"
-      "virtio_pci"
-      "virtio_ring"
-      "virtio_blk"
-      "virtio_net"
-      "vmwgfx"
-      "vmmouse"
-      "hv_vmbus"
-      "hv_storvsc"
-      "hv_netvsc"
     ];
     initrd.kernelModules = [ ];
     kernelModules = [ ];
     extraModulePackages = [ ];
   };
 
+  # VMware guest tools
   virtualisation.vmware.guest.enable = true;
-  services.open-vm-tools.enable = true;
 
   fileSystems = {
     "/" = {
-      device = "LABEL=nixos";
+      device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
   };
