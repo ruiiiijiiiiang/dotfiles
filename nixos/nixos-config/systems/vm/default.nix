@@ -8,8 +8,6 @@
     ../common/users.nix
     ./hardware.nix
     ./network.nix
-    ./services.nix
-    ./users.nix
   ];
 
   # Disable flatpak for VM
@@ -21,5 +19,5 @@
     NH_FLAKE = "/home/rui/nixos-config/";
   };
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "25.05";
 }
