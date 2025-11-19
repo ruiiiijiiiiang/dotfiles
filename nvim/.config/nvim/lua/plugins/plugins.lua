@@ -119,11 +119,25 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    opts = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "<c-k>", false, mode = { "i" } }
+    config = function()
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local bufnr = args.buf
+          local ft = vim.bo[bufnr].filetype
+          if ft == "markdown" then
+            vim.diagnostic.enable(false)
+          end
+        end,
+      })
     end,
   },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = function()
+  --     local keys = require("lazyvim.plugins.lsp.keymaps").get()
+  --     keys[#keys + 1] = { "<c-k>", false, mode = { "i" } }
+  --   end,
+  -- },
   {
     "Bekaboo/dropbar.nvim",
     dependencies = {
@@ -243,6 +257,19 @@ return {
     "XXiaoA/atone.nvim",
     cmd = "Atone",
     opts = {},
+  },
+  {
+    "obsidian-nvim/obsidian.nvim",
+    version = "*",
+    ft = "markdown",
+    opts = {
+      workspaces = {
+        {
+          name = "rui-vault",
+          path = "~/Sync/obsidian/rui-vault",
+        },
+      },
+    },
   },
   -- {
   --   "alanfortlink/animatedbg.nvim",

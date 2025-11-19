@@ -1,106 +1,18 @@
 { inputs, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "libxml2-2.13.8" # Required for PacketTracer
+    "ciscoPacketTracer8-8.2.2"
   ];
 
   environment.systemPackages = with pkgs; [
-    # --- System Core & Essentials ---
-    linux-firmware
-
-    # --- System Information & Diagnostics ---
-    pciutils
-    usbutils
-    hwinfo
-    fastfetch
-    kmon
-
-    # --- System & Process Monitoring ---
-    sysstat
-    btop
-    bottom
-    htop
-    neohtop
-    glances
-    iotop
-    lsof
-    mission-center
-    systemctl-tui
-    lazyjournal
-
-    # --- Networking & Connectivity ---
-    iw
-    nmap
-    dig
-    mtr
-    wget
-    networkmanagerapplet
-    nssTools
-    rustscan
-
-    # --- Disk & Filesystem Utilities ---
-    tree
-    ncdu
-    rsync
-    dust
-    dysk
-    inputs.noxdir.packages.${pkgs.stdenv.system}.default
-
-    # --- Archiving & Compression ---
-    unzip
-    unrar
-    ouch
-
-    # --- General CLI Tools ---
-    stow
-    tldr
-    starship
-    atuin
-    gnupg
-    posting
-    imagemagick
-    pastel
-    superfile
-    broot
-    xplr
-    asciinema_3
-    carapace
-    gh
-    navi
-    smassh
-    onefetch
-    crush
-    gemini-cli
-    github-copilot-cli
-    inputs.file_clipper.packages.${pkgs.stdenv.system}.default
-    inputs.lazynmap.packages.${pkgs.stdenv.system}.default
-    inputs.doxx.packages.${pkgs.stdenv.system}.default
-
-    # --- File & Text Search/Manipulation CLI Tools ---
-    fzf
-    lsd
-    fd
-    silver-searcher
-    ripgrep
-    jq
-    yq
-    miller
-    delta
-    glow
-    binsider
-    fx
-    helix
-
-    # --- Terminal Emulators ---
-    wezterm
-
     # --- GUI Applications ---
     inputs.zen-browser.packages.${pkgs.stdenv.system}.default
     vivaldi
     zed-editor
     libreoffice-qt
+    mission-center
     kdePackages.kate
     kdePackages.kcalc
     kdePackages.filelight
@@ -151,6 +63,11 @@
     gnumake
 
     # --- Development Tools: Language Tooling ---
+    # AI
+    crush
+    gemini-cli
+    github-copilot-cli
+
     # Web Development
     deno
     nodejs
@@ -200,14 +117,8 @@
     marksman
     markdownlint-cli2
 
-    # --- Nix-Specific Tools ---
-    cachix
-    direnv
-    nix-index
-    nix-search-cli
-    nix-tree
-
     # --- Fun & Entertainment ---
+    asciinema_3
     cmatrix
     cbonsai
     tty-clock
@@ -216,22 +127,10 @@
   ];
 
   programs = {
-    git.enable = true;
-    vim.enable = true;
     niri.enable = true;
-    fish.enable = true;
-    lazygit.enable = true;
-    htop.enable = true;
-    pay-respects.enable = true;
     firefox.enable = true;
     steam.enable = true;
-    zoxide.enable = true;
-    yazi.enable = true;
     wireshark.enable = true;
-    tcpdump.enable = true;
-    neovim.enable = true;
-    bat.enable = true;
-    direnv.enable = true;
   };
 
   fonts = {

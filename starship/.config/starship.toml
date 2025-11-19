@@ -3,8 +3,8 @@ add_newline = true
 format = """\
 [󱞬 ](lavender)[](teal)$os$username$sudo\
 [▓▒░](fg:teal bg:sapphire)$directory\
-[▓▒░](fg:sapphire bg:blue)$cmd_duration$status\
-[](blue)[󰮯  ](yellow)$fill [  ](red)\
+[▓▒░](fg:sapphire bg:blue)$nix_shell$cmd_duration$status\
+[ ](blue)[󰮯  ](yellow)$fill[   ](red)\
 [ ](flamingo)$git_branch$git_status\
 [▓▒░](fg:flamingo bg:yellow)$c$deno$goland$java$lua$nim$nodejs$ruby$rust$php$python\
 [▓▒░](fg:yellow bg:maroon)$package\
@@ -74,6 +74,10 @@ truncate_to_repo = false
 "Music" = " "
 "Pictures" = " "
 "~" = " "
+
+[nix_shell]
+format = "[ 󱄅 $state]($style)"
+style = "fg:crust bg:blue bold"
 
 [cmd_duration]
 format = "[  $duration]($style)"

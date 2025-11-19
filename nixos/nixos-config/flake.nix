@@ -50,6 +50,19 @@
 
           specialArgs = { inherit inputs; };
         };
+
+        rui-nixos-vm = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = [
+            ./systems/vm
+            ./modules
+            nix-flatpak.nixosModules.nix-flatpak
+            catppuccin.nixosModules.catppuccin
+          ];
+
+          specialArgs = { inherit inputs; };
+        };
       };
 
       homeConfigurations = {
@@ -58,6 +71,14 @@
 
           modules = [
             ./homes/rui
+          ];
+        };
+
+        rui-vm = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            ./homes/vm
           ];
         };
       };

@@ -6,12 +6,14 @@
 
 {
   imports = [
+    ../common/nixos.nix
+    ../common/services.nix
+    ../common/packages.nix
+    ../common/users.nix
     ./hardware.nix
     ./network.nix
-    ./nixos.nix
     ./services.nix
     ./packages.nix
-    ./users.nix
   ];
 
   environment.variables = {

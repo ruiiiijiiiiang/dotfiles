@@ -3,8 +3,6 @@
 {
   imports = [
     ../common
-    ./configs.nix
-    ./files
-    ./services
+    ../rui/configs.nix
   ];
 }

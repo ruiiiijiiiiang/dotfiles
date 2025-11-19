@@ -16,8 +16,6 @@
       name = "rui";
       members = [ "rui" ];
     };
-
-    extraGroups.vboxusers.members = [ "rui" ];
   };
 
   time.timeZone = "America/Chicago";

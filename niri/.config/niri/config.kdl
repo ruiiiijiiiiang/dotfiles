@@ -136,7 +136,7 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    // default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -271,13 +271,13 @@ window-rule {
 
 // Open Betterbird reminders as floating by default.
 window-rule {
-  match app-id="Betterbird" title="Reminders"
+    match app-id="Betterbird" title="Reminders"
     open-floating true
 }
 
 window-rule {
-  match title="^waykeypedia$"
-  open-floating true
+    match title="^waykeypedia$"
+    open-floating true
 }
 
 // Example: block out two password managers from screen capture.
@@ -316,6 +316,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Space { spawn "rofi" "-show" "drun" "-theme" "/home/rui/.config/rofi/launcher-theme.rasi"; }
+    Mod+Shift+Space { spawn "anyrun"; }
     Mod+Escape { spawn "sh" "/home/rui/.config/rofi/powermenu.sh"; }
     Mod+T { spawn "wezterm"; }
     Mod+B { spawn "sh" "-c" "if command -v flatpak &> /dev/null; then flatpak run app.zen_browser.zen; else zen-browser; fi"; }
@@ -544,6 +545,6 @@ binds {
 }
 
 environment {
-  QT_QPA_PLATFORMTHEME "kde"
-  QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "kde"
+    QT_QPA_PLATFORM "wayland"
 }
