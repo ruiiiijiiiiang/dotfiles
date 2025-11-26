@@ -1,23 +1,30 @@
-{ ... }:
-
-{
-  services.flatpak.enable = true;
-
-  services.flatpak.remotes = [
-    {
-      name = "flathub";
-      location = "https://flathub.org/repo/flathub.flatpakrepo";
-    }
+{ config, lib, inputs, ... }:
+with lib;
+let
+  cfg = config.rui.flatpak;
+in {
+  imports = [
+    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
-  # Optional: Auto-update
-  services.flatpak.update.auto.enable = true;
-  services.flatpak.update.auto.onCalendar = "weekly";
+  config = mkIf cfg.enable {
+    services.flatpak = {
+      enable = true;
+      remotes = [
+        {
+          name = "flathub";
+          location = "https://flathub.org/repo/flathub.flatpakrepo";
+        }
+      ];
+      update.auto.enable = true;
+      update.auto.onCalendar = "weekly";
 
-  services.flatpak.packages = [
-    "io.github.milkshiift.GoofCord"
-    "com.spotify.Client"
-    "org.upscayl.Upscayl"
-    "com.simplenote.Simplenote"
-  ];
+      packages = [
+        "io.github.milkshiift.GoofCord"
+        "com.spotify.Client"
+        "org.upscayl.Upscayl"
+        "com.simplenote.Simplenote"
+      ];
+    };
+  };
 }

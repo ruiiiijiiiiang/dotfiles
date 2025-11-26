@@ -1,14 +1,11 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, pkgs, ... }:
 
 {
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+
+    binfmt.emulatedSystems = [ "aarch64-linux" ]; # to build aarch64 kernel for pi
 
     kernelPackages = pkgs.linuxPackages_latest;
 

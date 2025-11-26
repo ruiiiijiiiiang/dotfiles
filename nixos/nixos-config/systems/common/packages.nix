@@ -7,9 +7,6 @@
     # --- System Core & Essentials ---
     linux-firmware
 
-    # --- Terminal Emulators ---
-    wezterm
-
     # --- System Information & Diagnostics ---
     pciutils
     usbutils
@@ -22,7 +19,6 @@
     btop
     bottom
     htop
-    neohtop
     glances
     iotop
     lsof
@@ -35,9 +31,6 @@
     dig
     mtr
     wget
-    networkmanagerapplet
-    nssTools
-    rustscan
 
     # --- Disk & Filesystem Utilities ---
     tree
@@ -57,21 +50,10 @@
     tldr
     starship
     atuin
-    gnupg
-    posting
-    imagemagick
-    pastel
-    superfile
-    broot
-    xplr
-    carapace
-    gh
-    navi
-    smassh
     onefetch
+    navi
+    carapace
     inputs.file_clipper.packages.${pkgs.stdenv.system}.default
-    inputs.lazynmap.packages.${pkgs.stdenv.system}.default
-    inputs.doxx.packages.${pkgs.stdenv.system}.default
 
     # --- File & Text Search/Manipulation CLI Tools ---
     fzf
@@ -84,28 +66,23 @@
     miller
     delta
     glow
-    binsider
     fx
     helix
 
     # --- Nix-Specific Tools ---
     cachix
-    direnv
     nix-index
     nix-search-cli
     nix-tree
   ];
 
   programs = {
-    git.enable = true;
     vim.enable = true;
     fish.enable = true;
-    lazygit.enable = true;
     htop.enable = true;
     pay-respects.enable = true;
     zoxide.enable = true;
     yazi.enable = true;
-    tcpdump.enable = true;
     neovim.enable = true;
     bat.enable = true;
     direnv.enable = true;

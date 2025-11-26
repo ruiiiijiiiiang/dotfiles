@@ -2,22 +2,13 @@
 
 {
   imports = [
-    ../common/nixos.nix
-    ../common/services.nix
-    ../common/packages.nix
-    ../common/users.nix
+    ../../modules
+    ../common
     ./hardware.nix
     ./network.nix
+    ./packages.nix
+    ./services.nix
   ];
-
-  # Disable flatpak for VM
-  services.flatpak.enable = lib.mkForce false;
-
-  environment.variables = {
-    OS = "nixos";
-    EDITOR = "nvim";
-    NH_FLAKE = "/home/rui/nixos-config/";
-  };
 
   system.stateVersion = "25.05";
 }

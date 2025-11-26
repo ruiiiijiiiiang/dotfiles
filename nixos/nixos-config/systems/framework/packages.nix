@@ -7,6 +7,24 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # --- Terminal Emulators ---
+    wezterm
+
+    # --- TUI Applications ---
+    inputs.doxx.packages.${pkgs.stdenv.system}.default
+    imagemagick
+    smassh
+    pastel
+    superfile
+    broot
+    posting
+    xplr
+    gnupg
+    gh
+    inputs.lazynmap.packages.${pkgs.stdenv.system}.default
+    rustscan
+    inputs.agenix.packages.${pkgs.stdenv.system}.default
+
     # --- GUI Applications ---
     inputs.zen-browser.packages.${pkgs.stdenv.system}.default
     vivaldi
@@ -28,8 +46,10 @@
     protonmail-bridge-gui
     logseq
     obsidian
+    neohtop
 
     # --- Desktop Environment: Niri (Wayland) ---
+    networkmanagerapplet
     libnotify
     rofi
     niriswitcher
@@ -127,10 +147,13 @@
   ];
 
   programs = {
+    git.enable = true;
+    lazygit.enable = true;
     niri.enable = true;
     firefox.enable = true;
     steam.enable = true;
     wireshark.enable = true;
+    tcpdump.enable = true;
   };
 
   fonts = {

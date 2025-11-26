@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "109b13d"
+rev = "2301ff8"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "109b13d"
-hash = "63b6c222bf2103b3023389dde5e2ecfe"
+rev = "2301ff8"
+hash = "27ca02f49fd236b5cc7bf03c243859fe"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
@@ -15,13 +15,13 @@ hash = "981acbe9b758b1af3a8154c932bb936d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "109b13d"
+rev = "2301ff8"
 hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "109b13d"
-hash = "1adc12c2b2b025411ab61eb8f0879574"
+rev = "2301ff8"
+hash = "8ad3e90b079190b4905f24a44f4ca06b"
 
 [[plugin.deps]]
 use = "imsi32/yatline-catppuccin"

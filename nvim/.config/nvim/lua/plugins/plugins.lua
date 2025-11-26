@@ -271,6 +271,11 @@ return {
       },
     },
   },
+  {
+    "stevearc/quicker.nvim",
+    ft = "qf",
+    opts = {},
+  },
   -- {
   --   "alanfortlink/animatedbg.nvim",
   --   config = function()

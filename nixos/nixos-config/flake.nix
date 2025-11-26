@@ -3,19 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:ryantm/agenix";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     file_clipper.url = "github:ruiiiijiiiiang/file_clipper";
     lazynmap.url = "github:ruiiiijiiiiang/lazynmap";
@@ -27,9 +26,8 @@
     {
       self,
       nixpkgs,
+      nixos-hardware,
       home-manager,
-      nix-flatpak,
-      catppuccin,
       ...
     }@inputs:
     let
@@ -40,35 +38,45 @@
       nixosConfigurations = {
         rui-nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-
+          specialArgs = { inherit inputs; };
           modules = [
             ./systems/framework
-            ./modules
-            nix-flatpak.nixosModules.nix-flatpak
-            catppuccin.nixosModules.catppuccin
           ];
-
-          specialArgs = { inherit inputs; };
         };
 
         rui-nixos-vm = nixpkgs.lib.nixosSystem {
           inherit system;
-
+          specialArgs = { inherit inputs; };
           modules = [
             ./systems/vm
-            ./modules
-            nix-flatpak.nixosModules.nix-flatpak
-            catppuccin.nixosModules.catppuccin
           ];
-
-          specialArgs = { inherit inputs; };
         };
+
+        rui-nixos-pi = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            nixos-hardware.nixosModules.raspberry-pi-4
+            ({ pkgs, lib, modulesPath, ... }: {
+            imports = [
+              (modulesPath + "/installer/sd-card/sd-image-aarch64.nix")
+            ];
+            sdImage.compressImage = false;
+          })
+            ./systems/pi
+          ];
+        };
+      };
+
+      devShells.${system} = {
+        devops = import ./shells/devops { inherit pkgs; };
+        forensics = import ./shells/forensics { inherit pkgs; };
+        default = self.devShells.${system}.devops;
       };
 
       homeConfigurations = {
         rui = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-
           modules = [
             ./homes/rui
           ];
@@ -76,7 +84,6 @@
 
         rui-vm = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-
           modules = [
             ./homes/vm
           ];

@@ -8,10 +8,16 @@
 
 {
   boot = {
-    loader.grub.enable = true;
-    loader.grub.device = "/dev/sda";
-    
+    loader = {
+      grub = {
+        enable = true;
+        device = "/dev/sda";
+      };
+    };
+
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.availableKernelModules = [
+      "ahci"
       "ata_piix"
       "mptspi"
       "uhci_hcd"
@@ -24,9 +30,6 @@
     extraModulePackages = [ ];
   };
 
-  # VMware guest tools
-  virtualisation.vmware.guest.enable = true;
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/nixos";
@@ -38,4 +41,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.enableRedistributableFirmware = true;
+  virtualisation.vmware.guest.enable = true;
 }

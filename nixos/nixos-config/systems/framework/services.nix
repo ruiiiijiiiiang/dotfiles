@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  rui = {
+    catppuccin.enable = true;
+    flatpak.enable = true;
+    syncthing.enable = true;
+  };
+
   services = {
     power-profiles-daemon.enable = true;
 
@@ -17,6 +23,14 @@
       pkgs.kdePackages.xdg-desktop-portal-kde
       pkgs.xdg-desktop-portal
     ];
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
   };
 
   security.pam.services = {
