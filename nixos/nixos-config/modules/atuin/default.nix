@@ -20,9 +20,9 @@ in with consts; {
 
       atuin = {
         enable = true;
-        openFirewall = true;
-        port = 8888;
-        host = "0.0.0.0";
+        openFirewall = false;
+        port = ports.atuin;
+        host = addresses.localhost;
         maxHistoryLength = 100000;
         openRegistration = false;
         database = {
@@ -31,11 +31,11 @@ in with consts; {
         };
       };
 
-      nginx.virtualHosts."atuin.${homeDomain}" = {
-        useACMEHost = homeDomain;
+      nginx.virtualHosts."atuin.${domains.home}" = {
+        useACMEHost = domains.home;
         forceSSL = true;
         locations."/" = {
-          proxyPass = "http://127.0.0.1:8888";
+          proxyPass = "http://${addresses.localhost}:${toString ports.atuin}";
         };
       };
     };

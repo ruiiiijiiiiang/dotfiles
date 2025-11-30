@@ -71,12 +71,13 @@
 
     # --- Nix-Specific Tools ---
     cachix
-    nix-index
     nix-search-cli
     nix-tree
   ];
 
   programs = {
+    nix-index.enable = true;
+    command-not-found.enable = false;
     vim.enable = true;
     fish.enable = true;
     htop.enable = true;

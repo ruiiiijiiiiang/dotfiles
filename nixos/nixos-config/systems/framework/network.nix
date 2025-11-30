@@ -1,9 +1,9 @@
 { config, lib, inputs, ... }:
 with lib;
 let
-  keys = import ../../lib/keys.nix;
   consts = import ../../lib/consts.nix;
-in with keys; with consts; {
+  keys = import ../../lib/keys.nix;
+in with consts; with keys; {
   age.secrets = {
     wg-privatekey.file = ../../secrets/wg-privatekey.age;
     wg-presharedkey.file = ../../secrets/wg-presharedkey.age;
@@ -11,19 +11,18 @@ in with keys; with consts; {
 
   networking = {
     hostName = "rui-nixos";
-    networkmanager.enable = true;
-    useDHCP = mkDefault true;
 
     wg-quick.interfaces.wg-home = {
       privateKeyFile = config.age.secrets.wg-privatekey.path;
-      address = [ "10.5.5.4/32" ];
+      address = [ "${addresses.vpn.hosts.nixos}/32" ];
+      dns = [ addresses.home.hosts.pi ];
       peers = [
         {
           inherit (wg.wg-home) publicKey;
           presharedKeyFile = config.age.secrets.wg-presharedkey.path;
-          endpoint = "${tplinkDomain}:${wgPort}";
-          allowedIPs = [ "192.168.68.0/24" ];
-          persistentKeepalive = 60;
+          endpoint = "${domains.tplink}:${toString ports.wireguard}";
+          allowedIPs = [ addresses.home.network ];
+          persistentKeepalive = 25;
         }
       ];
     };

@@ -9,7 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:ryantm/agenix";
-
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     catppuccin = {
       url = "github:catppuccin/nix";
@@ -22,72 +21,72 @@
     doxx.url = "github:bgreenwell/doxx";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nixos-hardware,
-      home-manager,
-      ...
-    }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-    in
-    {
-      nixosConfigurations = {
-        rui-nixos = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./systems/framework
-          ];
-        };
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-hardware,
+    home-manager,
+    ...
+  }@inputs:
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
+    inherit (nixpkgs.lib) nixosSystem;
+    inherit (home-manager.lib) homeManagerConfiguration;
+  in {
+    nixosConfigurations = {
+      rui-nixos = nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./systems/framework
+        ];
+      };
 
-        rui-nixos-vm = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./systems/vm
-          ];
-        };
+      rui-nixos-vm = nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./systems/vm
+        ];
+      };
 
-        rui-nixos-pi = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            nixos-hardware.nixosModules.raspberry-pi-4
-            ({ pkgs, lib, modulesPath, ... }: {
+      rui-nixos-pi = nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ({ modulesPath, ...}: {
             imports = [
-              (modulesPath + "/installer/sd-card/sd-image-aarch64.nix")
+              "${modulesPath}/installer/sd-card/sd-image-aarch64.nix"
             ];
             sdImage.compressImage = false;
           })
-            ./systems/pi
-          ];
-        };
-      };
-
-      devShells.${system} = {
-        devops = import ./shells/devops { inherit pkgs; };
-        forensics = import ./shells/forensics { inherit pkgs; };
-        default = self.devShells.${system}.devops;
-      };
-
-      homeConfigurations = {
-        rui = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./homes/rui
-          ];
-        };
-
-        rui-vm = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./homes/vm
-          ];
-        };
+          nixos-hardware.nixosModules.raspberry-pi-4
+          ./systems/pi
+        ];
       };
     };
+
+    devShells.${system} = {
+      devops = import ./shells/devops { inherit pkgs; };
+      forensics = import ./shells/forensics { inherit pkgs; };
+      default = self.devShells.${system}.devops;
+    };
+
+    homeConfigurations = {
+      rui = homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./homes/rui
+        ];
+      };
+
+      rui-vm = homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./homes/vm
+        ];
+      };
+    };
+  };
 }

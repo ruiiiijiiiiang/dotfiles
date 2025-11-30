@@ -44,7 +44,6 @@
     wireshark
     telegram-desktop
     protonmail-bridge-gui
-    logseq
     obsidian
     neohtop
 
@@ -138,7 +137,6 @@
     markdownlint-cli2
 
     # --- Fun & Entertainment ---
-    asciinema_3
     cmatrix
     cbonsai
     tty-clock
@@ -157,6 +155,7 @@
   };
 
   fonts = {
+    enableGhostscriptFonts = true;
     packages = with pkgs; [
       noto-fonts
       noto-fonts-color-emoji

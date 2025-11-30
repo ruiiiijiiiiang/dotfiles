@@ -6,12 +6,6 @@ let
 in with consts; {
   config = mkIf cfg.enable {
     virtualisation = {
-      podman = {
-        enable = true;
-        dockerCompat = true;
-        autoPrune.enable = true;
-      };
-
       oci-containers = {
         backend = "podman";
         containers = {
@@ -24,9 +18,12 @@ in with consts; {
 
           zwave-js-ui = {
             image = "zwavejs/zwave-js-ui:latest";
-            ports = [ "8091:8091" "3000:3000" ];
+            # ports = [ "${addresses.localhost}:${toString ports.zwave.server}:${toString ports.zwave.server}" "${addresses.localhost}:${toString ports.zwave.websocket}:${toString ports.zwave.websocket}" ];
             volumes = [ "/var/lib/zwave-js-ui:/usr/src/app/store" ];
-            extraOptions = [ "--device=/dev/serial/by-id/usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_80edec297b57ed1193f12ef21c62bc44-if00-port0:/dev/zwave" ];
+            extraOptions = [
+              "--network=host"
+              "--device=/dev/serial/by-id/usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_80edec297b57ed1193f12ef21c62bc44-if00-port0:/dev/zwave"
+            ];
           };
         };
       };
@@ -38,11 +35,20 @@ in with consts; {
     ];
 
     services = {
-      nginx.virtualHosts."ha.${homeDomain}" = {
-        useACMEHost = homeDomain;
+      nginx.virtualHosts."ha.${domains.home}" = {
+        useACMEHost = domains.home;
         forceSSL = true;
         locations."/" = {
-          proxyPass = "http://127.0.0.1:8123";
+          proxyPass = "http://${addresses.localhost}:${toString ports.homeassistant}";
+          proxyWebsockets = true;
+        };
+      };
+
+      nginx.virtualHosts."zwave.${domains.home}" = {
+        useACMEHost = domains.home;
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://${addresses.localhost}:${toString ports.zwave.server}";
           proxyWebsockets = true;
         };
       };

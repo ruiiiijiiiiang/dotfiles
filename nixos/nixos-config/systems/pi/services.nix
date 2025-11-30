@@ -1,12 +1,28 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   rui = {
     acme.enable = true;
     atuin.enable = true;
-    nginx.enable = true;
+    cloudflared.enable = true;
+    dns.enable = true;
     homeassistant.enable = true;
-    syncthing.enable = true;
+    microbin.enable = true;
+    monit.enable = true;
+    nginx.enable = true;
+    syncthing = {
+      enable = true;
+      proxied = true;
+    };
+    vaultwarden.enable = true;
+  };
+
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      autoPrune.enable = true;
+    };
   };
 
   services = {

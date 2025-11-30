@@ -2,7 +2,8 @@
 with lib;
 let
   cfg = config.rui.nginx;
-in {
+  consts = import ../../lib/consts.nix;
+in with consts; {
   config = mkIf cfg.enable {
     services = {
       nginx = {
@@ -11,6 +12,19 @@ in {
         recommendedTlsSettings = true;
         recommendedGzipSettings = true;
         recommendedOptimisation = true;
+
+        appendHttpConfig = ''
+          allow ${addresses.home.network};
+          allow ${addresses.vpn.network};
+          deny all;
+        '';
+
+        commonHttpConfig = lib.mkMerge [
+          (lib.mkIf config.rui.microbin.enable ''
+            limit_req_zone $binary_remote_addr zone=microbin_limit:10m rate=1r/s;
+          '')
+        ];
+
         virtualHosts."_" = {
           default = true;
           rejectSSL = true;

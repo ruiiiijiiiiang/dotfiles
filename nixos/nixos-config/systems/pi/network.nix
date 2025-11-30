@@ -1,20 +1,16 @@
 { lib, ... }:
+with lib;
 let
+  consts = import ../../lib/consts.nix;
   keys = import ../../lib/keys.nix;
-in {
+in with consts; with keys; {
   networking = {
     hostName = "rui-nixos-pi";
-    networkmanager.enable = true;
-    networkmanager.wifi.powersave = false;
-    useDHCP = lib.mkDefault true;
+    networkmanager = {
+      wifi.powersave = false;
+    };
     firewall = {
-      allowedTCPPorts = [
-        22
-        80
-        443
-        22000
-      ];
-      allowedUDPPorts = [ 22000 21027 ];
+      allowedTCPPorts = [ 22 80 443 ports.homeassistant ];
     };
   };
 
@@ -30,11 +26,9 @@ in {
       enable = true;
       maxretry = 5;
       bantime = "24h";
-      ignoreIP = [
-        "192.168.1.0/24"
-      ];
+      ignoreIP = [ addresses.home.network ];
     };
   };
 
-  users.users.rui.openssh.authorizedKeys.keys = keys.ssh.rui-arch ++ keys.ssh.rui-nixos;
+  users.users.rui.openssh.authorizedKeys.keys = ssh.rui-arch ++ ssh.rui-nixos;
 }

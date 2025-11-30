@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
-
+with lib;
 {
   boot = {
     loader.systemd-boot.enable = true;
@@ -109,9 +109,9 @@
 
   zramSwap.enable = true;
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.hostPlatform = mkDefault "x86_64-linux";
   hardware = {
-    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    cpu.amd.updateMicrocode = mkDefault config.hardware.enableRedistributableFirmware;
     enableRedistributableFirmware = true;
     bluetooth.enable = true;
   };

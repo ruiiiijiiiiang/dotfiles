@@ -1,11 +1,5 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}:
-
+{ lib, pkgs, ... }:
+with lib;
 {
   boot = {
     loader = {
@@ -39,7 +33,7 @@
 
   swapDevices = [ ];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.hostPlatform = mkDefault "x86_64-linux";
   hardware.enableRedistributableFirmware = true;
   virtualisation.vmware.guest.enable = true;
 }

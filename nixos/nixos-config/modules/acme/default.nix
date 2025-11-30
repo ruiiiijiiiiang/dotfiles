@@ -12,14 +12,17 @@ in with consts; {
         group = "acme";
         mode = "440";
       };
+      cloudflare-dns-token = {
+        file = ../../secrets/cloudflare-dns-token.age;
+      };
     };
 
     security.acme = {
       acceptTerms = true;
       defaults.email = "me@ruijiang.me";
-      certs."${homeDomain}" = {
-        domain = homeDomain;
-        extraDomainNames = [ "*.${homeDomain}" ];
+      certs."${domains.home}" = {
+        domain = domains.home;
+        extraDomainNames = [ "*.${domains.home}" ];
         dnsProvider = "cloudflare";
         dnsResolver = "1.1.1.1:53";
         dnsPropagationCheck = true;
@@ -29,7 +32,7 @@ in with consts; {
       };
     };
 
-    systemd.services."acme-${homeDomain}" = {
+    systemd.services."acme-${domains.home}" = {
       environment = {
         LEGO_DISABLE_CNAME_SUPPORT = "true";
       };
@@ -39,8 +42,9 @@ in with consts; {
 
     services.cloudflare-dyndns = {
       enable = true;
-      apiTokenFile = config.age.secrets.cloudflare-token.path;
-      domains = [ homeDomain "*.${homeDomain}" ];
+      apiTokenFile = config.age.secrets.cloudflare-dns-token.path;
+      domains = [ domains.home "*.${domains.home}" ];
+      proxied = true;
     };
   };
 }

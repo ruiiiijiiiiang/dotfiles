@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   services = {
@@ -6,7 +6,5 @@
       layout = "us";
       options = "caps:escape";
     };
-
-    resolved.enable = true;
   };
 }

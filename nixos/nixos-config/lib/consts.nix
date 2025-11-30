@@ -2,11 +2,50 @@
   timeZone = "America/Chicago";
   defaultLocale = "en_US.UTF-8";
 
-  homeDomain = "ruijiang.me";
-  tplinkDomain = "ruijiang.tplinkdns.com";
-  wgPort = "51820";
+  # please don't DDOS :)
+  domains = {
+    home = "ruijiang.me";
+    tplink = "ruijiang.tplinkdns.com";
+  };
 
-  archIp = "192.168.68.65";
-  piIp = "192.168.68.80";
+  addresses = {
+    localhost = "127.0.0.1";
+    home = {
+      network = "192.168.68.0/24";
+      hosts = {
+        arch = "192.168.68.65";
+        pi = "192.168.68.80";
+        nixos = "192.168.68.85";
+        desktop = {
+          ethernet = "192.168.68.81";
+          wifi = "192.168.68.76";
+        };
+      };
+    };
+    vpn = {
+      network = "10.0.0.0/8";
+      hosts = {
+        nixos = "10.5.5.4";
+      };
+    };
+  };
+
+  ports = {
+    monit = 2812;
+    unbound = 5335;
+    pihole = 8008;
+    microbin = 8080;
+    zwave = {
+      server = 8091;
+      websocket = 3000;
+    };
+    homeassistant = 8123;
+    vaultwarden = {
+      server = 8222;
+      websocket = 3012;
+    };
+    syncthing = 8384;
+    atuin = 8888;
+    wireguard = 51820;
+  };
 }
-# please don't DDOS :)
