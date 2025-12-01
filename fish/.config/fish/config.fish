@@ -86,7 +86,7 @@ if status is-interactive
         end
     end
 
-    function ya
+    function yay
         env PATH="/usr/bin:$PATH" \
             LD_PRELOAD="" \
             LD_LIBRARY_PATH="" \
@@ -104,16 +104,3 @@ if status is-interactive
         fastfetch
     end
 end
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /home/rui/miniconda3/bin/conda
-    eval /home/rui/miniconda3/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/home/rui/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/home/rui/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH /home/rui/miniconda3/bin $PATH
-    end
-end
-# <<< conda initialize <<<
