@@ -1,4 +1,5 @@
 local frappe = require("catppuccin.palettes").get_palette("frappe")
+
 return {
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
@@ -21,19 +22,6 @@ return {
     lazy = false,
     opts = {
       preset = "helix",
-    },
-  },
-  {
-    "mistricky/codesnap.nvim",
-    build = "make",
-    opts = {
-      save_path = "~/Pictures",
-      has_breadcrumbs = true,
-      has_line_number = true,
-      watermark = "",
-      bg_theme = "sea",
-      bg_x_padding = 32,
-      bg_y_padding = 24,
     },
   },
   {
@@ -119,25 +107,28 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(args)
-          local bufnr = args.buf
-          local ft = vim.bo[bufnr].filetype
-          if ft == "markdown" then
-            vim.diagnostic.enable(false)
-          end
-        end,
-      })
-    end,
+    opts = {
+      servers = {
+        rust_analyzer = {
+          settings = {
+            ["rust-analyzer"] = {
+              inlayHints = {
+                bindingModeHints = { enable = true },
+                lifetimeElisionHints = { enable = true },
+                closureCaptureHints = { enable = true },
+                closureReturnTypeHints = { enable = true },
+                expressionAdjustmentHints = { enable = true },
+                parameterHints = { enable = true },
+                discriminateHints = { enable = true },
+                typeHints = { enable = true },
+                reborrowHints = { enable = true },
+              },
+            },
+          },
+        },
+      },
+    },
   },
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   opts = function()
-  --     local keys = require("lazyvim.plugins.lsp.keymaps").get()
-  --     keys[#keys + 1] = { "<c-k>", false, mode = { "i" } }
-  --   end,
-  -- },
   {
     "Bekaboo/dropbar.nvim",
     dependencies = {
@@ -276,16 +267,4 @@ return {
     ft = "qf",
     opts = {},
   },
-  -- {
-  --   "alanfortlink/animatedbg.nvim",
-  --   config = function()
-  --     require("animatedbg-nvim").setup({})
-  --   end,
-  -- },
-  -- {
-  --   "nvzone/typr",
-  --   dependencies = "nvzone/volt",
-  --   opts = {},
-  --   cmd = { "Typr", "TyprStats" },
-  -- },
 }

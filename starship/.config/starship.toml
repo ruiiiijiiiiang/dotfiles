@@ -76,7 +76,7 @@ truncate_to_repo = false
 "~" = " "
 
 [nix_shell]
-format = "[ 󱄅 $state]($style)"
+format = "[ 󱄅 $name]($style)"
 style = "fg:crust bg:blue bold"
 
 [cmd_duration]

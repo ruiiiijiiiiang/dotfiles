@@ -97,14 +97,8 @@ Neovim plugins are managed by LazyVim.
 ### Desktop Environment
 
 - [niri](https://github.com/YaLTeR/niri)
-- [waybar](https://github.com/Alexays/Waybar)
-- [rofi](https://github.com/davatorium/rofi)
-- [niriswitcher](https://github.com/isaksamsten/niriswitcher)
-- [swaybg](https://github.com/swaywm/swaybg)
-- [swaylock](https://github.com/swaywm/swaylock)
-- [swayidle](https://github.com/swaywm/swayidle)
-- [swaync](https://github.com/ErikReider/SwayNotificationCenter)
-- [swayosd](https://github.com/ErikReider/SwayOSD)
+- [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
+- [vicinae](https://github.com/vicinaehq/vicinae)
 
 ### Development Environment
 
@@ -114,9 +108,7 @@ Neovim plugins are managed by LazyVim.
   - [LazyVim](https://github.com/LazyVim/LazyVim)
   - [snacks.nvim](https://github.com/folke/snacks.nvim)
   - [mini.nvim](https://github.com/echasnovski/mini.nvim)
-  - [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
   - [smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim)
-  - [codesnap.nvim](https://github.com/mistricky/codesnap.nvim)
   - [tiny-glimmer.nvim](https://github.com/rachartier/tiny-glimmer.nvim)
   - [reactive.nvim](https://github.com/rasulomaroff/reactive.nvim)
   - [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim)
@@ -157,5 +149,3 @@ Neovim plugins are managed by LazyVim.
 - [zed](https://github.com/zed-industries/zed)
 - [GoofCord](https://github.com/Milkshiift/GoofCord)
 - [NeoHtop](https://github.com/Abdenasser/neohtop)
-- [spicetify](https://github.com/spicetify/cli)
-- [system24](https://github.com/refact0r/system24)

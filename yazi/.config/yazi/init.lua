@@ -2,6 +2,7 @@ require("git"):setup()
 require("full-border"):setup({
 	type = ui.Border.ROUNDED,
 })
+
 local catppuccin_theme = require("yatline-catppuccin"):setup("frappe")
 require("yatline"):setup({
 	theme = catppuccin_theme,

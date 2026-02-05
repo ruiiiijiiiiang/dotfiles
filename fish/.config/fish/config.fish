@@ -16,6 +16,8 @@ end
 
 # Interactive shell - Shell behavior and user interface
 if status is-interactive
+    fish_config theme choose catppuccin
+
     # Aliases
     alias ls="lsd"
     alias cat="bat"
@@ -28,6 +30,8 @@ if status is-interactive
     abbr -a lg lazygit
     abbr -a qcd --position command --regex "q+" --function qcd
     abbr -a vg "ssh veggie.ooapi.com"
+
+    set -g fish_key_bindings fish_vi_key_bindings
 
     # Interactive functions
     function run-ls-on-cd -v PWD
