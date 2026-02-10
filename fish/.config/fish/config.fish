@@ -104,6 +104,19 @@ if status is-interactive
             yay $argv
     end
 
+    function np
+        set -l packages
+        for arg in $argv
+            set packages $packages $arg
+        end
+
+        if test (count $packages) -gt 0
+            nix-shell -p $packages --command "exec fish -l"
+        else
+            nix-shell --command "exec fish -l"
+        end
+    end
+
     function fish_greeting
         fastfetch
     end

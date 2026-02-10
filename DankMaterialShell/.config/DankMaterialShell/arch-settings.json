@@ -16,7 +16,7 @@
   "widgetBackgroundColor": "sch",
   "widgetColorMode": "colorful",
   "cornerRadius": 12,
-  "niriLayoutGapsOverride": -1,
+  "niriLayoutGapsOverride": 8,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
   "hyprlandLayoutGapsOverride": -1,
@@ -357,7 +357,6 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         "launcherButton",
-        "workspaceSwitcher",
         "focusedWindow"
       ],
       "centerWidgets": [
@@ -379,12 +378,24 @@
           "enabled": true
         },
         {
+          "id": "cpuTemp",
+          "enabled": true,
+          "minimumWidth": true
+        },
+        {
           "id": "memUsage",
           "enabled": true
         },
         {
           "id": "diskUsage",
           "enabled": true
+        },
+        {
+          "id": "gpuTemp",
+          "enabled": true,
+          "selectedGpuIndex": 0,
+          "pciId": "1002:67df",
+          "minimumWidth": true
         },
         {
           "id": "notificationButton",
@@ -410,7 +421,7 @@
       "borderOpacity": 1,
       "borderThickness": 2,
       "widgetOutlineEnabled": true,
-      "widgetOutlineColor": "surfaceText",
+      "widgetOutlineColor": "secondary",
       "widgetOutlineOpacity": 1,
       "widgetOutlineThickness": 2,
       "fontScale": 1.5,
@@ -420,7 +431,8 @@
       "visible": true,
       "popupGapsAuto": true,
       "popupGapsManual": 4,
-      "maximizeDetection": true
+      "maximizeDetection": true,
+      "shadowColorMode": "text"
     }
   ],
   "desktopClockEnabled": false,

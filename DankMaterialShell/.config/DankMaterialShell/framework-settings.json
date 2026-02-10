@@ -16,7 +16,7 @@
   "widgetBackgroundColor": "sth",
   "widgetColorMode": "colorful",
   "cornerRadius": 12,
-  "niriLayoutGapsOverride": 6,
+  "niriLayoutGapsOverride": 8,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
   "hyprlandLayoutGapsOverride": -1,
@@ -178,7 +178,7 @@
   "useAutoLocation": true,
   "weatherEnabled": true,
   "networkPreference": "wifi",
-  "vpnLastConnected": "462b68b1-75d1-4137-91e0-ace194036249",
+  "vpnLastConnected": "05662471-9aca-4e09-a35a-66e93b3514a4",
   "iconTheme": "Catppuccin-Frappe-Lavender-Cursors",
   "cursorSettings": {
     "theme": "catppuccin-frappe-lavender-cursors",
