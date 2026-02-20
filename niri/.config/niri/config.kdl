@@ -1,5 +1,5 @@
 include "./dms/alttab.kdl"
-// include "./dms/binds.kdl"
+include "./dms/binds.kdl"
 include "./dms/colors.kdl"
 include "./dms/layout.kdl"
 include "./dms/wpblur.kdl"
@@ -29,7 +29,6 @@ layout {
     }
 }
 
-spawn-sh-at-startup "vicinae server"
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
@@ -65,10 +64,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Space repeat=false { spawn "vicinae" "toggle"; }
-    Mod+Escape { spawn "sh" "/home/rui/.config/rofi/powermenu.sh"; }
     Mod+T { spawn "wezterm"; }
-    Mod+B { spawn "sh" "-c" "if command -v flatpak &> /dev/null; then flatpak run app.zen_browser.zen; else zen-browser; fi"; }
     Mod+E { spawn "dolphin"; }
 
     Mod+Shift+Up          allow-when-locked=true {
@@ -77,11 +73,11 @@ binds {
     Mod+Shift+Down        allow-when-locked=true {
         spawn "dms" "ipc" "call" "audio" "decrement" "3";
     }
-    Mod+Shift+Left        allow-when-locked=true {
-       spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
-    }
     Mod+Shift+Right       allow-when-locked=true {
        spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
+    }
+    Mod+Shift+Left        allow-when-locked=true {
+       spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
     }
 
     Mod+Q { close-window; }

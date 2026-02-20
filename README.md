@@ -98,7 +98,6 @@ Neovim plugins are managed by LazyVim.
 
 - [niri](https://github.com/YaLTeR/niri)
 - [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
-- [vicinae](https://github.com/vicinaehq/vicinae)
 
 ### Development Environment
 

@@ -141,6 +141,7 @@ return {
         hidden = true,
       },
       picker = {
+        hidden = true,
         win = {
           input = {
             keys = {
@@ -154,6 +155,9 @@ return {
           },
         },
         sources = {
+          files = {
+            hidden = true,
+          },
           explorer = {
             actions = {
               window_picker = function(_, item)
@@ -179,22 +183,6 @@ return {
           },
         },
         layout = "ivy",
-      },
-    },
-    keys = {
-      {
-        "<leader>e",
-        function()
-          Snacks.explorer({ cwd = LazyVim.root(), hidden = true })
-        end,
-        desc = "File Explorer (root dir)",
-      },
-      {
-        "<leader>E",
-        function()
-          Snacks.explorer({ hidden = true })
-        end,
-        desc = "File Explorer (cwd)",
       },
     },
   },

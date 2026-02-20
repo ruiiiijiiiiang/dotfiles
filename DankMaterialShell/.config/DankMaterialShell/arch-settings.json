@@ -269,7 +269,7 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
   "showDock": true,
-  "dockAutoHide": false,
+  "dockAutoHide": true,
   "dockGroupByApp": false,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
@@ -506,6 +506,10 @@
   "desktopWidgetGridSettings": {},
   "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
-  "builtInPluginSettings": {},
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?"
+    }
+  },
   "configVersion": 5
 }
