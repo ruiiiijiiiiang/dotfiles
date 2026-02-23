@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "provider": "zed"
+  },
   "prettier": {
     "allowed": true
   },
@@ -15,9 +18,6 @@
       "provider": "google",
       "model": "gemini-3-pro-preview"
     }
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
   },
   "ui_font_size": 18,
   "buffer_font_size": 18,
@@ -37,12 +37,12 @@
     }
   },
   "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Frappé"
   },
   "icon_theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Catppuccin Frappé",
     "dark": "Catppuccin Frappé"
   },

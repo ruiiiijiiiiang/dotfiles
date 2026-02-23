@@ -317,15 +317,15 @@
   "dockMargin": 0,
   "dockIconSize": 48,
   "dockIndicatorStyle": "line",
-  "dockBorderEnabled": false,
-  "dockBorderColor": "primary",
+  "dockBorderEnabled": true,
+  "dockBorderColor": "secondary",
   "dockBorderOpacity": 1,
   "dockBorderThickness": 1,
   "dockIsolateDisplays": false,
   "dockLauncherEnabled": true,
-  "dockLauncherLogoMode": "apps",
+  "dockLauncherLogoMode": "os",
   "dockLauncherLogoCustomPath": "",
-  "dockLauncherLogoColorOverride": "",
+  "dockLauncherLogoColorOverride": "primary",
   "dockLauncherLogoSizeOffset": 0,
   "dockLauncherLogoBrightness": 0.5,
   "dockLauncherLogoContrast": 1,
@@ -420,10 +420,6 @@
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
-        {
-          "id": "launcherButton",
-          "enabled": true
-        },
         {
           "id": "workspaceSwitcher",
           "enabled": true

@@ -77,10 +77,17 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 11 (current)</summary>
+  <summary>Version 11</summary>
   Back to NixOS; new waybar design
 
 ![Screenshot](./screenshots/Screenshot_from_2025-06-19_23-06-09.png)
+
+</details>
+<details>
+  <summary>Version 12 (Current)</summary>
+  Migrated shell to DMS
+
+![Screenshot](./screenshots/Screenshot_from_2026-02-23_12-18-31.png)
 
 </details>
 
@@ -95,6 +102,8 @@ Most of these tools should be readily available from the package manager of your
 Neovim plugins are managed by LazyVim.
 
 ### Desktop Environment
+
+I have now moved to DMS and I am no longer ricing my desktop environment. All configs for shell software such as waybar, rofi, swaync, etc are no longer being maintained.
 
 - [niri](https://github.com/YaLTeR/niri)
 - [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
@@ -141,10 +150,3 @@ Neovim plugins are managed by LazyVim.
 - [noxdir](https://github.com/crumbyte/noxdir)
 - [onefetch](https://github.com/o2sh/onefetch)
 - [scooter](https://github.com/thomasschafer/scooter)
-
-### GUI Applications
-
-- [zen-browser](https://github.com/zen-browser/desktop)
-- [zed](https://github.com/zed-industries/zed)
-- [GoofCord](https://github.com/Milkshiift/GoofCord)
-- [NeoHtop](https://github.com/Abdenasser/neohtop)
