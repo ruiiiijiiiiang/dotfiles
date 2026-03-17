@@ -59,6 +59,7 @@ window-rule {
 
 window-rule {
     clip-to-geometry true
+    opacity 0.95
 }
 
 binds {
@@ -206,3 +207,5 @@ environment {
 include "dms/cursor.kdl"
 
 include "dms/outputs.kdl"
+
+include "dms/windowrules.kdl"

@@ -300,8 +300,8 @@
   "matugenTemplateKitty": true,
   "matugenTemplateFoot": true,
   "matugenTemplateAlacritty": true,
-  "matugenTemplateNeovim": true,
-  "matugenTemplateWezterm": true,
+  "matugenTemplateNeovim": false,
+  "matugenTemplateWezterm": false,
   "matugenTemplateDgop": true,
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
@@ -509,7 +509,10 @@
       "maximizeDetection": true,
       "widgetOutlineOpacity": 0.75,
       "shadowIntensity": 0,
-      "shadowColorMode": "secondary"
+      "shadowColorMode": "secondary",
+      "widgetPadding": 4,
+      "maximizeWidgetIcons": false,
+      "removeWidgetPadding": false
     }
   ],
   "desktopClockEnabled": false,
@@ -653,6 +656,12 @@
           "height": 480,
           "x": 1760,
           "y": 840
+        },
+        "DP-3": {
+          "width": 320,
+          "height": 480,
+          "x": 800,
+          "y": 300
         }
       }
     },
@@ -660,18 +669,19 @@
       "id": "dw_1768690279674_y3y9mnig9",
       "widgetType": "desktopClock",
       "name": "Desktop Clock",
-      "enabled": false,
+      "enabled": true,
       "config": {
         "style": "analog",
         "transparency": 0.8,
         "colorMode": "primary",
         "customColor": "#ffffff",
         "showDate": true,
-        "showAnalogNumbers": false,
-        "showAnalogSeconds": true,
+        "showAnalogNumbers": true,
+        "showAnalogSeconds": false,
         "displayPreferences": [
           "all"
-        ]
+        ],
+        "syncPositionAcrossScreens": true
       },
       "positions": {
         "eDP-1": {
@@ -715,6 +725,12 @@
           "height": 200,
           "x": 1820,
           "y": 980
+        },
+        "_synced": {
+          "x": 0.82076416015625,
+          "y": 0.051611328125,
+          "width": 331.17578125,
+          "height": 331.17578125
         }
       }
     }
