@@ -1,9 +1,9 @@
-# Global functions and variables
-
-set -U fish_user_paths /home/rui/.local/bin /home/rui/.bun/bin /home/rui/.cargo/bin /home/rui/.deno/bin /usr/local/sbin /usr/local/bin /usr/bin /usr/bin/core_perl
-
-# Login shell - Environment setup and one-time initializations
 if status is-login
+    set -U fish_user_paths /home/rui/.local/bin /home/rui/.bun/bin /home/rui/.cargo/bin /home/rui/.deno/bin /usr/local/sbin /usr/local/bin /usr/bin /usr/bin/core_perl
+end
+
+# Interactive shell - Shell behavior and user interface
+if status is-interactive
     # Tool initializations
     zoxide init fish | source
     starship init fish | source
@@ -12,10 +12,7 @@ if status is-login
     pay-respects fish --alias | source
     carapace _carapace | source
     navi widget fish | source
-end
 
-# Interactive shell - Shell behavior and user interface
-if status is-interactive
     fish_config theme choose catppuccin
 
     # Aliases
