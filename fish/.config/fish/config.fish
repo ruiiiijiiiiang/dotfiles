@@ -27,6 +27,7 @@ if status is-interactive
     abbr -a lg lazygit
     abbr -a qcd --position command --regex "q+" --function qcd
     abbr -a vg "ssh veggie.ooapi.com"
+    abbr -a wcs wezterm cli spawn --domain-name
 
     set -g fish_key_bindings fish_vi_key_bindings
 

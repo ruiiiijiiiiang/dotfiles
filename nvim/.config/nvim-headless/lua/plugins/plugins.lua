@@ -1,6 +1,8 @@
 local frappe = require("catppuccin.palettes").get_palette("frappe")
 
 return {
+  { "williamboman/mason.nvim", enabled = false },
+  { "williamboman/mason-lspconfig.nvim", enabled = false },
   { "mrjones2014/smart-splits.nvim", lazy = false },
   {
     "rasulomaroff/reactive.nvim",
