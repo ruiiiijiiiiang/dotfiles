@@ -12,7 +12,6 @@
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.ui.mini-animate",
     "lazyvim.plugins.extras.ui.smear-cursor",
-    "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
@@ -22,4 +21,3 @@
   },
   "version": 8
 }
-
