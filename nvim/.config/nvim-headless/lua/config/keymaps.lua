@@ -4,7 +4,6 @@
 
 local map = LazyVim.safe_keymap_set
 local smart_splits = require("smart-splits")
-local dropbar_api = require("dropbar.api")
 
 map("n", "<Enter>", "a<Enter><Esc>", { desc = "Enter in normal mode" })
 
