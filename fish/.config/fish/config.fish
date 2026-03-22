@@ -33,7 +33,7 @@ if status is-interactive
     # Interactive functions
     function run-ls-on-cd -v PWD
         set current_repository (git rev-parse --show-toplevel 2> /dev/null)
-        if [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]
+        if command -q onefetch && [ "$current_repository" ] && [ "$current_repository" != "$last_repository" ]
             onefetch
         end
         set -gx last_repository $current_repository
@@ -111,6 +111,18 @@ if status is-interactive
             nix-shell -p $packages --command "exec fish -l"
         else
             nix-shell --command "exec fish -l"
+        end
+    end
+
+    function stats
+        systemctl status $argv[1] | tspin
+    end
+
+    function log
+        if count $argv >1
+            journalctl -u $argv[1] -n $argv[2] | tspin
+        else
+            journalctl -u $argv[1] -f | tspin
         end
     end
 

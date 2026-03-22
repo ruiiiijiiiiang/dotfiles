@@ -208,7 +208,7 @@ return {
         sh = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
         bash = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
         zsh = { { "shfmt", extra_args = { "-i", "2", "-ci" } } },
-        -- lua = { { "stylua", extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } } },
+        lua = { { "stylua", extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } } },
       },
     },
   },

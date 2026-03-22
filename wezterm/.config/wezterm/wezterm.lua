@@ -94,7 +94,8 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
 end)
 
 wezterm.on("update-right-status", function(window, pane)
-  local cwd = pane:get_current_working_dir().file_path
+  local cwd_uri = pane:get_current_working_dir()
+  local cwd = cwd_uri and cwd_uri.file_path or ""
   local cells = {
     { Background = { Color = color_scheme.tab_bar.background } },
     { Foreground = { Color = accent } },
@@ -105,5 +106,20 @@ wezterm.on("update-right-status", function(window, pane)
   }
   window:set_right_status(wezterm.format(cells))
 end)
+
+config.ssh_domains = {
+  {
+    name = "vm-app",
+    remote_address = "vm-app",
+  },
+  {
+    name = "vm-monitor",
+    remote_address = "vm-monitor",
+  },
+  {
+    name = "vm-network",
+    remote_address = "vm-network",
+  },
+}
 
 return config
