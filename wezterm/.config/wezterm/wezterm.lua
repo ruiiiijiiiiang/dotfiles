@@ -18,10 +18,6 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.tab_max_width = 48
 
--- This function returns the suggested title for a tab.
--- It prefers the title that was set via `tab:set_title()`
--- or `wezterm cli set-tab-title`, but falls back to the
--- title of the active pane in that tab.
 local function tab_title(tab_info)
   local title = tab_info.tab_title
   if not title or #title == 0 then
@@ -93,16 +89,51 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
   }
 end)
 
+local function smart_abbreviate(path, max_len)
+  local home = os.getenv("HOME") or ""
+  local result = path:gsub(home, "~")
+
+  if #result <= max_len then
+    return result
+  end
+
+  local parts = {}
+  for segment in string.gmatch(result, "[^/]+") do
+    table.insert(parts, segment)
+  end
+
+  if #parts > 1 then
+    for i = 1, #parts - 1 do
+      if parts[i] ~= "~" then
+        parts[i] = string.sub(parts[i], 1, 1)
+      end
+    end
+  end
+
+  local prefix = result:sub(1, 1) == "/" and "/" or ""
+  return prefix .. table.concat(parts, "/")
+end
+
 wezterm.on("update-right-status", function(window, pane)
-  local cwd_uri = pane:get_current_working_dir()
-  local cwd = cwd_uri and cwd_uri.file_path or ""
+  local success, cwd_uri = pcall(function()
+    return pane:get_current_working_dir()
+  end)
+
+  local hostname = "local"
+  local cwd = ""
+
+  if success and cwd_uri then
+    hostname = cwd_uri.host
+    cwd = smart_abbreviate(cwd_uri.file_path, 20)
+  end
+
   local cells = {
     { Background = { Color = color_scheme.tab_bar.background } },
     { Foreground = { Color = accent } },
     { Text = "" },
     { Background = { Color = accent } },
     { Foreground = { Color = color_scheme.tab_bar.background } },
-    { Text = "  " .. cwd .. " " },
+    { Text = "  " .. cwd .. "@" .. hostname .. " " },
   }
   window:set_right_status(wezterm.format(cells))
 end)

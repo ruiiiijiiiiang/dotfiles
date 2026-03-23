@@ -52,10 +52,23 @@ local keys = {
   {
     key = 'q',
     mods = 'ALT',
-    action = wezterm.action.CloseCurrentTab { confirm = true },
+    action = act.CloseCurrentTab { confirm = true },
   },
   {
     key = "Space",
+    mods = "ALT",
+    action = act.ShowLauncherArgs {
+      flags = 'FUZZY|DOMAINS',
+      title = 'Select Remote Domain',
+    },
+  },
+  {
+    key = 'd',
+    mods = 'ALT',
+    action = act.DetachDomain "CurrentPaneDomain",
+  },
+  {
+    key = "s",
     mods = "ALT",
     action = act.QuickSelect,
   },
@@ -132,12 +145,12 @@ local keys = {
   {
     key = "l",
     mods = "CTRL|SHIFT",
-    action = wezterm.action.DisableDefaultAssignment,
+    action = act.DisableDefaultAssignment,
   },
   {
     key = "k",
     mods = "CTRL|SHIFT",
-    action = wezterm.action.DisableDefaultAssignment,
+    action = act.DisableDefaultAssignment,
   },
   -- move between split panes
   split_nav("move", "h"),
