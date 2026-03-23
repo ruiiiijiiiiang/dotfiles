@@ -8,49 +8,49 @@ Thank you for checking out the configuration for my personal development environ
   <summary>Version 1</summary>
   Simple terminal setup
 
-![Screenshot](./screenshots/Screenshot_20241029_101253.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/Screenshot_20241029_101253.png)
 
 </details>
 <details>
   <summary>Version 2</summary>
   First attempt at Linux ricing with Hyprland and waybar
 
-![Screenshot](./screenshots/2024-11-05-230828_hyprshot.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/2024-11-05-230828_hyprshot.png)
 
 </details>
 <details>
   <summary>Version 3</summary>
   Reduced rainbow puke
 
-![Screenshot](./screenshots/2024-11-09-195111_hyprshot.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/2024-11-09-195111_hyprshot.png)
 
 </details>
 <details>
   <summary>Version 4</summary>
   Ditched waybar for hyprpanel
 
-![Screenshot](./screenshots/2024-11-12-110707_hyprshot.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/2024-11-12-110707_hyprshot.png)
 
 </details>
 <details>
   <summary>Version 5</summary>
   Added theme for spotify and discord
 
-![Screenshot](./screenshots/2024-12-16-144539_hyprshot.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/2024-12-16-144539_hyprshot.png)
 
 </details>
 <details>
   <summary>Version 6</summary>
   Reverted to waybar and rethemed
 
-![Screenshot](./screenshots/2024-12-18-222122_hyprshot.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/2024-12-18-222122_hyprshot.png)
 
 </details>
 <details>
   <summary>Version 7</summary>
   Better rofi theme
 
-![Screenshot](./screenshots/2025-01-06-200827_hyprshot.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/2025-01-06-200827_hyprshot.png)
 
 </details>
 
@@ -59,35 +59,35 @@ Thank you for checking out the configuration for my personal development environ
   <summary>Version 8</summary>
   Some minor color adjustments
 
-![Screenshot](./screenshots/2025-01-10-194631_hyprshot.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/2025-01-10-194631_hyprshot.png)
 
 </details>
 <details>
   <summary>Version 9</summary>
   Moved to niri
 
-![Screenshot](./screenshots/niri_screenshot_2.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/niri_screenshot_2.png)
 
 </details>
 <details>
   <summary>Version 10</summary>
   Ditched NixOS; updated discord to the newest UI
 
-![Screenshot](./screenshots/Screenshot_from_2025-04-29_21-22-05.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/Screenshot_from_2025-04-29_21-22-05.png)
 
 </details>
 <details>
   <summary>Version 11</summary>
   Back to NixOS; new waybar design
 
-![Screenshot](./screenshots/Screenshot_from_2025-06-19_23-06-09.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/Screenshot_from_2025-06-19_23-06-09.png)
 
 </details>
 <details>
   <summary>Version 12 (Current)</summary>
   Migrated shell to DMS
 
-![Screenshot](./screenshots/Screenshot_from_2026-02-23_12-18-31.png)
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/Screenshot_from_2026-02-23_12-18-31.png)
 
 </details>
 
