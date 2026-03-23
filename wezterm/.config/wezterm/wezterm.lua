@@ -133,7 +133,9 @@ wezterm.on("update-right-status", function(window, pane)
     { Text = "" },
     { Background = { Color = accent } },
     { Foreground = { Color = color_scheme.tab_bar.background } },
-    { Text = "  " .. cwd .. "@" .. hostname .. " " },
+    { Text = "  " .. cwd },
+    { Attribute = { Italic = true } },
+    { Text = "@" .. hostname .. " " },
   }
   window:set_right_status(wezterm.format(cells))
 end)

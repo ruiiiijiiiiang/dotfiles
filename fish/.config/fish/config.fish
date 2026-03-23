@@ -27,7 +27,7 @@ if status is-interactive
     abbr -a lg lazygit
     abbr -a qcd --position command --regex "q+" --function qcd
     abbr -a vg "ssh veggie.ooapi.com"
-    abbr -a wcs wezterm cli spawn --domain-name
+    abbr -a systui systemctl-tui
 
     set -g fish_key_bindings fish_vi_key_bindings
 
@@ -120,11 +120,36 @@ if status is-interactive
     end
 
     function log
-        if count $argv >1
-            journalctl -u $argv[1] -n $argv[2] | tspin
-        else
-            journalctl -u $argv[1] -f | tspin
+        set -l unit $argv[1]
+        set -l lines $argv[2]
+
+        if not set -q argv[1]
+            set unit (__fish_systemd_services | fzf --header="Select a service to log" --height=40% --reverse)
+            if test -z "$unit"
+                return 0
+            end
         end
+
+        if count $argv >1
+            journalctl -u $unit -f -n $lines | tspin
+        else
+            journalctl -u $unit -f | tspin
+        end
+    end
+
+    function restart-log
+        set -l unit $argv[1]
+
+        if not set -q argv[1]
+            echo "Usage: restart-log <unit>"
+            return 1
+        end
+
+        echo "Revolving $unit..."
+
+        sudo systemctl restart $unit &
+
+        journalctl -u $unit -f -n 50 | tspin
     end
 
     function fish_greeting
