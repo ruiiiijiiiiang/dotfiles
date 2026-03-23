@@ -1,5 +1,0 @@
-[delta]
-features = ["catppuccin-frappe", "line-numbers", "side-by-side"]
-
-[delta.syntax]
-theme = "Catppuccin Frappe"

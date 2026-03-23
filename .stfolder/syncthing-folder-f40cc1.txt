@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: dotfiles
+created: 2025-11-28T00:32:37-06:00
