@@ -1,7 +1,9 @@
 {
-  description = "rui's dotfiles source flake";
+  description = "Personal dotfiles source flake";
 
-  outputs = { self, ... }: {
-    lib.source = self.outPath;
-  };
+  outputs =
+    { self, ... }:
+    {
+      lib.source = self.outPath;
+    };
 }
