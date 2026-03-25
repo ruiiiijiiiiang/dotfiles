@@ -1,6 +1,7 @@
 local frappe = require("catppuccin.palettes").get_palette("frappe")
 
 return {
+  { "folke/tokyonight.nvim", enabled = false },
   { "mason-org/mason.nvim", enabled = false },
   { "mason-org/mason-lspconfig.nvim", enabled = false },
   { "nvim-treesitter/nvim-treesitter", enabled = false },

@@ -142,6 +142,10 @@ end)
 
 config.ssh_domains = {
   {
+    name = "hypervisor",
+    remote_address = "hypervisor",
+  },
+  {
     name = "vm-app",
     remote_address = "vm-app",
   },

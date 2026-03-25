@@ -1,6 +1,7 @@
 local frappe = require("catppuccin.palettes").get_palette("frappe")
 
 return {
+  { "folke/tokyonight.nvim", enabled = false },
   { "kchmck/vim-coffee-script" },
   { "alaviss/nim.nvim" },
   { "nvzone/showkeys", cmd = "ShowkeysToggle" },
