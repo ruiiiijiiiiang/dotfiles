@@ -1,10 +1,6 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-
+local profile = require("config.profile")
 local map = LazyVim.safe_keymap_set
 local smart_splits = require("smart-splits")
-local dropbar_api = require("dropbar.api")
 
 map("n", "<Enter>", "a<Enter><Esc>", { desc = "Enter in normal mode" })
 
@@ -34,7 +30,6 @@ map("n", "N", "Nzz")
 map("n", "<C-o>", "<C-o>zz")
 map("n", "<C-i>", "<C-i>zz")
 
--- Dropbar
-map("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
-map("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
-map("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
+if profile.is("workstation") then
+  require("config.profiles.workstation.keymaps")()
+end
