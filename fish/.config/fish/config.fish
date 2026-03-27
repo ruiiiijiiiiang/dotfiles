@@ -130,7 +130,7 @@ if status is-interactive
             end
         end
 
-        if count $argv >1
+        if test (count $argv) -gt 1
             journalctl -u $unit -f -n $lines | tspin
         else
             journalctl -u $unit -f | tspin
