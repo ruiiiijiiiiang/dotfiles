@@ -192,6 +192,17 @@
   "centeringMode": "geometric",
   "clockDateFormat": "",
   "lockDateFormat": "",
+  "greeterRememberLastSession": true,
+  "greeterRememberLastUser": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
+  "greeterWallpaperPath": "",
+  "greeterUse24HourClock": true,
+  "greeterShowSeconds": false,
+  "greeterPadHours12Hour": false,
+  "greeterLockDateFormat": "",
+  "greeterFontFamily": "",
+  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "grid",
   "spotlightModalViewMode": "list",
@@ -306,6 +317,7 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
   "matugenTemplateEmacs": true,
+  "matugenTemplateZed": true,
   "showDock": true,
   "dockAutoHide": false,
   "dockSmartAutoHide": true,
@@ -347,6 +359,8 @@
   "lockAtStartup": false,
   "enableFprint": false,
   "maxFprintTries": 3,
+  "enableU2f": false,
+  "u2fMode": "or",
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 0,
@@ -662,6 +676,12 @@
           "height": 480,
           "x": 800,
           "y": 300
+        },
+        "DP-2": {
+          "width": 320,
+          "height": 480,
+          "x": 1760,
+          "y": 840
         }
       }
     },

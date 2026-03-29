@@ -1,0 +1,24 @@
+spawn-at-startup "noctalia-shell"
+
+binds {
+    Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+S { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
+
+    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+
+    XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    Mod+Shift+Up allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
+
+    XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    Mod+Shift+Down allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+
+    XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    Mod+Shift+Right allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+
+    XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    Mod+Shift+Left allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+}
+
+environment {
+    QT_QPA_PLATFORMTHEME "qt5ct"
+}

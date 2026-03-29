@@ -1,11 +1,3 @@
-include "./dms/alttab.kdl"
-include "./dms/binds.kdl"
-include "./dms/colors.kdl"
-include "./dms/cursor.kdl"
-include "./dms/layout.kdl"
-include "./dms/outputs.kdl"
-include "./dms/windowrules.kdl"
-
 hotkey-overlay {
     skip-at-startup
 }
@@ -24,11 +16,53 @@ input {
 
 layout {
     center-focused-column "never"
+
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
     }
+    gaps 10
+
+    background-color "transparent"
+
+    focus-ring {
+        width 2
+        active-color   "#babbf1"
+        inactive-color "#737994"
+        urgent-color   "#e78284"
+    }
+
+    border {
+        width 2
+        active-color   "#babbf1"
+        inactive-color "#737994"
+        urgent-color   "#e78284"
+    }
+
+    shadow {
+        color "#00000070"
+    }
+
+    tab-indicator {
+        active-color   "#babbf1"
+        inactive-color "#737994"
+        urgent-color   "#e78284"
+    }
+
+    insert-hint {
+        color "#babbf180"
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+
+cursor {
+    xcursor-theme "catppuccin-frappe-lavender-cursors"
+    xcursor-size 28
 }
 
 prefer-no-csd
@@ -62,28 +96,26 @@ window-rule {
 window-rule {
     clip-to-geometry true
     opacity 0.95
+    geometry-corner-radius 12
+    tiled-state true
+    draw-border-with-background false
+}
+
+recent-windows {
+    highlight {
+        corner-radius 12
+        active-color   "#3d427b"
+        urgent-color   "#e78284"
+    }
 }
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Mod+Q { close-window; }
+
     Mod+T { spawn "wezterm"; }
     Mod+E { spawn "dolphin"; }
-
-    Mod+Shift+Up          allow-when-locked=true {
-        spawn "dms" "ipc" "call" "audio" "increment" "3";
-    }
-    Mod+Shift+Down        allow-when-locked=true {
-        spawn "dms" "ipc" "call" "audio" "decrement" "3";
-    }
-    Mod+Shift+Right       allow-when-locked=true {
-       spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
-    }
-    Mod+Shift+Left        allow-when-locked=true {
-       spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
-    }
-
-    Mod+Q { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
@@ -202,12 +234,7 @@ binds {
 }
 
 environment {
-    QT_QPA_PLATFORMTHEME "kde"
     QT_QPA_PLATFORM "wayland"
 }
 
-include "dms/cursor.kdl"
-
-include "dms/outputs.kdl"
-
-include "dms/windowrules.kdl"
+include "./noctalia.kdl"
