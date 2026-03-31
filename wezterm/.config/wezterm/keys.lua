@@ -68,7 +68,7 @@ local keys = {
     action = act.DetachDomain "CurrentPaneDomain",
   },
   {
-    key = "s",
+    key = "f",
     mods = "ALT",
     action = act.QuickSelect,
   },

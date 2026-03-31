@@ -47,11 +47,11 @@
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
         "contentPadding": 2,
-        "density": "comfortable",
+        "density": "spacious",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
         "fontScale": 1.2000000000000002,
-        "frameRadius": 8,
+        "frameRadius": 16,
         "frameThickness": 6,
         "hideOnOverview": true,
         "marginHorizontal": 4,
@@ -91,7 +91,7 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "maxWidth": 360,
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "textColor": "none",
@@ -102,11 +102,11 @@
                 {
                     "colorizeSystemIcon": "none",
                     "customIconPath": "",
-                    "enableColorization": false,
+                    "enableColorization": true,
                     "icon": "rocket",
                     "iconColor": "none",
                     "id": "Launcher",
-                    "useDistroLogo": false
+                    "useDistroLogo": true
                 },
                 {
                     "characterCount": 2,
@@ -338,7 +338,7 @@
         "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
         "groupIndicatorStyle": "dots",
-        "inactiveIndicators": false,
+        "inactiveIndicators": true,
         "indicatorColor": "primary",
         "indicatorOpacity": 0.6,
         "indicatorThickness": 3,
@@ -354,7 +354,8 @@
         "pinnedApps": [
             "org.wezfurlong.wezterm",
             "vivaldi-stable",
-            "goofcord"
+            "goofcord",
+            "org.kde.dolphin"
         ],
         "pinnedStatic": false,
         "position": "bottom",
@@ -642,7 +643,7 @@
         "enableUserTheming": false
     },
     "ui": {
-        "boxBorderEnabled": false,
+        "boxBorderEnabled": true,
         "fontDefault": "Noto Sans",
         "fontDefaultScale": 1,
         "fontFixed": "Maple Mono",
@@ -651,9 +652,9 @@
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
-        "settingsPanelSideBarCardStyle": true,
+        "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true,
-        "translucentWidgets": false
+        "translucentWidgets": true
     },
     "wallpaper": {
         "automationEnabled": true,
