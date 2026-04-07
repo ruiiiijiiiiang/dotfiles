@@ -104,7 +104,7 @@ window-rule {
 recent-windows {
     highlight {
         corner-radius 12
-        active-color   "#3d427b"
+        active-color   "#babbf1"
         urgent-color   "#e78284"
     }
 }

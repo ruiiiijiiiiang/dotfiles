@@ -22,3 +22,21 @@ binds {
 environment {
     QT_QPA_PLATFORMTHEME "qt5ct"
 }
+
+output "eDP-1" {
+    mode "2880x1920@120.000"
+    scale 1.5
+    position x=0 y=160
+}
+
+output "Dell Inc. AW3423DWF 9Y252S3" {
+    mode "3440x1440@99.982"
+    scale 1
+    position x=1920 y=0
+}
+
+output "ViewSonic Corporation VA1655-FHD WMM221720733" {
+    mode "1920x1080@59.934"
+    scale 1
+    position x=2680 y=1440
+}
