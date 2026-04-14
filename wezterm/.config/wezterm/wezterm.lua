@@ -157,6 +157,10 @@ config.ssh_domains = {
     name = "vm-network",
     remote_address = "vm-network",
   },
+  {
+    name = "vm-public",
+    remote_address = "vm-public",
+  },
 }
 
 return config

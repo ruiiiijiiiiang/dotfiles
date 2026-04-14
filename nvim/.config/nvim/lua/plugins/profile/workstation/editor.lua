@@ -1,5 +1,4 @@
 return {
-  { "AndrewRadev/switch.vim" },
   {
     "m4xshen/hardtime.nvim",
     lazy = false,
