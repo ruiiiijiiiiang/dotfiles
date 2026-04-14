@@ -309,12 +309,7 @@
     "enabled": true,
     "gridSnap": false,
     "gridSnapScale": false,
-    "monitorWidgets": [
-      {
-        "name": "DP-1",
-        "widgets": []
-      }
-    ],
+    "monitorWidgets": [],
     "overviewEnabled": true
   },
   "dock": {
@@ -372,13 +367,28 @@
     "forceBlackScreenCorners": false,
     "iRadiusRatio": 1,
     "keybinds": {
-      "keyDown": ["Down"],
-      "keyEnter": ["Return", "Enter"],
-      "keyEscape": ["Esc"],
-      "keyLeft": ["Left"],
-      "keyRemove": ["Del"],
-      "keyRight": ["Right"],
-      "keyUp": ["Up"]
+      "keyDown": [
+        "Down"
+      ],
+      "keyEnter": [
+        "Return",
+        "Enter"
+      ],
+      "keyEscape": [
+        "Esc"
+      ],
+      "keyLeft": [
+        "Left"
+      ],
+      "keyRemove": [
+        "Del"
+      ],
+      "keyRight": [
+        "Right"
+      ],
+      "keyUp": [
+        "Up"
+      ]
     },
     "language": "",
     "lockOnSuspend": true,
@@ -500,7 +510,11 @@
     "autoHideMs": 2000,
     "backgroundOpacity": 1,
     "enabled": true,
-    "enabledTypes": [0, 1, 2],
+    "enabledTypes": [
+      0,
+      1,
+      2
+    ],
     "location": "top_right",
     "monitors": [],
     "overlayLayer": true

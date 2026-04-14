@@ -332,10 +332,6 @@
     "gridSnapScale": true,
     "monitorWidgets": [
       {
-        "name": "DP-1",
-        "widgets": []
-      },
-      {
         "name": "eDP-1",
         "widgets": [
           {
@@ -383,7 +379,7 @@
     "launcherIconColor": "none",
     "launcherPosition": "end",
     "launcherUseDistroLogo": false,
-    "monitors": ["DP-1", "DP-2"],
+    "monitors": [],
     "onlySameOutput": false,
     "pinnedApps": [
       "org.wezfurlong.wezterm",
@@ -418,13 +414,28 @@
     "forceBlackScreenCorners": false,
     "iRadiusRatio": 1,
     "keybinds": {
-      "keyDown": ["Down"],
-      "keyEnter": ["Return", "Enter"],
-      "keyEscape": ["Esc"],
-      "keyLeft": ["Left"],
-      "keyRemove": ["Del"],
-      "keyRight": ["Right"],
-      "keyUp": ["Up"]
+      "keyDown": [
+        "Down"
+      ],
+      "keyEnter": [
+        "Return",
+        "Enter"
+      ],
+      "keyEscape": [
+        "Esc"
+      ],
+      "keyLeft": [
+        "Left"
+      ],
+      "keyRemove": [
+        "Del"
+      ],
+      "keyRight": [
+        "Right"
+      ],
+      "keyUp": [
+        "Up"
+      ]
     },
     "language": "",
     "lockOnSuspend": true,
@@ -547,7 +558,7 @@
     "autoHideMs": 2000,
     "backgroundOpacity": 1,
     "enabled": true,
-    "enabledTypes": [0, 1, 2],
+    "enabledTypes": [],
     "location": "top_right",
     "monitors": [],
     "overlayLayer": true
@@ -648,12 +659,7 @@
     "warningColor": ""
   },
   "templates": {
-    "activeTemplates": [
-      {
-        "enabled": true,
-        "id": "niri"
-      }
-    ],
+    "activeTemplates": [],
     "enableUserTheming": false
   },
   "ui": {
