@@ -36,6 +36,7 @@ local base = {
 
 local workstation = {
   ai = {
+    "lazyvim.plugins.extras.ai.codeium",
     "lazyvim.plugins.extras.ai.sidekick",
   },
   editing = {

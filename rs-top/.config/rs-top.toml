@@ -1,0 +1,20 @@
+[[hosts]]
+address = "hypervisor"
+
+[[hosts]]
+address = "vm-app"
+
+[[hosts]]
+address = "vm-network"
+
+[[hosts]]
+address = "vm-monitor"
+
+[[hosts]]
+address = "vm-public"
+
+[[hosts]]
+address = "pi"
+
+[[hosts]]
+address = "pi-legacy"

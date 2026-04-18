@@ -361,6 +361,36 @@
                         "showBackground": true,
                         "x": 1400,
                         "y": 80
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "CPU",
+                        "x": 1440,
+                        "y": 200
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Memory",
+                        "x": 1440,
+                        "y": 360
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Network",
+                        "x": 1440,
+                        "y": 520
                     }
                 ]
             }

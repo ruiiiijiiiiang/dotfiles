@@ -7,9 +7,8 @@ config.keys = require("keys")
 config.default_prog = { "fish", "-l" }
 
 config.color_scheme = "Catppuccin Frappe"
-config.window_background_opacity = 0.95
 local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
-local accent = "#babbf1" -- lavender
+local accent = "#babbf1"
 
 config.font = wezterm.font("Maple Mono")
 config.font_size = 14
