@@ -84,10 +84,18 @@ Thank you for checking out the configuration for my personal development environ
 
 </details>
 <details>
-  <summary>Version 12 (Current)</summary>
+  <summary>Version 12</summary>
   Migrated shell to DMS
 
 ![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/Screenshot_from_2026-02-23_12-18-31.png)
+
+</details>
+
+<details>
+  <summary>Version 13 (Current)</summary>
+  Friendship ended with DMS; now noctalia is my best friend
+
+![Screenshot](https://raw.githubusercontent.com/ruiiiijiiiiang/dotfiles/screenshots/Screenshot%20from%202026-05-06%2013-48-04.png)
 
 </details>
 
