@@ -94,6 +94,7 @@
                     "maxWidth": 360,
                     "scrollingMode": "hover",
                     "showIcon": true,
+                    "showText": true,
                     "textColor": "none",
                     "useFixedWidth": false
                 }
@@ -101,6 +102,7 @@
             "left": [
                 {
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "rocket",
@@ -210,6 +212,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": false,
                     "icon": "noctalia",
@@ -361,6 +364,16 @@
                         "statType": "Memory",
                         "x": 2080,
                         "y": 360
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Network",
+                        "x": 2080,
+                        "y": 520
                     }
                 ]
             },
@@ -405,6 +418,16 @@
                         "statType": "Memory",
                         "x": 2080,
                         "y": 360
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Network",
+                        "x": 2080,
+                        "y": 520
                     }
                 ]
             }
@@ -441,10 +464,12 @@
             "org.wezfurlong.wezterm",
             "vivaldi-stable",
             "goofcord",
+            "eu.betterbird.Betterbird",
             "org.kde.dolphin",
-            "steam"
+            "steam",
+            "dev.zed.Zed"
         ],
-        "pinnedStatic": false,
+        "pinnedStatic": true,
         "position": "bottom",
         "showDockIndicator": true,
         "showLauncherIcon": false,

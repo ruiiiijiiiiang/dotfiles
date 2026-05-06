@@ -1,4 +1,5 @@
 spawn-at-startup "noctalia-shell"
+spawn-at-startup "protonmail-bridge-gui" "--no-window"
 
 binds {
     Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }

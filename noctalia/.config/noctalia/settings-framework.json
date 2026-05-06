@@ -426,7 +426,8 @@
             "vivaldi-stable",
             "goofcord",
             "org.kde.dolphin",
-            "eu.betterbird.Betterbird"
+            "eu.betterbird.Betterbird",
+            "dev.zed.Zed"
         ],
         "pinnedStatic": false,
         "position": "bottom",
@@ -736,7 +737,7 @@
         "monitorDirectories": [
         ],
         "overviewBlur": 0.4,
-        "overviewEnabled": false,
+        "overviewEnabled": true,
         "overviewTint": 0.6,
         "panelPosition": "follow_bar",
         "randomIntervalSec": 300,

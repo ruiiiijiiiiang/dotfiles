@@ -95,10 +95,13 @@ window-rule {
 
 window-rule {
     clip-to-geometry true
-    opacity 0.95
+    opacity 0.8
     geometry-corner-radius 12
     tiled-state true
     draw-border-with-background false
+    background-effect {
+        blur true
+    }
 }
 
 recent-windows {
