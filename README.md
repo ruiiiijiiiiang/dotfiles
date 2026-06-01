@@ -111,10 +111,10 @@ Neovim plugins are managed by LazyVim.
 
 ### Desktop Environment
 
-I have now moved to DMS and I am no longer ricing my desktop environment. All configs for shell software such as waybar, rofi, swaync, etc are no longer being maintained.
+I have now moved to noctalia-shell and I am no longer ricing my desktop environment. All configs for shell software such as waybar, rofi, swaync, etc are no longer being maintained.
 
 - [niri](https://github.com/YaLTeR/niri)
-- [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
+- [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)
 
 ### Development Environment
 

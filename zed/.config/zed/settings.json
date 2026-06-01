@@ -7,6 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    }
+  },
   "project_panel": {
     "dock": "left"
   },
@@ -26,10 +34,31 @@
     "allowed": true
   },
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^rg\\s+PtyOutput(\\s|$)"
+            },
+            {
+              "pattern": "^cat\\b"
+            },
+            {
+              "pattern": "^sed\\b"
+            },
+            {
+              "pattern": "^find\\s+src(\\s|$)"
+            }
+          ]
+        }
+      }
+    },
     "dock": "right",
     "default_model": {
-      "provider": "google",
-      "model": "gemini-3-pro-preview"
+      "enable_thinking": true,
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5"
     }
   },
   "ui_font_size": 18,

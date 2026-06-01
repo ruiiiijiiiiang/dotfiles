@@ -95,7 +95,7 @@ window-rule {
 
 window-rule {
     clip-to-geometry true
-    opacity 0.8
+    opacity 0.85
     geometry-corner-radius 12
     tiled-state true
     draw-border-with-background false
