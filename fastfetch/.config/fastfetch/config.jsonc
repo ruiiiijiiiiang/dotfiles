@@ -158,7 +158,7 @@
       "type": "terminalfont",
       "key": "│ ╠󰬴 font    │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{font1}"
+      "format": "{$3}{$4}│{$5}{combined}"
     },
     {
       "type": "terminal",
