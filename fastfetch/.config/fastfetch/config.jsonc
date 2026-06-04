@@ -132,6 +132,7 @@
     },
     {
       "type": "disk",
+      "folders": "/",
       "key": "│ ╠ age     │",
       "keyColor": "blue",
       "format": "{$3}{$4}│{$5}{days} days ({create-time:10})"

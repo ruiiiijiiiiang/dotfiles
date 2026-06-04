@@ -352,8 +352,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "CPU",
-                        "x": 2080,
-                        "y": 200
+                        "x": 2280,
+                        "y": 280
                     },
                     {
                         "diskPath": "/",
@@ -362,8 +362,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "Memory",
-                        "x": 2080,
-                        "y": 360
+                        "x": 2280,
+                        "y": 440
                     },
                     {
                         "diskPath": "/",
@@ -372,8 +372,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "Network",
-                        "x": 2080,
-                        "y": 520
+                        "x": 2280,
+                        "y": 600
                     }
                 ]
             },
@@ -406,8 +406,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "CPU",
-                        "x": 2080,
-                        "y": 200
+                        "x": 2280,
+                        "y": 280
                     },
                     {
                         "diskPath": "/",
@@ -416,8 +416,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "Memory",
-                        "x": 2080,
-                        "y": 360
+                        "x": 2280,
+                        "y": 440
                     },
                     {
                         "diskPath": "/",
@@ -426,8 +426,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "Network",
-                        "x": 2080,
-                        "y": 520
+                        "x": 2280,
+                        "y": 600
                     }
                 ]
             }

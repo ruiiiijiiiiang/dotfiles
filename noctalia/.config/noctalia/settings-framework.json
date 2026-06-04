@@ -369,8 +369,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "CPU",
-                        "x": 1440,
-                        "y": 200
+                        "x": 1640,
+                        "y": 280
                     },
                     {
                         "diskPath": "/",
@@ -379,8 +379,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "Memory",
-                        "x": 1440,
-                        "y": 360
+                        "x": 1640,
+                        "y": 440
                     },
                     {
                         "diskPath": "/",
@@ -389,8 +389,8 @@
                         "roundedCorners": true,
                         "showBackground": true,
                         "statType": "Network",
-                        "x": 1440,
-                        "y": 520
+                        "x": 1640,
+                        "y": 600
                     }
                 ]
             }
