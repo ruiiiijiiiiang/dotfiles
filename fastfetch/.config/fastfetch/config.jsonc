@@ -87,9 +87,9 @@
       "keyColor": "cyan",
       "format": "{$2}{$4}│{$5}{capacity-bar} {$2}({capacity})",
       "percent": {
-        "type": 7,
-        "green": 30,
-        "yellow": 70
+        "type": 3,
+        "green": 50,
+        "yellow": 20
       }
     },
     {

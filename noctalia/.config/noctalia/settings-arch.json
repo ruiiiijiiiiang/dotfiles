@@ -150,6 +150,17 @@
             ],
             "right": [
                 {
+                    "blacklist": [
+                    ],
+                    "chevronColor": "none",
+                    "colorizeIcons": false,
+                    "drawerEnabled": true,
+                    "hidePassive": false,
+                    "id": "Tray",
+                    "pinned": [
+                    ]
+                },
+                {
                     "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
@@ -172,17 +183,6 @@
                     "usePadding": false
                 },
                 {
-                    "blacklist": [
-                    ],
-                    "chevronColor": "none",
-                    "colorizeIcons": false,
-                    "drawerEnabled": true,
-                    "hidePassive": false,
-                    "id": "Tray",
-                    "pinned": [
-                    ]
-                },
-                {
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Network",
@@ -195,19 +195,24 @@
                     "textColor": "none"
                 },
                 {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Volume",
+                    "middleClickCommand": "pwvucontrol || pavucontrol",
+                    "textColor": "none"
+                },
+                {
+                    "iconColor": "none",
+                    "id": "KeepAwake",
+                    "textColor": "none"
+                },
+                {
                     "hideWhenZero": false,
                     "hideWhenZeroUnread": false,
                     "iconColor": "none",
                     "id": "NotificationHistory",
                     "showUnreadBadge": true,
                     "unreadBadgeColor": "primary"
-                },
-                {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Volume",
-                    "middleClickCommand": "pwvucontrol || pavucontrol",
-                    "textColor": "none"
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -317,7 +322,7 @@
         }
     },
     "desktopWidgets": {
-        "enabled": true,
+        "enabled": false,
         "gridSnap": true,
         "gridSnapScale": true,
         "monitorWidgets": [
@@ -467,7 +472,8 @@
             "eu.betterbird.Betterbird",
             "org.kde.dolphin",
             "steam",
-            "dev.zed.Zed"
+            "dev.zed.Zed",
+            "obsidian"
         ],
         "pinnedStatic": true,
         "position": "bottom",
@@ -555,7 +561,7 @@
     },
     "idle": {
         "customCommands": "[]",
-        "enabled": false,
+        "enabled": true,
         "fadeDuration": 5,
         "lockCommand": "",
         "lockTimeout": 660,
@@ -769,7 +775,7 @@
     "wallpaper": {
         "automationEnabled": true,
         "directory": "/home/rui/OpenCloud/Personal/Pictures",
-        "enableMultiMonitorDirectories": false,
+        "enableMultiMonitorDirectories": true,
         "enabled": true,
         "favorites": [
         ],

@@ -28,8 +28,8 @@ local function tab_title(tab_info)
     title = "󰣀 " .. title
   elseif title:find("^sudo ") then
     title = "󰦝 " .. title
-  elseif title:find("^ Gemini") then
-    title = title:gsub("^ Gemini", " ")
+  elseif title:find("^agy") or title:find("^OpenCode") or title:find("^codex") then
+    title = title:gsub("^agy", " "):gsub("^OpenCode", " "):gsub("^codex", " ")
   elseif title:find("^nv ") or title:find("^nvim ") then
     title = title:gsub("^nv ", " "):gsub("^nvim ", " ")
   elseif title:find("^vim ") then

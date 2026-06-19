@@ -68,8 +68,24 @@ cursor {
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
+window-rule {
+    clip-to-geometry true
+    opacity 0.9
+    geometry-corner-radius 12
+    tiled-state true
+    draw-border-with-background false
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match title=r#"- YouTube -"#
+    match title=r#"VLC media player"#
+    opacity 1.0
+}
+
 // Maximize terminal and browser
-// by setting an empty default-column-width.
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     match app-id=r#"zen"#
@@ -79,8 +95,8 @@ window-rule {
 
 // Open picture-in-picture player as floating by default.
 window-rule {
-    match title="^Picture-in-Picture$"
-    match title="^Picture in picture$"
+    match title="Picture-in-Picture"
+    match title="Picture in picture"
     open-floating true
     default-floating-position x=32 y=10 relative-to="bottom-right"
     default-column-width { fixed 854; }
@@ -93,22 +109,17 @@ window-rule {
     open-floating true
 }
 
-window-rule {
-    clip-to-geometry true
-    opacity 0.85
-    geometry-corner-radius 12
-    tiled-state true
-    draw-border-with-background false
-    background-effect {
-        blur true
-    }
-}
-
 recent-windows {
     highlight {
         corner-radius 12
-        active-color   "#babbf1"
-        urgent-color   "#e78284"
+        active-color  "#babbf1"
+        urgent-color  "#e78284"
+    }
+}
+
+gestures {
+    hot-corners {
+        bottom-right
     }
 }
 
