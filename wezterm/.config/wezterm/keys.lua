@@ -68,12 +68,19 @@ local function toggle_file_explorer()
         end)
         local initial_cwd = success and cwd_uri and cwd_uri.file_path or nil
 
+        local args
+        if not wezterm.target_triple:find("windows") then
+          args = { "fish", "-c", "wezterm_explorer" }
+        else
+          args = { "powershell.exe", "-NoLogo", "-Command", "wezterm_explorer" }
+        end
+
         pane:split {
           direction = "Left",
           size = 0.25,
           top_level = true,
           cwd = initial_cwd,
-          args = { "fish", "-c", "wezterm_explorer" },
+          args = args,
         }
         pane:activate()
       end

@@ -26,8 +26,6 @@ if status is-interactive
     abbr -a nv nvim
     abbr -a lg lazygit
     abbr -a qcd --position command --regex "q+" --function qcd
-    abbr -a vg "ssh veggie.ooapi.com"
-    abbr -a systui systemctl-tui
 
     set -g fish_key_bindings fish_vi_key_bindings
 
