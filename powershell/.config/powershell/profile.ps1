@@ -3,30 +3,32 @@
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Tool initializations
-if (Get-Command zoxide -ErrorAction SilentlyContinue) {
-    zoxide init powershell | Out-String | Invoke-Expression
-}
 if (Get-Command starship -ErrorAction SilentlyContinue) {
     starship init powershell | Out-String | Invoke-Expression
+}
+if (Get-Command zoxide -ErrorAction SilentlyContinue) {
+    zoxide init powershell | Out-String | Invoke-Expression
 }
 if (Get-Command atuin -ErrorAction SilentlyContinue) {
     atuin init powershell | Out-String | Invoke-Expression
 }
 if (Get-Command carapace -ErrorAction SilentlyContinue) {
-    Set-PSReadLineOption -Colors @{ "Selection" = "`e[7m" }
+    Set-PSReadLineOption -Colors @{ "Selection" = "$([char]0x1b)[7m" }
     Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
     carapace _carapace | Out-String | Invoke-Expression
 }
+Set-PSReadLineOption -EditMode Vi
 
 # Aliases
-Set-Alias -Name cd -Value z -Option Force -ErrorAction SilentlyContinue
-Set-Alias -Name ls -Value lsd -Option Force -ErrorAction SilentlyContinue
-Set-Alias -Name cat -Value bat -Option Force -ErrorAction SilentlyContinue
-Set-Alias -Name l -Value lsd -Option Force -ErrorAction SilentlyContinue
-Set-Alias -Name nv -Value nvim -Option Force -ErrorAction SilentlyContinue
-Set-Alias -Name lg -Value lazygit -Option Force -ErrorAction SilentlyContinue
+Set-Alias -Name cd -Value z -Force -Option AllScope -ErrorAction SilentlyContinue
+Set-Alias -Name ls -Value lsd -Force -Option AllScope -ErrorAction SilentlyContinue
+Set-Alias -Name cat -Value bat -Force -Option AllScope -ErrorAction SilentlyContinue
+Set-Alias -Name l -Value lsd -Force -Option AllScope -ErrorAction SilentlyContinue
+Set-Alias -Name nv -Value nvim -Force -Option AllScope -ErrorAction SilentlyContinue
+Set-Alias -Name lg -Value lazygit -Force -Option AllScope -ErrorAction SilentlyContinue
 
 # Abbreviations & command wrappers
+function ll { lsd -l $args }
 function lt { lsd --tree $args }
 function lta { lsd --tree -a $args }
 
@@ -108,17 +110,21 @@ function wezterm_explorer {
 }
 
 $global:LastPWD = $PWD.Path
-$oldPrompt = $function:prompt
-function prompt {
+if ($null -eq $global:__original_prompt) {
+    $global:__original_prompt = $function:prompt
+}
+function global:prompt {
     if ($PWD.Path -ne $global:LastPWD) {
         $global:LastPWD = $PWD.Path
         if (Get-Command lsd -ErrorAction SilentlyContinue) {
-            lsd -l
+            [Console]::Write((lsd -l --color=always | Out-String))
         } else {
-            Get-ChildItem
+            Get-ChildItem | Out-Host
         }
     }
-    & $oldPrompt
+    if ($null -ne $global:__original_prompt) {
+        & $global:__original_prompt
+    }
 }
 
 if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
