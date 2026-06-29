@@ -78,6 +78,16 @@
       }
     }
   },
+  "windows": {
+    "terminal": {
+      "shell": {
+        "with_arguments": {
+          "program": "powershell.exe",
+          "args": ["-NoLogo"]
+        }
+      }
+    }
+  },
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",

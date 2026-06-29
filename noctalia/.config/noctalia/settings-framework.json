@@ -183,6 +183,14 @@
                     "usePadding": false
                 },
                 {
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
+                    "iconColor": "none",
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
+                },
+                {
                     "deviceNativePath": "__default__",
                     "displayMode": "graphic-clean",
                     "hideIfIdle": false,
@@ -190,16 +198,6 @@
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
                     "showPowerProfiles": false
-                },
-                {
-                    "iconColor": "none",
-                    "id": "PowerProfile"
-                },
-                {
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "VPN",
-                    "textColor": "none"
                 },
                 {
                     "displayMode": "onhover",
@@ -226,19 +224,6 @@
                     "iconColor": "none",
                     "id": "Brightness",
                     "textColor": "none"
-                },
-                {
-                    "iconColor": "none",
-                    "id": "KeepAwake",
-                    "textColor": "none"
-                },
-                {
-                    "hideWhenZero": false,
-                    "hideWhenZeroUnread": false,
-                    "iconColor": "none",
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true,
-                    "unreadBadgeColor": "primary"
                 },
                 {
                     "colorizeDistroLogo": false,

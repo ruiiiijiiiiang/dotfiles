@@ -2,9 +2,16 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+local last_explorer_cwd = {}
+
+package.loaded["keys"] = nil
 config.keys = require("keys")
 
-config.default_prog = { "fish", "-l" }
+if not wezterm.target_triple:find("windows") then
+  config.default_prog = { "fish", "-l" }
+else
+  config.default_prog = { "powershell.exe", "-NoLogo" }
+end
 
 config.color_scheme = "Catppuccin Frappe"
 local color_scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
@@ -114,6 +121,19 @@ local function smart_abbreviate(path, max_len)
 end
 
 wezterm.on("update-right-status", function(window, pane)
+  if pane:get_user_vars().WEZTERM_ROLE == "explorer" then
+    local tab = window:active_tab()
+    if tab then
+      for _, p in ipairs(tab:panes()) do
+        if p:get_user_vars().WEZTERM_ROLE ~= "explorer" then
+          p:activate()
+          break
+        end
+      end
+    end
+    return
+  end
+
   local success, cwd_uri = pcall(function()
     return pane:get_current_working_dir()
   end)
@@ -122,8 +142,33 @@ wezterm.on("update-right-status", function(window, pane)
   local cwd = ""
 
   if success and cwd_uri then
-    hostname = cwd_uri.host
+    hostname = cwd_uri.host or "local"
     cwd = smart_abbreviate(cwd_uri.file_path, 20)
+  end
+
+  local tab = window:active_tab()
+  if tab then
+    local explorer_pane = nil
+    for _, p in ipairs(tab:panes()) do
+      if p:get_user_vars().WEZTERM_ROLE == "explorer" then
+        explorer_pane = p
+        break
+      end
+    end
+
+    if explorer_pane and pane:pane_id() ~= explorer_pane:pane_id() then
+      local success_cwd, cwd_val = pcall(function()
+        return pane:get_current_working_dir()
+      end)
+      if success_cwd and cwd_val then
+        local current_cwd = cwd_val.file_path
+        local exp_id = explorer_pane:pane_id()
+        if last_explorer_cwd[exp_id] ~= current_cwd then
+          last_explorer_cwd[exp_id] = current_cwd
+          explorer_pane:send_text(current_cwd .. "\n")
+        end
+      end
+    end
   end
 
   local cells = {
@@ -159,6 +204,10 @@ config.ssh_domains = {
   {
     name = "vm-public",
     remote_address = "vm-public",
+  },
+  {
+    name = "windows",
+    remote_address = "windows",
   },
 }
 

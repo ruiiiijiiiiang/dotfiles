@@ -43,6 +43,43 @@ local function activateTab(n)
   }
 end
 
+local function toggle_file_explorer()
+  return wezterm.action_callback(function(window, pane)
+      local tab = window:active_tab()
+      if not tab then return end
+
+      local explorer_pane = nil
+      for _, p in ipairs(tab:panes()) do
+        if p:get_user_vars().WEZTERM_ROLE == "explorer" then
+          explorer_pane = p
+          break
+        end
+      end
+
+      if explorer_pane then
+        explorer_pane:activate()
+        window:perform_action(
+          wezterm.action.CloseCurrentPane { confirm = false },
+          explorer_pane
+        )
+      else
+        local success, cwd_uri = pcall(function()
+          return pane:get_current_working_dir()
+        end)
+        local initial_cwd = success and cwd_uri and cwd_uri.file_path or nil
+
+        pane:split {
+          direction = "Left",
+          size = 0.25,
+          top_level = true,
+          cwd = initial_cwd,
+          args = { "fish", "-c", "wezterm_explorer" },
+        }
+        pane:activate()
+      end
+    end)
+end
+
 local keys = {
   {
     key = "t",
@@ -68,9 +105,14 @@ local keys = {
     action = act.DetachDomain "CurrentPaneDomain",
   },
   {
-    key = "f",
+    key = "v",
     mods = "ALT",
     action = act.QuickSelect,
+  },
+  {
+    key = "f",
+    mods = "ALT",
+    action = toggle_file_explorer(),
   },
   {
     key = "c",
