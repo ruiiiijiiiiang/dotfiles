@@ -1,3 +1,7 @@
+# Set UTF-8 encoding
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+
 # Tool initializations
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
     zoxide init powershell | Out-String | Invoke-Expression
@@ -82,7 +86,7 @@ function wezterm_explorer {
         } else {
             Get-ChildItem -Force
         }
-        Write-Host ([char]10 + '────────────────────────────────────────' + [char]10 + ' 📂 ' + $PWD)
+        Write-Host ([char]10 + ([string][char]0x2500 * 40) + [char]10 + ' ' + [char]::ConvertFromUtf32(0x1F4C1) + ' ' + $PWD)
     }
 
     _render_dir
