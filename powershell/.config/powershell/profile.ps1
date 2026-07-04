@@ -2,6 +2,32 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
+# Bypassing SSH junction limitations by pointing tools directly to their real dotfiles configuration paths
+$env:ATUIN_CONFIG_DIR = "C:\Users\Rui\dotfiles\atuin\.config\atuin"
+$env:YAZI_CONFIG_HOME = "C:\Users\Rui\dotfiles\yazi\.config\yazi"
+$env:BAT_CONFIG_PATH = "C:\Users\Rui\dotfiles\bat\.config\bat\config"
+$env:LG_CONFIG_FILE = "C:\Users\Rui\dotfiles\lazygit\.config\lazygit\config.yml"
+$env:XDG_CONFIG_HOME = "C:\Users\Rui\dotfiles\delta\.config"
+
+# Wrapper functions to bypass junctions for Helix, LSD, and Fastfetch
+function global:hx {
+    $oldXdg = $env:XDG_CONFIG_HOME
+    $env:XDG_CONFIG_HOME = "C:\Users\Rui\dotfiles\helix\.config"
+    try {
+        & hx.exe @args
+    } finally {
+        $env:XDG_CONFIG_HOME = $oldXdg
+    }
+}
+
+function global:lsd {
+    & lsd.exe --config-file "C:\Users\Rui\dotfiles\lsd\.config\lsd\config.yaml" @args
+}
+
+function global:fastfetch {
+    & fastfetch.exe --config "C:\Users\Rui\dotfiles\fastfetch\.config\fastfetch\config.jsonc" @args
+}
+
 # Tool initializations
 if (Get-Command starship -ErrorAction SilentlyContinue) {
     starship init powershell | Out-String | Invoke-Expression
