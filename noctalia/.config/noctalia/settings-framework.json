@@ -419,8 +419,8 @@
         ],
         "onlySameOutput": false,
         "pinnedApps": [
-            "org.wezfurlong.wezterm",
             "vivaldi-stable",
+            "org.wezfurlong.wezterm",
             "goofcord",
             "org.kde.dolphin",
             "eu.betterbird.Betterbird",
