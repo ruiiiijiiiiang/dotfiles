@@ -3,50 +3,46 @@
   "display": {
     "separator": "",
     "constants": [
-      "\u001b[1m",                        // {$1}: bold
-      "\u001b[36m",                       // {$2}: cyan
-      "\u001b[94m",                       // {$3}: blue
+      "\u001b[1m", // {$1}: bold
+      "\u001b[36m", // {$2}: cyan
+      "\u001b[94m", // {$3}: blue
       "                                ", // {$4}: spaces
-      "\u001b[33D",                       // {$5}: move cursor left
-      "\u001b[4m",                        // {$6}: start underline
-      "\u001b[24m"                        // {$7}: stop underline
-    ]
+      "\u001b[33D", // {$5}: move cursor left
+      "\u001b[4m", // {$6}: start underline
+      "\u001b[24m", // {$7}: stop underline
+    ],
   },
   "logo": {
     "padding": {
-      "top": 2
+      "top": 2,
     },
-    "color": {
-      "1": "cyan",
-      "2": "blue"
-    }
   },
   "modules": [
     {
       "type": "custom",
-      "format": " \u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m "
+      "format": " \u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m ",
     },
     {
       "type": "custom",
-      "format": "{$2}╭────────────┬──────Hardware──────────────────╮"
+      "format": "{$2}╭────────────┬──────Hardware──────────────────╮",
     },
     {
       "type": "host",
       "key": "│{$6} PC        │{$7}",
       "keyColor": "cyan",
-      "format": "{$1}{$2}{$6}{$4}{$7}│{$5}{$6}{vendor}{$7}"
+      "format": "{$1}{$2}{$6}{$4}{$7}│{$5}{$6}{vendor}{$7}",
     },
     {
       "type": "cpu",
       "key": "│ ╠ cpu     │",
       "keyColor": "cyan",
-      "format": "{$2}{$4}│{$5}{name}"
+      "format": "{$2}{$4}│{$5}{name}",
     },
     {
       "type": "gpu",
       "key": "│ ╠ gpu     │",
       "keyColor": "cyan",
-      "format": "{$2}{$4}│{$5}{vendor} {name}"
+      "format": "{$2}{$4}│{$5}{vendor} {name}",
     },
     {
       "type": "memory",
@@ -56,8 +52,8 @@
       "percent": {
         "type": 7,
         "green": 30,
-        "yellow": 70
-      }
+        "yellow": 70,
+      },
     },
     {
       "type": "swap",
@@ -67,8 +63,8 @@
       "percent": {
         "type": 7,
         "green": 30,
-        "yellow": 70
-      }
+        "yellow": 70,
+      },
     },
     {
       "type": "disk",
@@ -78,8 +74,8 @@
       "percent": {
         "type": 7,
         "green": 30,
-        "yellow": 70
-      }
+        "yellow": 70,
+      },
     },
     {
       "type": "battery",
@@ -89,97 +85,97 @@
       "percent": {
         "type": 3,
         "green": 50,
-        "yellow": 20
-      }
+        "yellow": 20,
+      },
     },
     {
       "type": "localip",
       "key": "│ ╠󰩠 ip      │",
       "keyColor": "cyan",
-      "format": "{$2}{$4}│{$5}{ipv4}"
+      "format": "{$2}{$4}│{$5}{ipv4}",
     },
     {
       "type": "uptime",
       "key": "│ ╚󰚰 uptime  │",
       "keyColor": "cyan",
-      "format": "{$2}{$4}│{$5}{days} days {hours} hours {minutes} minutes"
+      "format": "{$2}{$4}│{$5}{days} days {hours} hours {minutes} minutes",
     },
     {
       "type": "custom",
-      "format": "\u001b[36m╰────────────┴────────────────────────────────╯"
+      "format": "\u001b[36m╰────────────┴────────────────────────────────╯",
     },
     {
       "type": "custom",
-      "format": "\u001b[34m╭────────────┬─────Software───────────────────╮"
+      "format": "\u001b[34m╭────────────┬─────Software───────────────────╮",
     },
     {
       "type": "os",
       "key": "│{$6} OS        │{$7}",
       "keyColor": "blue",
-      "format": "{$1}{$3}{$6}{$4}{$7}│{$5}{$6}{pretty-name}{$7}"
+      "format": "{$1}{$3}{$6}{$4}{$7}│{$5}{$6}{pretty-name}{$7}",
     },
     {
       "type": "title",
       "key": "│ ╠ host    │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{user-name}@{host-name}"
+      "format": "{$3}{$4}│{$5}{user-name}@{host-name}",
     },
     {
       "type": "kernel",
       "key": "│ ╠ kernel  │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{sysname} {release} {arch}"
+      "format": "{$3}{$4}│{$5}{sysname} {release} {arch}",
     },
     {
       "type": "disk",
       "folders": "/",
       "key": "│ ╠ age     │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{days} days ({create-time:10})"
+      "format": "{$3}{$4}│{$5}{days} days ({create-time:10})",
     },
     {
       "type": "packages",
       "key": "│ ╠ packages│",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{all}"
+      "format": "{$3}{$4}│{$5}{all}",
     },
     {
       "type": "de",
       "key": "│ ╠ de      │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{pretty-name}"
+      "format": "{$3}{$4}│{$5}{pretty-name}",
     },
     {
       "type": "wm",
       "key": "│ ╠󱂬 wm      │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{pretty-name} ({protocol-name})"
+      "format": "{$3}{$4}│{$5}{pretty-name} ({protocol-name})",
     },
     {
       "type": "terminalfont",
       "key": "│ ╠󰬴 font    │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{combined}"
+      "format": "{$3}{$4}│{$5}{combined}",
     },
     {
       "type": "terminal",
       "key": "│ ╠ terminal│",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{pretty-name}"
+      "format": "{$3}{$4}│{$5}{pretty-name}",
     },
     {
       "type": "shell",
       "key": "│ ╚ shell   │",
       "keyColor": "blue",
-      "format": "{$3}{$4}│{$5}{pretty-name}"
+      "format": "{$3}{$4}│{$5}{pretty-name}",
     },
     {
       "type": "custom",
-      "format": "\u001b[34m╰────────────┴────────────────────────────────╯"
+      "format": "\u001b[34m╰────────────┴────────────────────────────────╯",
     },
     {
       "type": "custom",
-      "format": " \u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m "
-    }
-  ]
+      "format": " \u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m ",
+    },
+  ],
 }

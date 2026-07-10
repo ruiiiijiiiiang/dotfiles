@@ -267,6 +267,7 @@ binds {
 environment {
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "kde"
+    QT_QUICK_CONTROLS_STYLE "Basic"
 }
 
 spawn-at-startup "noctalia-shell"

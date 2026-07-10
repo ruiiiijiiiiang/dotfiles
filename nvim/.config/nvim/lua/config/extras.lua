@@ -53,7 +53,6 @@ local workstation = {
   languages = {
     "lazyvim.plugins.extras.lang.docker",
     "lazyvim.plugins.extras.lang.git",
-    "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.nix",

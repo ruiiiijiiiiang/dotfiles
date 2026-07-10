@@ -7,7 +7,6 @@ $env:ATUIN_CONFIG_DIR = "C:\Users\Rui\dotfiles\atuin\.config\atuin"
 $env:YAZI_CONFIG_HOME = "C:\Users\Rui\dotfiles\yazi\.config\yazi"
 $env:BAT_CONFIG_PATH = "C:\Users\Rui\dotfiles\bat\.config\bat\config"
 $env:LG_CONFIG_FILE = "C:\Users\Rui\dotfiles\lazygit\.config\lazygit\config.yml"
-$env:XDG_CONFIG_HOME = "C:\Users\Rui\dotfiles\delta\.config"
 
 # Wrapper functions to bypass junctions for Helix, LSD, and Fastfetch
 function global:hx {
