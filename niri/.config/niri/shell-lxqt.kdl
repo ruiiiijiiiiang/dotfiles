@@ -1,0 +1,17 @@
+binds {
+    Mod+Space { spawn "lxqt-runner"; }
+
+    XF86AudioMute { spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle"; }
+
+    XF86AudioRaiseVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
+    Mod+Shift+Up { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%"; }
+
+    XF86AudioLowerVolume { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
+    Mod+Shift+Down { spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%"; }
+}
+
+environment {
+    QT_QPA_PLATFORMTHEME "lxqt"
+}
+
+spawn-at-startup "lxqt-session"
