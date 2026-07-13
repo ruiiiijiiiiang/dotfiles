@@ -2,10 +2,10 @@
 address = "hypervisor"
 
 [[hosts]]
-address = "vm-app"
+address = "vm-network"
 
 [[hosts]]
-address = "vm-network"
+address = "vm-app"
 
 [[hosts]]
 address = "vm-monitor"

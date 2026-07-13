@@ -1,5 +1,6 @@
 .stfolder
 .stignore
+.direnv
 
 lazygit/.config/lazygit/state.yml
 nvim/.config/nvim/lazy-lock.json
