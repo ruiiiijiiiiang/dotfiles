@@ -271,6 +271,6 @@ environment {
 }
 
 spawn-at-startup "noctalia-shell"
-spawn-at-startup "protonmail-bridge-gui" "--no-window"
+spawn-sh-at-startup "systemctl --user start plasma-kwallet-pam"
 
 include "./host.kdl"

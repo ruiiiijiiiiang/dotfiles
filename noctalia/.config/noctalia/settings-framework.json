@@ -723,7 +723,7 @@
     },
     "wallpaper": {
         "automationEnabled": true,
-        "directory": "/home/rui/OpenCloud/Personal/Pictures/",
+        "directory": "/home/rui/OpenCloud/Personal/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": true,
         "enabled": true,
         "favorites": [
@@ -733,6 +733,21 @@
         "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
+            {
+                "directory": "/home/rui/OpenCloud/Personal/Pictures/Wallpapers",
+                "name": "eDP-1",
+                "wallpaper": ""
+            },
+            {
+                "directory": "/home/rui/OpenCloud/Personal/Pictures/Wallpapers",
+                "name": "DP-10",
+                "wallpaper": ""
+            },
+            {
+                "directory": "/home/rui/OpenCloud/Personal/Pictures/Wallpapers",
+                "name": "DP-9",
+                "wallpaper": ""
+            }
         ],
         "overviewBlur": 0.4,
         "overviewEnabled": false,

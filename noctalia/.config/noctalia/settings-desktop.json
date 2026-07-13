@@ -483,7 +483,7 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/rui/Pictures/cat_profile.png",
+        "avatarImage": "/home/rui/OpenCloud/Personal/Pictures/catppuccin.png",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
@@ -769,7 +769,7 @@
     },
     "wallpaper": {
         "automationEnabled": true,
-        "directory": "/home/rui/OpenCloud/Personal/Pictures",
+        "directory": "/home/rui/OpenCloud/Personal/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": true,
         "enabled": true,
         "favorites": [
@@ -780,12 +780,12 @@
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
             {
-                "directory": "/home/rui/OpenCloud/Personal/Pictures",
+                "directory": "/home/rui/OpenCloud/Personal/Pictures/Wallpapers",
                 "name": "DP-1",
                 "wallpaper": ""
             },
             {
-                "directory": "/home/rui/OpenCloud/Personal/Pictures",
+                "directory": "/home/rui/OpenCloud/Personal/Pictures/Wallpapers",
                 "name": "DP-2",
                 "wallpaper": ""
             }
