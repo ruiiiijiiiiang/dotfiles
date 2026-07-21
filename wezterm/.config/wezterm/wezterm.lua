@@ -188,26 +188,32 @@ config.ssh_domains = {
   {
     name = "hypervisor",
     remote_address = "hypervisor",
+    username = "rui",
   },
   {
     name = "vm-app",
     remote_address = "vm-app",
+    username = "rui",
   },
   {
     name = "vm-monitor",
     remote_address = "vm-monitor",
+    username = "rui",
   },
   {
     name = "vm-network",
     remote_address = "vm-network",
+    username = "rui",
   },
   {
     name = "vm-public",
     remote_address = "vm-public",
+    username = "rui",
   },
   {
     name = "windows",
     remote_address = "windows",
+    username = "rui",
   },
 }
 

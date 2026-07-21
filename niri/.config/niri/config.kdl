@@ -55,8 +55,6 @@ layout {
     }
 }
 
-
-
 cursor {
     xcursor-theme "catppuccin-frappe-lavender-cursors"
     xcursor-size 28
@@ -121,8 +119,6 @@ gestures {
 }
 
 binds {
-
-
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Q { close-window; }
