@@ -14,7 +14,7 @@
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
@@ -464,7 +464,6 @@
             "org.wezfurlong.wezterm",
             "vivaldi-stable",
             "goofcord",
-            "eu.betterbird.Betterbird",
             "org.kde.dolphin",
             "steam",
             "dev.zed.Zed",
