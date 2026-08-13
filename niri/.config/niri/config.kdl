@@ -244,6 +244,7 @@ binds {
 
 environment {
     QT_QPA_PLATFORM "wayland;xcb"
+    XDG_MENU_PREFIX "plasma-"
 }
 
 include "./host.kdl"

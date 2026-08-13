@@ -18,6 +18,7 @@ if status is-interactive
     # Aliases
     alias ls="lsd"
     alias cat="bat"
+    alias clear="pyroclear"
 
     # Abbreviations
     abbr -a l lsd
