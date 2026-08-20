@@ -200,6 +200,10 @@
                     "showPowerProfiles": false
                 },
                 {
+                    "iconColor": "none",
+                    "id": "PowerProfile"
+                },
+                {
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Network",

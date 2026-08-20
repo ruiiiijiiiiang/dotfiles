@@ -69,7 +69,12 @@ if status is-interactive
         if command -q open
             command open $argv &
         else if command -q xdg-open
-            xdg-open $argv &
+            for target in $argv
+                if test -e "$target"
+                    set target (path resolve "$target")
+                end
+                command xdg-open "$target" &
+            end
         else
             echo "Error: Neither 'open' nor 'xdg-open' command found." >&2
             return 1
