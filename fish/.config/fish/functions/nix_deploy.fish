@@ -6,12 +6,25 @@ function nix_deploy
     set -l mode $argv[2]
 
     if test -z "$host"
-        echo "Usage: deploy <host> [mode] [-d|--debug]"
+        echo "Usage: nix_deploy <host|rollout> [mode] [-d|--debug]"
         return 1
     end
 
     if test -z "$mode"
         set mode switch
+    end
+
+    if test "$host" = rollout
+        set -l rollout_flags
+        if set -q _flag_debug
+            set rollout_flags --debug
+        end
+
+        for rollout_host in vm-public vm-monitor vm-app vm-network hypervisor
+            nix_deploy $rollout_flags $rollout_host $mode
+            or return
+        end
+        return
     end
 
     set -l common_flags \
