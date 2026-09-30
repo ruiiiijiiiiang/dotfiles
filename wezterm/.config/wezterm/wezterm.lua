@@ -215,6 +215,11 @@ config.ssh_domains = {
     remote_address = "windows",
     username = "rui",
   },
+  {
+    name = "cloud-observe",
+    remote_address = "cloud-observe",
+    username = "rui",
+  },
 }
 
 return config

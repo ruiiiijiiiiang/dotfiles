@@ -1,5 +1,5 @@
 function nix_push_cache --description "Build host configurations locally and push them to the vm-app harmonia cache"
-    set -l hosts framework desktop hypervisor vm-network vm-app vm-monitor vm-public vm-cyber pi
+    set -l hosts framework desktop hypervisor vm-network vm-app vm-monitor vm-public vm-cyber cloud-observe pi
     set -l targets $argv
 
     if test (count $targets) -eq 0

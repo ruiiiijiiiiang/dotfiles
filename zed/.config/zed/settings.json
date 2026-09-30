@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
+  "inlay_hints": {
+    "enabled": true
+  },
   "cli_default_open_behavior": "existing_window",
   "agent_servers": {
     "github-copilot-cli": {
