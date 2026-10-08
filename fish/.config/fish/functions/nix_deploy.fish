@@ -8,7 +8,7 @@ function nix_deploy --description "Build and cache host configurations, optional
     end
 
     set -l targets cloud-observe vm-public vm-monitor vm-app vm-network hypervisor framework desktop
-    if test (count $argv) -gt 1
+    if test (count $argv) -ge 1
         set targets $argv[1]
     end
 
