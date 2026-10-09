@@ -13,3 +13,4 @@ superfile/.config/superfile/theme/
 !superfile/.config/superfile/theme/catppuccin-frappe.toml
 wezterm/.config/wezterm/colors/dank-theme.toml
 yazi/.config/yazi/plugins
+fish/.config/fish/conf.d/
