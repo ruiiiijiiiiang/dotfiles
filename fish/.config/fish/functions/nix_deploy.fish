@@ -8,7 +8,7 @@ function nix_deploy --description "Build and cache host configurations, optional
     end
 
     set -l targets cloud-observe vm-public vm-monitor vm-app vm-network hypervisor framework desktop
-    if test (count $argv) -ge 1
+    if test (count $argv) -ge 1 && test $argv[1] != all
         set targets $argv[1]
     end
 
@@ -56,7 +56,7 @@ function nix_deploy --description "Build and cache host configurations, optional
 
         if test "$mode" != cache
             echo "Deploying to $target ($mode)..."
-            set -l deploy_flags --target-host "root@$target" --store-path "$store_path" $debug_flags
+            set -l deploy_flags --target-host "root@$target" --store-path "$store_path" --no-reexec $debug_flags
             if command -q nixos-rebuild
                 nixos-rebuild $mode $deploy_flags
             else
