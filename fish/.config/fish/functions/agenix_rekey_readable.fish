@@ -20,7 +20,7 @@ function agenix_rekey_readable --description 'Rekey agenix secrets readable with
     set repo (path resolve -- "$repo")
     or return 1
 
-    set -l rules "$repo/secrets/secrets.nix"
+    set -l rules "$repo/secrets/agenix-rules.nix"
     if not test -f "$rules"
         echo "Error: Agenix rules not found at $rules." >&2
         return 1
