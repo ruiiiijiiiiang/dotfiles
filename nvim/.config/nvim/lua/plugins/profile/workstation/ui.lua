@@ -36,14 +36,16 @@ return {
     dependencies = { "lewis6991/gitsigns.nvim" },
     config = function()
       require("gitsigns").setup()
-      require("scrollbar.handlers.gitsigns").setup()
       require("scrollbar").setup({
-        handle = {
-          color = frappe.lavender,
+        providers = { gitsigns = true },
+        scrollbar = {
+          thumb = {
+            highlight = { bg = frappe.lavender },
+          },
         },
         marks = {
           Cursor = {
-            color = frappe.base,
+            highlight = { fg = frappe.base },
           },
         },
       })
